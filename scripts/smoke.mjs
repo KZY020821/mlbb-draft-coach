@@ -25,7 +25,7 @@ let lc = await lastCall();
 check("API key sent as bearer token", lc.last.auth === "Bearer test-key");
 check("hits the chat completions path", lc.last.url === "/chat/completions");
 check("JSON mode requested", lc.last.body.response_format?.type === "json_object");
-check("normal mode turns DeepSeek thinking off", lc.last.body.thinking?.type === "disabled" && lc.last.body.max_tokens === 3000);
+check("DeepSeek thinking is turned off", lc.last.body.thinking?.type === "disabled" && !("reasoning_effort" in lc.last.body));
 const sys = lc.last.body.messages[0].content, usr = lc.last.body.messages[1].content;
 check("prompt includes patch + notes + roster", sys.includes("Patch 2.2.16") && sys.includes("Masha was reworked") && sys.includes("Hirara (Assassin)"));
 check("prompt mentions JSON (required by JSON mode)", /json/i.test(sys));

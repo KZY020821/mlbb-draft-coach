@@ -11,7 +11,7 @@ type Result = {
   meta: { patch: string; season: string; dataAsOf: string; dataAgeDays: number; model: string; retried: boolean };
 };
 
-type Props = { heroes: string[]; passcodeRequired: boolean; deepAvailable: boolean; staleDays: number };
+type Props = { heroes: string[]; passcodeRequired: boolean; staleDays: number };
 
 const idOf = (s: string) =>
   s
@@ -23,12 +23,11 @@ const blank = (n: number) => Array.from({ length: n }, () => "");
 
 type Group = "bans" | "enemy" | "team";
 
-export default function DraftForm({ heroes, passcodeRequired, deepAvailable, staleDays }: Props) {
+export default function DraftForm({ heroes, passcodeRequired, staleDays }: Props) {
   const [bans, setBans] = useState<string[]>(blank(10));
   const [enemy, setEnemy] = useState<string[]>(blank(5));
   const [team, setTeam] = useState<string[]>(blank(5));
   const [passcode, setPasscode] = useState("");
-  const [deep, setDeep] = useState(false);
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState("");
   const [result, setResult] = useState<Result | null>(null);
@@ -81,8 +80,7 @@ export default function DraftForm({ heroes, passcodeRequired, deepAvailable, sta
         body: JSON.stringify({
           bans: bans.map((v) => v.trim()).filter(Boolean),
           enemyPicks: enemy.map((v) => v.trim()).filter(Boolean),
-          teamPicks: team.map((v) => v.trim()).filter(Boolean),
-          deep
+          teamPicks: team.map((v) => v.trim()).filter(Boolean)
         })
       });
       const data = await res.json().catch(() => null);
@@ -181,12 +179,6 @@ export default function DraftForm({ heroes, passcodeRequired, deepAvailable, sta
                 <input type="password" value={passcode} onChange={(e) => setPasscode(e.target.value)} autoComplete="off" />
               </label>
             )}
-            {deepAvailable && (
-              <label className="check">
-                <input type="checkbox" checked={deep} onChange={(e) => setDeep(e.target.checked)} />
-                <span>Deeper analysis (slower)</span>
-              </label>
-            )}
           </div>
           <div className="actions">
             <button type="button" className="ghost" onClick={reset} disabled={busy}>
@@ -199,7 +191,7 @@ export default function DraftForm({ heroes, passcodeRequired, deepAvailable, sta
           <p className="note" aria-live="polite">
             {blocker ||
               (busy
-                ? "Reading the patch data and your draft. This can take up to half a minute."
+                ? "Reading the patch data and your draft. This usually takes a few seconds."
                 : `Your team has ${left} pick${left === 1 ? "" : "s"} left. The analysis recommends ${Math.min(2, left)}.`)}
           </p>
         </section>

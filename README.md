@@ -20,7 +20,9 @@ Until the key is replaced, the app loads but the analysis returns "The DeepSeek 
 
 ## Settings
 
-All are environment variables, listed with defaults in `.env.example`: `DEEPSEEK_API_KEY`, `DEEPSEEK_BASE_URL`, `DEEPSEEK_MODEL` (default `deepseek-flash`), `DEEPSEEK_DEEP_MODEL` (default `deepseek-v4-pro`, shows the "Deeper analysis" box), `APP_PASSCODE`, `RATE_LIMIT_PER_10MIN`.
+All are environment variables, listed with defaults in `.env.example`: `DEEPSEEK_API_KEY`, `DEEPSEEK_BASE_URL`, `DEEPSEEK_MODEL` (default `deepseek-flash`), `APP_PASSCODE`, `RATE_LIMIT_PER_10MIN`.
+
+The app uses one fast model with DeepSeek's "thinking" mode turned off, because draft decisions are made in seconds. An answer usually takes about 4 seconds.
 
 ## How an analysis works
 

@@ -8,11 +8,9 @@ export function getApiKey(): string | null {
   return key;
 }
 
-export function getModels() {
-  return {
-    fast: (process.env.DEEPSEEK_MODEL || "deepseek-flash").trim(),
-    deep: (process.env.DEEPSEEK_DEEP_MODEL || "").trim()
-  };
+// The app uses one fast model on purpose: draft decisions are made in seconds.
+export function getModel(): string {
+  return (process.env.DEEPSEEK_MODEL || "deepseek-flash").trim();
 }
 
 export class UpstreamError extends Error {
@@ -25,14 +23,10 @@ export class UpstreamError extends Error {
 }
 
 // One request to DeepSeek's OpenAI-compatible chat endpoint in JSON mode.
-// DeepSeek turns "thinking" on by default, and thinking tokens count against
-// max_tokens. The normal mode turns it off so the answer comes back quickly;
-// the deeper mode keeps it on with a larger budget.
-export async function chatJson(opts: { model: string; messages: Message[]; apiKey: string; think?: boolean }): Promise<string> {
+// DeepSeek turns "thinking" on by default, which is slow and spends tokens
+// before any answer is written, so it is always switched off here.
+export async function chatJson(opts: { model: string; messages: Message[]; apiKey: string }): Promise<string> {
   const base = (process.env.DEEPSEEK_BASE_URL || "https://api.deepseek.com").replace(/\/+$/, "");
-  const mode = opts.think
-    ? { thinking: { type: "enabled" }, reasoning_effort: "low", max_tokens: 12000 }
-    : { thinking: { type: "disabled" }, max_tokens: 3000, temperature: 0.3 };
   let res: Response;
   try {
     res = await fetch(`${base}/chat/completions`, {
@@ -42,10 +36,12 @@ export async function chatJson(opts: { model: string; messages: Message[]; apiKe
         model: opts.model,
         messages: opts.messages,
         response_format: { type: "json_object" },
-        ...mode,
+        thinking: { type: "disabled" },
+        max_tokens: 2000,
+        temperature: 0.3,
         stream: false
       }),
-      signal: AbortSignal.timeout(opts.think ? 55_000 : 40_000)
+      signal: AbortSignal.timeout(25_000)
     });
   } catch (e) {
     if (e instanceof Error && (e.name === "TimeoutError" || e.name === "AbortError")) {

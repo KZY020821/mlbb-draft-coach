@@ -8,7 +8,7 @@ export type Draft = {
 };
 
 export type ParsedRequest =
-  | { ok: true; draft: Draft; need: number; deep: boolean }
+  | { ok: true; draft: Draft; need: number }
   | { ok: false; message: string };
 
 function names(value: unknown, max: number, label: string): { list: string[]; error?: string } {
@@ -69,8 +69,7 @@ export function parseRequest(body: unknown, index: HeroIndex): ParsedRequest {
   return {
     ok: true,
     draft: { bans: resolved.bans, enemy: resolved.enemyPicks, team: resolved.teamPicks },
-    need: Math.min(2, remaining),
-    deep: b.deep === true
+    need: Math.min(2, remaining)
   };
 }
 

@@ -2,7 +2,7 @@ import { getContext, dataAgeDays } from "@/lib/context";
 import { buildIndex } from "@/lib/heroes";
 import { parseRequest, checkAnalysis } from "@/lib/draft";
 import { buildMessages, retryMessage } from "@/lib/prompt";
-import { chatJson, getApiKey, getModels, UpstreamError } from "@/lib/deepseek";
+import { chatJson, getApiKey, getModel, UpstreamError } from "@/lib/deepseek";
 import { clientId, passcodeOk, rateLimit } from "@/lib/guard";
 
 export const maxDuration = 60;
@@ -50,15 +50,12 @@ export async function POST(req: Request) {
     return fail(503, "not_configured", "The DeepSeek API key is not set on the server. Add DEEPSEEK_API_KEY to the environment.");
   }
 
-  const models = getModels();
-  const think = parsed.deep && Boolean(models.deep);
-  const model = think ? models.deep : models.fast;
+  const model = getModel();
   const messages = buildMessages(ctx, parsed.draft, parsed.need);
 
   try {
-    let reply = await chatJson({ model, messages, apiKey, think }).catch(async (e) => {
-      // A thinking run that came back empty would likely take as long again, so only retry fast mode.
-      if (e instanceof UpstreamError && e.code === "empty" && !think) return chatJson({ model, messages, apiKey, think });
+    let reply = await chatJson({ model, messages, apiKey }).catch(async (e) => {
+      if (e instanceof UpstreamError && e.code === "empty") return chatJson({ model, messages, apiKey });
       throw e;
     });
     let checked = checkAnalysis(reply, index, parsed.draft, parsed.need);
@@ -69,8 +66,7 @@ export async function POST(req: Request) {
       reply = await chatJson({
         model,
         messages: [...messages, { role: "assistant", content: reply }, retryMessage(checked.problems)],
-        apiKey,
-        think: false
+        apiKey
       });
       checked = checkAnalysis(reply, index, parsed.draft, parsed.need);
     }
