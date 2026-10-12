@@ -1,5 +1,6 @@
 import type { Hero } from "./context";
 import { resolveHero, type HeroIndex } from "./heroes";
+import type { AppliedRule } from "./rules";
 
 export type Draft = {
   bans: Hero[];
@@ -86,6 +87,7 @@ export type Analysis = {
 export type Checked = {
   analysis: Analysis;
   problems: string[];
+  ruleIgnored: boolean;
 };
 
 function text(v: unknown, max = 600): string {
@@ -93,7 +95,7 @@ function text(v: unknown, max = 600): string {
 }
 
 // Parse the model's JSON and keep only heroes that exist and are still available.
-export function checkAnalysis(raw: string, index: HeroIndex, draft: Draft, need: number): Checked {
+export function checkAnalysis(raw: string, index: HeroIndex, draft: Draft, need: number, applied: AppliedRule[] = []): Checked {
   const problems: string[] = [];
   let data: Record<string, unknown> = {};
   try {
@@ -134,6 +136,16 @@ export function checkAnalysis(raw: string, index: HeroIndex, draft: Draft, need:
   }
   if (picks.length < need) problems.push(`Only ${picks.length} of ${need} requested picks were usable.`);
 
+  // At least one open counter rule should be honoured in the picks.
+  const open = applied.filter((r) => !r.teamHas && r.available.length);
+  const counters = new Set(open.flatMap((r) => r.available));
+  const ruleIgnored = open.length > 0 && !picks.some((p) => counters.has(p.hero));
+  if (ruleIgnored) {
+    for (const r of open) {
+      problems.push(`The enemy picked ${r.enemy}. Our team's counter rule says to pick ${r.available.join(" or ")}, but none of them is in picks.`);
+    }
+  }
+
   const backups: Backup[] = [];
   for (const item of Array.isArray(data.backups) ? data.backups : []) {
     if (backups.length >= 3) break;
@@ -151,6 +163,7 @@ export function checkAnalysis(raw: string, index: HeroIndex, draft: Draft, need:
       backups,
       plan: text(data.plan)
     },
-    problems
+    problems,
+    ruleIgnored
   };
 }

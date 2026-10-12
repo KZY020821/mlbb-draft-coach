@@ -1,5 +1,6 @@
 import type { Context } from "./context";
 import type { Draft } from "./draft";
+import type { AppliedRule } from "./rules";
 
 export type Message = { role: "system" | "user" | "assistant"; content: string };
 
@@ -34,7 +35,32 @@ function list(heroes: { name: string; roles: string[] }[]): string {
   return heroes.length ? heroes.map((h) => `${h.name} (${h.roles.join("/")})`).join(", ") : "none";
 }
 
-export function buildMessages(ctx: Context, draft: Draft, need: number): Message[] {
+function rulesBlock(applied: AppliedRule[]): string {
+  if (!applied.length) return "";
+  const lines = applied.map((r) => {
+    if (r.teamHas) return `- Enemy picked ${r.enemy}. Our team already has ${r.teamHas}, which counters it.`;
+    const parts = [`- Enemy picked ${r.enemy}.`];
+    if (r.available.length) parts.push(`Counter with: ${r.available.join(" or ")}.`);
+    if (r.unavailable.length) parts.push(`(${r.unavailable.join(", ")} also counter${r.unavailable.length === 1 ? "s" : ""} it but ${r.unavailable.length === 1 ? "is" : "are"} banned or taken.)`);
+    if (r.why) parts.push(`Reason: ${r.why}`);
+    return parts.join(" ");
+  });
+  return [
+    "",
+    "OUR TEAM'S COUNTER RULES",
+    "These come from our team's coach and are known, reliable counters. When a counter below is available, put it in picks, best first, unless our team already has that counter.",
+    "If you leave out an available counter, explain why in plan.",
+    ...lines
+  ].join("\n");
+}
+
+export function buildMessages(
+  ctx: Context,
+  draft: Draft,
+  need: number,
+  applied: AppliedRule[] = [],
+  principles: string[] = []
+): Message[] {
   const m = ctx.meta;
   const system = [
     "You are an expert Mobile Legends: Bang Bang draft analyst. A team is in the middle of a draft and needs help choosing its remaining pick or picks.",
@@ -46,6 +72,7 @@ export function buildMessages(ctx: Context, draft: Draft, need: number): Message
     `- These heroes are recent and their abilities were not verified, so do not describe their abilities in detail: ${m.unverifiedKits.join(", ")}.`,
     "- Do not invent win rates, statistics or patch changes.",
     "- Weigh what the enemy team can do, what our team still lacks, which heroes are likely to be contested, and the pro draft signals.",
+    ...(principles.length ? ["", "OUR TEAM'S DRAFT PRINCIPLES (follow these)", ...principles.map((p) => `- ${p}`)] : []),
     "",
     "PATCH CONTEXT",
     `Patch ${m.patch} (${m.season}), opened ${m.patchOpened}. Data last updated ${m.dataAsOf}.`,
@@ -81,6 +108,7 @@ export function buildMessages(ctx: Context, draft: Draft, need: number): Message
     `Enemy picks: ${list(draft.enemy)}`,
     `Our picks so far: ${list(draft.team)}`,
     `Heroes that are not available: ${unavailable.length ? unavailable.join(", ") : "none"}`,
+    rulesBlock(applied),
     "",
     `Our team has ${5 - draft.team.length} pick${5 - draft.team.length === 1 ? "" : "s"} left. Recommend exactly ${need} hero${need === 1 ? "" : "es"} in "picks"${
       need === 2 ? ", listed in the order the team should lock them in" : ""

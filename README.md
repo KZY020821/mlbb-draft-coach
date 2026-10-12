@@ -31,6 +31,26 @@ The app uses one fast model with DeepSeek's "thinking" mode turned off, because 
 3. `lib/deepseek.ts` calls DeepSeek in JSON mode.
 4. `lib/draft.ts` checks every suggested hero against the roster and the draft. If a pick is invented, banned or already picked, the server asks once more with the problems listed, then drops anything still invalid.
 
+## Your team's draft rules
+
+`data/draft-rules.json` holds draft knowledge the model must respect. Edit it on GitHub and the site redeploys in about 30 seconds.
+
+```json
+{
+  "counters": [
+    { "enemy": "Gloo", "picks": ["Vexana", "Faramis"], "why": "" }
+  ],
+  "principles": [
+    "Always secure a frontline before the last pick."
+  ]
+}
+```
+
+- **counters**: when the enemy picks `enemy`, the prompt tells the model to pick one of `picks` (skipping any that are banned or taken, and skipping the rule if your team already has one). If the model's picks ignore every applicable rule, the server asks once more. `why` is optional and is passed to the model as the reason.
+- **principles**: plain sentences added to the instructions for every draft.
+
+Hero names must match the roster (case and spacing do not matter). The results page shows which rules applied.
+
 ## Patch data
 
 `data/context.json` is a snapshot (patch 2.2.16, Season 42, as of 2026-10-12). The page warns when it is more than 7 days old. `getContext()` in `lib/context.ts` is the single place to change when the data comes from a daily refresh job instead of this file.

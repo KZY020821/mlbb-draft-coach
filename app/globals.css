@@ -101,6 +101,9 @@ input.bad { border-color: var(--enemy); }
 .rank { font: 700 12px/1 var(--display); letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold); }
 .role { color: var(--muted); font-size: 13px; }
 .risk { color: var(--enemy); font-size: 13.5px; }
+.rule-tag { padding: 3px 8px; border-radius: 999px; background: rgba(111, 211, 160, 0.16); color: var(--good); font: 700 11px/1 var(--display); letter-spacing: 0.06em; text-transform: uppercase; }
+.rules ul { margin: 8px 0 0; padding-left: 18px; display: grid; gap: 4px; }
+.rules .muted { color: var(--muted); }
 .plan { margin: 0; }
 .backups ul { margin: 8px 0 0; padding-left: 18px; display: grid; gap: 4px; color: var(--muted); }
 .backups strong { color: var(--fg); }

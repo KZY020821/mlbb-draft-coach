@@ -4,6 +4,7 @@ import { parseRequest, checkAnalysis } from "@/lib/draft";
 import { buildMessages, retryMessage } from "@/lib/prompt";
 import { chatJson, getApiKey, getModel, UpstreamError } from "@/lib/deepseek";
 import { clientId, passcodeOk, rateLimit } from "@/lib/guard";
+import { applyRules, getRules } from "@/lib/rules";
 
 export const maxDuration = 60;
 export const dynamic = "force-dynamic";
@@ -51,24 +52,34 @@ export async function POST(req: Request) {
   }
 
   const model = getModel();
-  const messages = buildMessages(ctx, parsed.draft, parsed.need);
+  const rules = getRules();
+  const applied = applyRules(rules, index, parsed.draft);
+  const messages = buildMessages(ctx, parsed.draft, parsed.need, applied, rules.principles);
 
   try {
     let reply = await chatJson({ model, messages, apiKey }).catch(async (e) => {
       if (e instanceof UpstreamError && e.code === "empty") return chatJson({ model, messages, apiKey });
       throw e;
     });
-    let checked = checkAnalysis(reply, index, parsed.draft, parsed.need);
+    let checked = checkAnalysis(reply, index, parsed.draft, parsed.need, applied);
     let retried = false;
 
-    if (checked.analysis.picks.length < parsed.need) {
+    // Ask once more if picks are missing or our counter rules were ignored.
+    if (checked.analysis.picks.length < parsed.need || checked.ruleIgnored) {
       retried = true;
-      reply = await chatJson({
-        model,
-        messages: [...messages, { role: "assistant", content: reply }, retryMessage(checked.problems)],
-        apiKey
-      });
-      checked = checkAnalysis(reply, index, parsed.draft, parsed.need);
+      try {
+        const second = await chatJson({
+          model,
+          messages: [...messages, { role: "assistant", content: reply }, retryMessage(checked.problems)],
+          apiKey
+        });
+        const rechecked = checkAnalysis(second, index, parsed.draft, parsed.need, applied);
+        // Keep the second answer unless it lost usable picks.
+        if (rechecked.analysis.picks.length >= checked.analysis.picks.length) checked = rechecked;
+      } catch (e) {
+        // If the retry fails but the first answer had usable picks, show those.
+        if (checked.analysis.picks.length === 0) throw e;
+      }
     }
 
     if (checked.analysis.picks.length === 0) {
@@ -79,6 +90,7 @@ export async function POST(req: Request) {
       analysis: checked.analysis,
       need: parsed.need,
       partial: checked.analysis.picks.length < parsed.need,
+      rules: applied,
       meta: {
         patch: ctx.meta.patch,
         season: ctx.meta.season,

@@ -8,6 +8,7 @@ type Result = {
   analysis: { summary: string; confidence: "low" | "medium" | "high"; picks: Pick[]; backups: Backup[]; plan: string };
   need: number;
   partial: boolean;
+  rules: { enemy: string; available: string[]; unavailable: string[]; why: string; teamHas: string | null }[];
   meta: { patch: string; season: string; dataAsOf: string; dataAgeDays: number; model: string; retried: boolean };
 };
 
@@ -210,6 +211,8 @@ export default function DraftForm({ heroes, passcodeRequired, staleDays }: Props
 
 function Results({ result }: { result: Result }) {
   const { analysis: a, meta } = result;
+  const rules = result.rules ?? [];
+  const ruleFor = (hero: string) => rules.find((r) => r.available.includes(hero));
   return (
     <section className="results" aria-label="Recommendation">
       <div className="results-head">
@@ -228,12 +231,30 @@ function Results({ result }: { result: Result }) {
               <span className="rank">{result.need === 2 ? (i === 0 ? "First" : "Then") : "Pick"}</span>
               <strong>{p.hero}</strong>
               {p.role && <span className="role">{p.role}</span>}
+              {ruleFor(p.hero) && <span className="rule-tag">Your rule vs {ruleFor(p.hero)!.enemy}</span>}
             </div>
             {p.why && <p>{p.why}</p>}
             {p.risk && <p className="risk">Risk: {p.risk}</p>}
           </li>
         ))}
       </ol>
+
+      {rules.length > 0 && (
+        <div className="rules">
+          <h3>Your counter rules</h3>
+          <ul>
+            {rules.map((r) => (
+              <li key={r.enemy}>
+                <strong>{r.enemy}</strong>
+                {r.teamHas
+                  ? ` · already countered by your ${r.teamHas}`
+                  : ` → ${r.available.length ? r.available.join(" or ") : "no counter left"}`}
+                {!r.teamHas && r.unavailable.length > 0 && <span className="muted"> ({r.unavailable.join(", ")} banned or taken)</span>}
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
 
       {a.plan && (
         <p className="plan">

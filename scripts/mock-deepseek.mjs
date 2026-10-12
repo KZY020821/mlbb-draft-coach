@@ -9,7 +9,11 @@ const POOL = ["Hirara", "Marcel", "Aulus", "Khufra", "Melissa", "Eudora", "Barat
 function goodReply(userText) {
   const unavailable = ((userText.match(/Heroes that are not available: (.*)/) || [])[1] || "").split(", ");
   const need = Number((userText.match(/Recommend exactly (\d)/) || [])[1] || 1);
-  const free = POOL.filter((h) => !unavailable.includes(h));
+  let free = POOL.filter((h) => !unavailable.includes(h));
+  if (mode === "follow_rules") {
+    const m = userText.match(/Counter with: ([^.]+)\./);
+    if (m) free = [m[1].split(" or ")[0], ...free];
+  }
   return {
     summary: "The enemy has strong dive and your team lacks a frontline.",
     confidence: "medium",

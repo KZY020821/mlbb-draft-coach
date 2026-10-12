@@ -93,6 +93,43 @@ check("oversized body -> 413", big.status === 413);
 const junk = await fetch(APP + "/api/analyze", { method: "POST", body: "not json" });
 check("malformed JSON -> 400", junk.status === 400);
 
+// Team counter rules (data/draft-rules.json has Gloo -> Vexana, Faramis).
+const glooDraft = { bans: ["Hayabusa"], enemyPicks: ["Gloo", "Ling"], teamPicks: ["Tigreal", "Miya", "Bane"] };
+await setMode("good");
+r = await post({ ...draft, enemyPicks: ["Ling", "Layla"] });
+lc = await lastCall();
+check("no rules block when no rule applies", !lc.last.body.messages[1].content.includes("COUNTER RULES") && r.json.rules.length === 0);
+
+await setMode("follow_rules");
+r = await post(glooDraft);
+lc = await lastCall();
+let u = lc.last.body.messages[1].content;
+check("Gloo rule reaches the prompt", u.includes("OUR TEAM'S COUNTER RULES") && u.includes("Enemy picked Gloo. Counter with: Vexana or Faramis."));
+check("rule followed -> no retry, counter in picks", lc.calls === 1 && r.json.analysis.picks[0].hero === "Vexana", JSON.stringify(r.json.analysis?.picks?.map((p) => p.hero)));
+check("response lists the applied rule", r.json.rules[0]?.enemy === "Gloo" && r.json.rules[0].available.join() === "Vexana,Faramis");
+
+await setMode("good");
+r = await post(glooDraft);
+lc = await lastCall();
+check("rule ignored -> one retry naming the rule", lc.calls === 2 && r.json.meta.retried === true && JSON.stringify(lc.last.body.messages).includes("counter rule says to pick Vexana or Faramis"));
+check("still returns an answer after the retry", r.status === 200 && r.json.analysis.picks.length === 2);
+
+await setMode("follow_rules");
+r = await post({ ...glooDraft, bans: ["Vexana"] });
+lc = await lastCall();
+u = lc.last.body.messages[1].content;
+check("banned counter is skipped", u.includes("Counter with: Faramis.") && u.includes("Vexana also counters it but is banned or taken") && r.json.analysis.picks[0].hero === "Faramis");
+
+await setMode("good");
+r = await post({ ...glooDraft, teamPicks: ["Tigreal", "Miya", "Vexana"] });
+lc = await lastCall();
+check("team already has the counter -> no push, no retry", lc.calls === 1 && lc.last.body.messages[1].content.includes("Our team already has Vexana") && r.json.rules[0].teamHas === "Vexana");
+
+await setMode("good");
+r = await post({ ...glooDraft, bans: ["Vexana", "Faramis"] });
+lc = await lastCall();
+check("all counters gone -> no retry", lc.calls === 1 && r.status === 200);
+
 // Rate limit: limit is set low by the test environment.
 let limited = 0;
 for (let i = 0; i < 80 && limited === 0; i++) { const x = await post(draft); if (x.status === 429) limited++; }
