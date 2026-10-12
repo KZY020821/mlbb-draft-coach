@@ -51,12 +51,14 @@ export async function POST(req: Request) {
   }
 
   const models = getModels();
-  const model = parsed.deep && models.deep ? models.deep : models.fast;
+  const think = parsed.deep && Boolean(models.deep);
+  const model = think ? models.deep : models.fast;
   const messages = buildMessages(ctx, parsed.draft, parsed.need);
 
   try {
-    let reply = await chatJson({ model, messages, apiKey }).catch(async (e) => {
-      if (e instanceof UpstreamError && e.code === "empty") return chatJson({ model, messages, apiKey });
+    let reply = await chatJson({ model, messages, apiKey, think }).catch(async (e) => {
+      // A thinking run that came back empty would likely take as long again, so only retry fast mode.
+      if (e instanceof UpstreamError && e.code === "empty" && !think) return chatJson({ model, messages, apiKey, think });
       throw e;
     });
     let checked = checkAnalysis(reply, index, parsed.draft, parsed.need);
@@ -67,7 +69,8 @@ export async function POST(req: Request) {
       reply = await chatJson({
         model,
         messages: [...messages, { role: "assistant", content: reply }, retryMessage(checked.problems)],
-        apiKey
+        apiKey,
+        think: false
       });
       checked = checkAnalysis(reply, index, parsed.draft, parsed.need);
     }

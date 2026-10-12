@@ -25,8 +25,14 @@ export class UpstreamError extends Error {
 }
 
 // One request to DeepSeek's OpenAI-compatible chat endpoint in JSON mode.
-export async function chatJson(opts: { model: string; messages: Message[]; apiKey: string }): Promise<string> {
+// DeepSeek turns "thinking" on by default, and thinking tokens count against
+// max_tokens. The normal mode turns it off so the answer comes back quickly;
+// the deeper mode keeps it on with a larger budget.
+export async function chatJson(opts: { model: string; messages: Message[]; apiKey: string; think?: boolean }): Promise<string> {
   const base = (process.env.DEEPSEEK_BASE_URL || "https://api.deepseek.com").replace(/\/+$/, "");
+  const mode = opts.think
+    ? { thinking: { type: "enabled" }, reasoning_effort: "low", max_tokens: 12000 }
+    : { thinking: { type: "disabled" }, max_tokens: 3000, temperature: 0.3 };
   let res: Response;
   try {
     res = await fetch(`${base}/chat/completions`, {
@@ -36,11 +42,10 @@ export async function chatJson(opts: { model: string; messages: Message[]; apiKe
         model: opts.model,
         messages: opts.messages,
         response_format: { type: "json_object" },
-        max_tokens: 3000,
-        temperature: 0.3,
+        ...mode,
         stream: false
       }),
-      signal: AbortSignal.timeout(50_000)
+      signal: AbortSignal.timeout(opts.think ? 55_000 : 40_000)
     });
   } catch (e) {
     if (e instanceof Error && (e.name === "TimeoutError" || e.name === "AbortError")) {
@@ -60,8 +65,10 @@ export async function chatJson(opts: { model: string; messages: Message[]; apiKe
   } catch {
     throw new UpstreamError("upstream", "DeepSeek sent a reply that could not be read.");
   }
-  const content = (body as { choices?: { message?: { content?: unknown } }[] })?.choices?.[0]?.message?.content;
+  const choice = (body as { choices?: { message?: { content?: unknown }; finish_reason?: string }[] })?.choices?.[0];
+  const content = choice?.message?.content;
   if (typeof content !== "string" || !content.trim()) {
+    console.error("[deepseek] empty content, finish_reason:", choice?.finish_reason);
     throw new UpstreamError("empty", "DeepSeek returned an empty reply.");
   }
   return content;
