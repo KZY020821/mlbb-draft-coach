@@ -31,6 +31,24 @@ The app uses one fast model with DeepSeek's "thinking" mode turned off, because 
 3. `lib/deepseek.ts` calls DeepSeek in JSON mode.
 4. `lib/draft.ts` checks every suggested hero against the roster and the draft. If a pick is invented, banned or already picked, the server asks once more with the problems listed, then drops anything still invalid.
 
+## Fill the form from a link
+
+The page fills its boxes from the link, so you only click **Analyze draft**:
+
+```
+https://mlbb-draft-coach-six.vercel.app/?bans=Hirara,Freya,Kaja&enemy=Tigreal,Gloo,Clint&ours=Hanabi,Yu Zhong
+```
+
+`bans` (up to 10), `enemy` (up to 5) and `ours` (up to 5) are comma-separated hero names. Case and spacing do not matter. Nothing is sent until you click the button.
+
+To build and open that link for you (needs Node, nothing to install):
+
+```bash
+node scripts/open-draft.mjs tests/drafts/gloo-faramis-last-pick.json      # a saved draft
+node scripts/open-draft.mjs --bans "Hirara,Freya" --enemy "Gloo,Clint" --ours "Hanabi,Fanny"
+node scripts/open-draft.mjs --print tests/drafts/gloo-faramis-last-pick.json   # only print the link
+```
+
 ## Your team's draft rules
 
 `data/draft-rules.json` holds draft knowledge the model must respect. Edit it on GitHub and the site redeploys in about 30 seconds.

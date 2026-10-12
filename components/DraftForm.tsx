@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 
 type Pick = { hero: string; role: string; why: string; risk: string };
 type Backup = { hero: string; why: string };
@@ -22,6 +22,19 @@ const idOf = (s: string) =>
 
 const blank = (n: number) => Array.from({ length: n }, () => "");
 
+// Reads a comma-separated list from the page link, e.g. ?bans=Hirara,Freya
+function fromLink(params: URLSearchParams, key: string, size: number, canonical: Map<string, string>): string[] | null {
+  const raw = params.get(key);
+  if (!raw) return null;
+  const names = raw
+    .split(",")
+    .map((s) => s.trim())
+    .filter(Boolean)
+    .slice(0, size)
+    .map((s) => canonical.get(idOf(s)) ?? s);
+  return [...names, ...blank(size - names.length)];
+}
+
 type Group = "bans" | "enemy" | "team";
 
 export default function DraftForm({ heroes, passcodeRequired, staleDays }: Props) {
@@ -34,6 +47,18 @@ export default function DraftForm({ heroes, passcodeRequired, staleDays }: Props
   const [result, setResult] = useState<Result | null>(null);
 
   const known = useMemo(() => new Set(heroes.map(idOf)), [heroes]);
+
+  // Prefill the boxes from the link (?bans=...&enemy=...&ours=...). Nothing is submitted.
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    const canonical = new Map(heroes.map((h) => [idOf(h), h]));
+    const b = fromLink(params, "bans", 10, canonical);
+    const e = fromLink(params, "enemy", 5, canonical);
+    const t = fromLink(params, "ours", 5, canonical);
+    if (b) setBans(b);
+    if (e) setEnemy(e);
+    if (t) setTeam(t);
+  }, [heroes]);
 
   // Per-box state: "empty", "ok", "unknown" or "dupe".
   const status = useMemo(() => {

@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "test": "node scripts/smoke.mjs"
+    "test": "node scripts/smoke.mjs",
+    "open-draft": "node scripts/open-draft.mjs"
   },
   "dependencies": {
     "next": "16.4.0",
