@@ -1,0 +1,1166 @@
+{
+  "meta": {
+    "patch": "2.2.16",
+    "season": "Season 42",
+    "patchOpened": "2026-09-16",
+    "dataAsOf": "2026-10-12",
+    "sources": [
+      "https://mlbbhub.com/tier-list",
+      "https://mlbbhub.com/mpl/ph/drafts",
+      "https://timesaver.gg/blog/mobile-legends-best-heroes-to-ban-season-42",
+      "https://gamemarket.gg/news/mobile-legends-bang-bang/msc-2026-meta-analysis-why-these-heroes-dominate-draft-phase"
+    ],
+    "proPeriod": "MPL Philippines Season 18, 2026-08-21 to 2026-10-09 (ban rates)",
+    "unverifiedKits": [
+      "Marcel",
+      "Obsidia",
+      "Hirara",
+      "Lukas",
+      "Zhuxin",
+      "Suyou",
+      "Sora",
+      "Zetian",
+      "Cici",
+      "Chip",
+      "Kalea"
+    ]
+  },
+  "patchNotes": "Season 42 opened September 16, 2026. Masha was reworked and Bruno was revamped in this patch, so older Masha and Bruno assumptions no longer hold. Patch 2.1.90 weakened tank jungle clear, so pro drafts prefer snowball assassin junglers (Hirara, Ling, Fanny, Nolan) over tank junglers and deprioritize tank-first drafting. Against assassin junglers, pro teams draft anti-dive carries (Melissa, Hanabi) and anti-diver EXP laners (Barats). Estes and Floryn force anti-heal drafting.",
+  "heroes": [
+    {
+      "name": "Tigreal",
+      "roles": [
+        "Tank"
+      ],
+      "tier": "D"
+    },
+    {
+      "name": "Grock",
+      "roles": [
+        "Tank"
+      ],
+      "tier": "D"
+    },
+    {
+      "name": "Fredrinn",
+      "roles": [
+        "Tank"
+      ],
+      "tier": "B"
+    },
+    {
+      "name": "Akai",
+      "roles": [
+        "Tank"
+      ],
+      "tier": "B"
+    },
+    {
+      "name": "Franco",
+      "roles": [
+        "Tank"
+      ],
+      "tier": "D"
+    },
+    {
+      "name": "Minotaur",
+      "roles": [
+        "Tank"
+      ],
+      "tier": "S",
+      "lanes": [
+        "Roam"
+      ]
+    },
+    {
+      "name": "Johnson",
+      "roles": [
+        "Tank"
+      ],
+      "tier": "C"
+    },
+    {
+      "name": "Gatotkaca",
+      "roles": [
+        "Tank"
+      ],
+      "tier": "D"
+    },
+    {
+      "name": "Hylos",
+      "roles": [
+        "Tank"
+      ],
+      "tier": "C"
+    },
+    {
+      "name": "Uranus",
+      "roles": [
+        "Tank"
+      ],
+      "tier": "C",
+      "banRate": 47
+    },
+    {
+      "name": "Belerick",
+      "roles": [
+        "Tank"
+      ],
+      "tier": "A",
+      "lanes": [
+        "Roam"
+      ],
+      "pro": "ban",
+      "note": "Durable frontline roamer that is consistently contested at high ranks."
+    },
+    {
+      "name": "Khufra",
+      "roles": [
+        "Tank"
+      ],
+      "tier": "S"
+    },
+    {
+      "name": "Baxia",
+      "roles": [
+        "Tank"
+      ],
+      "tier": "D"
+    },
+    {
+      "name": "Atlas",
+      "roles": [
+        "Tank"
+      ],
+      "tier": "A",
+      "lanes": [
+        "Roam"
+      ],
+      "pro": "ban",
+      "banRate": 81,
+      "note": "Primary hard-engage initiator."
+    },
+    {
+      "name": "Barats",
+      "roles": [
+        "Tank"
+      ],
+      "tier": "A",
+      "lanes": [
+        "Jungle",
+        "EXP"
+      ],
+      "pro": "pick",
+      "note": "Anti-diver frontliner whose displacement suits squishy assassin junglers."
+    },
+    {
+      "name": "Gloo",
+      "roles": [
+        "Tank"
+      ],
+      "tier": "S",
+      "lanes": [
+        "EXP",
+        "Roam"
+      ],
+      "pro": "ban",
+      "note": "Sticky, durable roamer with near-permanent ban status at MSC 2026."
+    },
+    {
+      "name": "Edith",
+      "roles": [
+        "Tank",
+        "Marksman"
+      ],
+      "tier": "A"
+    },
+    {
+      "name": "Novaria",
+      "roles": [
+        "Tank"
+      ],
+      "tier": "B"
+    },
+    {
+      "name": "Nolan",
+      "roles": [
+        "Tank"
+      ],
+      "tier": "B",
+      "lanes": [
+        "Jungle"
+      ],
+      "pro": "pick",
+      "note": "Tempo snowball pick that benefits from the lack of tank junglers."
+    },
+    {
+      "name": "Khaleed",
+      "roles": [
+        "Fighter"
+      ],
+      "tier": "B"
+    },
+    {
+      "name": "Roger",
+      "roles": [
+        "Fighter",
+        "Marksman"
+      ],
+      "tier": "C"
+    },
+    {
+      "name": "Paquito",
+      "roles": [
+        "Fighter"
+      ],
+      "tier": "B",
+      "lanes": [
+        "EXP"
+      ],
+      "pro": "ban",
+      "note": "Still a top-five ban after his rework."
+    },
+    {
+      "name": "Yu Zhong",
+      "roles": [
+        "Fighter"
+      ],
+      "tier": "C"
+    },
+    {
+      "name": "Balmond",
+      "roles": [
+        "Fighter"
+      ],
+      "tier": "D"
+    },
+    {
+      "name": "Alucard",
+      "roles": [
+        "Fighter"
+      ],
+      "tier": "C"
+    },
+    {
+      "name": "Bane",
+      "roles": [
+        "Fighter"
+      ],
+      "tier": "B"
+    },
+    {
+      "name": "Zilong",
+      "roles": [
+        "Fighter"
+      ],
+      "tier": "D"
+    },
+    {
+      "name": "Freya",
+      "roles": [
+        "Fighter"
+      ],
+      "tier": "C",
+      "pro": "ban",
+      "banRate": 90,
+      "note": "Most-banned hero in MPL Philippines Season 18."
+    },
+    {
+      "name": "Chou",
+      "roles": [
+        "Fighter"
+      ],
+      "tier": "D",
+      "lanes": [
+        "EXP"
+      ],
+      "pro": "ban",
+      "note": "Premier pick-or-ban status at MSC 2026."
+    },
+    {
+      "name": "Sun",
+      "roles": [
+        "Fighter"
+      ],
+      "tier": "A",
+      "lanes": [
+        "Jungle",
+        "EXP"
+      ]
+    },
+    {
+      "name": "Alpha",
+      "roles": [
+        "Fighter"
+      ],
+      "tier": "C"
+    },
+    {
+      "name": "Ruby",
+      "roles": [
+        "Fighter"
+      ],
+      "tier": "B"
+    },
+    {
+      "name": "Hilda",
+      "roles": [
+        "Fighter"
+      ],
+      "tier": "B"
+    },
+    {
+      "name": "Lapu-Lapu",
+      "roles": [
+        "Fighter"
+      ],
+      "tier": "C",
+      "lanes": [
+        "EXP"
+      ],
+      "pro": "pick",
+      "note": "Aggressive duelist and playmaker in EXP."
+    },
+    {
+      "name": "Argus",
+      "roles": [
+        "Fighter"
+      ],
+      "tier": "S",
+      "lanes": [
+        "EXP"
+      ]
+    },
+    {
+      "name": "Jawhead",
+      "roles": [
+        "Fighter"
+      ],
+      "tier": "C"
+    },
+    {
+      "name": "Martis",
+      "roles": [
+        "Fighter"
+      ],
+      "tier": "C"
+    },
+    {
+      "name": "Kaja",
+      "roles": [
+        "Fighter"
+      ],
+      "tier": "B"
+    },
+    {
+      "name": "Aldous",
+      "roles": [
+        "Fighter"
+      ],
+      "tier": "B"
+    },
+    {
+      "name": "Leomord",
+      "roles": [
+        "Fighter"
+      ],
+      "tier": "B"
+    },
+    {
+      "name": "Thamuz",
+      "roles": [
+        "Fighter"
+      ],
+      "tier": "C"
+    },
+    {
+      "name": "Minsitthar",
+      "roles": [
+        "Fighter"
+      ],
+      "tier": "B"
+    },
+    {
+      "name": "Badang",
+      "roles": [
+        "Fighter"
+      ],
+      "tier": "B"
+    },
+    {
+      "name": "Guinevere",
+      "roles": [
+        "Fighter"
+      ],
+      "tier": "A",
+      "lanes": [
+        "EXP"
+      ]
+    },
+    {
+      "name": "Terizla",
+      "roles": [
+        "Fighter"
+      ],
+      "tier": "B"
+    },
+    {
+      "name": "X.Borg",
+      "roles": [
+        "Fighter"
+      ],
+      "tier": "B"
+    },
+    {
+      "name": "Dyrroth",
+      "roles": [
+        "Fighter"
+      ],
+      "tier": "C"
+    },
+    {
+      "name": "Masha",
+      "roles": [
+        "Fighter"
+      ],
+      "tier": "S",
+      "lanes": [
+        "EXP"
+      ]
+    },
+    {
+      "name": "Silvanna",
+      "roles": [
+        "Fighter"
+      ],
+      "tier": "B"
+    },
+    {
+      "name": "Luo Yi",
+      "roles": [
+        "Fighter"
+      ],
+      "tier": "C"
+    },
+    {
+      "name": "Phoveus",
+      "roles": [
+        "Fighter"
+      ],
+      "tier": "C"
+    },
+    {
+      "name": "Aulus",
+      "roles": [
+        "Fighter"
+      ],
+      "tier": "S",
+      "lanes": [
+        "Jungle",
+        "EXP"
+      ]
+    },
+    {
+      "name": "Yin",
+      "roles": [
+        "Fighter"
+      ],
+      "tier": "C"
+    },
+    {
+      "name": "Julian",
+      "roles": [
+        "Fighter"
+      ],
+      "tier": "B",
+      "lanes": [
+        "Jungle",
+        "EXP"
+      ]
+    },
+    {
+      "name": "Arlott",
+      "roles": [
+        "Fighter"
+      ],
+      "tier": "C",
+      "lanes": [
+        "EXP"
+      ],
+      "pro": "pick",
+      "note": "Aggressive duelist and playmaker in EXP."
+    },
+    {
+      "name": "Aamon",
+      "roles": [
+        "Assassin"
+      ],
+      "tier": "B"
+    },
+    {
+      "name": "Ling",
+      "roles": [
+        "Assassin"
+      ],
+      "tier": "A",
+      "lanes": [
+        "Jungle"
+      ],
+      "pro": "ban",
+      "note": "Mechanical pick-off threat that is often banned."
+    },
+    {
+      "name": "Saber",
+      "roles": [
+        "Assassin"
+      ],
+      "tier": "B"
+    },
+    {
+      "name": "Joy",
+      "roles": [
+        "Assassin"
+      ],
+      "tier": "C"
+    },
+    {
+      "name": "Karina",
+      "roles": [
+        "Assassin"
+      ],
+      "tier": "C"
+    },
+    {
+      "name": "Fanny",
+      "roles": [
+        "Assassin"
+      ],
+      "tier": "D",
+      "lanes": [
+        "Jungle"
+      ],
+      "pro": "ban",
+      "banRate": 65,
+      "note": "Mechanical pick-off threat. Banned in 65% of MPL Philippines Season 18 games."
+    },
+    {
+      "name": "Hayabusa",
+      "roles": [
+        "Assassin"
+      ],
+      "tier": "C"
+    },
+    {
+      "name": "Natalia",
+      "roles": [
+        "Assassin"
+      ],
+      "tier": "B"
+    },
+    {
+      "name": "Yi Sun-shin",
+      "roles": [
+        "Assassin"
+      ],
+      "tier": "B"
+    },
+    {
+      "name": "Lancelot",
+      "roles": [
+        "Assassin"
+      ],
+      "tier": "D"
+    },
+    {
+      "name": "Helcurt",
+      "roles": [
+        "Assassin"
+      ],
+      "tier": "C"
+    },
+    {
+      "name": "Gusion",
+      "roles": [
+        "Assassin"
+      ],
+      "tier": "C"
+    },
+    {
+      "name": "Selena",
+      "roles": [
+        "Assassin"
+      ],
+      "tier": "B",
+      "banRate": 47
+    },
+    {
+      "name": "Hanzo",
+      "roles": [
+        "Assassin"
+      ],
+      "tier": "B"
+    },
+    {
+      "name": "Benedetta",
+      "roles": [
+        "Assassin"
+      ],
+      "tier": "A"
+    },
+    {
+      "name": "Valentina",
+      "roles": [
+        "Mage"
+      ],
+      "tier": "D",
+      "lanes": [
+        "Mid"
+      ],
+      "pro": "pick",
+      "note": "Counter-pick that copies enemy ultimates."
+    },
+    {
+      "name": "Eudora",
+      "roles": [
+        "Mage"
+      ],
+      "tier": "A",
+      "lanes": [
+        "Mid"
+      ],
+      "pro": "ban",
+      "note": "Deletes squishy backline targets from range. Top mid ban at Season 42."
+    },
+    {
+      "name": "Harley",
+      "roles": [
+        "Mage"
+      ],
+      "tier": "C"
+    },
+    {
+      "name": "Kagura",
+      "roles": [
+        "Mage"
+      ],
+      "tier": "A",
+      "lanes": [
+        "Mid"
+      ]
+    },
+    {
+      "name": "Lylia",
+      "roles": [
+        "Mage"
+      ],
+      "tier": "B"
+    },
+    {
+      "name": "Pharsa",
+      "roles": [
+        "Mage"
+      ],
+      "tier": "C"
+    },
+    {
+      "name": "Alice",
+      "roles": [
+        "Mage"
+      ],
+      "tier": "B",
+      "lanes": [
+        "Jungle"
+      ]
+    },
+    {
+      "name": "Nana",
+      "roles": [
+        "Mage"
+      ],
+      "tier": "C"
+    },
+    {
+      "name": "Gord",
+      "roles": [
+        "Mage"
+      ],
+      "tier": "A",
+      "lanes": [
+        "Mid"
+      ]
+    },
+    {
+      "name": "Cyclops",
+      "roles": [
+        "Mage"
+      ],
+      "tier": "B",
+      "lanes": [
+        "Mid"
+      ]
+    },
+    {
+      "name": "Aurora",
+      "roles": [
+        "Mage"
+      ],
+      "tier": "C"
+    },
+    {
+      "name": "Vexana",
+      "roles": [
+        "Mage"
+      ],
+      "tier": "B"
+    },
+    {
+      "name": "Odette",
+      "roles": [
+        "Mage"
+      ],
+      "tier": "B"
+    },
+    {
+      "name": "Zhask",
+      "roles": [
+        "Mage"
+      ],
+      "tier": "A"
+    },
+    {
+      "name": "Valir",
+      "roles": [
+        "Mage"
+      ],
+      "tier": "A",
+      "lanes": [
+        "Mid"
+      ]
+    },
+    {
+      "name": "Chang'e",
+      "roles": [
+        "Mage"
+      ],
+      "tier": "C"
+    },
+    {
+      "name": "Vale",
+      "roles": [
+        "Mage"
+      ],
+      "tier": "B"
+    },
+    {
+      "name": "Lunox",
+      "roles": [
+        "Mage"
+      ],
+      "tier": "C"
+    },
+    {
+      "name": "Harith",
+      "roles": [
+        "Mage"
+      ],
+      "tier": "D"
+    },
+    {
+      "name": "Kadita",
+      "roles": [
+        "Mage"
+      ],
+      "tier": "A",
+      "lanes": [
+        "Mid"
+      ]
+    },
+    {
+      "name": "Esmeralda",
+      "roles": [
+        "Mage"
+      ],
+      "tier": "C",
+      "lanes": [
+        "EXP"
+      ],
+      "pro": "pick",
+      "note": "Self-sustaining laner who can hold a side lane alone."
+    },
+    {
+      "name": "Cecilion",
+      "roles": [
+        "Mage"
+      ],
+      "tier": "B",
+      "lanes": [
+        "Mid"
+      ]
+    },
+    {
+      "name": "Yve",
+      "roles": [
+        "Mage"
+      ],
+      "tier": "B"
+    },
+    {
+      "name": "Xavier",
+      "roles": [
+        "Mage"
+      ],
+      "tier": "B"
+    },
+    {
+      "name": "Ixia",
+      "roles": [
+        "Marksman"
+      ],
+      "tier": "B",
+      "lanes": [
+        "Gold"
+      ]
+    },
+    {
+      "name": "Granger",
+      "roles": [
+        "Marksman"
+      ],
+      "tier": "D"
+    },
+    {
+      "name": "Layla",
+      "roles": [
+        "Marksman"
+      ],
+      "tier": "B"
+    },
+    {
+      "name": "Melissa",
+      "roles": [
+        "Marksman"
+      ],
+      "tier": "C",
+      "lanes": [
+        "Gold"
+      ],
+      "pro": "pick",
+      "note": "Anti-dive carry with a tether and a protective ultimate shield."
+    },
+    {
+      "name": "Natan",
+      "roles": [
+        "Marksman"
+      ],
+      "tier": "B"
+    },
+    {
+      "name": "Miya",
+      "roles": [
+        "Marksman"
+      ],
+      "tier": "B",
+      "lanes": [
+        "Gold"
+      ]
+    },
+    {
+      "name": "Bruno",
+      "roles": [
+        "Marksman"
+      ],
+      "tier": "A"
+    },
+    {
+      "name": "Clint",
+      "roles": [
+        "Marksman"
+      ],
+      "tier": "B",
+      "lanes": [
+        "Gold"
+      ]
+    },
+    {
+      "name": "Moskov",
+      "roles": [
+        "Marksman"
+      ],
+      "tier": "B",
+      "lanes": [
+        "Gold"
+      ]
+    },
+    {
+      "name": "Karrie",
+      "roles": [
+        "Marksman"
+      ],
+      "tier": "C",
+      "lanes": [
+        "Gold"
+      ],
+      "pro": "pick",
+      "note": "True-damage carry against high-HP frontliners."
+    },
+    {
+      "name": "Irithel",
+      "roles": [
+        "Marksman"
+      ],
+      "tier": "A"
+    },
+    {
+      "name": "Lesley",
+      "roles": [
+        "Marksman"
+      ],
+      "tier": "B"
+    },
+    {
+      "name": "Hanabi",
+      "roles": [
+        "Marksman"
+      ],
+      "tier": "A",
+      "lanes": [
+        "Gold"
+      ],
+      "pro": "pick",
+      "note": "Crowd-control-immune carry for long teamfights."
+    },
+    {
+      "name": "Claude",
+      "roles": [
+        "Marksman"
+      ],
+      "tier": "B"
+    },
+    {
+      "name": "Kimmy",
+      "roles": [
+        "Marksman"
+      ],
+      "tier": "C"
+    },
+    {
+      "name": "Wanwan",
+      "roles": [
+        "Marksman"
+      ],
+      "tier": "C"
+    },
+    {
+      "name": "Popol & Kupa",
+      "roles": [
+        "Marksman"
+      ],
+      "tier": "A"
+    },
+    {
+      "name": "Brody",
+      "roles": [
+        "Marksman"
+      ],
+      "tier": "B",
+      "lanes": [
+        "Gold"
+      ]
+    },
+    {
+      "name": "Beatrix",
+      "roles": [
+        "Marksman"
+      ],
+      "tier": "B",
+      "lanes": [
+        "Gold"
+      ]
+    },
+    {
+      "name": "Mathilda",
+      "roles": [
+        "Support"
+      ],
+      "tier": "D"
+    },
+    {
+      "name": "Rafaela",
+      "roles": [
+        "Support"
+      ],
+      "tier": "S",
+      "lanes": [
+        "Roam"
+      ]
+    },
+    {
+      "name": "Lolita",
+      "roles": [
+        "Support"
+      ],
+      "tier": "A"
+    },
+    {
+      "name": "Estes",
+      "roles": [
+        "Support"
+      ],
+      "tier": "A",
+      "lanes": [
+        "Roam"
+      ],
+      "pro": "pick",
+      "note": "Sustain support that forces opponents into anti-heal drafting."
+    },
+    {
+      "name": "Diggie",
+      "roles": [
+        "Support"
+      ],
+      "tier": "A"
+    },
+    {
+      "name": "Angela",
+      "roles": [
+        "Support"
+      ],
+      "tier": "B"
+    },
+    {
+      "name": "Faramis",
+      "roles": [
+        "Support"
+      ],
+      "tier": "B"
+    },
+    {
+      "name": "Carmilla",
+      "roles": [
+        "Support"
+      ],
+      "tier": "S",
+      "lanes": [
+        "Roam"
+      ]
+    },
+    {
+      "name": "Marcel",
+      "roles": [
+        "Support"
+      ],
+      "tier": "S",
+      "lanes": [
+        "Roam"
+      ],
+      "pro": "pick",
+      "note": "Area-freeze roamer that became a contested first pick at MSC 2026."
+    },
+    {
+      "name": "Obsidia",
+      "roles": [
+        "Marksman"
+      ],
+      "tier": "S",
+      "lanes": [
+        "Gold"
+      ]
+    },
+    {
+      "name": "Hirara",
+      "roles": [
+        "Assassin"
+      ],
+      "tier": "S",
+      "lanes": [
+        "Jungle"
+      ],
+      "pro": "ban",
+      "note": "Highest ban rate in the game at Season 42. Burst and escape tools."
+    },
+    {
+      "name": "Lukas",
+      "roles": [
+        "Fighter"
+      ],
+      "tier": "A",
+      "lanes": [
+        "Jungle",
+        "EXP"
+      ]
+    },
+    {
+      "name": "Zhuxin",
+      "roles": [
+        "Mage"
+      ],
+      "tier": "B",
+      "lanes": [
+        "Mid"
+      ],
+      "pro": "ban",
+      "note": "Crowd-control pick that controls teamfight choke points. High-priority ban at MSC 2026."
+    },
+    {
+      "name": "Suyou",
+      "roles": [
+        "Assassin",
+        "Fighter"
+      ],
+      "tier": "B"
+    },
+    {
+      "name": "Sora",
+      "roles": [
+        "Fighter",
+        "Assassin"
+      ],
+      "tier": "B"
+    },
+    {
+      "name": "Zetian",
+      "roles": [
+        "Mage"
+      ],
+      "tier": "B",
+      "lanes": [
+        "Mid"
+      ]
+    },
+    {
+      "name": "Cici",
+      "roles": [
+        "Fighter"
+      ],
+      "tier": "C"
+    },
+    {
+      "name": "Chip",
+      "roles": [
+        "Support",
+        "Tank"
+      ],
+      "tier": "D"
+    },
+    {
+      "name": "Kalea",
+      "roles": [
+        "Support",
+        "Fighter"
+      ],
+      "tier": "D"
+    },
+    {
+      "name": "Floryn",
+      "roles": [
+        "Support"
+      ],
+      "tier": "S",
+      "lanes": [
+        "Roam"
+      ],
+      "pro": "pick",
+      "note": "Sustain support that forces opponents into anti-heal drafting."
+    }
+  ]
+}
