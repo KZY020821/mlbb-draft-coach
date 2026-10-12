@@ -1,0 +1,15 @@
+{
+  "name": "Gloo already countered by our Faramis, one pick left",
+  "source": "Screenshot from the team, 2026-10-12",
+  "draft": {
+    "bans": ["Hirara", "Freya", "Kaja", "Eudora", "Aulus", "Marcel", "Sun"],
+    "enemyPicks": ["Tigreal", "Gloo", "Clint", "Nolan", "Zetian"],
+    "teamPicks": ["Hanabi", "Yu Zhong", "Faramis", "Fanny"]
+  },
+  "expect": {
+    "status": 200,
+    "need": 1,
+    "rules": [{ "enemy": "Gloo", "teamHas": "Faramis" }],
+    "notPicked": ["Hirara", "Freya", "Kaja", "Eudora", "Aulus", "Marcel", "Sun", "Tigreal", "Gloo", "Clint", "Nolan", "Zetian", "Hanabi", "Yu Zhong", "Faramis", "Fanny"]
+  }
+}

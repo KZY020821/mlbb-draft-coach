@@ -130,6 +130,16 @@ r = await post({ ...glooDraft, bans: ["Vexana", "Faramis"] });
 lc = await lastCall();
 check("all counters gone -> no retry", lc.calls === 1 && r.status === 200);
 
+// Saved real drafts (tests/drafts) run through the mock to check the plumbing.
+import { readFileSync as readSaved } from "node:fs";
+const saved = JSON.parse(readSaved(new URL("../tests/drafts/gloo-faramis-last-pick.json", import.meta.url), "utf8"));
+await setMode("good");
+r = await post(saved.draft);
+lc = await lastCall();
+check("saved draft: one pick left", r.status === 200 && r.json.need === 1 && lc.last.body.messages[1].content.includes("Recommend exactly 1"));
+check("saved draft: Gloo rule sees our Faramis, no retry", r.json.rules[0]?.teamHas === "Faramis" && lc.calls === 1 && lc.last.body.messages[1].content.includes("Our team already has Faramis"));
+check("saved draft: suggestion is not banned or picked", !saved.expect.notPicked.includes(r.json.analysis.picks[0].hero), r.json.analysis.picks[0].hero);
+
 // Rate limit: limit is set low by the test environment.
 let limited = 0;
 for (let i = 0; i < 80 && limited === 0; i++) { const x = await post(draft); if (x.status === 429) limited++; }
