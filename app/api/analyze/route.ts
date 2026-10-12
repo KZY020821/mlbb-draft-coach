@@ -90,6 +90,7 @@ export async function POST(req: Request) {
       analysis: checked.analysis,
       need: parsed.need,
       partial: checked.analysis.picks.length < parsed.need,
+      open: parsed.draft.open,
       rules: applied,
       meta: {
         patch: ctx.meta.patch,

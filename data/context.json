@@ -23,7 +23,8 @@
       "Cici",
       "Chip",
       "Kalea"
-    ]
+    ],
+    "rolesSource": "https://mlbbhub.com/heroes (2026-10-12)"
   },
   "patchNotes": "Season 42 opened September 16, 2026. Masha was reworked and Bruno was revamped in this patch, so older Masha and Bruno assumptions no longer hold. Patch 2.1.90 weakened tank jungle clear, so pro drafts prefer snowball assassin junglers (Hirara, Ling, Fanny, Nolan) over tank junglers and deprioritize tank-first drafting. Against assassin junglers, pro teams draft anti-dive carries (Melissa, Hanabi) and anti-diver EXP laners (Barats). Estes and Floryn force anti-heal drafting.",
   "heroes": [
@@ -37,13 +38,15 @@
     {
       "name": "Grock",
       "roles": [
-        "Tank"
+        "Tank",
+        "Fighter"
       ],
       "tier": "D"
     },
     {
       "name": "Fredrinn",
       "roles": [
+        "Fighter",
         "Tank"
       ],
       "tier": "B"
@@ -65,7 +68,8 @@
     {
       "name": "Minotaur",
       "roles": [
-        "Tank"
+        "Tank",
+        "Support"
       ],
       "tier": "S",
       "lanes": [
@@ -75,14 +79,16 @@
     {
       "name": "Johnson",
       "roles": [
-        "Tank"
+        "Tank",
+        "Support"
       ],
       "tier": "C"
     },
     {
       "name": "Gatotkaca",
       "roles": [
-        "Tank"
+        "Tank",
+        "Fighter"
       ],
       "tier": "D"
     },
@@ -143,7 +149,8 @@
     {
       "name": "Barats",
       "roles": [
-        "Tank"
+        "Tank",
+        "Fighter"
       ],
       "tier": "A",
       "lanes": [
@@ -177,14 +184,14 @@
     {
       "name": "Novaria",
       "roles": [
-        "Tank"
+        "Mage"
       ],
       "tier": "B"
     },
     {
       "name": "Nolan",
       "roles": [
-        "Tank"
+        "Assassin"
       ],
       "tier": "B",
       "lanes": [
@@ -211,7 +218,8 @@
     {
       "name": "Paquito",
       "roles": [
-        "Fighter"
+        "Fighter",
+        "Assassin"
       ],
       "tier": "B",
       "lanes": [
@@ -237,21 +245,24 @@
     {
       "name": "Alucard",
       "roles": [
-        "Fighter"
+        "Fighter",
+        "Assassin"
       ],
       "tier": "C"
     },
     {
       "name": "Bane",
       "roles": [
-        "Fighter"
+        "Fighter",
+        "Mage"
       ],
       "tier": "B"
     },
     {
       "name": "Zilong",
       "roles": [
-        "Fighter"
+        "Fighter",
+        "Assassin"
       ],
       "tier": "D"
     },
@@ -305,7 +316,8 @@
     {
       "name": "Hilda",
       "roles": [
-        "Fighter"
+        "Fighter",
+        "Tank"
       ],
       "tier": "B"
     },
@@ -348,7 +360,7 @@
     {
       "name": "Kaja",
       "roles": [
-        "Fighter"
+        "Support"
       ],
       "tier": "B"
     },
@@ -400,7 +412,8 @@
     {
       "name": "Terizla",
       "roles": [
-        "Fighter"
+        "Fighter",
+        "Tank"
       ],
       "tier": "B"
     },
@@ -421,7 +434,8 @@
     {
       "name": "Masha",
       "roles": [
-        "Fighter"
+        "Fighter",
+        "Tank"
       ],
       "tier": "S",
       "lanes": [
@@ -438,7 +452,7 @@
     {
       "name": "Luo Yi",
       "roles": [
-        "Fighter"
+        "Mage"
       ],
       "tier": "C"
     },
@@ -463,13 +477,15 @@
     {
       "name": "Yin",
       "roles": [
-        "Fighter"
+        "Fighter",
+        "Assassin"
       ],
       "tier": "C"
     },
     {
       "name": "Julian",
       "roles": [
+        "Assassin",
         "Fighter"
       ],
       "tier": "B",
@@ -481,7 +497,8 @@
     {
       "name": "Arlott",
       "roles": [
-        "Fighter"
+        "Fighter",
+        "Assassin"
       ],
       "tier": "C",
       "lanes": [
@@ -560,7 +577,8 @@
     {
       "name": "Yi Sun-shin",
       "roles": [
-        "Assassin"
+        "Assassin",
+        "Marksman"
       ],
       "tier": "B"
     },
@@ -588,7 +606,8 @@
     {
       "name": "Selena",
       "roles": [
-        "Assassin"
+        "Assassin",
+        "Mage"
       ],
       "tier": "B",
       "banRate": 47
@@ -603,7 +622,8 @@
     {
       "name": "Benedetta",
       "roles": [
-        "Assassin"
+        "Assassin",
+        "Fighter"
       ],
       "tier": "A"
     },
@@ -634,6 +654,7 @@
     {
       "name": "Harley",
       "roles": [
+        "Assassin",
         "Mage"
       ],
       "tier": "C"
@@ -665,6 +686,7 @@
     {
       "name": "Alice",
       "roles": [
+        "Tank",
         "Mage"
       ],
       "tier": "B",
@@ -768,7 +790,8 @@
     {
       "name": "Kadita",
       "roles": [
-        "Mage"
+        "Mage",
+        "Assassin"
       ],
       "tier": "A",
       "lanes": [
@@ -778,6 +801,7 @@
     {
       "name": "Esmeralda",
       "roles": [
+        "Tank",
         "Mage"
       ],
       "tier": "C",
@@ -913,7 +937,8 @@
     {
       "name": "Lesley",
       "roles": [
-        "Marksman"
+        "Marksman",
+        "Assassin"
       ],
       "tier": "B"
     },
@@ -939,7 +964,8 @@
     {
       "name": "Kimmy",
       "roles": [
-        "Marksman"
+        "Marksman",
+        "Mage"
       ],
       "tier": "C"
     },
@@ -980,7 +1006,8 @@
     {
       "name": "Mathilda",
       "roles": [
-        "Support"
+        "Support",
+        "Assassin"
       ],
       "tier": "D"
     },
@@ -997,7 +1024,8 @@
     {
       "name": "Lolita",
       "roles": [
-        "Support"
+        "Support",
+        "Tank"
       ],
       "tier": "A"
     },
@@ -1030,14 +1058,16 @@
     {
       "name": "Faramis",
       "roles": [
-        "Support"
+        "Support",
+        "Mage"
       ],
       "tier": "B"
     },
     {
       "name": "Carmilla",
       "roles": [
-        "Support"
+        "Support",
+        "Tank"
       ],
       "tier": "S",
       "lanes": [

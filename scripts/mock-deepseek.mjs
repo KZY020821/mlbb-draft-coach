@@ -4,23 +4,36 @@ import http from "node:http";
 let mode = "good";
 let calls = 0;
 let last = null;
-const POOL = ["Hirara", "Marcel", "Aulus", "Khufra", "Melissa", "Eudora", "Barats", "Floryn", "Carmilla", "Argus"];
+
+// Heroes the mock suggests for each position (all are played there).
+const POOL = {
+  Roam: ["Khufra", "Estes", "Floryn", "Minotaur", "Rafaela"],
+  Marksman: ["Melissa", "Karrie", "Obsidia", "Hanabi"],
+  Jungler: ["Hirara", "Ling", "Lukas", "Nolan"],
+  Mage: ["Valir", "Gord", "Zhuxin", "Kagura"],
+  Fighter: ["Argus", "Lapu-Lapu", "Arlott", "Esmeralda"]
+};
 
 function goodReply(userText) {
   const unavailable = ((userText.match(/Heroes that are not available: (.*)/) || [])[1] || "").split(", ");
-  const need = Number((userText.match(/Recommend exactly (\d)/) || [])[1] || 1);
-  let free = POOL.filter((h) => !unavailable.includes(h));
+  const open = ((userText.match(/Open positions: (.*)/) || [])[1] || "Roam")
+    .split(", ")
+    .map((p) => p.split(" ")[0]);
+  const need = Math.min(2, open.length);
+  const free = (pos) => POOL[pos].filter((h) => !unavailable.includes(h));
+  const picks = open.slice(0, need).map((position) => ({ hero: free(position)[0], position, why: "Fits the draft.", risk: "May be banned next time." }));
+
   if (mode === "follow_rules") {
     const m = userText.match(/Counter with: ([^.]+)\./);
-    if (m) free = [m[1].split(" or ")[0], ...free];
+    if (m) {
+      const counter = m[1].split(" or ")[0];
+      const position = open.includes("Mage") ? "Mage" : open[0];
+      const i = picks.findIndex((p) => p.position === position);
+      picks[i >= 0 ? i : 0] = { hero: counter, position, why: "Coach's counter.", risk: "None." };
+    }
   }
-  return {
-    summary: "The enemy has strong dive and your team lacks a frontline.",
-    confidence: "medium",
-    picks: free.slice(0, need).map((hero) => ({ hero, role: "Roam", why: "Fits the draft.", risk: "May be banned next time." })),
-    backups: free.slice(need, need + 2).map((hero) => ({ hero, why: "Reasonable alternative." })),
-    plan: "Lock the frontline first."
-  };
+  const backups = free(open[0]).slice(1, 3).map((hero) => ({ hero, position: open[0], why: "Reasonable alternative." }));
+  return { summary: "The enemy has strong dive and your team lacks a frontline.", confidence: "medium", picks, backups, plan: "Lock the open positions." };
 }
 
 http
@@ -57,16 +70,20 @@ http
       if (mode === "not_json") return reply("Sorry, I cannot help with that.");
       if (mode === "empty_then_good") return calls === 1 ? reply("") : reply(JSON.stringify(goodReply(userText)));
       if (mode === "always_bad") {
-        return reply(JSON.stringify({ summary: "x", picks: [{ hero: "Notahero", why: "x" }], backups: [] }));
+        return reply(JSON.stringify({ summary: "x", picks: [{ hero: "Notahero", position: "Roam", why: "x" }], backups: [] }));
       }
-      if (mode === "bad_then_good") {
-        if (calls === 1) {
-          const g = goodReply(userText);
-          g.picks[0].hero = "Notahero";
-          g.picks.push({ hero: "Hayabusa", role: "Jungle", why: "banned", risk: "x" });
-          return reply(JSON.stringify(g));
-        }
-        return reply(JSON.stringify(goodReply(userText)));
+      if (mode === "bad_then_good" && calls === 1) {
+        const g = goodReply(userText);
+        g.picks[0].hero = "Notahero";
+        g.picks.push({ hero: "Hayabusa", position: "Jungler", why: "banned", risk: "x" });
+        return reply(JSON.stringify(g));
+      }
+      if (mode === "wrong_position_then_good" && calls === 1) {
+        const g = goodReply(userText);
+        // Barats is played in Jungle/EXP, so put him in the last open position (Roam or Mage in the tests).
+        const i = g.picks.length - 1;
+        g.picks[i] = { hero: "Barats", position: g.picks[i].position, why: "Tanky.", risk: "x" };
+        return reply(JSON.stringify(g));
       }
       return reply(JSON.stringify(goodReply(userText)));
     });

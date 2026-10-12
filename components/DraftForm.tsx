@@ -2,13 +2,27 @@
 
 import { useEffect, useMemo, useState } from "react";
 
-type Pick = { hero: string; role: string; why: string; risk: string };
-type Backup = { hero: string; why: string };
+type PositionKey = "roam" | "marksman" | "jungler" | "mage" | "fighter";
+
+// Our team's boxes, in order. The key is also the link parameter (?roam=Estes).
+const TEAM_SLOTS: { key: PositionKey; label: string; lane?: string }[] = [
+  { key: "roam", label: "Roam" },
+  { key: "marksman", label: "Marksman", lane: "Gold" },
+  { key: "jungler", label: "Jungler" },
+  { key: "mage", label: "Mage", lane: "Mid" },
+  { key: "fighter", label: "Fighter", lane: "EXP" }
+];
+const SLOT_LABEL = Object.fromEntries(TEAM_SLOTS.map((s) => [s.key, s.label])) as Record<PositionKey, string>;
+
+type Pick = { hero: string; position: PositionKey; why: string; risk: string };
+type Backup = { hero: string; position: PositionKey; why: string };
+type Rule = { enemy: string; available: string[]; unavailable: string[]; offPosition: string[]; why: string; teamHas: string | null };
 type Result = {
   analysis: { summary: string; confidence: "low" | "medium" | "high"; picks: Pick[]; backups: Backup[]; plan: string };
   need: number;
   partial: boolean;
-  rules: { enemy: string; available: string[]; unavailable: string[]; why: string; teamHas: string | null }[];
+  open: PositionKey[];
+  rules: Rule[];
   meta: { patch: string; season: string; dataAsOf: string; dataAgeDays: number; model: string; retried: boolean };
 };
 
@@ -35,12 +49,15 @@ function fromLink(params: URLSearchParams, key: string, size: number, canonical:
   return [...names, ...blank(size - names.length)];
 }
 
+const listOf = (names: string[]) =>
+  names.length <= 1 ? names.join("") : `${names.slice(0, -1).join(", ")} and ${names[names.length - 1]}`;
+
 type Group = "bans" | "enemy" | "team";
 
 export default function DraftForm({ heroes, passcodeRequired, staleDays }: Props) {
   const [bans, setBans] = useState<string[]>(blank(10));
   const [enemy, setEnemy] = useState<string[]>(blank(5));
-  const [team, setTeam] = useState<string[]>(blank(5));
+  const [team, setTeam] = useState<string[]>(blank(5)); // same order as TEAM_SLOTS
   const [passcode, setPasscode] = useState("");
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState("");
@@ -48,16 +65,18 @@ export default function DraftForm({ heroes, passcodeRequired, staleDays }: Props
 
   const known = useMemo(() => new Set(heroes.map(idOf)), [heroes]);
 
-  // Prefill the boxes from the link (?bans=...&enemy=...&ours=...). Nothing is submitted.
+  // Prefill from the link: ?bans=a,b&enemy=c,d&roam=e&marksman=f&jungler=g&mage=h&fighter=i
+  // Nothing is submitted.
   useEffect(() => {
     const params = new URLSearchParams(window.location.search);
     const canonical = new Map(heroes.map((h) => [idOf(h), h]));
     const b = fromLink(params, "bans", 10, canonical);
     const e = fromLink(params, "enemy", 5, canonical);
-    const t = fromLink(params, "ours", 5, canonical);
     if (b) setBans(b);
     if (e) setEnemy(e);
-    if (t) setTeam(t);
+    if (TEAM_SLOTS.some((s) => params.get(s.key))) {
+      setTeam(TEAM_SLOTS.map((s) => (fromLink(params, s.key, 1, canonical) ?? [""])[0]));
+    }
   }, [heroes]);
 
   // Per-box state: "empty", "ok", "unknown" or "dupe".
@@ -78,15 +97,19 @@ export default function DraftForm({ heroes, passcodeRequired, staleDays }: Props
 
   const filled = (list: string[]) => list.filter((v) => v.trim()).length;
   const anyBad = [...status.bans, ...status.enemy, ...status.team].some((s) => s === "unknown" || s === "dupe");
-  const teamFilled = filled(team);
-  const total = filled(bans) + filled(enemy) + teamFilled;
-  const left = 5 - teamFilled;
+  const openSlots = TEAM_SLOTS.filter((_, i) => !team[i].trim());
+  const total = filled(bans) + filled(enemy) + filled(team);
 
   let blocker = "";
   if (anyBad) blocker = "Fix the highlighted boxes first. Each hero must be in the roster and used once.";
-  else if (teamFilled >= 5) blocker = "Your team already has five picks.";
+  else if (openSlots.length === 0) blocker = "Your team already has five picks.";
   else if (total === 0) blocker = "Enter at least one ban or pick.";
   else if (passcodeRequired && !passcode.trim()) blocker = "Enter the passcode.";
+
+  const openNote =
+    openSlots.length <= 2
+      ? `Your team still needs: ${listOf(openSlots.map((s) => s.label))}. The analysis suggests a hero for ${openSlots.length === 1 ? "it" : "each"}.`
+      : `Your team still needs: ${listOf(openSlots.map((s) => s.label))}. The analysis suggests heroes for the 2 that matter most now.`;
 
   function setAt(group: Group, i: number, value: string) {
     const setter = group === "bans" ? setBans : group === "enemy" ? setEnemy : setTeam;
@@ -100,13 +123,14 @@ export default function DraftForm({ heroes, passcodeRequired, staleDays }: Props
     setError("");
     setResult(null);
     try {
+      const teamPicks = Object.fromEntries(TEAM_SLOTS.map((s, i) => [s.key, team[i].trim()]).filter(([, v]) => v));
       const res = await fetch("/api/analyze", {
         method: "POST",
         headers: { "Content-Type": "application/json", ...(passcodeRequired ? { "x-passcode": passcode } : {}) },
         body: JSON.stringify({
           bans: bans.map((v) => v.trim()).filter(Boolean),
           enemyPicks: enemy.map((v) => v.trim()).filter(Boolean),
-          teamPicks: team.map((v) => v.trim()).filter(Boolean)
+          teamPicks
         })
       });
       const data = await res.json().catch(() => null);
@@ -130,7 +154,27 @@ export default function DraftForm({ heroes, passcodeRequired, staleDays }: Props
     setError("");
   }
 
-  function renderBoxes(group: Group, values: string[], states: string[], prefix: string) {
+  function input(group: Group, i: number, value: string, state: string) {
+    return (
+      <>
+        <input
+          type="text"
+          list="hero-list"
+          value={value}
+          onChange={(e) => setAt(group, i, e.target.value)}
+          placeholder={group === "team" ? "Open" : "Hero"}
+          autoComplete="off"
+          spellCheck={false}
+          aria-invalid={state === "unknown" || state === "dupe"}
+          className={state === "unknown" || state === "dupe" ? "bad" : state === "ok" ? "good" : group === "team" ? "open" : ""}
+        />
+        {state === "unknown" && <span className="hint">Not in the roster</span>}
+        {state === "dupe" && <span className="hint">Used twice</span>}
+      </>
+    );
+  }
+
+  function renderBoxes(group: "bans" | "enemy", values: string[], states: string[], prefix: string) {
     return (
       <div className="boxes">
         {values.map((v, i) => (
@@ -138,19 +182,7 @@ export default function DraftForm({ heroes, passcodeRequired, staleDays }: Props
             <span className="box-label">
               {prefix} {i + 1}
             </span>
-            <input
-              type="text"
-              list="hero-list"
-              value={v}
-              onChange={(e) => setAt(group, i, e.target.value)}
-              placeholder="Hero"
-              autoComplete="off"
-              spellCheck={false}
-              aria-invalid={states[i] === "unknown" || states[i] === "dupe"}
-              className={states[i] === "unknown" || states[i] === "dupe" ? "bad" : states[i] === "ok" ? "good" : ""}
-            />
-            {states[i] === "unknown" && <span className="hint">Not in the roster</span>}
-            {states[i] === "dupe" && <span className="hint">Used twice</span>}
+            {input(group, i, v, states[i])}
           </label>
         ))}
       </div>
@@ -191,9 +223,19 @@ export default function DraftForm({ heroes, passcodeRequired, staleDays }: Props
           <section className="panel ours">
             <div className="panel-head">
               <h2>Our picks</h2>
-              <span className="count">{teamFilled} / 5</span>
+              <span className="count">{filled(team)} / 5</span>
             </div>
-            {renderBoxes("team", team, status.team, "Ours")}
+            <div className="boxes">
+              {TEAM_SLOTS.map((s, i) => (
+                <label key={s.key} className="box">
+                  <span className="box-label">
+                    {s.label}
+                    {s.lane && <span className="lane"> · {s.lane}</span>}
+                  </span>
+                  {input("team", i, team[i], status.team[i])}
+                </label>
+              ))}
+            </div>
           </section>
         </div>
 
@@ -215,10 +257,7 @@ export default function DraftForm({ heroes, passcodeRequired, staleDays }: Props
             </button>
           </div>
           <p className="note" aria-live="polite">
-            {blocker ||
-              (busy
-                ? "Reading the patch data and your draft. This usually takes a few seconds."
-                : `Your team has ${left} pick${left === 1 ? "" : "s"} left. The analysis recommends ${Math.min(2, left)}.`)}
+            {blocker || (busy ? "Reading the patch data and your draft. This usually takes a few seconds." : openNote)}
           </p>
         </section>
       </form>
@@ -238,10 +277,12 @@ function Results({ result }: { result: Result }) {
   const { analysis: a, meta } = result;
   const rules = result.rules ?? [];
   const ruleFor = (hero: string) => rules.find((r) => r.available.includes(hero));
+  const title =
+    result.need === 1 ? `Pick for ${SLOT_LABEL[a.picks[0]?.position ?? result.open[0]] ?? "your last slot"}` : "Your next two picks";
   return (
     <section className="results" aria-label="Recommendation">
       <div className="results-head">
-        <h2>{result.need === 1 ? "Last pick" : "Last two picks"}</h2>
+        <h2>{title}</h2>
         <span className={`conf conf-${a.confidence}`}>Confidence: {a.confidence}</span>
       </div>
       {a.summary && <p className="summary">{a.summary}</p>}
@@ -255,7 +296,7 @@ function Results({ result }: { result: Result }) {
             <div className="pick-head">
               <span className="rank">{result.need === 2 ? (i === 0 ? "First" : "Then") : "Pick"}</span>
               <strong>{p.hero}</strong>
-              {p.role && <span className="role">{p.role}</span>}
+              <span className="pos">{SLOT_LABEL[p.position]}</span>
               {ruleFor(p.hero) && <span className="rule-tag">Your rule vs {ruleFor(p.hero)!.enemy}</span>}
             </div>
             {p.why && <p>{p.why}</p>}
@@ -273,8 +314,9 @@ function Results({ result }: { result: Result }) {
                 <strong>{r.enemy}</strong>
                 {r.teamHas
                   ? ` · already countered by your ${r.teamHas}`
-                  : ` → ${r.available.length ? r.available.join(" or ") : "no counter left"}`}
+                  : ` → ${r.available.length ? r.available.join(" or ") : "no counter fits an open position"}`}
                 {!r.teamHas && r.unavailable.length > 0 && <span className="muted"> ({r.unavailable.join(", ")} banned or taken)</span>}
+                {!r.teamHas && r.offPosition.length > 0 && <span className="muted"> ({r.offPosition.join(", ")} not for an open position)</span>}
               </li>
             ))}
           </ul>
@@ -293,7 +335,7 @@ function Results({ result }: { result: Result }) {
           <ul>
             {a.backups.map((b) => (
               <li key={b.hero}>
-                <strong>{b.hero}</strong>
+                <strong>{b.hero}</strong> <span className="muted">({SLOT_LABEL[b.position]})</span>
                 {b.why ? ` · ${b.why}` : ""}
               </li>
             ))}

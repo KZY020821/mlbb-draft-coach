@@ -1,4 +1,6 @@
 // End-to-end checks against a running app (default http://127.0.0.1:3100) and the mock.
+import { readFileSync } from "node:fs";
+
 const APP = process.env.APP_URL || "http://127.0.0.1:3100";
 const MOCK = "http://127.0.0.1:4010";
 let failed = 0;
@@ -9,17 +11,20 @@ const post = async (body, headers = {}) => {
   return { status: r.status, json: await r.json().catch(() => null) };
 };
 const lastCall = async () => (await fetch(MOCK + "/__last")).json();
+const heroes = (r) => JSON.stringify(r.json?.analysis?.picks?.map((p) => `${p.hero}/${p.position}`));
 
+// Open positions: jungler and mage.
 const draft = {
   bans: ["Hayabusa", "Freya", "Atlas", "Fanny", "Selena"],
   enemyPicks: ["Ling", "Layla", "Gatotkaca", "Kagura", "Angela"],
-  teamPicks: ["Tigreal", "Miya", "Bane"]
+  teamPicks: { roam: "Tigreal", marksman: "Miya", fighter: "Bane" }
 };
 
 await setMode("good");
 let r = await post(draft);
-check("two picks left -> exactly 2 picks", r.status === 200 && r.json.analysis.picks.length === 2, JSON.stringify(r.json?.analysis?.picks?.map((p) => p.hero)));
-check("backups returned", r.json.analysis.backups.length >= 1);
+check("two open positions -> 2 picks, one per position", r.status === 200 && r.json.analysis.picks.length === 2 && r.json.analysis.picks.map((p) => p.position).sort().join() === "jungler,mage", heroes(r));
+check("response lists the open positions", JSON.stringify(r.json.open) === '["jungler","mage"]');
+check("backups returned with a position", r.json.analysis.backups.length >= 1 && r.json.analysis.backups.every((b) => b.position));
 check("meta carries patch + model", r.json.meta.patch === "2.2.16" && r.json.meta.model === "deepseek-flash", JSON.stringify(r.json.meta));
 let lc = await lastCall();
 check("API key sent as bearer token", lc.last.auth === "Bearer test-key");
@@ -27,16 +32,25 @@ check("hits the chat completions path", lc.last.url === "/chat/completions");
 check("JSON mode requested", lc.last.body.response_format?.type === "json_object");
 check("DeepSeek thinking is turned off", lc.last.body.thinking?.type === "disabled" && !("reasoning_effort" in lc.last.body));
 const sys = lc.last.body.messages[0].content, usr = lc.last.body.messages[1].content;
-check("prompt includes patch + notes + roster", sys.includes("Patch 2.2.16") && sys.includes("Masha was reworked") && sys.includes("Hirara (Assassin)"));
+check("prompt includes patch + notes + roster", sys.includes("Patch 2.2.16") && sys.includes("Masha was reworked") && sys.includes("Hirara (Assassin; lanes Jungle)"));
+check("prompt has corrected roles and lanes", sys.includes("Nolan (Assassin") && sys.includes("Barats (Tank/Fighter; lanes Jungle/EXP)"));
+check("prompt says to trust the listed roles", sys.includes("do not call a hero tanky or a frontliner unless its roles include Tank"));
 check("prompt mentions JSON (required by JSON mode)", /json/i.test(sys));
-check("prompt lists the draft", usr.includes("Enemy picks: Ling") && usr.includes("Our picks so far: Tigreal") && usr.includes("Banned heroes: Hayabusa"));
-check("prompt asks for exactly 2", usr.includes("Recommend exactly 2"));
+check("prompt lists our picks by position", usr.includes("- Roam: Tigreal") && usr.includes("- Jungler: OPEN") && usr.includes("- Mage (mid lane): OPEN"));
+check("prompt names the open positions", usr.includes("Open positions: Jungler, Mage (mid lane)") && usr.includes("one hero for each open position"));
 
-r = await post({ ...draft, teamPicks: ["Tigreal", "Miya", "Bane", "Khufra"] });
-check("one pick left -> exactly 1 pick", r.status === 200 && r.json.analysis.picks.length === 1);
+r = await post({ ...draft, teamPicks: { roam: "Tigreal", marksman: "Miya", fighter: "Bane", jungler: "Khufra" } });
+check("one open position -> 1 pick for it", r.status === 200 && r.json.analysis.picks.length === 1 && r.json.analysis.picks[0].position === "mage", heroes(r));
 
-r = await post({ ...draft, teamPicks: ["Tigreal", "Miya"] });
-check("three picks left -> still asks for 2", r.status === 200 && r.json.need === 2);
+r = await post({ ...draft, teamPicks: { roam: "Tigreal", marksman: "Miya" } });
+lc = await lastCall();
+check("three open positions -> asks for the 2 that matter most", r.status === 200 && r.json.need === 2 && lc.last.body.messages[1].content.includes("2 open positions that matter most"));
+
+await setMode("wrong_position_then_good");
+r = await post(draft);
+lc = await lastCall();
+check("hero in the wrong position triggers a retry", lc.calls === 2 && JSON.stringify(lc.last.body.messages).includes("Barats is not played as") && r.status === 200, heroes(r));
+check("the wrong-position hero is not shown", !r.json.analysis.picks.some((p) => p.hero === "Barats"));
 
 await setMode("bad_then_good");
 r = await post(draft);
@@ -72,11 +86,14 @@ check("upstream 429 -> 503 busy", r.status === 503 && r.json.error.code === "bus
 await setMode("good");
 const bad = [
   ["unknown hero", { ...draft, bans: ["Hayabusa", "Zzzhero"] }, "Zzzhero"],
+  ["unknown hero in a position", { ...draft, teamPicks: { roam: "Zzzhero" } }, "Zzzhero"],
   ["duplicate hero", { ...draft, bans: ["Hayabusa", "hayabusa"] }, "only once"],
-  ["hero in bans and picks", { ...draft, teamPicks: ["Ling"] }, "only once"],
-  ["team already full", { ...draft, teamPicks: ["Tigreal", "Miya", "Bane", "Khufra", "Grock"] }, "five picks"],
+  ["hero in bans and picks", { ...draft, teamPicks: { roam: "Ling" } }, "only once"],
+  ["team already full", { ...draft, teamPicks: { roam: "Tigreal", marksman: "Miya", jungler: "Khufra", mage: "Lylia", fighter: "Grock" } }, "five picks"],
+  ["team picks as a plain list", { ...draft, teamPicks: ["Tigreal"] }, "by position"],
+  ["unknown position", { ...draft, teamPicks: { support: "Tigreal" } }, "Unknown team position"],
   ["too many bans", { ...draft, bans: Array(11).fill("Hayabusa") }, "at most 10"],
-  ["empty draft", { bans: [], enemyPicks: [], teamPicks: [] }, "at least one"],
+  ["empty draft", { bans: [], enemyPicks: [], teamPicks: {} }, "at least one"],
   ["wrong types", { bans: "Hayabusa" }, "list"]
 ];
 for (const [name, body, frag] of bad) {
@@ -85,7 +102,7 @@ for (const [name, body, frag] of bad) {
 }
 r = await post({ ...draft, bans: ["popol and kupa", "POPOL & KUPA"] });
 check("name matching is forgiving but still catches duplicates", r.status === 400 && r.json.error.message.includes("Popol & Kupa"));
-r = await post({ ...draft, bans: ["  hayabusa  ", "FREYA"] });
+r = await post({ ...draft, bans: ["  hayabusa  ", "FREYA"], teamPicks: { roam: " tigreal ", marksman: "MIYA", fighter: "bane" } });
 check("whitespace and case are tolerated", r.status === 200);
 
 const big = await fetch(APP + "/api/analyze", { method: "POST", body: "x".repeat(5000) });
@@ -93,8 +110,8 @@ check("oversized body -> 413", big.status === 413);
 const junk = await fetch(APP + "/api/analyze", { method: "POST", body: "not json" });
 check("malformed JSON -> 400", junk.status === 400);
 
-// Team counter rules (data/draft-rules.json has Gloo -> Vexana, Faramis).
-const glooDraft = { bans: ["Hayabusa"], enemyPicks: ["Gloo", "Ling"], teamPicks: ["Tigreal", "Miya", "Bane"] };
+// Team counter rules (data/draft-rules.json has Gloo -> Vexana, Faramis). Open: jungler, mage.
+const glooDraft = { bans: ["Hayabusa"], enemyPicks: ["Gloo", "Ling"], teamPicks: { roam: "Tigreal", marksman: "Miya", fighter: "Bane" } };
 await setMode("good");
 r = await post({ ...draft, enemyPicks: ["Ling", "Layla"] });
 lc = await lastCall();
@@ -105,8 +122,7 @@ r = await post(glooDraft);
 lc = await lastCall();
 let u = lc.last.body.messages[1].content;
 check("Gloo rule reaches the prompt", u.includes("OUR TEAM'S COUNTER RULES") && u.includes("Enemy picked Gloo. Counter with: Vexana or Faramis."));
-check("rule followed -> no retry, counter in picks", lc.calls === 1 && r.json.analysis.picks[0].hero === "Vexana", JSON.stringify(r.json.analysis?.picks?.map((p) => p.hero)));
-check("response lists the applied rule", r.json.rules[0]?.enemy === "Gloo" && r.json.rules[0].available.join() === "Vexana,Faramis");
+check("rule followed -> no retry, counter picked as Mage", lc.calls === 1 && r.json.analysis.picks.some((p) => p.hero === "Vexana" && p.position === "mage"), heroes(r));
 
 await setMode("good");
 r = await post(glooDraft);
@@ -118,31 +134,42 @@ await setMode("follow_rules");
 r = await post({ ...glooDraft, bans: ["Vexana"] });
 lc = await lastCall();
 u = lc.last.body.messages[1].content;
-check("banned counter is skipped", u.includes("Counter with: Faramis.") && u.includes("Vexana also counters it but is banned or taken") && r.json.analysis.picks[0].hero === "Faramis");
+check("banned counter is skipped", u.includes("Counter with: Faramis.") && u.includes("(Vexana banned or taken.)") && r.json.analysis.picks.some((p) => p.hero === "Faramis"), heroes(r));
 
 await setMode("good");
-r = await post({ ...glooDraft, teamPicks: ["Tigreal", "Miya", "Vexana"] });
+r = await post({ ...glooDraft, teamPicks: { roam: "Tigreal", marksman: "Miya", mage: "Vexana" } });
 lc = await lastCall();
 check("team already has the counter -> no push, no retry", lc.calls === 1 && lc.last.body.messages[1].content.includes("Our team already has Vexana") && r.json.rules[0].teamHas === "Vexana");
+
+await setMode("good");
+r = await post({ ...glooDraft, teamPicks: { roam: "Tigreal", marksman: "Miya", mage: "Lylia" } });
+lc = await lastCall();
+check("counters that don't fit an open position are not pushed", lc.calls === 1 && r.json.rules[0].available.length === 0 && r.json.rules[0].offPosition.join() === "Vexana,Faramis");
 
 await setMode("good");
 r = await post({ ...glooDraft, bans: ["Vexana", "Faramis"] });
 lc = await lastCall();
 check("all counters gone -> no retry", lc.calls === 1 && r.status === 200);
 
-// Saved real drafts (tests/drafts) run through the mock to check the plumbing.
-import { readFileSync as readSaved } from "node:fs";
-const saved = JSON.parse(readSaved(new URL("../tests/drafts/gloo-faramis-last-pick.json", import.meta.url), "utf8"));
+// The team's saved screenshot draft (tests/drafts) through the mock.
+const saved = JSON.parse(readFileSync(new URL("../tests/drafts/gloo-faramis-last-pick.json", import.meta.url), "utf8"));
 await setMode("good");
 r = await post(saved.draft);
 lc = await lastCall();
-check("saved draft: one pick left", r.status === 200 && r.json.need === 1 && lc.last.body.messages[1].content.includes("Recommend exactly 1"));
-check("saved draft: Gloo rule sees our Faramis, no retry", r.json.rules[0]?.teamHas === "Faramis" && lc.calls === 1 && lc.last.body.messages[1].content.includes("Our team already has Faramis"));
-check("saved draft: suggestion is not banned or picked", !saved.expect.notPicked.includes(r.json.analysis.picks[0].hero), r.json.analysis.picks[0].hero);
+u = lc.last.body.messages[1].content;
+check("saved draft: only Roam is open", r.status === 200 && r.json.need === 1 && JSON.stringify(r.json.open) === '["roam"]' && u.includes("Open positions: Roam"));
+check("saved draft: Gloo rule sees our Faramis, no retry", r.json.rules[0]?.teamHas === "Faramis" && lc.calls === 1 && u.includes("Our team already has Faramis"));
+check("saved draft: suggestion is a Roam hero, not banned or picked", r.json.analysis.picks[0].position === "roam" && !saved.expect.notPicked.includes(r.json.analysis.picks[0].hero), heroes(r));
+check("saved draft: prompt calls Nolan an Assassin", u.includes("Nolan (Assassin;") && !u.includes("Nolan (Tank"));
 
-// Rate limit: limit is set low by the test environment.
+await setMode("wrong_position_then_good");
+r = await post(saved.draft);
+lc = await lastCall();
+check("saved draft: Barats as Roam is rejected", lc.calls === 2 && JSON.stringify(lc.last.body.messages).includes("Barats is not played as Roam (lanes: Jungle/EXP)") && r.json.analysis.picks[0].hero !== "Barats", heroes(r));
+
+// Rate limit: keep sending until the limiter answers.
 let limited = 0;
-for (let i = 0; i < 80 && limited === 0; i++) { const x = await post(draft); if (x.status === 429) limited++; }
+for (let i = 0; i < 120 && limited === 0; i++) { const x = await post(draft); if (x.status === 429) limited++; }
 check("rate limit kicks in", limited > 0, "429s=" + limited);
 
 console.log(failed ? `\n${failed} check(s) failed` : "\nall checks passed");

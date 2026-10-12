@@ -23,14 +23,19 @@ for (const file of files) {
   if (!res.ok) { console.log("   error:", body?.error?.message); failed++; continue; }
 
   const a = body.analysis;
-  a.picks.forEach((p, i) => console.log(`   pick ${i + 1}: ${p.hero}${p.role ? ` (${p.role})` : ""} - ${p.why}${p.risk ? ` Risk: ${p.risk}` : ""}`));
-  if (a.backups.length) console.log("   backups:", a.backups.map((b) => b.hero).join(", "));
+  console.log(`   open positions: ${body.open.join(", ")}`);
+  a.picks.forEach((p, i) => console.log(`   pick ${i + 1}: ${p.hero} (${p.position}) - ${p.why}${p.risk ? ` Risk: ${p.risk}` : ""}`));
+  if (a.backups.length) console.log("   backups:", a.backups.map((b) => `${b.hero} (${b.position})`).join(", "));
   if (body.rules.length) console.log("   rules:", body.rules.map((r) => (r.teamHas ? `${r.enemy} already countered by ${r.teamHas}` : `${r.enemy} -> ${r.available.join(" or ")}`)).join("; "));
   console.log(`   confidence: ${a.confidence} | retried: ${body.meta.retried} | model: ${body.meta.model}`);
 
   const e = t.expect || {};
   const problems = [];
   if (e.need && body.need !== e.need) problems.push(`expected ${e.need} pick(s), got ${body.need}`);
+  if (e.positions) {
+    const got = a.picks.map((p) => p.position).sort().join(",");
+    if (got !== [...e.positions].sort().join(",")) problems.push(`expected picks for ${e.positions.join(", ")}, got ${got || "none"}`);
+  }
   for (const r of e.rules || []) {
     const got = body.rules.find((x) => x.enemy === r.enemy);
     if (!got) problems.push(`rule for ${r.enemy} did not apply`);
