@@ -1,0 +1,30 @@
+{{Matchlist|width=350px |id=TEST |title=Week 1
+|M1={{Match
+	|bestof=3
+    |opponent1={{TeamOpponent|Team Liquid PH}}
+    |opponent2={{TeamOpponent|ONIC Philippines}}
+    |date= October 9,2026 - 17:00 {{Abbr/SGT}}
+    |map1={{Map|vod=https://youtu.be/x
+        |team1side=blue |team2side=red |length=14:07 |winner=1 |comment=[[Team Liquid PH|'''TLPH''']] picked <b>Flying Cloud</b>
+        |t1h1=arlott |t1h2=cici |t1h3=zhuxin |t1h4=atlas |t1h5=suyou
+        |t2h1=freya |t2h2=aulus |t2h3=marcel |t2h4=luo yi |t2h5=minotaur
+        |t1b1=fanny |t1b2=masha |t1b3=yz |t1b4=harley |t1b5=nolan
+        |t2b1=paquito |t2b2=lukas |t2b3=atlasx |t2b4=gatot |t2b5=guin
+    }}
+    |map2={{Map
+        |team1side=red |team2side=blue |winner=2
+        |t1h1=lapu |t1h2=claude |t1h3=valentina |t1h4=rafaela |t1h5=hirara
+        |t2h1=yss |t2h2=gloo |t2h3=kagura |t2h4=karrie |t2h5=chou
+    }}
+    |map3={{Map|winner=}}
+}}
+|M2={{Match
+    |opponent1={{TeamOpponent|Ap.bren}}
+    |opponent2={{TeamOpponent|Team Liquid PH}}
+    |date= October 11,2026
+    |map1={{Map|team1side=blue|team2side=red|winner=2
+        |t1h1=freya |t1h2=khufra |t1h3=novaria |t1h4=hirara |t1h5=esmeralda
+        |t2h1=cici |t2h2=atlas |t2h3=zhuxin |t2h4=suyou |t2h5=arlott
+    }}
+}}
+}}

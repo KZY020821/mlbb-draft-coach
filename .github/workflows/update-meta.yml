@@ -1,0 +1,48 @@
+name: Update pro meta data
+
+# Pulls MPL PH drafts from the Liquipedia API, infers positions, rebuilds data/meta.json
+# and data/pro-games.json, and commits them. The commit redeploys the site on Vercel.
+on:
+  schedule:
+    - cron: "30 16 * * *" # daily, 00:30 Philippine time
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - "scripts/meta/**"
+      - "scripts/update-meta.mjs"
+      - "data/meta-config.json"
+      - "data/position-overrides.json"
+      - ".github/workflows/update-meta.yml"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: update-meta
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Check the pipeline
+        run: node scripts/test-meta.mjs
+      - name: Build meta data from Liquipedia
+        run: node scripts/update-meta.mjs
+      - name: Commit if the data changed
+        run: |
+          git config user.name "meta-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/meta.json data/pro-games.json
+          if git diff --cached --quiet; then
+            echo "No data changes."
+          else
+            git commit -m "Update pro meta data from Liquipedia"
+            git push
+          fi

@@ -1,0 +1,27 @@
+{
+ "league": "MPL Philippines Season 18",
+ "source": {
+  "name": "Liquipedia",
+  "license": "CC BY-SA 3.0",
+  "pages": [],
+  "fetchedAt": ""
+ },
+ "focusTeam": "Team Liquid PH",
+ "focusWeight": 3,
+ "halfLifeDays": 28,
+ "games": 0,
+ "focusGames": 0,
+ "latestGame": "",
+ "positionConfidence": 0,
+ "correctedLineups": 0,
+ "unknownHeroes": [],
+ "heroes": {},
+ "ranking": {
+  "roam": [],
+  "marksman": [],
+  "jungler": [],
+  "mage": [],
+  "fighter": []
+ },
+ "pairs": []
+}

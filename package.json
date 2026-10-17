@@ -7,7 +7,9 @@
     "build": "next build",
     "start": "next start",
     "test": "node scripts/smoke.mjs",
-    "open-draft": "node scripts/open-draft.mjs"
+    "open-draft": "node scripts/open-draft.mjs",
+    "test:meta": "node scripts/test-meta.mjs",
+    "update-meta": "node scripts/update-meta.mjs"
   },
   "dependencies": {
     "next": "16.4.0",

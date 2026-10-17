@@ -1,0 +1,4 @@
+{
+  "about": "Hand corrections for inferred positions. Each entry fixes one team's lineup in one game: the date (YYYY-MM-DD), the team as written in data/pro-games.json, and the hero in each position. The five heroes must match that game's picks.",
+  "lineups": []
+}
