@@ -1,7 +1,4075 @@
 {
  "source": "Liquipedia",
  "license": "CC BY-SA 3.0 (https://creativecommons.org/licenses/by-sa/3.0/)",
- "pages": [],
+ "pages": [
+  "https://liquipedia.net/mobilelegends/MPL/Philippines/Season_18/Regular_Season",
+  "https://liquipedia.net/mobilelegends/MPL/Philippines/Season_18/Playoffs"
+ ],
  "note": "Positions are inferred from picks, not taken from Liquipedia.",
- "lineups": []
+ "lineups": [
+  {
+   "date": "2026-08-21",
+   "match": "MPL/Philippines/Season_18/Regular_Season#1",
+   "game": 1,
+   "team": "Aurora PH",
+   "opponent": "ONIC PH",
+   "won": false,
+   "positions": {
+    "fighter": "Alice",
+    "jungler": "Hirara",
+    "mage": "Rafaela",
+    "marksman": "Claude",
+    "roam": "Belerick"
+   },
+   "confidence": 0.96
+  },
+  {
+   "date": "2026-08-21",
+   "match": "MPL/Philippines/Season_18/Regular_Season#1",
+   "game": 1,
+   "team": "ONIC PH",
+   "opponent": "Aurora PH",
+   "won": true,
+   "positions": {
+    "fighter": "Barats",
+    "jungler": "Nolan",
+    "mage": "Novaria",
+    "marksman": "Melissa",
+    "roam": "Mathilda"
+   },
+   "confidence": 1
+  },
+  {
+   "date": "2026-08-21",
+   "match": "MPL/Philippines/Season_18/Regular_Season#1",
+   "game": 2,
+   "team": "Aurora PH",
+   "opponent": "ONIC PH",
+   "won": false,
+   "positions": {
+    "fighter": "Carmilla",
+    "jungler": "Nolan",
+    "mage": "Lylia",
+    "marksman": "Melissa",
+    "roam": "Belerick"
+   },
+   "confidence": 0.54
+  },
+  {
+   "date": "2026-08-21",
+   "match": "MPL/Philippines/Season_18/Regular_Season#1",
+   "game": 2,
+   "team": "ONIC PH",
+   "opponent": "Aurora PH",
+   "won": true,
+   "positions": {
+    "fighter": "Barats",
+    "jungler": "Hirara",
+    "mage": "Aurora",
+    "marksman": "Beatrix",
+    "roam": "Kaja"
+   },
+   "confidence": 1
+  },
+  {
+   "date": "2026-08-21",
+   "match": "MPL/Philippines/Season_18/Regular_Season#2",
+   "game": 1,
+   "team": "Team Liquid PH",
+   "opponent": "Team Falcons PH",
+   "won": true,
+   "positions": {
+    "fighter": "Uranus",
+    "jungler": "Paquito",
+    "mage": "Novaria",
+    "marksman": "Clint",
+    "roam": "Rafaela"
+   },
+   "confidence": 0.99
+  },
+  {
+   "date": "2026-08-21",
+   "match": "MPL/Philippines/Season_18/Regular_Season#2",
+   "game": 1,
+   "team": "Team Falcons PH",
+   "opponent": "Team Liquid PH",
+   "won": false,
+   "positions": {
+    "fighter": "Belerick",
+    "jungler": "Hirara",
+    "mage": "Eudora",
+    "marksman": "Brody",
+    "roam": "Marcel"
+   },
+   "confidence": 0.58
+  },
+  {
+   "date": "2026-08-21",
+   "match": "MPL/Philippines/Season_18/Regular_Season#2",
+   "game": 2,
+   "team": "Team Liquid PH",
+   "opponent": "Team Falcons PH",
+   "won": false,
+   "positions": {
+    "fighter": "Carmilla",
+    "jungler": "Hirara",
+    "mage": "Selena",
+    "marksman": "Moskov",
+    "roam": "Badang"
+   },
+   "confidence": 0.71
+  },
+  {
+   "date": "2026-08-21",
+   "match": "MPL/Philippines/Season_18/Regular_Season#2",
+   "game": 2,
+   "team": "Team Falcons PH",
+   "opponent": "Team Liquid PH",
+   "won": true,
+   "positions": {
+    "fighter": "Barats",
+    "jungler": "Fanny",
+    "mage": "Rafaela",
+    "marksman": "Claude",
+    "roam": "Belerick"
+   },
+   "confidence": 0.99
+  },
+  {
+   "date": "2026-08-21",
+   "match": "MPL/Philippines/Season_18/Regular_Season#2",
+   "game": 3,
+   "team": "Team Liquid PH",
+   "opponent": "Team Falcons PH",
+   "won": false,
+   "positions": {
+    "fighter": "Atlas",
+    "jungler": "Harley",
+    "mage": "Novaria",
+    "marksman": "Clint",
+    "roam": "Marcel"
+   },
+   "confidence": 0.66
+  },
+  {
+   "date": "2026-08-21",
+   "match": "MPL/Philippines/Season_18/Regular_Season#2",
+   "game": 3,
+   "team": "Team Falcons PH",
+   "opponent": "Team Liquid PH",
+   "won": true,
+   "positions": {
+    "fighter": "Barats",
+    "jungler": "Hirara",
+    "mage": "Valentina",
+    "marksman": "Brody",
+    "roam": "Rafaela"
+   },
+   "confidence": 1
+  },
+  {
+   "date": "2026-08-22",
+   "match": "MPL/Philippines/Season_18/Regular_Season#3",
+   "game": 1,
+   "team": "AP.Bren",
+   "opponent": "Twisted Minds PH",
+   "won": false,
+   "positions": {
+    "fighter": "Esmeralda",
+    "jungler": "Hirara",
+    "mage": "Eudora",
+    "marksman": "Harith",
+    "roam": "Gatotkaca"
+   },
+   "confidence": 0.99
+  },
+  {
+   "date": "2026-08-22",
+   "match": "MPL/Philippines/Season_18/Regular_Season#3",
+   "game": 1,
+   "team": "Twisted Minds PH",
+   "opponent": "AP.Bren",
+   "won": true,
+   "positions": {
+    "fighter": "Dyrroth",
+    "jungler": "Nolan",
+    "mage": "Selena",
+    "marksman": "Karrie",
+    "roam": "Belerick"
+   },
+   "confidence": 0.99
+  },
+  {
+   "date": "2026-08-22",
+   "match": "MPL/Philippines/Season_18/Regular_Season#3",
+   "game": 2,
+   "team": "AP.Bren",
+   "opponent": "Twisted Minds PH",
+   "won": true,
+   "positions": {
+    "fighter": "Esmeralda",
+    "jungler": "Paquito",
+    "mage": "Vexana",
+    "marksman": "Claude",
+    "roam": "Belerick"
+   },
+   "confidence": 0.98
+  },
+  {
+   "date": "2026-08-22",
+   "match": "MPL/Philippines/Season_18/Regular_Season#3",
+   "game": 2,
+   "team": "Twisted Minds PH",
+   "opponent": "AP.Bren",
+   "won": false,
+   "positions": {
+    "fighter": "Dyrroth",
+    "jungler": "Hirara",
+    "mage": "Valentina",
+    "marksman": "Moskov",
+    "roam": "Mathilda"
+   },
+   "confidence": 1
+  },
+  {
+   "date": "2026-08-22",
+   "match": "MPL/Philippines/Season_18/Regular_Season#3",
+   "game": 3,
+   "team": "AP.Bren",
+   "opponent": "Twisted Minds PH",
+   "won": true,
+   "positions": {
+    "fighter": "Barats",
+    "jungler": "Paquito",
+    "mage": "Eudora",
+    "marksman": "Clint",
+    "roam": "Rafaela"
+   },
+   "confidence": 1
+  },
+  {
+   "date": "2026-08-22",
+   "match": "MPL/Philippines/Season_18/Regular_Season#3",
+   "game": 3,
+   "team": "Twisted Minds PH",
+   "opponent": "AP.Bren",
+   "won": false,
+   "positions": {
+    "fighter": "Carmilla",
+    "jungler": "Hirara",
+    "mage": "Novaria",
+    "marksman": "Hanabi",
+    "roam": "Gatotkaca"
+   },
+   "confidence": 0.74
+  },
+  {
+   "date": "2026-08-22",
+   "match": "MPL/Philippines/Season_18/Regular_Season#4",
+   "game": 1,
+   "team": "Omega Esports",
+   "opponent": "Team Liquid PH",
+   "won": false,
+   "positions": {
+    "fighter": "Dyrroth",
+    "jungler": "Ling",
+    "mage": "Eudora",
+    "marksman": "Brody",
+    "roam": "Atlas"
+   },
+   "confidence": 0.98
+  },
+  {
+   "date": "2026-08-22",
+   "match": "MPL/Philippines/Season_18/Regular_Season#4",
+   "game": 1,
+   "team": "Team Liquid PH",
+   "opponent": "Omega Esports",
+   "won": true,
+   "positions": {
+    "fighter": "Uranus",
+    "jungler": "Harley",
+    "mage": "Novaria",
+    "marksman": "Clint",
+    "roam": "Mathilda"
+   },
+   "confidence": 1
+  },
+  {
+   "date": "2026-08-22",
+   "match": "MPL/Philippines/Season_18/Regular_Season#4",
+   "game": 2,
+   "team": "Omega Esports",
+   "opponent": "Team Liquid PH",
+   "won": false,
+   "positions": {
+    "fighter": "Barats",
+    "jungler": "Hirara",
+    "mage": "Valentina",
+    "marksman": "Clint",
+    "roam": "Angela"
+   },
+   "confidence": 1
+  },
+  {
+   "date": "2026-08-22",
+   "match": "MPL/Philippines/Season_18/Regular_Season#4",
+   "game": 2,
+   "team": "Team Liquid PH",
+   "opponent": "Omega Esports",
+   "won": true,
+   "positions": {
+    "fighter": "Belerick",
+    "jungler": "Paquito",
+    "mage": "Novaria",
+    "marksman": "Claude",
+    "roam": "Rafaela"
+   },
+   "confidence": 0.96
+  },
+  {
+   "date": "2026-08-22",
+   "match": "MPL/Philippines/Season_18/Regular_Season#5",
+   "game": 1,
+   "team": "Team Falcons PH",
+   "opponent": "TNC Pro Team",
+   "won": true,
+   "positions": {
+    "fighter": "Belerick",
+    "jungler": "Nolan",
+    "mage": "Vexana",
+    "marksman": "Paquito",
+    "roam": "Rafaela"
+   },
+   "confidence": 0.94
+  },
+  {
+   "date": "2026-08-22",
+   "match": "MPL/Philippines/Season_18/Regular_Season#5",
+   "game": 1,
+   "team": "TNC Pro Team",
+   "opponent": "Team Falcons PH",
+   "won": false,
+   "positions": {
+    "fighter": "Alice",
+    "jungler": "Hirara",
+    "mage": "Angela",
+    "marksman": "Claude",
+    "roam": "Gloo"
+   },
+   "confidence": 0.96
+  },
+  {
+   "date": "2026-08-22",
+   "match": "MPL/Philippines/Season_18/Regular_Season#5",
+   "game": 2,
+   "team": "Team Falcons PH",
+   "opponent": "TNC Pro Team",
+   "won": true,
+   "positions": {
+    "fighter": "Lapu-Lapu",
+    "jungler": "Paquito",
+    "mage": "Rafaela",
+    "marksman": "Moskov",
+    "roam": "Belerick"
+   },
+   "confidence": 0.96
+  },
+  {
+   "date": "2026-08-22",
+   "match": "MPL/Philippines/Season_18/Regular_Season#5",
+   "game": 2,
+   "team": "TNC Pro Team",
+   "opponent": "Team Falcons PH",
+   "won": false,
+   "positions": {
+    "fighter": "Barats",
+    "jungler": "Hirara",
+    "mage": "Lylia",
+    "marksman": "Brody",
+    "roam": "Badang"
+   },
+   "confidence": 1
+  },
+  {
+   "date": "",
+   "match": "MPL/Philippines/Season_18/Regular_Season#6",
+   "game": 1,
+   "team": "ONIC PH",
+   "opponent": "AP.Bren",
+   "won": true,
+   "positions": {
+    "fighter": "Belerick",
+    "jungler": "Hirara",
+    "mage": "Novaria",
+    "marksman": "Brody",
+    "roam": "Kaja"
+   },
+   "confidence": 0.97
+  },
+  {
+   "date": "",
+   "match": "MPL/Philippines/Season_18/Regular_Season#6",
+   "game": 1,
+   "team": "AP.Bren",
+   "opponent": "ONIC PH",
+   "won": false,
+   "positions": {
+    "fighter": "Esmeralda",
+    "jungler": "Lukas",
+    "mage": "Mathilda",
+    "marksman": "Melissa",
+    "roam": "Gatotkaca"
+   },
+   "confidence": 0.96
+  },
+  {
+   "date": "",
+   "match": "MPL/Philippines/Season_18/Regular_Season#6",
+   "game": 2,
+   "team": "ONIC PH",
+   "opponent": "AP.Bren",
+   "won": true,
+   "positions": {
+    "fighter": "Barats",
+    "jungler": "Hirara",
+    "mage": "Vexana",
+    "marksman": "Beatrix",
+    "roam": "Kaja"
+   },
+   "confidence": 1
+  },
+  {
+   "date": "",
+   "match": "MPL/Philippines/Season_18/Regular_Season#6",
+   "game": 2,
+   "team": "AP.Bren",
+   "opponent": "ONIC PH",
+   "won": false,
+   "positions": {
+    "fighter": "Esmeralda",
+    "jungler": "Suyou",
+    "mage": "Rafaela",
+    "marksman": "Melissa",
+    "roam": "Belerick"
+   },
+   "confidence": 0.97
+  },
+  {
+   "date": "2026-08-23",
+   "match": "MPL/Philippines/Season_18/Regular_Season#7",
+   "game": 1,
+   "team": "TNC Pro Team",
+   "opponent": "Aurora PH",
+   "won": true,
+   "positions": {
+    "fighter": "Edith",
+    "jungler": "Paquito",
+    "mage": "Rafaela",
+    "marksman": "Claude",
+    "roam": "Belerick"
+   },
+   "confidence": 0.68
+  },
+  {
+   "date": "2026-08-23",
+   "match": "MPL/Philippines/Season_18/Regular_Season#7",
+   "game": 1,
+   "team": "Aurora PH",
+   "opponent": "TNC Pro Team",
+   "won": false,
+   "positions": {
+    "fighter": "Uranus",
+    "jungler": "Hirara",
+    "mage": "Cecilion",
+    "marksman": "Brody",
+    "roam": "Kaja"
+   },
+   "confidence": 1
+  },
+  {
+   "date": "2026-08-23",
+   "match": "MPL/Philippines/Season_18/Regular_Season#7",
+   "game": 2,
+   "team": "TNC Pro Team",
+   "opponent": "Aurora PH",
+   "won": false,
+   "positions": {
+    "fighter": "Arlott",
+    "jungler": "Hirara",
+    "mage": "Lylia",
+    "marksman": "Brody",
+    "roam": "Marcel"
+   },
+   "confidence": 0.99
+  },
+  {
+   "date": "2026-08-23",
+   "match": "MPL/Philippines/Season_18/Regular_Season#7",
+   "game": 2,
+   "team": "Aurora PH",
+   "opponent": "TNC Pro Team",
+   "won": true,
+   "positions": {
+    "fighter": "Esmeralda",
+    "jungler": "Suyou",
+    "mage": "Zhuxin",
+    "marksman": "Melissa",
+    "roam": "Mathilda"
+   },
+   "confidence": 1
+  },
+  {
+   "date": "2026-08-23",
+   "match": "MPL/Philippines/Season_18/Regular_Season#7",
+   "game": 3,
+   "team": "TNC Pro Team",
+   "opponent": "Aurora PH",
+   "won": true,
+   "positions": {
+    "fighter": "Belerick",
+    "jungler": "Hirara",
+    "mage": "Angela",
+    "marksman": "Melissa",
+    "roam": "Gloo"
+   },
+   "confidence": 0.55
+  },
+  {
+   "date": "2026-08-23",
+   "match": "MPL/Philippines/Season_18/Regular_Season#7",
+   "game": 3,
+   "team": "Aurora PH",
+   "opponent": "TNC Pro Team",
+   "won": false,
+   "positions": {
+    "fighter": "Barats",
+    "jungler": "Harley",
+    "mage": "Vexana",
+    "marksman": "Granger",
+    "roam": "Rafaela"
+   },
+   "confidence": 0.98
+  },
+  {
+   "date": "",
+   "match": "MPL/Philippines/Season_18/Regular_Season#8",
+   "game": 1,
+   "team": "AP.Bren",
+   "opponent": "Team Liquid PH",
+   "won": false,
+   "positions": {
+    "fighter": "Esmeralda",
+    "jungler": "Hirara",
+    "mage": "Mathilda",
+    "marksman": "Moskov",
+    "roam": "Belerick"
+   },
+   "confidence": 0.95
+  },
+  {
+   "date": "",
+   "match": "MPL/Philippines/Season_18/Regular_Season#8",
+   "game": 1,
+   "team": "Team Liquid PH",
+   "opponent": "AP.Bren",
+   "won": true,
+   "positions": {
+    "fighter": "Atlas",
+    "jungler": "Suyou",
+    "mage": "Selena",
+    "marksman": "Clint",
+    "roam": "Minotaur"
+   },
+   "confidence": 0.95
+  },
+  {
+   "date": "",
+   "match": "MPL/Philippines/Season_18/Regular_Season#8",
+   "game": 2,
+   "team": "AP.Bren",
+   "opponent": "Team Liquid PH",
+   "won": false,
+   "positions": {
+    "fighter": "Barats",
+    "jungler": "Harley",
+    "mage": "Valentina",
+    "marksman": "Brody",
+    "roam": "Mathilda"
+   },
+   "confidence": 1
+  },
+  {
+   "date": "",
+   "match": "MPL/Philippines/Season_18/Regular_Season#8",
+   "game": 2,
+   "team": "Team Liquid PH",
+   "opponent": "AP.Bren",
+   "won": true,
+   "positions": {
+    "fighter": "Carmilla",
+    "jungler": "Hirara",
+    "mage": "Novaria",
+    "marksman": "Paquito",
+    "roam": "Belerick"
+   },
+   "confidence": 0.54
+  },
+  {
+   "date": "",
+   "match": "MPL/Philippines/Season_18/Regular_Season#9",
+   "game": 1,
+   "team": "Twisted Minds PH",
+   "opponent": "ONIC PH",
+   "won": false,
+   "positions": {
+    "fighter": "Uranus",
+    "jungler": "Suyou",
+    "mage": "Selena",
+    "marksman": "Melissa",
+    "roam": "Gatotkaca"
+   },
+   "confidence": 0.99
+  },
+  {
+   "date": "",
+   "match": "MPL/Philippines/Season_18/Regular_Season#9",
+   "game": 1,
+   "team": "ONIC PH",
+   "opponent": "Twisted Minds PH",
+   "won": true,
+   "positions": {
+    "fighter": "Belerick",
+    "jungler": "Hirara",
+    "mage": "Lunox",
+    "marksman": "Claude",
+    "roam": "Mathilda"
+   },
+   "confidence": 0.94
+  },
+  {
+   "date": "",
+   "match": "MPL/Philippines/Season_18/Regular_Season#9",
+   "game": 2,
+   "team": "Twisted Minds PH",
+   "opponent": "ONIC PH",
+   "won": false,
+   "positions": {
+    "fighter": "Esmeralda",
+    "jungler": "Paquito",
+    "mage": "Vexana",
+    "marksman": "Melissa",
+    "roam": "Belerick"
+   },
+   "confidence": 0.98
+  },
+  {
+   "date": "",
+   "match": "MPL/Philippines/Season_18/Regular_Season#9",
+   "game": 2,
+   "team": "ONIC PH",
+   "opponent": "Twisted Minds PH",
+   "won": true,
+   "positions": {
+    "fighter": "Barats",
+    "jungler": "Hirara",
+    "mage": "Novaria",
+    "marksman": "Claude",
+    "roam": "Chou"
+   },
+   "confidence": 0.98
+  },
+  {
+   "date": "",
+   "match": "MPL/Philippines/Season_18/Regular_Season#10",
+   "game": 1,
+   "team": "AP.Bren",
+   "opponent": "TNC Pro Team",
+   "won": false,
+   "positions": {
+    "fighter": "Belerick",
+    "jungler": "Paquito",
+    "mage": "Eudora",
+    "marksman": "Clint",
+    "roam": "Mathilda"
+   },
+   "confidence": 0.98
+  },
+  {
+   "date": "",
+   "match": "MPL/Philippines/Season_18/Regular_Season#10",
+   "game": 1,
+   "team": "TNC Pro Team",
+   "opponent": "AP.Bren",
+   "won": true,
+   "positions": {
+    "fighter": "Uranus",
+    "jungler": "Hirara",
+    "mage": "Valentina",
+    "marksman": "Brody",
+    "roam": "Badang"
+   },
+   "confidence": 0.99
+  },
+  {
+   "date": "",
+   "match": "MPL/Philippines/Season_18/Regular_Season#10",
+   "game": 2,
+   "team": "AP.Bren",
+   "opponent": "TNC Pro Team",
+   "won": true,
+   "positions": {
+    "fighter": "Alice",
+    "jungler": "Hirara",
+    "mage": "Angela",
+    "marksman": "Claude",
+    "roam": "Belerick"
+   },
+   "confidence": 0.95
+  },
+  {
+   "date": "",
+   "match": "MPL/Philippines/Season_18/Regular_Season#10",
+   "game": 2,
+   "team": "TNC Pro Team",
+   "opponent": "AP.Bren",
+   "won": false,
+   "positions": {
+    "fighter": "Barats",
+    "jungler": "Paquito",
+    "mage": "Valentina",
+    "marksman": "Clint",
+    "roam": "Atlas"
+   },
+   "confidence": 0.99
+  },
+  {
+   "date": "",
+   "match": "MPL/Philippines/Season_18/Regular_Season#10",
+   "game": 3,
+   "team": "AP.Bren",
+   "opponent": "TNC Pro Team",
+   "won": false,
+   "positions": {
+    "fighter": "Esmeralda",
+    "jungler": "Hirara",
+    "mage": "Mathilda",
+    "marksman": "Karrie",
+    "roam": "Gatotkaca"
+   },
+   "confidence": 0.98
+  },
+  {
+   "date": "",
+   "match": "MPL/Philippines/Season_18/Regular_Season#10",
+   "game": 3,
+   "team": "TNC Pro Team",
+   "opponent": "AP.Bren",
+   "won": true,
+   "positions": {
+    "fighter": "Ruby",
+    "jungler": "Harley",
+    "mage": "Zhuxin",
+    "marksman": "Claude",
+    "roam": "Belerick"
+   },
+   "confidence": 0.99
+  },
+  {
+   "date": "2026-08-29",
+   "match": "MPL/Philippines/Season_18/Regular_Season#11",
+   "game": 1,
+   "team": "Omega Esports",
+   "opponent": "Team Falcons PH",
+   "won": true,
+   "positions": {
+    "fighter": "Ruby",
+    "jungler": "Fanny",
+    "mage": "Selena",
+    "marksman": "Melissa",
+    "roam": "Gloo"
+   },
+   "confidence": 0.99
+  },
+  {
+   "date": "2026-08-29",
+   "match": "MPL/Philippines/Season_18/Regular_Season#11",
+   "game": 1,
+   "team": "Team Falcons PH",
+   "opponent": "Omega Esports",
+   "won": false,
+   "positions": {
+    "fighter": "Uranus",
+    "jungler": "Hirara",
+    "mage": "Novaria",
+    "marksman": "Brody",
+    "roam": "Marcel"
+   },
+   "confidence": 0.99
+  },
+  {
+   "date": "2026-08-29",
+   "match": "MPL/Philippines/Season_18/Regular_Season#11",
+   "game": 2,
+   "team": "Omega Esports",
+   "opponent": "Team Falcons PH",
+   "won": false,
+   "positions": {
+    "jungler": "Paquito",
+    "fighter": "Fredrinn",
+    "mage": "Selena",
+    "marksman": "Claude",
+    "roam": "Minotaur"
+   },
+   "confidence": 0.96
+  },
+  {
+   "date": "2026-08-29",
+   "match": "MPL/Philippines/Season_18/Regular_Season#11",
+   "game": 2,
+   "team": "Team Falcons PH",
+   "opponent": "Omega Esports",
+   "won": true,
+   "positions": {
+    "fighter": "Carmilla",
+    "jungler": "Hirara",
+    "mage": "Mathilda",
+    "marksman": "Brody",
+    "roam": "Belerick"
+   },
+   "confidence": 0.54
+  },
+  {
+   "date": "2026-08-29",
+   "match": "MPL/Philippines/Season_18/Regular_Season#11",
+   "game": 3,
+   "team": "Omega Esports",
+   "opponent": "Team Falcons PH",
+   "won": true,
+   "positions": {
+    "fighter": "Phoveus",
+    "jungler": "Hirara",
+    "mage": "Vexana",
+    "marksman": "Paquito",
+    "roam": "Angela"
+   },
+   "confidence": 0.98
+  },
+  {
+   "date": "2026-08-29",
+   "match": "MPL/Philippines/Season_18/Regular_Season#11",
+   "game": 3,
+   "team": "Team Falcons PH",
+   "opponent": "Omega Esports",
+   "won": false,
+   "positions": {
+    "fighter": "Carmilla",
+    "jungler": "Fanny",
+    "mage": "Mathilda",
+    "marksman": "Brody",
+    "roam": "Hylos"
+   },
+   "confidence": 0.54
+  },
+  {
+   "date": "2026-08-29",
+   "match": "MPL/Philippines/Season_18/Regular_Season#12",
+   "game": 1,
+   "team": "Team Liquid PH",
+   "opponent": "Aurora PH",
+   "won": true,
+   "positions": {
+    "fighter": "Ruby",
+    "jungler": "Paquito",
+    "mage": "Eudora",
+    "marksman": "Clint",
+    "roam": "Marcel"
+   },
+   "confidence": 0.99
+  },
+  {
+   "date": "2026-08-29",
+   "match": "MPL/Philippines/Season_18/Regular_Season#12",
+   "game": 1,
+   "team": "Aurora PH",
+   "opponent": "Team Liquid PH",
+   "won": false,
+   "positions": {
+    "fighter": "Uranus",
+    "jungler": "Hirara",
+    "mage": "Zhuxin",
+    "marksman": "Brody",
+    "roam": "Minotaur"
+   },
+   "confidence": 1
+  },
+  {
+   "date": "2026-08-29",
+   "match": "MPL/Philippines/Season_18/Regular_Season#12",
+   "game": 2,
+   "team": "Team Liquid PH",
+   "opponent": "Aurora PH",
+   "won": true,
+   "positions": {
+    "fighter": "Atlas",
+    "jungler": "Suyou",
+    "mage": "Eudora",
+    "marksman": "Clint",
+    "roam": "Marcel"
+   },
+   "confidence": 0.66
+  },
+  {
+   "date": "2026-08-29",
+   "match": "MPL/Philippines/Season_18/Regular_Season#12",
+   "game": 2,
+   "team": "Aurora PH",
+   "opponent": "Team Liquid PH",
+   "won": false,
+   "positions": {
+    "fighter": "Esmeralda",
+    "jungler": "Hirara",
+    "mage": "Kimmy",
+    "marksman": "Moskov",
+    "roam": "Mathilda"
+   },
+   "confidence": 1
+  },
+  {
+   "date": "",
+   "match": "MPL/Philippines/Season_18/Regular_Season#13",
+   "game": 1,
+   "team": "Twisted Minds PH",
+   "opponent": "Team Falcons PH",
+   "won": false,
+   "positions": {
+    "fighter": "Phoveus",
+    "jungler": "Hirara",
+    "mage": "Selena",
+    "marksman": "Brody",
+    "roam": "Mathilda"
+   },
+   "confidence": 1
+  },
+  {
+   "date": "",
+   "match": "MPL/Philippines/Season_18/Regular_Season#13",
+   "game": 1,
+   "team": "Team Falcons PH",
+   "opponent": "Twisted Minds PH",
+   "won": true,
+   "positions": {
+    "fighter": "Ruby",
+    "jungler": "Paquito",
+    "mage": "Eudora",
+    "marksman": "Clint",
+    "roam": "Belerick"
+   },
+   "confidence": 0.99
+  },
+  {
+   "date": "",
+   "match": "MPL/Philippines/Season_18/Regular_Season#13",
+   "game": 2,
+   "team": "Twisted Minds PH",
+   "opponent": "Team Falcons PH",
+   "won": false,
+   "positions": {
+    "fighter": "Uranus",
+    "jungler": "Hirara",
+    "mage": "Selena",
+    "marksman": "Moskov",
+    "roam": "Baxia"
+   },
+   "confidence": 0.99
+  },
+  {
+   "date": "",
+   "match": "MPL/Philippines/Season_18/Regular_Season#13",
+   "game": 2,
+   "team": "Team Falcons PH",
+   "opponent": "Twisted Minds PH",
+   "won": true,
+   "positions": {
+    "fighter": "Alice",
+    "jungler": "Paquito",
+    "mage": "Rafaela",
+    "marksman": "Claude",
+    "roam": "Belerick"
+   },
+   "confidence": 0.95
+  },
+  {
+   "date": "",
+   "match": "MPL/Philippines/Season_18/Regular_Season#14",
+   "game": 1,
+   "team": "ONIC PH",
+   "opponent": "Omega Esports",
+   "won": true,
+   "positions": {
+    "fighter": "Atlas",
+    "jungler": "Suyou",
+    "mage": "Selena",
+    "marksman": "Moskov",
+    "roam": "Belerick"
+   },
+   "confidence": 0.59
+  },
+  {
+   "date": "",
+   "match": "MPL/Philippines/Season_18/Regular_Season#14",
+   "game": 1,
+   "team": "Omega Esports",
+   "opponent": "ONIC PH",
+   "won": false,
+   "positions": {
+    "fighter": "Gatotkaca",
+    "jungler": "Hirara",
+    "mage": "Kagura",
+    "marksman": "Chou",
+    "roam": "Angela"
+   },
+   "confidence": 0.49
+  },
+  {
+   "date": "",
+   "match": "MPL/Philippines/Season_18/Regular_Season#14",
+   "game": 2,
+   "team": "ONIC PH",
+   "opponent": "Omega Esports",
+   "won": false,
+   "positions": {
+    "roam": "Belerick",
+    "jungler": "Suyou",
+    "mage": "Selena",
+    "marksman": "Claude",
+    "fighter": "Khaleed"
+   },
+   "confidence": 0.63
+  },
+  {
+   "date": "",
+   "match": "MPL/Philippines/Season_18/Regular_Season#14",
+   "game": 2,
+   "team": "Omega Esports",
+   "opponent": "ONIC PH",
+   "won": true,
+   "positions": {
+    "fighter": "Gatotkaca",
+    "jungler": "Hirara",
+    "mage": "Novaria",
+    "marksman": "Hanabi",
+    "roam": "Mathilda"
+   },
+   "confidence": 0.96
+  },
+  {
+   "date": "",
+   "match": "MPL/Philippines/Season_18/Regular_Season#14",
+   "game": 3,
+   "team": "ONIC PH",
+   "opponent": "Omega Esports",
+   "won": true,
+   "positions": {
+    "fighter": "Atlas",
+    "jungler": "Paquito",
+    "mage": "Luo Yi",
+    "marksman": "Clint",
+    "roam": "Mathilda"
+   },
+   "confidence": 0.97
+  },
+  {
+   "date": "",
+   "match": "MPL/Philippines/Season_18/Regular_Season#14",
+   "game": 3,
+   "team": "Omega Esports",
+   "opponent": "ONIC PH",
+   "won": false,
+   "positions": {
+    "fighter": "Belerick",
+    "jungler": "Leomord",
+    "mage": "Kimmy",
+    "marksman": "Brody",
+    "roam": "Rafaela"
+   },
+   "confidence": 0.94
+  },
+  {
+   "date": "2026-09-04",
+   "match": "MPL/Philippines/Season_18/Regular_Season#15",
+   "game": 1,
+   "team": "Twisted Minds PH",
+   "opponent": "Aurora PH",
+   "won": false,
+   "positions": {
+    "fighter": "Alice",
+    "jungler": "Hirara",
+    "mage": "Novaria",
+    "marksman": "Yi Sun-shin",
+    "roam": "Belerick"
+   },
+   "confidence": 0.97
+  },
+  {
+   "date": "2026-09-04",
+   "match": "MPL/Philippines/Season_18/Regular_Season#15",
+   "game": 1,
+   "team": "Aurora PH",
+   "opponent": "Twisted Minds PH",
+   "won": true,
+   "positions": {
+    "fighter": "Uranus",
+    "jungler": "Paquito",
+    "mage": "Eudora",
+    "marksman": "Clint",
+    "roam": "Marcel"
+   },
+   "confidence": 0.99
+  },
+  {
+   "date": "2026-09-04",
+   "match": "MPL/Philippines/Season_18/Regular_Season#15",
+   "game": 2,
+   "team": "Twisted Minds PH",
+   "opponent": "Aurora PH",
+   "won": false,
+   "positions": {
+    "fighter": "Phoveus",
+    "jungler": "Hirara",
+    "mage": "Eudora",
+    "marksman": "Moskov",
+    "roam": "Mathilda"
+   },
+   "confidence": 1
+  },
+  {
+   "date": "2026-09-04",
+   "match": "MPL/Philippines/Season_18/Regular_Season#15",
+   "game": 2,
+   "team": "Aurora PH",
+   "opponent": "Twisted Minds PH",
+   "won": true,
+   "positions": {
+    "fighter": "Belerick",
+    "jungler": "Paquito",
+    "mage": "Pharsa",
+    "marksman": "Clint",
+    "roam": "Rafaela"
+   },
+   "confidence": 0.75
+  },
+  {
+   "date": "2026-09-04",
+   "match": "MPL/Philippines/Season_18/Regular_Season#16",
+   "game": 1,
+   "team": "TNC Pro Team",
+   "opponent": "ONIC PH",
+   "won": true,
+   "positions": {
+    "fighter": "Barats",
+    "jungler": "Suyou",
+    "mage": "Valentina",
+    "marksman": "Claude",
+    "roam": "Badang"
+   },
+   "confidence": 1
+  },
+  {
+   "date": "2026-09-04",
+   "match": "MPL/Philippines/Season_18/Regular_Season#16",
+   "game": 1,
+   "team": "ONIC PH",
+   "opponent": "TNC Pro Team",
+   "won": false,
+   "positions": {
+    "roam": "Hylos",
+    "jungler": "Hirara",
+    "mage": "Selena",
+    "marksman": "Clint",
+    "fighter": "Chou"
+   },
+   "confidence": 0.68
+  },
+  {
+   "date": "2026-09-04",
+   "match": "MPL/Philippines/Season_18/Regular_Season#16",
+   "game": 2,
+   "team": "TNC Pro Team",
+   "opponent": "ONIC PH",
+   "won": false,
+   "positions": {
+    "fighter": "Barats",
+    "jungler": "Yi Sun-shin",
+    "mage": "Zhuxin",
+    "marksman": "Claude",
+    "roam": "Lolita"
+   },
+   "confidence": 0.98
+  },
+  {
+   "date": "2026-09-04",
+   "match": "MPL/Philippines/Season_18/Regular_Season#16",
+   "game": 2,
+   "team": "ONIC PH",
+   "opponent": "TNC Pro Team",
+   "won": true,
+   "positions": {
+    "fighter": "Hylos",
+    "jungler": "Hirara",
+    "mage": "Selena",
+    "marksman": "Hanabi",
+    "roam": "Mathilda"
+   },
+   "confidence": 0.99
+  },
+  {
+   "date": "2026-09-04",
+   "match": "MPL/Philippines/Season_18/Regular_Season#16",
+   "game": 3,
+   "team": "TNC Pro Team",
+   "opponent": "ONIC PH",
+   "won": false,
+   "positions": {
+    "fighter": "Uranus",
+    "jungler": "Paquito",
+    "mage": "Xavier",
+    "marksman": "Brody",
+    "roam": "Marcel"
+   },
+   "confidence": 0.99
+  },
+  {
+   "date": "2026-09-04",
+   "match": "MPL/Philippines/Season_18/Regular_Season#16",
+   "game": 3,
+   "team": "ONIC PH",
+   "opponent": "TNC Pro Team",
+   "won": true,
+   "positions": {
+    "fighter": "Sora",
+    "jungler": "Hirara",
+    "mage": "Novaria",
+    "marksman": "Melissa",
+    "roam": "Gatotkaca"
+   },
+   "confidence": 1
+  },
+  {
+   "date": "",
+   "match": "MPL/Philippines/Season_18/Regular_Season#17",
+   "game": 1,
+   "team": "Omega Esports",
+   "opponent": "AP.Bren",
+   "won": false,
+   "positions": {
+    "fighter": "Ruby",
+    "jungler": "Suyou",
+    "mage": "Valentina",
+    "marksman": "Melissa",
+    "roam": "Atlas"
+   },
+   "confidence": 0.99
+  },
+  {
+   "date": "",
+   "match": "MPL/Philippines/Season_18/Regular_Season#17",
+   "game": 1,
+   "team": "AP.Bren",
+   "opponent": "Omega Esports",
+   "won": true,
+   "positions": {
+    "fighter": "Uranus",
+    "jungler": "Hirara",
+    "mage": "Rafaela",
+    "marksman": "Miya",
+    "roam": "Minotaur"
+   },
+   "confidence": 1
+  },
+  {
+   "date": "",
+   "match": "MPL/Philippines/Season_18/Regular_Season#17",
+   "game": 2,
+   "team": "Omega Esports",
+   "opponent": "AP.Bren",
+   "won": true,
+   "positions": {
+    "roam": "Belerick",
+    "jungler": "Paquito",
+    "mage": "Eudora",
+    "marksman": "Brody",
+    "fighter": "Kalea"
+   },
+   "confidence": 0.76
+  },
+  {
+   "date": "",
+   "match": "MPL/Philippines/Season_18/Regular_Season#17",
+   "game": 2,
+   "team": "AP.Bren",
+   "opponent": "Omega Esports",
+   "won": false,
+   "positions": {
+    "fighter": "Esmeralda",
+    "jungler": "Hirara",
+    "mage": "Angela",
+    "marksman": "Miya",
+    "roam": "Atlas"
+   },
+   "confidence": 0.95
+  },
+  {
+   "date": "",
+   "match": "MPL/Philippines/Season_18/Regular_Season#17",
+   "game": 3,
+   "team": "Omega Esports",
+   "opponent": "AP.Bren",
+   "won": true,
+   "positions": {
+    "fighter": "Ruby",
+    "jungler": "Paquito",
+    "mage": "Eudora",
+    "marksman": "Claude",
+    "roam": "Hylos"
+   },
+   "confidence": 0.99
+  },
+  {
+   "date": "",
+   "match": "MPL/Philippines/Season_18/Regular_Season#17",
+   "game": 3,
+   "team": "AP.Bren",
+   "opponent": "Omega Esports",
+   "won": false,
+   "positions": {
+    "fighter": "Yu Zhong",
+    "jungler": "Hirara",
+    "mage": "Rafaela",
+    "marksman": "Moskov",
+    "roam": "Minotaur"
+   },
+   "confidence": 1
+  },
+  {
+   "date": "2026-09-05",
+   "match": "MPL/Philippines/Season_18/Regular_Season#18",
+   "game": 1,
+   "team": "TNC Pro Team",
+   "opponent": "Team Liquid PH",
+   "won": false,
+   "positions": {
+    "fighter": "Belerick",
+    "jungler": "Hirara",
+    "mage": "Novaria",
+    "marksman": "Claude",
+    "roam": "Badang"
+   },
+   "confidence": 0.68
+  },
+  {
+   "date": "2026-09-05",
+   "match": "MPL/Philippines/Season_18/Regular_Season#18",
+   "game": 1,
+   "team": "Team Liquid PH",
+   "opponent": "TNC Pro Team",
+   "won": true,
+   "positions": {
+    "roam": "Carmilla",
+    "jungler": "Suyou",
+    "mage": "Eudora",
+    "marksman": "Clint",
+    "fighter": "Atlas"
+   },
+   "confidence": 0.55
+  },
+  {
+   "date": "2026-09-05",
+   "match": "MPL/Philippines/Season_18/Regular_Season#18",
+   "game": 2,
+   "team": "TNC Pro Team",
+   "opponent": "Team Liquid PH",
+   "won": false,
+   "positions": {
+    "fighter": "Atlas",
+    "jungler": "Hirara",
+    "mage": "Eudora",
+    "marksman": "Claude",
+    "roam": "Gatotkaca"
+   },
+   "confidence": 0.78
+  },
+  {
+   "date": "2026-09-05",
+   "match": "MPL/Philippines/Season_18/Regular_Season#18",
+   "game": 2,
+   "team": "Team Liquid PH",
+   "opponent": "TNC Pro Team",
+   "won": true,
+   "positions": {
+    "fighter": "Belerick",
+    "jungler": "Nolan",
+    "mage": "Valentina",
+    "marksman": "Melissa",
+    "roam": "Minotaur"
+   },
+   "confidence": 0.93
+  },
+  {
+   "date": "2026-09-05",
+   "match": "MPL/Philippines/Season_18/Regular_Season#19",
+   "game": 1,
+   "team": "ONIC PH",
+   "opponent": "Team Falcons PH",
+   "won": true,
+   "positions": {
+    "fighter": "Barats",
+    "jungler": "Nolan",
+    "mage": "Valentina",
+    "marksman": "Beatrix",
+    "roam": "Kaja"
+   },
+   "confidence": 1
+  },
+  {
+   "date": "2026-09-05",
+   "match": "MPL/Philippines/Season_18/Regular_Season#19",
+   "game": 1,
+   "team": "Team Falcons PH",
+   "opponent": "ONIC PH",
+   "won": false,
+   "positions": {
+    "fighter": "Uranus",
+    "jungler": "Paquito",
+    "mage": "Mathilda",
+    "marksman": "Obsidia",
+    "roam": "Gatotkaca"
+   },
+   "confidence": 0.99
+  },
+  {
+   "date": "2026-09-05",
+   "match": "MPL/Philippines/Season_18/Regular_Season#19",
+   "game": 2,
+   "team": "ONIC PH",
+   "opponent": "Team Falcons PH",
+   "won": false,
+   "positions": {
+    "fighter": "Barats",
+    "jungler": "Fanny",
+    "mage": "Lylia",
+    "marksman": "Melissa",
+    "roam": "Chou"
+   },
+   "confidence": 0.98
+  },
+  {
+   "date": "2026-09-05",
+   "match": "MPL/Philippines/Season_18/Regular_Season#19",
+   "game": 2,
+   "team": "Team Falcons PH",
+   "opponent": "ONIC PH",
+   "won": true,
+   "positions": {
+    "roam": "Carmilla",
+    "jungler": "Hirara",
+    "mage": "Selena",
+    "marksman": "Miya",
+    "fighter": "Khufra"
+   },
+   "confidence": 0.71
+  },
+  {
+   "date": "2026-09-05",
+   "match": "MPL/Philippines/Season_18/Regular_Season#19",
+   "game": 3,
+   "team": "ONIC PH",
+   "opponent": "Team Falcons PH",
+   "won": false,
+   "positions": {
+    "fighter": "Barats",
+    "jungler": "Suyou",
+    "mage": "Novaria",
+    "marksman": "Melissa",
+    "roam": "Marcel"
+   },
+   "confidence": 0.99
+  },
+  {
+   "date": "2026-09-05",
+   "match": "MPL/Philippines/Season_18/Regular_Season#19",
+   "game": 3,
+   "team": "Team Falcons PH",
+   "opponent": "ONIC PH",
+   "won": true,
+   "positions": {
+    "fighter": "Carmilla",
+    "jungler": "Hirara",
+    "mage": "Rafaela",
+    "marksman": "Miya",
+    "roam": "Gloo"
+   },
+   "confidence": 0.59
+  },
+  {
+   "date": "2026-09-06",
+   "match": "MPL/Philippines/Season_18/Regular_Season#20",
+   "game": 1,
+   "team": "Team Liquid PH",
+   "opponent": "Twisted Minds PH",
+   "won": true,
+   "positions": {
+    "fighter": "Atlas",
+    "jungler": "Suyou",
+    "mage": "Eudora",
+    "marksman": "Claude",
+    "roam": "Minotaur"
+   },
+   "confidence": 0.95
+  },
+  {
+   "date": "2026-09-06",
+   "match": "MPL/Philippines/Season_18/Regular_Season#20",
+   "game": 1,
+   "team": "Twisted Minds PH",
+   "opponent": "Team Liquid PH",
+   "won": false,
+   "positions": {
+    "fighter": "Belerick",
+    "jungler": "Hirara",
+    "mage": "Valentina",
+    "marksman": "Harith",
+    "roam": "Gatotkaca"
+   },
+   "confidence": 0.7
+  },
+  {
+   "date": "2026-09-06",
+   "match": "MPL/Philippines/Season_18/Regular_Season#20",
+   "game": 2,
+   "team": "Team Liquid PH",
+   "opponent": "Twisted Minds PH",
+   "won": true,
+   "positions": {
+    "fighter": "Barats",
+    "jungler": "Nolan",
+    "mage": "Selena",
+    "marksman": "Claude",
+    "roam": "Minotaur"
+   },
+   "confidence": 1
+  },
+  {
+   "date": "2026-09-06",
+   "match": "MPL/Philippines/Season_18/Regular_Season#20",
+   "game": 2,
+   "team": "Twisted Minds PH",
+   "opponent": "Team Liquid PH",
+   "won": false,
+   "positions": {
+    "fighter": "Esmeralda",
+    "jungler": "Hirara",
+    "mage": "Mathilda",
+    "marksman": "Miya",
+    "roam": "Gloo"
+   },
+   "confidence": 0.95
+  },
+  {
+   "date": "",
+   "match": "MPL/Philippines/Season_18/Regular_Season#21",
+   "game": 1,
+   "team": "Aurora PH",
+   "opponent": "Omega Esports",
+   "won": true,
+   "positions": {
+    "fighter": "Uranus",
+    "jungler": "Paquito",
+    "mage": "Pharsa",
+    "marksman": "Clint",
+    "roam": "Rafaela"
+   },
+   "confidence": 0.82
+  },
+  {
+   "date": "",
+   "match": "MPL/Philippines/Season_18/Regular_Season#21",
+   "game": 1,
+   "team": "Omega Esports",
+   "opponent": "Aurora PH",
+   "won": false,
+   "positions": {
+    "fighter": "Ruby",
+    "jungler": "Hirara",
+    "mage": "Novaria",
+    "marksman": "Claude",
+    "roam": "Belerick"
+   },
+   "confidence": 0.99
+  },
+  {
+   "date": "",
+   "match": "MPL/Philippines/Season_18/Regular_Season#21",
+   "game": 2,
+   "team": "Aurora PH",
+   "opponent": "Omega Esports",
+   "won": true,
+   "positions": {
+    "fighter": "Uranus",
+    "jungler": "Hirara",
+    "mage": "Eudora",
+    "marksman": "Clint",
+    "roam": "Marcel"
+   },
+   "confidence": 0.99
+  },
+  {
+   "date": "",
+   "match": "MPL/Philippines/Season_18/Regular_Season#21",
+   "game": 2,
+   "team": "Omega Esports",
+   "opponent": "Aurora PH",
+   "won": false,
+   "positions": {
+    "fighter": "Carmilla",
+    "jungler": "Paquito",
+    "mage": "Cecilion",
+    "marksman": "Brody",
+    "roam": "Hylos"
+   },
+   "confidence": 0.54
+  },
+  {
+   "date": "",
+   "match": "MPL/Philippines/Season_18/Regular_Season#22",
+   "game": 1,
+   "team": "Omega Esports",
+   "opponent": "Twisted Minds PH",
+   "won": true,
+   "positions": {
+    "fighter": "Carmilla",
+    "jungler": "Paquito",
+    "mage": "Cecilion",
+    "marksman": "Claude",
+    "roam": "Hylos"
+   },
+   "confidence": 0.54
+  },
+  {
+   "date": "",
+   "match": "MPL/Philippines/Season_18/Regular_Season#22",
+   "game": 1,
+   "team": "Twisted Minds PH",
+   "opponent": "Omega Esports",
+   "won": false,
+   "positions": {
+    "fighter": "Uranus",
+    "jungler": "Hirara",
+    "mage": "Eudora",
+    "marksman": "Karrie",
+    "roam": "Badang"
+   },
+   "confidence": 0.99
+  },
+  {
+   "date": "",
+   "match": "MPL/Philippines/Season_18/Regular_Season#22",
+   "game": 2,
+   "team": "Omega Esports",
+   "opponent": "Twisted Minds PH",
+   "won": false,
+   "positions": {
+    "fighter": "Barats",
+    "jungler": "Hirara",
+    "mage": "Selena",
+    "marksman": "Miya",
+    "roam": "Gloo"
+   },
+   "confidence": 0.99
+  },
+  {
+   "date": "",
+   "match": "MPL/Philippines/Season_18/Regular_Season#22",
+   "game": 2,
+   "team": "Twisted Minds PH",
+   "opponent": "Omega Esports",
+   "won": true,
+   "positions": {
+    "roam": "Gatotkaca",
+    "jungler": "Paquito",
+    "mage": "Eudora",
+    "marksman": "Moskov",
+    "fighter": "Marcel"
+   },
+   "confidence": 0.64
+  },
+  {
+   "date": "",
+   "match": "MPL/Philippines/Season_18/Regular_Season#22",
+   "game": 3,
+   "team": "Omega Esports",
+   "opponent": "Twisted Minds PH",
+   "won": true,
+   "positions": {
+    "fighter": "Ruby",
+    "jungler": "Hirara",
+    "mage": "Eudora",
+    "marksman": "Moskov",
+    "roam": "Hylos"
+   },
+   "confidence": 0.99
+  },
+  {
+   "date": "",
+   "match": "MPL/Philippines/Season_18/Regular_Season#22",
+   "game": 3,
+   "team": "Twisted Minds PH",
+   "opponent": "Omega Esports",
+   "won": false,
+   "positions": {
+    "roam": "Gatotkaca",
+    "jungler": "Fanny",
+    "mage": "Selena",
+    "marksman": "Miya",
+    "fighter": "Badang"
+   },
+   "confidence": 0.53
+  },
+  {
+   "date": "",
+   "match": "MPL/Philippines/Season_18/Regular_Season#23",
+   "game": 1,
+   "team": "Aurora PH",
+   "opponent": "AP.Bren",
+   "won": true,
+   "positions": {
+    "fighter": "Atlas",
+    "jungler": "Fanny",
+    "mage": "Selena",
+    "marksman": "Obsidia",
+    "roam": "Gatotkaca"
+   },
+   "confidence": 0.77
+  },
+  {
+   "date": "",
+   "match": "MPL/Philippines/Season_18/Regular_Season#23",
+   "game": 1,
+   "team": "AP.Bren",
+   "opponent": "Aurora PH",
+   "won": false,
+   "positions": {
+    "fighter": "Barats",
+    "jungler": "Suyou",
+    "mage": "Valentina",
+    "marksman": "Miya",
+    "roam": "Belerick"
+   },
+   "confidence": 0.99
+  },
+  {
+   "date": "",
+   "match": "MPL/Philippines/Season_18/Regular_Season#23",
+   "game": 2,
+   "team": "Aurora PH",
+   "opponent": "AP.Bren",
+   "won": true,
+   "positions": {
+    "fighter": "Uranus",
+    "jungler": "Nolan",
+    "mage": "Rafaela",
+    "marksman": "Clint",
+    "roam": "Gloo"
+   },
+   "confidence": 0.98
+  },
+  {
+   "date": "",
+   "match": "MPL/Philippines/Season_18/Regular_Season#23",
+   "game": 2,
+   "team": "AP.Bren",
+   "opponent": "Aurora PH",
+   "won": false,
+   "positions": {
+    "fighter": "Barats",
+    "jungler": "Hirara",
+    "mage": "Eudora",
+    "marksman": "Brody",
+    "roam": "Marcel"
+   },
+   "confidence": 1
+  },
+  {
+   "date": "",
+   "match": "MPL/Philippines/Season_18/Regular_Season#24",
+   "game": 1,
+   "team": "Twisted Minds PH",
+   "opponent": "TNC Pro Team",
+   "won": false,
+   "positions": {
+    "fighter": "Hilda",
+    "jungler": "Paquito",
+    "mage": "Eudora",
+    "marksman": "Karrie",
+    "roam": "Gatotkaca"
+   },
+   "confidence": 0.7
+  },
+  {
+   "date": "",
+   "match": "MPL/Philippines/Season_18/Regular_Season#24",
+   "game": 1,
+   "team": "TNC Pro Team",
+   "opponent": "Twisted Minds PH",
+   "won": true,
+   "positions": {
+    "fighter": "Belerick",
+    "jungler": "Hirara",
+    "mage": "Selena",
+    "marksman": "Clint",
+    "roam": "Gloo"
+   },
+   "confidence": 0.56
+  },
+  {
+   "date": "",
+   "match": "MPL/Philippines/Season_18/Regular_Season#24",
+   "game": 2,
+   "team": "Twisted Minds PH",
+   "opponent": "TNC Pro Team",
+   "won": false,
+   "positions": {
+    "fighter": "Belerick",
+    "jungler": "Hirara",
+    "mage": "Selena",
+    "marksman": "Beatrix",
+    "roam": "Hylos"
+   },
+   "confidence": 0.51
+  },
+  {
+   "date": "",
+   "match": "MPL/Philippines/Season_18/Regular_Season#24",
+   "game": 2,
+   "team": "TNC Pro Team",
+   "opponent": "Twisted Minds PH",
+   "won": true,
+   "positions": {
+    "fighter": "Barats",
+    "jungler": "Paquito",
+    "mage": "Valentina",
+    "marksman": "Hanabi",
+    "roam": "Mathilda"
+   },
+   "confidence": 0.99
+  },
+  {
+   "date": "",
+   "match": "MPL/Philippines/Season_18/Regular_Season#25",
+   "game": 1,
+   "team": "Team Falcons PH",
+   "opponent": "AP.Bren",
+   "won": true,
+   "positions": {
+    "fighter": "Esmeralda",
+    "jungler": "Hirara",
+    "mage": "Vexana",
+    "marksman": "Melissa",
+    "roam": "Minotaur"
+   },
+   "confidence": 1
+  },
+  {
+   "date": "",
+   "match": "MPL/Philippines/Season_18/Regular_Season#25",
+   "game": 1,
+   "team": "AP.Bren",
+   "opponent": "Team Falcons PH",
+   "won": false,
+   "positions": {
+    "fighter": "Freya",
+    "jungler": "Paquito",
+    "mage": "Eudora",
+    "marksman": "Clint",
+    "roam": "Gatotkaca"
+   },
+   "confidence": 0.96
+  },
+  {
+   "date": "",
+   "match": "MPL/Philippines/Season_18/Regular_Season#25",
+   "game": 2,
+   "team": "Team Falcons PH",
+   "opponent": "AP.Bren",
+   "won": true,
+   "positions": {
+    "fighter": "Freya",
+    "jungler": "Hirara",
+    "mage": "Vexana",
+    "marksman": "Brody",
+    "roam": "Carmilla"
+   },
+   "confidence": 0.98
+  },
+  {
+   "date": "",
+   "match": "MPL/Philippines/Season_18/Regular_Season#25",
+   "game": 2,
+   "team": "AP.Bren",
+   "opponent": "Team Falcons PH",
+   "won": false,
+   "positions": {
+    "fighter": "Uranus",
+    "jungler": "Paquito",
+    "mage": "Zhuxin",
+    "marksman": "Melissa",
+    "roam": "Minotaur"
+   },
+   "confidence": 1
+  },
+  {
+   "date": "",
+   "match": "MPL/Philippines/Season_18/Regular_Season#26",
+   "game": 1,
+   "team": "ONIC PH",
+   "opponent": "Team Liquid PH",
+   "won": false,
+   "positions": {
+    "fighter": "Belerick",
+    "jungler": "Hirara",
+    "mage": "Aurora",
+    "marksman": "Moskov",
+    "roam": "Kaja"
+   },
+   "confidence": 0.97
+  },
+  {
+   "date": "",
+   "match": "MPL/Philippines/Season_18/Regular_Season#26",
+   "game": 1,
+   "team": "Team Liquid PH",
+   "opponent": "ONIC PH",
+   "won": true,
+   "positions": {
+    "fighter": "Carmilla",
+    "jungler": "Paquito",
+    "mage": "Novaria",
+    "marksman": "Melissa",
+    "roam": "Minotaur"
+   },
+   "confidence": 0.93
+  },
+  {
+   "date": "",
+   "match": "MPL/Philippines/Season_18/Regular_Season#26",
+   "game": 2,
+   "team": "ONIC PH",
+   "opponent": "Team Liquid PH",
+   "won": false,
+   "positions": {
+    "fighter": "Belerick",
+    "jungler": "Hirara",
+    "mage": "Zetian",
+    "marksman": "Claude",
+    "roam": "Gloo"
+   },
+   "confidence": 0.56
+  },
+  {
+   "date": "",
+   "match": "MPL/Philippines/Season_18/Regular_Season#26",
+   "game": 2,
+   "team": "Team Liquid PH",
+   "opponent": "ONIC PH",
+   "won": true,
+   "positions": {
+    "fighter": "Uranus",
+    "jungler": "Paquito",
+    "mage": "Eudora",
+    "marksman": "Clint",
+    "roam": "Mathilda"
+   },
+   "confidence": 1
+  },
+  {
+   "date": "",
+   "match": "MPL/Philippines/Season_18/Regular_Season#27",
+   "game": 1,
+   "team": "TNC Pro Team",
+   "opponent": "Omega Esports",
+   "won": false,
+   "positions": {
+    "roam": "Minotaur",
+    "jungler": "Suyou",
+    "mage": "Zhuxin",
+    "marksman": "Melissa",
+    "fighter": "Chou"
+   },
+   "confidence": 0.95
+  },
+  {
+   "date": "",
+   "match": "MPL/Philippines/Season_18/Regular_Season#27",
+   "game": 1,
+   "team": "Omega Esports",
+   "opponent": "TNC Pro Team",
+   "won": true,
+   "positions": {
+    "fighter": "Phoveus",
+    "jungler": "Hirara",
+    "mage": "Angela",
+    "marksman": "Paquito",
+    "roam": "Gatotkaca"
+   },
+   "confidence": 0.99
+  },
+  {
+   "date": "",
+   "match": "MPL/Philippines/Season_18/Regular_Season#27",
+   "game": 2,
+   "team": "TNC Pro Team",
+   "opponent": "Omega Esports",
+   "won": true,
+   "positions": {
+    "roam": "Minotaur",
+    "jungler": "Hirara",
+    "mage": "Selena",
+    "marksman": "Obsidia",
+    "fighter": "Carmilla"
+   },
+   "confidence": 0.94
+  },
+  {
+   "date": "",
+   "match": "MPL/Philippines/Season_18/Regular_Season#27",
+   "game": 2,
+   "team": "Omega Esports",
+   "opponent": "TNC Pro Team",
+   "won": false,
+   "positions": {
+    "roam": "Gatotkaca",
+    "marksman": "Yi Sun-shin",
+    "mage": "Novaria",
+    "jungler": "Paquito",
+    "fighter": "Marcel"
+   },
+   "confidence": 0.39
+  },
+  {
+   "date": "",
+   "match": "MPL/Philippines/Season_18/Regular_Season#27",
+   "game": 3,
+   "team": "TNC Pro Team",
+   "opponent": "Omega Esports",
+   "won": false,
+   "positions": {
+    "roam": "Minotaur",
+    "jungler": "Hirara",
+    "mage": "Selena",
+    "marksman": "Obsidia",
+    "fighter": "Carmilla"
+   },
+   "confidence": 0.94
+  },
+  {
+   "date": "",
+   "match": "MPL/Philippines/Season_18/Regular_Season#27",
+   "game": 3,
+   "team": "Omega Esports",
+   "opponent": "TNC Pro Team",
+   "won": true,
+   "positions": {
+    "fighter": "Uranus",
+    "jungler": "Suyou",
+    "mage": "Eudora",
+    "marksman": "Miya",
+    "roam": "Belerick"
+   },
+   "confidence": 0.98
+  },
+  {
+   "date": "",
+   "match": "MPL/Philippines/Season_18/Regular_Season#28",
+   "game": 1,
+   "team": "Team Falcons PH",
+   "opponent": "Aurora PH",
+   "won": true,
+   "positions": {
+    "fighter": "Barats",
+    "jungler": "Hirara",
+    "mage": "Selena",
+    "marksman": "Miya",
+    "roam": "Carmilla"
+   },
+   "confidence": 0.99
+  },
+  {
+   "date": "",
+   "match": "MPL/Philippines/Season_18/Regular_Season#28",
+   "game": 1,
+   "team": "Aurora PH",
+   "opponent": "Team Falcons PH",
+   "won": false,
+   "positions": {
+    "fighter": "Esmeralda",
+    "jungler": "Paquito",
+    "mage": "Rafaela",
+    "marksman": "Obsidia",
+    "roam": "Belerick"
+   },
+   "confidence": 0.97
+  },
+  {
+   "date": "",
+   "match": "MPL/Philippines/Season_18/Regular_Season#28",
+   "game": 2,
+   "team": "Team Falcons PH",
+   "opponent": "Aurora PH",
+   "won": false,
+   "positions": {
+    "roam": "Minotaur",
+    "jungler": "Hirara",
+    "mage": "Eudora",
+    "marksman": "Miya",
+    "fighter": "Belerick"
+   },
+   "confidence": 0.93
+  },
+  {
+   "date": "",
+   "match": "MPL/Philippines/Season_18/Regular_Season#28",
+   "game": 2,
+   "team": "Aurora PH",
+   "opponent": "Team Falcons PH",
+   "won": true,
+   "positions": {
+    "fighter": "Atlas",
+    "jungler": "Nolan",
+    "mage": "Valentina",
+    "marksman": "Moskov",
+    "roam": "Gatotkaca"
+   },
+   "confidence": 0.78
+  },
+  {
+   "date": "",
+   "match": "MPL/Philippines/Season_18/Regular_Season#28",
+   "game": 3,
+   "team": "Team Falcons PH",
+   "opponent": "Aurora PH",
+   "won": true,
+   "positions": {
+    "roam": "Minotaur",
+    "jungler": "Nolan",
+    "mage": "Eudora",
+    "marksman": "Melissa",
+    "fighter": "Belerick"
+   },
+   "confidence": 0.93
+  },
+  {
+   "date": "",
+   "match": "MPL/Philippines/Season_18/Regular_Season#28",
+   "game": 3,
+   "team": "Aurora PH",
+   "opponent": "Team Falcons PH",
+   "won": false,
+   "positions": {
+    "fighter": "Sora",
+    "jungler": "Hirara",
+    "mage": "Rafaela",
+    "marksman": "Moskov",
+    "roam": "Gatotkaca"
+   },
+   "confidence": 0.99
+  },
+  {
+   "date": "",
+   "match": "MPL/Philippines/Season_18/Regular_Season#29",
+   "game": 1,
+   "team": "Team Liquid PH",
+   "opponent": "TNC Pro Team",
+   "won": true,
+   "positions": {
+    "fighter": "Uranus",
+    "jungler": "Paquito",
+    "mage": "Eudora",
+    "marksman": "Karrie",
+    "roam": "Mathilda"
+   },
+   "confidence": 1
+  },
+  {
+   "date": "",
+   "match": "MPL/Philippines/Season_18/Regular_Season#29",
+   "game": 1,
+   "team": "TNC Pro Team",
+   "opponent": "Team Liquid PH",
+   "won": false,
+   "positions": {
+    "fighter": "Carmilla",
+    "jungler": "Hirara",
+    "mage": "Valentina",
+    "marksman": "Obsidia",
+    "roam": "Minotaur"
+   },
+   "confidence": 0.94
+  },
+  {
+   "date": "",
+   "match": "MPL/Philippines/Season_18/Regular_Season#29",
+   "game": 2,
+   "team": "Team Liquid PH",
+   "opponent": "TNC Pro Team",
+   "won": false,
+   "positions": {
+    "fighter": "Barats",
+    "jungler": "Hirara",
+    "mage": "Novaria",
+    "marksman": "Clint",
+    "roam": "Carmilla"
+   },
+   "confidence": 0.99
+  },
+  {
+   "date": "",
+   "match": "MPL/Philippines/Season_18/Regular_Season#29",
+   "game": 2,
+   "team": "TNC Pro Team",
+   "opponent": "Team Liquid PH",
+   "won": true,
+   "positions": {
+    "fighter": "Belerick",
+    "jungler": "Fanny",
+    "mage": "Selena",
+    "marksman": "Bruno",
+    "roam": "Gatotkaca"
+   },
+   "confidence": 0.71
+  },
+  {
+   "date": "",
+   "match": "MPL/Philippines/Season_18/Regular_Season#29",
+   "game": 3,
+   "team": "Team Liquid PH",
+   "opponent": "TNC Pro Team",
+   "won": true,
+   "positions": {
+    "fighter": "Ruby",
+    "jungler": "Paquito",
+    "mage": "Eudora",
+    "marksman": "Clint",
+    "roam": "Minotaur"
+   },
+   "confidence": 0.99
+  },
+  {
+   "date": "",
+   "match": "MPL/Philippines/Season_18/Regular_Season#29",
+   "game": 3,
+   "team": "TNC Pro Team",
+   "opponent": "Team Liquid PH",
+   "won": false,
+   "positions": {
+    "roam": "Belerick",
+    "jungler": "Hirara",
+    "mage": "Cecilion",
+    "marksman": "Bruno",
+    "fighter": "Carmilla"
+   },
+   "confidence": 0.54
+  },
+  {
+   "date": "",
+   "match": "MPL/Philippines/Season_18/Regular_Season#30",
+   "game": 1,
+   "team": "Omega Esports",
+   "opponent": "Aurora PH",
+   "won": false,
+   "positions": {
+    "fighter": "Ruby",
+    "jungler": "Hirara",
+    "mage": "Eudora",
+    "marksman": "Bruno",
+    "roam": "Belerick"
+   },
+   "confidence": 0.99
+  },
+  {
+   "date": "",
+   "match": "MPL/Philippines/Season_18/Regular_Season#30",
+   "game": 1,
+   "team": "Aurora PH",
+   "opponent": "Omega Esports",
+   "won": true,
+   "positions": {
+    "fighter": "Barats",
+    "jungler": "Nolan",
+    "mage": "Rafaela",
+    "marksman": "Clint",
+    "roam": "Hylos"
+   },
+   "confidence": 0.99
+  },
+  {
+   "date": "",
+   "match": "MPL/Philippines/Season_18/Regular_Season#30",
+   "game": 2,
+   "team": "Omega Esports",
+   "opponent": "Aurora PH",
+   "won": false,
+   "positions": {
+    "fighter": "Ruby",
+    "jungler": "Hirara",
+    "mage": "Eudora",
+    "marksman": "Miya",
+    "roam": "Hylos"
+   },
+   "confidence": 0.99
+  },
+  {
+   "date": "",
+   "match": "MPL/Philippines/Season_18/Regular_Season#30",
+   "game": 2,
+   "team": "Aurora PH",
+   "opponent": "Omega Esports",
+   "won": true,
+   "positions": {
+    "fighter": "Uranus",
+    "jungler": "Nolan",
+    "mage": "Yve",
+    "marksman": "Clint",
+    "roam": "Gatotkaca"
+   },
+   "confidence": 0.99
+  },
+  {
+   "date": "",
+   "match": "MPL/Philippines/Season_18/Regular_Season#31",
+   "game": 1,
+   "team": "TNC Pro Team",
+   "opponent": "AP.Bren",
+   "won": false,
+   "positions": {
+    "fighter": "Freya",
+    "jungler": "Hirara",
+    "mage": "Vexana",
+    "marksman": "Bruno",
+    "roam": "Carmilla"
+   },
+   "confidence": 0.95
+  },
+  {
+   "date": "",
+   "match": "MPL/Philippines/Season_18/Regular_Season#31",
+   "game": 1,
+   "team": "AP.Bren",
+   "opponent": "TNC Pro Team",
+   "won": true,
+   "positions": {
+    "fighter": "Esmeralda",
+    "jungler": "Paquito",
+    "mage": "Eudora",
+    "marksman": "Obsidia",
+    "roam": "Minotaur"
+   },
+   "confidence": 1
+  },
+  {
+   "date": "",
+   "match": "MPL/Philippines/Season_18/Regular_Season#31",
+   "game": 2,
+   "team": "TNC Pro Team",
+   "opponent": "AP.Bren",
+   "won": false,
+   "positions": {
+    "fighter": "Uranus",
+    "jungler": "Nolan",
+    "mage": "Lylia",
+    "marksman": "Clint",
+    "roam": "Gatotkaca"
+   },
+   "confidence": 0.99
+  },
+  {
+   "date": "",
+   "match": "MPL/Philippines/Season_18/Regular_Season#31",
+   "game": 2,
+   "team": "AP.Bren",
+   "opponent": "TNC Pro Team",
+   "won": true,
+   "positions": {
+    "roam": "Hilda",
+    "jungler": "Hirara",
+    "mage": "Eudora",
+    "marksman": "Moskov",
+    "fighter": "Carmilla"
+   },
+   "confidence": 0.53
+  },
+  {
+   "date": "",
+   "match": "MPL/Philippines/Season_18/Regular_Season#32",
+   "game": 1,
+   "team": "Team Falcons PH",
+   "opponent": "Twisted Minds PH",
+   "won": true,
+   "positions": {
+    "roam": "Minotaur",
+    "jungler": "Hirara",
+    "mage": "Valentina",
+    "marksman": "Paquito",
+    "fighter": "Gloo"
+   },
+   "confidence": 0.91
+  },
+  {
+   "date": "",
+   "match": "MPL/Philippines/Season_18/Regular_Season#32",
+   "game": 1,
+   "team": "Twisted Minds PH",
+   "opponent": "Team Falcons PH",
+   "won": false,
+   "positions": {
+    "fighter": "Carmilla",
+    "jungler": "Nolan",
+    "mage": "Selena",
+    "marksman": "Brody",
+    "roam": "Gatotkaca"
+   },
+   "confidence": 0.74
+  },
+  {
+   "date": "",
+   "match": "MPL/Philippines/Season_18/Regular_Season#32",
+   "game": 2,
+   "team": "Team Falcons PH",
+   "opponent": "Twisted Minds PH",
+   "won": true,
+   "positions": {
+    "fighter": "Uranus",
+    "jungler": "Nolan",
+    "mage": "Selena",
+    "marksman": "Clint",
+    "roam": "Minotaur"
+   },
+   "confidence": 1
+  },
+  {
+   "date": "",
+   "match": "MPL/Philippines/Season_18/Regular_Season#32",
+   "game": 2,
+   "team": "Twisted Minds PH",
+   "opponent": "Team Falcons PH",
+   "won": false,
+   "positions": {
+    "roam": "Gatotkaca",
+    "jungler": "Hanzo",
+    "mage": "Cecilion",
+    "marksman": "Brody",
+    "fighter": "Carmilla"
+   },
+   "confidence": 0.74
+  },
+  {
+   "date": "",
+   "match": "MPL/Philippines/Season_18/Regular_Season#33",
+   "game": 1,
+   "team": "Aurora PH",
+   "opponent": "Team Liquid PH",
+   "won": true,
+   "positions": {
+    "roam": "Gatotkaca",
+    "jungler": "Yi Sun-shin",
+    "mage": "Kimmy",
+    "marksman": "Freya",
+    "fighter": "Gloo"
+   },
+   "confidence": 0.55
+  },
+  {
+   "date": "",
+   "match": "MPL/Philippines/Season_18/Regular_Season#33",
+   "game": 1,
+   "team": "Team Liquid PH",
+   "opponent": "Aurora PH",
+   "won": false,
+   "positions": {
+    "fighter": "Carmilla",
+    "jungler": "Hirara",
+    "mage": "Zhuxin",
+    "marksman": "Paquito",
+    "roam": "Angela"
+   },
+   "confidence": 0.9
+  },
+  {
+   "date": "",
+   "match": "MPL/Philippines/Season_18/Regular_Season#33",
+   "game": 2,
+   "team": "Aurora PH",
+   "opponent": "Team Liquid PH",
+   "won": true,
+   "positions": {
+    "fighter": "Esmeralda",
+    "jungler": "Nolan",
+    "mage": "Eudora",
+    "marksman": "Claude",
+    "roam": "Gloo"
+   },
+   "confidence": 0.99
+  },
+  {
+   "date": "",
+   "match": "MPL/Philippines/Season_18/Regular_Season#33",
+   "game": 2,
+   "team": "Team Liquid PH",
+   "opponent": "Aurora PH",
+   "won": false,
+   "positions": {
+    "fighter": "Carmilla",
+    "jungler": "Hirara",
+    "mage": "Selena",
+    "marksman": "Melissa",
+    "roam": "Mathilda"
+   },
+   "confidence": 0.99
+  },
+  {
+   "date": "",
+   "match": "MPL/Philippines/Season_18/Regular_Season#34",
+   "game": 1,
+   "team": "AP.Bren",
+   "opponent": "ONIC PH",
+   "won": false,
+   "positions": {
+    "fighter": "Barats",
+    "jungler": "Nolan",
+    "mage": "Novaria",
+    "marksman": "Obsidia",
+    "roam": "Minotaur"
+   },
+   "confidence": 1
+  },
+  {
+   "date": "",
+   "match": "MPL/Philippines/Season_18/Regular_Season#34",
+   "game": 1,
+   "team": "ONIC PH",
+   "opponent": "AP.Bren",
+   "won": true,
+   "positions": {
+    "fighter": "Uranus",
+    "jungler": "Hirara",
+    "mage": "Eudora",
+    "marksman": "Aulus",
+    "roam": "Gatotkaca"
+   },
+   "confidence": 0.99
+  },
+  {
+   "date": "",
+   "match": "MPL/Philippines/Season_18/Regular_Season#34",
+   "game": 2,
+   "team": "AP.Bren",
+   "opponent": "ONIC PH",
+   "won": true,
+   "positions": {
+    "fighter": "Barats",
+    "jungler": "Hirara",
+    "mage": "Valentina",
+    "marksman": "Claude",
+    "roam": "Gatotkaca"
+   },
+   "confidence": 1
+  },
+  {
+   "date": "",
+   "match": "MPL/Philippines/Season_18/Regular_Season#34",
+   "game": 2,
+   "team": "ONIC PH",
+   "opponent": "AP.Bren",
+   "won": false,
+   "positions": {
+    "roam": "Hylos",
+    "jungler": "Yi Sun-shin",
+    "mage": "Eudora",
+    "marksman": "Bruno",
+    "fighter": "Kalea"
+   },
+   "confidence": 0.75
+  },
+  {
+   "date": "",
+   "match": "MPL/Philippines/Season_18/Regular_Season#34",
+   "game": 3,
+   "team": "AP.Bren",
+   "opponent": "ONIC PH",
+   "won": false,
+   "positions": {
+    "fighter": "Uranus",
+    "jungler": "Suyou",
+    "mage": "Eudora",
+    "marksman": "Moskov",
+    "roam": "Carmilla"
+   },
+   "confidence": 0.98
+  },
+  {
+   "date": "",
+   "match": "MPL/Philippines/Season_18/Regular_Season#34",
+   "game": 3,
+   "team": "ONIC PH",
+   "opponent": "AP.Bren",
+   "won": true,
+   "positions": {
+    "fighter": "Dyrroth",
+    "jungler": "Hirara",
+    "mage": "Zhuxin",
+    "marksman": "Obsidia",
+    "roam": "Gatotkaca"
+   },
+   "confidence": 1
+  },
+  {
+   "date": "",
+   "match": "MPL/Philippines/Season_18/Regular_Season#35",
+   "game": 1,
+   "team": "Team Liquid PH",
+   "opponent": "Omega Esports",
+   "won": true,
+   "positions": {
+    "roam": "Minotaur",
+    "jungler": "Nolan",
+    "mage": "Zhuxin",
+    "marksman": "Karrie",
+    "fighter": "Marcel"
+   },
+   "confidence": 0.9
+  },
+  {
+   "date": "",
+   "match": "MPL/Philippines/Season_18/Regular_Season#35",
+   "game": 1,
+   "team": "Omega Esports",
+   "opponent": "Team Liquid PH",
+   "won": false,
+   "positions": {
+    "fighter": "Barats",
+    "jungler": "Hayabusa",
+    "mage": "Eudora",
+    "marksman": "Brody",
+    "roam": "Kalea"
+   },
+   "confidence": 0.97
+  },
+  {
+   "date": "",
+   "match": "MPL/Philippines/Season_18/Regular_Season#35",
+   "game": 2,
+   "team": "Team Liquid PH",
+   "opponent": "Omega Esports",
+   "won": true,
+   "positions": {
+    "fighter": "Esmeralda",
+    "jungler": "Nolan",
+    "mage": "Eudora",
+    "marksman": "Bruno",
+    "roam": "Minotaur"
+   },
+   "confidence": 1
+  },
+  {
+   "date": "",
+   "match": "MPL/Philippines/Season_18/Regular_Season#35",
+   "game": 2,
+   "team": "Omega Esports",
+   "opponent": "Team Liquid PH",
+   "won": false,
+   "positions": {
+    "fighter": "Barats",
+    "jungler": "Hirara",
+    "mage": "Novaria",
+    "marksman": "Brody",
+    "roam": "Marcel"
+   },
+   "confidence": 1
+  },
+  {
+   "date": "",
+   "match": "MPL/Philippines/Season_18/Regular_Season#36",
+   "game": 1,
+   "team": "Twisted Minds PH",
+   "opponent": "AP.Bren",
+   "won": false,
+   "positions": {
+    "fighter": "Hylos",
+    "jungler": "Aulus",
+    "mage": "Zhuxin",
+    "marksman": "Moskov",
+    "roam": "Minotaur"
+   },
+   "confidence": 0.87
+  },
+  {
+   "date": "",
+   "match": "MPL/Philippines/Season_18/Regular_Season#36",
+   "game": 1,
+   "team": "AP.Bren",
+   "opponent": "Twisted Minds PH",
+   "won": true,
+   "positions": {
+    "fighter": "Alice",
+    "jungler": "Fanny",
+    "mage": "Eudora",
+    "marksman": "Obsidia",
+    "roam": "Carmilla"
+   },
+   "confidence": 0.96
+  },
+  {
+   "date": "",
+   "match": "MPL/Philippines/Season_18/Regular_Season#36",
+   "game": 2,
+   "team": "Twisted Minds PH",
+   "opponent": "AP.Bren",
+   "won": false,
+   "positions": {
+    "fighter": "Hylos",
+    "jungler": "Hirara",
+    "mage": "Zhuxin",
+    "marksman": "Aulus",
+    "roam": "Angela"
+   },
+   "confidence": 0.89
+  },
+  {
+   "date": "",
+   "match": "MPL/Philippines/Season_18/Regular_Season#36",
+   "game": 2,
+   "team": "AP.Bren",
+   "opponent": "Twisted Minds PH",
+   "won": true,
+   "positions": {
+    "roam": "Hilda",
+    "jungler": "Suyou",
+    "mage": "Eudora",
+    "marksman": "Obsidia",
+    "fighter": "Kalea"
+   },
+   "confidence": 0.75
+  },
+  {
+   "date": "",
+   "match": "MPL/Philippines/Season_18/Regular_Season#37",
+   "game": 1,
+   "team": "Omega Esports",
+   "opponent": "ONIC PH",
+   "won": false,
+   "positions": {
+    "fighter": "Phoveus",
+    "jungler": "Fanny",
+    "mage": "Cecilion",
+    "marksman": "Obsidia",
+    "roam": "Carmilla"
+   },
+   "confidence": 0.99
+  },
+  {
+   "date": "",
+   "match": "MPL/Philippines/Season_18/Regular_Season#37",
+   "game": 1,
+   "team": "ONIC PH",
+   "opponent": "Omega Esports",
+   "won": true,
+   "positions": {
+    "roam": "Belerick",
+    "jungler": "Suyou",
+    "mage": "Valentina",
+    "marksman": "Moskov",
+    "fighter": "Masha"
+   },
+   "confidence": 0.94
+  },
+  {
+   "date": "",
+   "match": "MPL/Philippines/Season_18/Regular_Season#37",
+   "game": 2,
+   "team": "Omega Esports",
+   "opponent": "ONIC PH",
+   "won": false,
+   "positions": {
+    "fighter": "Uranus",
+    "jungler": "Nolan",
+    "mage": "Valentina",
+    "marksman": "Bruno",
+    "roam": "Minotaur"
+   },
+   "confidence": 1
+  },
+  {
+   "date": "",
+   "match": "MPL/Philippines/Season_18/Regular_Season#37",
+   "game": 2,
+   "team": "ONIC PH",
+   "opponent": "Omega Esports",
+   "won": true,
+   "positions": {
+    "fighter": "Dyrroth",
+    "jungler": "Hirara",
+    "mage": "Selena",
+    "marksman": "Claude",
+    "roam": "Carmilla"
+   },
+   "confidence": 0.99
+  },
+  {
+   "date": "",
+   "match": "MPL/Philippines/Season_18/Regular_Season#38",
+   "game": 1,
+   "team": "TNC Pro Team",
+   "opponent": "Twisted Minds PH",
+   "won": true,
+   "positions": {
+    "fighter": "Masha",
+    "jungler": "Nolan",
+    "mage": "Lylia",
+    "marksman": "Claude",
+    "roam": "Gloo"
+   },
+   "confidence": 0.96
+  },
+  {
+   "date": "",
+   "match": "MPL/Philippines/Season_18/Regular_Season#38",
+   "game": 1,
+   "team": "Twisted Minds PH",
+   "opponent": "TNC Pro Team",
+   "won": false,
+   "positions": {
+    "fighter": "Esmeralda",
+    "jungler": "Aulus",
+    "mage": "Zhuxin",
+    "marksman": "Moskov",
+    "roam": "Carmilla"
+   },
+   "confidence": 0.95
+  },
+  {
+   "date": "",
+   "match": "MPL/Philippines/Season_18/Regular_Season#38",
+   "game": 2,
+   "team": "TNC Pro Team",
+   "opponent": "Twisted Minds PH",
+   "won": true,
+   "positions": {
+    "jungler": "Freya",
+    "fighter": "Alice",
+    "mage": "Zhuxin",
+    "marksman": "Claude",
+    "roam": "Atlas"
+   },
+   "confidence": 0.81
+  },
+  {
+   "date": "",
+   "match": "MPL/Philippines/Season_18/Regular_Season#38",
+   "game": 2,
+   "team": "Twisted Minds PH",
+   "opponent": "TNC Pro Team",
+   "won": false,
+   "positions": {
+    "fighter": "Masha",
+    "jungler": "Nolan",
+    "mage": "Eudora",
+    "marksman": "Melissa",
+    "roam": "Belerick"
+   },
+   "confidence": 0.95
+  },
+  {
+   "date": "",
+   "match": "MPL/Philippines/Season_18/Regular_Season#39",
+   "game": 1,
+   "team": "AP.Bren",
+   "opponent": "Aurora PH",
+   "won": false,
+   "positions": {
+    "fighter": "Alice",
+    "jungler": "Hirara",
+    "mage": "Eudora",
+    "marksman": "Obsidia",
+    "roam": "Gatotkaca"
+   },
+   "confidence": 0.99
+  },
+  {
+   "date": "",
+   "match": "MPL/Philippines/Season_18/Regular_Season#39",
+   "game": 1,
+   "team": "Aurora PH",
+   "opponent": "AP.Bren",
+   "won": true,
+   "positions": {
+    "roam": "Minotaur",
+    "jungler": "Nolan",
+    "mage": "Rafaela",
+    "marksman": "Clint",
+    "fighter": "Masha"
+   },
+   "confidence": 0.99
+  },
+  {
+   "date": "",
+   "match": "MPL/Philippines/Season_18/Regular_Season#39",
+   "game": 2,
+   "team": "AP.Bren",
+   "opponent": "Aurora PH",
+   "won": false,
+   "positions": {
+    "fighter": "Barats",
+    "jungler": "Hirara",
+    "mage": "Eudora",
+    "marksman": "Claude",
+    "roam": "Gatotkaca"
+   },
+   "confidence": 1
+  },
+  {
+   "date": "",
+   "match": "MPL/Philippines/Season_18/Regular_Season#39",
+   "game": 2,
+   "team": "Aurora PH",
+   "opponent": "AP.Bren",
+   "won": true,
+   "positions": {
+    "roam": "Minotaur",
+    "jungler": "Nolan",
+    "mage": "Zhuxin",
+    "marksman": "Obsidia",
+    "fighter": "Gloo"
+   },
+   "confidence": 0.91
+  },
+  {
+   "date": "",
+   "match": "MPL/Philippines/Season_18/Regular_Season#40",
+   "game": 1,
+   "team": "Team Falcons PH",
+   "opponent": "ONIC PH",
+   "won": true,
+   "positions": {
+    "roam": "Hylos",
+    "jungler": "Nolan",
+    "mage": "Valentina",
+    "marksman": "Obsidia",
+    "fighter": "Masha"
+   },
+   "confidence": 0.95
+  },
+  {
+   "date": "",
+   "match": "MPL/Philippines/Season_18/Regular_Season#40",
+   "game": 1,
+   "team": "ONIC PH",
+   "opponent": "Team Falcons PH",
+   "won": false,
+   "positions": {
+    "roam": "Minotaur",
+    "jungler": "Paquito",
+    "mage": "Luo Yi",
+    "marksman": "Aulus",
+    "fighter": "Marcel"
+   },
+   "confidence": 0.85
+  },
+  {
+   "date": "",
+   "match": "MPL/Philippines/Season_18/Regular_Season#40",
+   "game": 2,
+   "team": "Team Falcons PH",
+   "opponent": "ONIC PH",
+   "won": false,
+   "positions": {
+    "marksman": "Cici",
+    "fighter": "Guinevere",
+    "mage": "Eudora",
+    "jungler": "Paquito",
+    "roam": "Minotaur"
+   },
+   "confidence": 0.94
+  },
+  {
+   "date": "",
+   "match": "MPL/Philippines/Season_18/Regular_Season#40",
+   "game": 2,
+   "team": "ONIC PH",
+   "opponent": "Team Falcons PH",
+   "won": true,
+   "positions": {
+    "fighter": "Barats",
+    "jungler": "Hirara",
+    "mage": "Valentina",
+    "marksman": "Claude",
+    "roam": "Belerick"
+   },
+   "confidence": 0.99
+  },
+  {
+   "date": "",
+   "match": "MPL/Philippines/Season_18/Regular_Season#40",
+   "game": 3,
+   "team": "Team Falcons PH",
+   "opponent": "ONIC PH",
+   "won": true,
+   "positions": {
+    "roam": "Minotaur",
+    "jungler": "Harley",
+    "mage": "Valentina",
+    "marksman": "Obsidia",
+    "fighter": "Marcel"
+   },
+   "confidence": 0.9
+  },
+  {
+   "date": "",
+   "match": "MPL/Philippines/Season_18/Regular_Season#40",
+   "game": 3,
+   "team": "ONIC PH",
+   "opponent": "Team Falcons PH",
+   "won": false,
+   "positions": {
+    "roam": "Belerick",
+    "jungler": "Paquito",
+    "mage": "Selena",
+    "marksman": "Clint",
+    "fighter": "Carmilla"
+   },
+   "confidence": 0.54
+  },
+  {
+   "date": "",
+   "match": "MPL/Philippines/Season_18/Regular_Season#41",
+   "game": 1,
+   "team": "Omega Esports",
+   "opponent": "TNC Pro Team",
+   "won": true,
+   "positions": {
+    "roam": "Belerick",
+    "jungler": "Yi Sun-shin",
+    "mage": "Yve",
+    "marksman": "Aulus",
+    "fighter": "Masha"
+   },
+   "confidence": 0.87
+  },
+  {
+   "date": "",
+   "match": "MPL/Philippines/Season_18/Regular_Season#41",
+   "game": 1,
+   "team": "TNC Pro Team",
+   "opponent": "Omega Esports",
+   "won": false,
+   "positions": {
+    "jungler": "Lukas",
+    "fighter": "Alice",
+    "mage": "Zhuxin",
+    "marksman": "Claude",
+    "roam": "Carmilla"
+   },
+   "confidence": 0.9
+  },
+  {
+   "date": "",
+   "match": "MPL/Philippines/Season_18/Regular_Season#41",
+   "game": 2,
+   "team": "Omega Esports",
+   "opponent": "TNC Pro Team",
+   "won": true,
+   "positions": {
+    "fighter": "Barats",
+    "jungler": "Harley",
+    "mage": "Valentina",
+    "marksman": "Aulus",
+    "roam": "Minotaur"
+   },
+   "confidence": 1
+  },
+  {
+   "date": "",
+   "match": "MPL/Philippines/Season_18/Regular_Season#41",
+   "game": 2,
+   "team": "TNC Pro Team",
+   "opponent": "Omega Esports",
+   "won": false,
+   "positions": {
+    "fighter": "Hylos",
+    "jungler": "Nolan",
+    "mage": "Eudora",
+    "marksman": "Obsidia",
+    "roam": "Gloo"
+   },
+   "confidence": 0.55
+  },
+  {
+   "date": "",
+   "match": "MPL/Philippines/Season_18/Regular_Season#42",
+   "game": 1,
+   "team": "Aurora PH",
+   "opponent": "Team Falcons PH",
+   "won": false,
+   "positions": {
+    "fighter": "Uranus",
+    "jungler": "Hirara",
+    "mage": "Pharsa",
+    "marksman": "Paquito",
+    "roam": "Rafaela"
+   },
+   "confidence": 0.82
+  },
+  {
+   "date": "",
+   "match": "MPL/Philippines/Season_18/Regular_Season#42",
+   "game": 1,
+   "team": "Team Falcons PH",
+   "opponent": "Aurora PH",
+   "won": true,
+   "positions": {
+    "fighter": "Barats",
+    "jungler": "Nolan",
+    "mage": "Kimmy",
+    "marksman": "Aulus",
+    "roam": "Estes"
+   },
+   "confidence": 1
+  },
+  {
+   "date": "",
+   "match": "MPL/Philippines/Season_18/Regular_Season#42",
+   "game": 2,
+   "team": "Aurora PH",
+   "opponent": "Team Falcons PH",
+   "won": false,
+   "positions": {
+    "fighter": "Alice",
+    "jungler": "Hirara",
+    "mage": "Cecilion",
+    "marksman": "Obsidia",
+    "roam": "Carmilla"
+   },
+   "confidence": 0.97
+  },
+  {
+   "date": "",
+   "match": "MPL/Philippines/Season_18/Regular_Season#42",
+   "game": 2,
+   "team": "Team Falcons PH",
+   "opponent": "Aurora PH",
+   "won": true,
+   "positions": {
+    "fighter": "Atlas",
+    "jungler": "Nolan",
+    "mage": "Eudora",
+    "marksman": "Aulus",
+    "roam": "Marcel"
+   },
+   "confidence": 0.66
+  },
+  {
+   "date": "",
+   "match": "MPL/Philippines/Season_18/Regular_Season#43",
+   "game": 1,
+   "team": "ONIC PH",
+   "opponent": "Twisted Minds PH",
+   "won": true,
+   "positions": {
+    "fighter": "Belerick",
+    "jungler": "Hirara",
+    "mage": "Valentina",
+    "marksman": "Brody",
+    "roam": "Marcel"
+   },
+   "confidence": 0.58
+  },
+  {
+   "date": "",
+   "match": "MPL/Philippines/Season_18/Regular_Season#43",
+   "game": 1,
+   "team": "Twisted Minds PH",
+   "opponent": "ONIC PH",
+   "won": false,
+   "positions": {
+    "roam": "Minotaur",
+    "jungler": "Nolan",
+    "mage": "Selena",
+    "marksman": "Miya",
+    "fighter": "Gatotkaca"
+   },
+   "confidence": 0.84
+  },
+  {
+   "date": "",
+   "match": "MPL/Philippines/Season_18/Regular_Season#43",
+   "game": 2,
+   "team": "ONIC PH",
+   "opponent": "Twisted Minds PH",
+   "won": true,
+   "positions": {
+    "fighter": "Carmilla",
+    "jungler": "Hayabusa",
+    "mage": "Selena",
+    "marksman": "Obsidia",
+    "roam": "Gatotkaca"
+   },
+   "confidence": 0.73
+  },
+  {
+   "date": "",
+   "match": "MPL/Philippines/Season_18/Regular_Season#43",
+   "game": 2,
+   "team": "Twisted Minds PH",
+   "opponent": "ONIC PH",
+   "won": false,
+   "positions": {
+    "fighter": "Uranus",
+    "jungler": "Hirara",
+    "mage": "Valentina",
+    "marksman": "Brody",
+    "roam": "Minotaur"
+   },
+   "confidence": 1
+  },
+  {
+   "date": "",
+   "match": "MPL/Philippines/Season_18/Regular_Season#44",
+   "game": 1,
+   "team": "Aurora PH",
+   "opponent": "TNC Pro Team",
+   "won": false,
+   "positions": {
+    "fighter": "Atlas",
+    "jungler": "Nolan",
+    "mage": "Eudora",
+    "marksman": "Miya",
+    "roam": "Gatotkaca"
+   },
+   "confidence": 0.78
+  },
+  {
+   "date": "",
+   "match": "MPL/Philippines/Season_18/Regular_Season#44",
+   "game": 1,
+   "team": "TNC Pro Team",
+   "opponent": "Aurora PH",
+   "won": true,
+   "positions": {
+    "fighter": "Belerick",
+    "jungler": "Hirara",
+    "mage": "Valentina",
+    "marksman": "Melissa",
+    "roam": "Marcel"
+   },
+   "confidence": 0.58
+  },
+  {
+   "date": "",
+   "match": "MPL/Philippines/Season_18/Regular_Season#44",
+   "game": 2,
+   "team": "Aurora PH",
+   "opponent": "TNC Pro Team",
+   "won": true,
+   "positions": {
+    "fighter": "Uranus",
+    "jungler": "Paquito",
+    "mage": "Zhuxin",
+    "marksman": "Obsidia",
+    "roam": "Khaleed"
+   },
+   "confidence": 0.97
+  },
+  {
+   "date": "",
+   "match": "MPL/Philippines/Season_18/Regular_Season#44",
+   "game": 2,
+   "team": "TNC Pro Team",
+   "opponent": "Aurora PH",
+   "won": false,
+   "positions": {
+    "fighter": "Belerick",
+    "jungler": "Hirara",
+    "mage": "Valentina",
+    "marksman": "Brody",
+    "roam": "Gloo"
+   },
+   "confidence": 0.56
+  },
+  {
+   "date": "",
+   "match": "MPL/Philippines/Season_18/Regular_Season#44",
+   "game": 3,
+   "team": "Aurora PH",
+   "opponent": "TNC Pro Team",
+   "won": true,
+   "positions": {
+    "fighter": "Uranus",
+    "jungler": "Paquito",
+    "mage": "Zhuxin",
+    "marksman": "Miya",
+    "roam": "Atlas"
+   },
+   "confidence": 0.97
+  },
+  {
+   "date": "",
+   "match": "MPL/Philippines/Season_18/Regular_Season#44",
+   "game": 3,
+   "team": "TNC Pro Team",
+   "opponent": "Aurora PH",
+   "won": false,
+   "positions": {
+    "fighter": "Carmilla",
+    "jungler": "Hirara",
+    "mage": "Valentina",
+    "marksman": "Obsidia",
+    "roam": "Gloo"
+   },
+   "confidence": 0.59
+  },
+  {
+   "date": "",
+   "match": "MPL/Philippines/Season_18/Regular_Season#45",
+   "game": 1,
+   "team": "Twisted Minds PH",
+   "opponent": "Omega Esports",
+   "won": false,
+   "positions": {
+    "marksman": "Cici",
+    "fighter": "Hayabusa",
+    "mage": "Valentina",
+    "jungler": "Paquito",
+    "roam": "Minotaur"
+   },
+   "confidence": 0.55
+  },
+  {
+   "date": "",
+   "match": "MPL/Philippines/Season_18/Regular_Season#45",
+   "game": 1,
+   "team": "Omega Esports",
+   "opponent": "Twisted Minds PH",
+   "won": true,
+   "positions": {
+    "fighter": "Carmilla",
+    "jungler": "Nolan",
+    "mage": "Zhuxin",
+    "marksman": "Obsidia",
+    "roam": "Gloo"
+   },
+   "confidence": 0.59
+  },
+  {
+   "date": "",
+   "match": "MPL/Philippines/Season_18/Regular_Season#45",
+   "game": 2,
+   "team": "Twisted Minds PH",
+   "opponent": "Omega Esports",
+   "won": false,
+   "positions": {
+    "marksman": "Cici",
+    "fighter": "Saber",
+    "mage": "Eudora",
+    "jungler": "Paquito",
+    "roam": "Minotaur"
+   },
+   "confidence": 0.79
+  },
+  {
+   "date": "",
+   "match": "MPL/Philippines/Season_18/Regular_Season#45",
+   "game": 2,
+   "team": "Omega Esports",
+   "opponent": "Twisted Minds PH",
+   "won": true,
+   "positions": {
+    "fighter": "Barats",
+    "jungler": "Hirara",
+    "mage": "Vexana",
+    "marksman": "Aulus",
+    "roam": "Belerick"
+   },
+   "confidence": 0.99
+  },
+  {
+   "date": "",
+   "match": "MPL/Philippines/Season_18/Regular_Season#46",
+   "game": 1,
+   "team": "AP.Bren",
+   "opponent": "Team Falcons PH",
+   "won": true,
+   "positions": {
+    "fighter": "Alice",
+    "jungler": "Hirara",
+    "mage": "Zhuxin",
+    "marksman": "Claude",
+    "roam": "Carmilla"
+   },
+   "confidence": 0.97
+  },
+  {
+   "date": "",
+   "match": "MPL/Philippines/Season_18/Regular_Season#46",
+   "game": 1,
+   "team": "Team Falcons PH",
+   "opponent": "AP.Bren",
+   "won": false,
+   "positions": {
+    "roam": "Minotaur",
+    "jungler": "Nolan",
+    "mage": "Vexana",
+    "marksman": "Paquito",
+    "fighter": "Belerick"
+   },
+   "confidence": 0.92
+  },
+  {
+   "date": "",
+   "match": "MPL/Philippines/Season_18/Regular_Season#46",
+   "game": 2,
+   "team": "AP.Bren",
+   "opponent": "Team Falcons PH",
+   "won": false,
+   "positions": {
+    "fighter": "Barats",
+    "jungler": "Paquito",
+    "mage": "Valentina",
+    "marksman": "Miya",
+    "roam": "Minotaur"
+   },
+   "confidence": 1
+  },
+  {
+   "date": "",
+   "match": "MPL/Philippines/Season_18/Regular_Season#46",
+   "game": 2,
+   "team": "Team Falcons PH",
+   "opponent": "AP.Bren",
+   "won": true,
+   "positions": {
+    "roam": "Hylos",
+    "jungler": "Hirara",
+    "mage": "Eudora",
+    "marksman": "Obsidia",
+    "fighter": "Khufra"
+   },
+   "confidence": 0.75
+  },
+  {
+   "date": "",
+   "match": "MPL/Philippines/Season_18/Regular_Season#46",
+   "game": 3,
+   "team": "AP.Bren",
+   "opponent": "Team Falcons PH",
+   "won": false,
+   "positions": {
+    "fighter": "Phoveus",
+    "jungler": "Harley",
+    "mage": "Valentina",
+    "marksman": "Obsidia",
+    "roam": "Carmilla"
+   },
+   "confidence": 0.99
+  },
+  {
+   "date": "",
+   "match": "MPL/Philippines/Season_18/Regular_Season#46",
+   "game": 3,
+   "team": "Team Falcons PH",
+   "opponent": "AP.Bren",
+   "won": true,
+   "positions": {
+    "fighter": "Hylos",
+    "jungler": "Nolan",
+    "mage": "Eudora",
+    "marksman": "Chou",
+    "roam": "Marcel"
+   },
+   "confidence": 0.57
+  },
+  {
+   "date": "",
+   "match": "MPL/Philippines/Season_18/Regular_Season#47",
+   "game": 1,
+   "team": "ONIC PH",
+   "opponent": "Aurora PH",
+   "won": true,
+   "positions": {
+    "fighter": "Carmilla",
+    "jungler": "Fanny",
+    "mage": "Kimmy",
+    "marksman": "Freya",
+    "roam": "Gatotkaca"
+   },
+   "confidence": 0.73
+  },
+  {
+   "date": "",
+   "match": "MPL/Philippines/Season_18/Regular_Season#47",
+   "game": 1,
+   "team": "Aurora PH",
+   "opponent": "ONIC PH",
+   "won": false,
+   "positions": {
+    "fighter": "Barats",
+    "jungler": "Harley",
+    "mage": "Zhuxin",
+    "marksman": "Obsidia",
+    "roam": "Badang"
+   },
+   "confidence": 1
+  },
+  {
+   "date": "",
+   "match": "MPL/Philippines/Season_18/Regular_Season#47",
+   "game": 2,
+   "team": "ONIC PH",
+   "opponent": "Aurora PH",
+   "won": false,
+   "positions": {
+    "fighter": "Atlas",
+    "jungler": "Nolan",
+    "mage": "Valentina",
+    "marksman": "Moskov",
+    "roam": "Hylos"
+   },
+   "confidence": 0.6
+  },
+  {
+   "date": "",
+   "match": "MPL/Philippines/Season_18/Regular_Season#47",
+   "game": 2,
+   "team": "Aurora PH",
+   "opponent": "ONIC PH",
+   "won": true,
+   "positions": {
+    "roam": "Gatotkaca",
+    "jungler": "Fanny",
+    "mage": "Zhuxin",
+    "marksman": "Obsidia",
+    "fighter": "Belerick"
+   },
+   "confidence": 0.71
+  },
+  {
+   "date": "",
+   "match": "MPL/Philippines/Season_18/Regular_Season#47",
+   "game": 3,
+   "team": "ONIC PH",
+   "opponent": "Aurora PH",
+   "won": false,
+   "positions": {
+    "roam": "Gatotkaca",
+    "jungler": "Hayabusa",
+    "mage": "Valentina",
+    "marksman": "Aulus",
+    "fighter": "Marcel"
+   },
+   "confidence": 0.63
+  },
+  {
+   "date": "",
+   "match": "MPL/Philippines/Season_18/Regular_Season#47",
+   "game": 3,
+   "team": "Aurora PH",
+   "opponent": "ONIC PH",
+   "won": true,
+   "positions": {
+    "fighter": "Carmilla",
+    "jungler": "Nolan",
+    "mage": "Lylia",
+    "marksman": "Obsidia",
+    "roam": "Gloo"
+   },
+   "confidence": 0.59
+  },
+  {
+   "date": "",
+   "match": "MPL/Philippines/Season_18/Regular_Season#48",
+   "game": 1,
+   "team": "Team Liquid PH",
+   "opponent": "AP.Bren",
+   "won": true,
+   "positions": {
+    "jungler": "Lukas",
+    "marksman": "Aulus",
+    "mage": "Kimmy",
+    "fighter": "Freya",
+    "roam": "Gloo"
+   },
+   "confidence": 0.58
+  },
+  {
+   "date": "",
+   "match": "MPL/Philippines/Season_18/Regular_Season#48",
+   "game": 1,
+   "team": "AP.Bren",
+   "opponent": "Team Liquid PH",
+   "won": false,
+   "positions": {
+    "fighter": "Esmeralda",
+    "jungler": "Hirara",
+    "mage": "Eudora",
+    "marksman": "Claude",
+    "roam": "Minotaur"
+   },
+   "confidence": 1
+  },
+  {
+   "date": "",
+   "match": "MPL/Philippines/Season_18/Regular_Season#48",
+   "game": 2,
+   "team": "Team Liquid PH",
+   "opponent": "AP.Bren",
+   "won": true,
+   "positions": {
+    "fighter": "Arlott",
+    "jungler": "Hirara",
+    "mage": "Yve",
+    "marksman": "Freya",
+    "roam": "Minotaur"
+   },
+   "confidence": 0.99
+  },
+  {
+   "date": "",
+   "match": "MPL/Philippines/Season_18/Regular_Season#48",
+   "game": 2,
+   "team": "AP.Bren",
+   "opponent": "Team Liquid PH",
+   "won": false,
+   "positions": {
+    "fighter": "Uranus",
+    "jungler": "Nolan",
+    "mage": "Zhuxin",
+    "marksman": "Brody",
+    "roam": "Gatotkaca"
+   },
+   "confidence": 0.99
+  },
+  {
+   "date": "",
+   "match": "MPL/Philippines/Season_18/Regular_Season#49",
+   "game": 1,
+   "team": "Team Falcons PH",
+   "opponent": "Omega Esports",
+   "won": true,
+   "positions": {
+    "fighter": "Sora",
+    "jungler": "Nolan",
+    "mage": "Valentina",
+    "marksman": "Paquito",
+    "roam": "Carmilla"
+   },
+   "confidence": 0.98
+  },
+  {
+   "date": "",
+   "match": "MPL/Philippines/Season_18/Regular_Season#49",
+   "game": 1,
+   "team": "Omega Esports",
+   "opponent": "Team Falcons PH",
+   "won": false,
+   "positions": {
+    "jungler": "Phoveus",
+    "fighter": "Alice",
+    "mage": "Kimmy",
+    "marksman": "Aulus",
+    "roam": "Minotaur"
+   },
+   "confidence": 0.63
+  },
+  {
+   "date": "",
+   "match": "MPL/Philippines/Season_18/Regular_Season#49",
+   "game": 2,
+   "team": "Team Falcons PH",
+   "opponent": "Omega Esports",
+   "won": true,
+   "positions": {
+    "fighter": "Barats",
+    "jungler": "Nolan",
+    "mage": "Eudora",
+    "marksman": "Chou",
+    "roam": "Marcel"
+   },
+   "confidence": 0.99
+  },
+  {
+   "date": "",
+   "match": "MPL/Philippines/Season_18/Regular_Season#49",
+   "game": 2,
+   "team": "Omega Esports",
+   "opponent": "Team Falcons PH",
+   "won": false,
+   "positions": {
+    "marksman": "Aulus",
+    "fighter": "Yi Sun-shin",
+    "mage": "Selena",
+    "jungler": "Paquito",
+    "roam": "Belerick"
+   },
+   "confidence": 0.33
+  },
+  {
+   "date": "",
+   "match": "MPL/Philippines/Season_18/Regular_Season#50",
+   "game": 1,
+   "team": "Twisted Minds PH",
+   "opponent": "Team Liquid PH",
+   "won": false,
+   "positions": {
+    "roam": "Minotaur",
+    "marksman": "Aulus",
+    "mage": "Eudora",
+    "jungler": "Sora",
+    "fighter": "Marcel"
+   },
+   "confidence": 0.83
+  },
+  {
+   "date": "",
+   "match": "MPL/Philippines/Season_18/Regular_Season#50",
+   "game": 1,
+   "team": "Team Liquid PH",
+   "opponent": "Twisted Minds PH",
+   "won": true,
+   "positions": {
+    "fighter": "Lukas",
+    "jungler": "Nolan",
+    "mage": "Zhuxin",
+    "marksman": "Cici",
+    "roam": "Hilda"
+   },
+   "confidence": 0.98
+  },
+  {
+   "date": "",
+   "match": "MPL/Philippines/Season_18/Regular_Season#50",
+   "game": 2,
+   "team": "Twisted Minds PH",
+   "opponent": "Team Liquid PH",
+   "won": false,
+   "positions": {
+    "fighter": "Sora",
+    "jungler": "Hirara",
+    "mage": "Vexana",
+    "marksman": "Aulus",
+    "roam": "Marcel"
+   },
+   "confidence": 0.99
+  },
+  {
+   "date": "",
+   "match": "MPL/Philippines/Season_18/Regular_Season#50",
+   "game": 2,
+   "team": "Team Liquid PH",
+   "opponent": "Twisted Minds PH",
+   "won": true,
+   "positions": {
+    "fighter": "Esmeralda",
+    "jungler": "Nolan",
+    "mage": "Kimmy",
+    "marksman": "Freya",
+    "roam": "Gatotkaca"
+   },
+   "confidence": 0.99
+  },
+  {
+   "date": "",
+   "match": "MPL/Philippines/Season_18/Regular_Season#51",
+   "game": 1,
+   "team": "ONIC PH",
+   "opponent": "TNC Pro Team",
+   "won": true,
+   "positions": {
+    "roam": "Minotaur",
+    "marksman": "Aulus",
+    "mage": "Rafaela",
+    "jungler": "Lukas",
+    "fighter": "Gatotkaca"
+   },
+   "confidence": 0.79
+  },
+  {
+   "date": "",
+   "match": "MPL/Philippines/Season_18/Regular_Season#51",
+   "game": 1,
+   "team": "TNC Pro Team",
+   "opponent": "ONIC PH",
+   "won": false,
+   "positions": {
+    "fighter": "Belerick",
+    "jungler": "Nolan",
+    "mage": "Zetian",
+    "marksman": "Paquito",
+    "roam": "Marcel"
+   },
+   "confidence": 0.57
+  },
+  {
+   "date": "",
+   "match": "MPL/Philippines/Season_18/Regular_Season#51",
+   "game": 2,
+   "team": "ONIC PH",
+   "opponent": "TNC Pro Team",
+   "won": false,
+   "positions": {
+    "fighter": "Lukas",
+    "jungler": "Nolan",
+    "mage": "Valentina",
+    "marksman": "Miya",
+    "roam": "Gatotkaca"
+   },
+   "confidence": 0.99
+  },
+  {
+   "date": "",
+   "match": "MPL/Philippines/Season_18/Regular_Season#51",
+   "game": 2,
+   "team": "TNC Pro Team",
+   "opponent": "ONIC PH",
+   "won": true,
+   "positions": {
+    "fighter": "Atlas",
+    "jungler": "Hirara",
+    "mage": "Eudora",
+    "marksman": "Cici",
+    "roam": "Marcel"
+   },
+   "confidence": 0.66
+  },
+  {
+   "date": "",
+   "match": "MPL/Philippines/Season_18/Regular_Season#51",
+   "game": 3,
+   "team": "ONIC PH",
+   "opponent": "TNC Pro Team",
+   "won": true,
+   "positions": {
+    "roam": "Minotaur",
+    "jungler": "Yi Sun-shin",
+    "mage": "Valentina",
+    "marksman": "Aulus",
+    "fighter": "Kalea"
+   },
+   "confidence": 0.89
+  },
+  {
+   "date": "",
+   "match": "MPL/Philippines/Season_18/Regular_Season#51",
+   "game": 3,
+   "team": "TNC Pro Team",
+   "opponent": "ONIC PH",
+   "won": false,
+   "positions": {
+    "fighter": "Alice",
+    "jungler": "Nolan",
+    "mage": "Kimmy",
+    "marksman": "Melissa",
+    "roam": "Belerick"
+   },
+   "confidence": 0.97
+  },
+  {
+   "date": "",
+   "match": "MPL/Philippines/Season_18/Regular_Season#52",
+   "game": 1,
+   "team": "AP.Bren",
+   "opponent": "Omega Esports",
+   "won": false,
+   "positions": {
+    "fighter": "Barats",
+    "jungler": "Hirara",
+    "mage": "Valentina",
+    "marksman": "Chou",
+    "roam": "Minotaur"
+   },
+   "confidence": 1
+  },
+  {
+   "date": "",
+   "match": "MPL/Philippines/Season_18/Regular_Season#52",
+   "game": 1,
+   "team": "Omega Esports",
+   "opponent": "AP.Bren",
+   "won": true,
+   "positions": {
+    "fighter": "Uranus",
+    "jungler": "Nolan",
+    "mage": "Zhuxin",
+    "marksman": "Freya",
+    "roam": "Gatotkaca"
+   },
+   "confidence": 0.99
+  },
+  {
+   "date": "",
+   "match": "MPL/Philippines/Season_18/Regular_Season#52",
+   "game": 2,
+   "team": "AP.Bren",
+   "opponent": "Omega Esports",
+   "won": false,
+   "positions": {
+    "fighter": "Alice",
+    "jungler": "Suyou",
+    "mage": "Valentina",
+    "marksman": "Obsidia",
+    "roam": "Minotaur"
+   },
+   "confidence": 0.99
+  },
+  {
+   "date": "",
+   "match": "MPL/Philippines/Season_18/Regular_Season#52",
+   "game": 2,
+   "team": "Omega Esports",
+   "opponent": "AP.Bren",
+   "won": true,
+   "positions": {
+    "fighter": "Phoveus",
+    "jungler": "Paquito",
+    "mage": "Kimmy",
+    "marksman": "Freya",
+    "roam": "Marcel"
+   },
+   "confidence": 0.86
+  },
+  {
+   "date": "",
+   "match": "MPL/Philippines/Season_18/Regular_Season#53",
+   "game": 1,
+   "team": "TNC Pro Team",
+   "opponent": "Team Falcons PH",
+   "won": true,
+   "positions": {
+    "roam": "Atlas",
+    "jungler": "Harley",
+    "mage": "Eudora",
+    "marksman": "Paquito",
+    "fighter": "Khufra"
+   },
+   "confidence": 0.64
+  },
+  {
+   "date": "",
+   "match": "MPL/Philippines/Season_18/Regular_Season#53",
+   "game": 1,
+   "team": "Team Falcons PH",
+   "opponent": "TNC Pro Team",
+   "won": false,
+   "positions": {
+    "marksman": "Aulus",
+    "fighter": "Alice",
+    "mage": "Valentina",
+    "jungler": "Lukas",
+    "roam": "Carmilla"
+   },
+   "confidence": 0.9
+  },
+  {
+   "date": "",
+   "match": "MPL/Philippines/Season_18/Regular_Season#54",
+   "game": 1,
+   "team": "Team Liquid PH",
+   "opponent": "ONIC PH",
+   "won": true,
+   "positions": {
+    "fighter": "Arlott",
+    "jungler": "Suyou",
+    "mage": "Zhuxin",
+    "marksman": "Cici",
+    "roam": "Atlas"
+   },
+   "confidence": 0.97
+  },
+  {
+   "date": "",
+   "match": "MPL/Philippines/Season_18/Regular_Season#54",
+   "game": 1,
+   "team": "ONIC PH",
+   "opponent": "Team Liquid PH",
+   "won": false,
+   "positions": {
+    "roam": "Minotaur",
+    "marksman": "Aulus",
+    "mage": "Luo Yi",
+    "jungler": "Freya",
+    "fighter": "Marcel"
+   },
+   "confidence": 0.58
+  },
+  {
+   "date": "",
+   "match": "MPL/Philippines/Season_18/Regular_Season#54",
+   "game": 2,
+   "team": "Team Liquid PH",
+   "opponent": "ONIC PH",
+   "won": true,
+   "positions": {
+    "fighter": "Alice",
+    "jungler": "Hirara",
+    "mage": "Zhuxin",
+    "marksman": "Cici",
+    "roam": "Hylos"
+   },
+   "confidence": 0.97
+  },
+  {
+   "date": "",
+   "match": "MPL/Philippines/Season_18/Regular_Season#54",
+   "game": 2,
+   "team": "ONIC PH",
+   "opponent": "Team Liquid PH",
+   "won": false,
+   "positions": {
+    "roam": "Minotaur",
+    "jungler": "Yi Sun-shin",
+    "mage": "Valentina",
+    "marksman": "Aulus",
+    "fighter": "Kalea"
+   },
+   "confidence": 0.89
+  },
+  {
+   "date": "",
+   "match": "MPL/Philippines/Season_18/Regular_Season#55",
+   "game": 1,
+   "team": "Aurora PH",
+   "opponent": "Twisted Minds PH",
+   "won": false,
+   "positions": {
+    "fighter": "Esmeralda",
+    "jungler": "Suyou",
+    "mage": "Kimmy",
+    "marksman": "Freya",
+    "roam": "Gatotkaca"
+   },
+   "confidence": 0.99
+  },
+  {
+   "date": "",
+   "match": "MPL/Philippines/Season_18/Regular_Season#55",
+   "game": 1,
+   "team": "Twisted Minds PH",
+   "opponent": "Aurora PH",
+   "won": true,
+   "positions": {
+    "fighter": "Uranus",
+    "marksman": "Aulus",
+    "mage": "Selena",
+    "jungler": "Paquito",
+    "roam": "Belerick"
+   },
+   "confidence": 0.93
+  }
+ ]
 }
