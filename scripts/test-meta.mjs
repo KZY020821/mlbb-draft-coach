@@ -1,7 +1,7 @@
 // Checks the pro-data pipeline (parse + position inference + stats) on the sample in tests/meta.
 // Run: node scripts/test-meta.mjs
 import { readFileSync } from "node:fs";
-import { parseMatches, teamName } from "./meta/parse.mjs";
+import { parseMatches, parseDate, teamName } from "./meta/parse.mjs";
 import { buildMeta } from "./meta/build.mjs";
 
 const root = new URL("..", import.meta.url).pathname;
@@ -19,6 +19,15 @@ check("parses played games only (unplayed map skipped)", games.length === 3, Str
 check("team names are normalised", games[0].teams.join() === "Team Liquid PH,ONIC PH" && games[2].teams[0] === "AP.Bren");
 check("team aliases", teamName("Onic PH") === "ONIC PH" && teamName("TEam Falcons PH") === "Team Falcons PH" && teamName("Ap.Bren") === "AP.Bren");
 check("date parsed", games[0].date === "2026-10-09" && games[2].date === "2026-10-11");
+check(
+  "date formats seen on Liquipedia",
+  parseDate("Oct 9, 2026 - 17:00 {{Abbr/SGT}}") === "2026-10-09" &&
+    parseDate("August 23 , 2026 - 17:00") === "2026-08-23" &&
+    parseDate("August 28 ,2026 - 19:30") === "2026-08-28" &&
+    parseDate("Sept. 5, 2026") === "2026-09-05" &&
+    parseDate("2026-10-11 17:00") === "2026-10-11" &&
+    parseDate("TBD") === ""
+);
 check("winner and sides", games[0].winner === 0 && games[1].winner === 1 && games[1].sides.join() === "red,blue");
 check("picks and bans read", games[0].picks[0].join() === "arlott,cici,zhuxin,atlas,suyou" && games[0].bans[0].length === 5);
 

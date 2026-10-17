@@ -83,11 +83,15 @@ function withoutMaps(match) {
   return out;
 }
 
-function parseDate(raw) {
-  const m = String(raw).match(/([A-Za-z]+)\s+(\d{1,2}),\s*(\d{4})/);
+// Handles "October 9,2026", "Oct 9, 2026", "Sept. 5 , 2026" and ISO "2026-10-09".
+export function parseDate(raw) {
+  const s = String(raw);
+  const iso = s.match(/(\d{4})-(\d{2})-(\d{2})/);
+  if (iso) return `${iso[1]}-${iso[2]}-${iso[3]}`;
+  const m = s.match(/([A-Za-z]+)\.?\s+(\d{1,2})\s*,\s*(\d{4})/);
   if (!m) return "";
-  const months = ["january", "february", "march", "april", "may", "june", "july", "august", "september", "october", "november", "december"];
-  const mo = months.indexOf(m[1].toLowerCase());
+  const months = ["jan", "feb", "mar", "apr", "may", "jun", "jul", "aug", "sep", "oct", "nov", "dec"];
+  const mo = months.indexOf(m[1].slice(0, 3).toLowerCase());
   if (mo < 0) return "";
   return `${m[3]}-${String(mo + 1).padStart(2, "0")}-${m[2].padStart(2, "0")}`;
 }
