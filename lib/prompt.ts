@@ -1,32 +1,14 @@
+import type { Candidate } from "./candidates";
 import type { Context, Hero } from "./context";
-import { teamHeroes, type Draft } from "./draft";
-import { POSITIONS, POSITION_LABEL } from "./positions";
+import { OPTIONS_PER_POSITION, teamHeroes, type Draft } from "./draft";
+import { getMeta, hasMeta } from "./meta";
+import { POSITIONS, POSITION_LABEL, type Position } from "./positions";
 import type { AppliedRule } from "./rules";
 
 export type Message = { role: "system" | "user" | "assistant"; content: string };
 
 function heroLabel(h: Hero): string {
-  return `${h.name} (${h.roles.join("/")}${h.lanes?.length ? `; lanes ${h.lanes.join("/")}` : ""})`;
-}
-
-function tierTable(ctx: Context): string {
-  return ["S", "A", "B", "C", "D"]
-    .map((t) => `${t}: ${ctx.heroes.filter((h) => h.tier === t).map(heroLabel).join(", ")}`)
-    .join("\n");
-}
-
-function proSignals(ctx: Context): string {
-  return ctx.heroes
-    .filter((h) => h.pro || h.banRate)
-    .map((h) => {
-      const parts = [
-        h.banRate ? `banned in ${h.banRate}% of games` : "",
-        h.pro === "ban" ? "priority ban" : h.pro === "pick" ? "pro pick" : "",
-        h.note ?? ""
-      ].filter(Boolean);
-      return `- ${h.name}: ${parts.join(". ")}`;
-    })
-    .join("\n");
+  return `${h.name} (${h.roles.join("/")})`;
 }
 
 function list(heroes: Hero[]): string {
@@ -37,20 +19,21 @@ function rulesBlock(applied: AppliedRule[]): string {
   if (!applied.length) return "";
   const lines = applied.map((r) => {
     if (r.teamHas) return `- Enemy picked ${r.enemy}. Our team already has ${r.teamHas}, which counters it.`;
-    const parts = [`- Enemy picked ${r.enemy}.`];
-    if (r.available.length) parts.push(`Counter with: ${r.available.join(" or ")}.`);
-    else parts.push("None of our counters for it can be picked right now.");
-    if (r.unavailable.length) parts.push(`(${r.unavailable.join(", ")} banned or taken.)`);
-    if (r.offPosition.length) parts.push(`(${r.offPosition.join(", ")} not played in our open positions.)`);
-    if (r.why) parts.push(`Reason: ${r.why}`);
-    return parts.join(" ");
+    if (!r.available.length) return `- Enemy picked ${r.enemy}. None of our counters for it fits an open position or is still available.`;
+    return `- Enemy picked ${r.enemy}. Counter with: ${r.available.join(" or ")}.${r.why ? ` Reason: ${r.why}` : ""}`;
   });
   return [
     "",
-    "OUR TEAM'S COUNTER RULES",
-    "These come from our team's coach and are known, reliable counters. When a counter below is available, put it in picks for the open position it is played in.",
-    "If you leave out an available counter, explain why in plan.",
+    "OUR COACH'S COUNTER RULES (known, reliable counters)",
+    "When a counter below is on a candidate list, include it among that position's options, ranked high unless the evidence clearly says otherwise.",
     ...lines
+  ].join("\n");
+}
+
+function candidateBlock(position: Position, list: Candidate[]): string {
+  return [
+    `${POSITION_LABEL[position]} — choose ${OPTIONS_PER_POSITION} from these candidates only:`,
+    ...list.map((c) => `- ${c.hero} (${c.roles.join("/")}; tier ${c.tier || "-"}): ${c.evidence}`)
   ].join("\n");
 }
 
@@ -58,50 +41,62 @@ export function buildMessages(
   ctx: Context,
   draft: Draft,
   need: number,
+  candidates: Partial<Record<Position, Candidate[]>>,
   applied: AppliedRule[] = [],
   principles: string[] = []
 ): Message[] {
   const m = ctx.meta;
+  const meta = getMeta();
+  const proLine = hasMeta(meta)
+    ? `${meta.league}: ${meta.games} pro games up to ${meta.latestGame}, including ${meta.focusGames} by ${meta.focusTeam}, the team whose drafts we follow most closely. Positions in the pro data are inferred from picks.`
+    : "No pro league data is loaded yet, so the candidates come from the tier list only.";
+  const topBans = Object.entries(meta.heroes)
+    .sort((a, b) => b[1].bans - a[1].bans)
+    .slice(0, 10)
+    .filter(([, h]) => h.bans > 0)
+    .map(([name, h]) => `${name} (${h.bans})`)
+    .join(", ");
+
   const system = [
-    "You are an expert Mobile Legends: Bang Bang draft analyst. A team is in the middle of a draft and needs help choosing its remaining pick or picks.",
+    "You are an expert Mobile Legends: Bang Bang draft analyst. A team is in the middle of a draft and needs options for its remaining position or positions.",
     "",
-    "Rules:",
-    "- Use only the data below and the draft you are given. You cannot browse the web. If the data does not cover something, say so instead of guessing.",
-    "- Never recommend a hero that is banned or already picked. Use hero names exactly as they appear in the roster below.",
-    "- The roles in the roster are correct. Describe each hero by its listed roles: for example, do not call a hero tanky or a frontliner unless its roles include Tank.",
-    "- Our team has five positions: Roam, Marksman (gold lane), Jungler, Mage (mid lane) and Fighter (EXP lane). Recommend heroes only for our open positions, and only heroes that are played there.",
-    "- When a hero's lanes are listed, it is played only in those lanes. Without lanes, use its roles: Roam is played by Tank or Support heroes; Marksman by Marksman heroes; Mage by Mage heroes; Fighter (EXP) by Fighter or Tank heroes; Jungler by Assassin, Fighter or Tank heroes.",
-    "- The patch notes are newer than the tier table. If they conflict, follow the patch notes.",
+    "How to decide:",
+    `- For each open position, choose exactly ${OPTIONS_PER_POSITION} heroes from that position's candidate list, ranked best first. Never pick a hero that is not on the list.`,
+    "- Follow the current pro meta first: how often pros pick a hero in that position and how it does, how often the focus team picks it, and how it pairs with our current picks. Treat small samples (1 to 3 games) as weak evidence.",
+    "- Then weigh the enemy draft: what it threatens and what counters it, and what our team still lacks.",
+    "- Offer three options that a player could each realistically play, so a player can choose the hero they play best. Avoid three near-identical heroes when a strong alternative style exists on the list.",
+    "- The roles listed are correct. Do not call a hero tanky or a frontliner unless its roles include Tank.",
     `- These heroes are recent and their abilities were not verified, so do not describe their abilities in detail: ${m.unverifiedKits.join(", ")}.`,
-    "- Do not invent win rates, statistics or patch changes.",
-    "- Weigh what the enemy team can do, what our team still lacks, which heroes are likely to be contested, and the pro draft signals.",
+    "- Use only the data given. You cannot browse the web. Do not invent statistics; quote only numbers that appear in the evidence.",
+    '- confidence per option: "high" when the pro evidence and the draft both support it, "medium" when one does, "low" otherwise.',
     ...(principles.length ? ["", "OUR TEAM'S DRAFT PRINCIPLES (follow these)", ...principles.map((p) => `- ${p}`)] : []),
     "",
-    "PATCH CONTEXT",
-    `Patch ${m.patch} (${m.season}), opened ${m.patchOpened}. Data last updated ${m.dataAsOf}.`,
-    `Patch notes: ${ctx.patchNotes || "none"}`,
-    "",
-    "ROSTER AND TIERS (name, roles, and lanes where known)",
-    tierTable(ctx),
-    "",
-    `PRO DRAFT SIGNALS (${m.proPeriod})`,
-    proSignals(ctx),
+    "CONTEXT",
+    proLine,
+    ...(topBans ? [`Most banned in that league: ${topBans}.`] : []),
+    `Patch ${m.patch} (${m.season}). Patch notes: ${ctx.patchNotes || "none"}`,
     "",
     "OUTPUT",
-    "Reply with one JSON object and nothing else. It must have this shape (the values below are only examples):",
+    "Reply with one JSON object and nothing else, shaped like this example (values are examples):",
     JSON.stringify(
       {
-        summary: "Two sentences on what the enemy draft threatens and what our team lacks.",
-        confidence: "medium",
-        picks: [{ hero: "Exact Hero Name", position: "Roam", why: "One or two sentences.", risk: "One short sentence." }],
-        backups: [{ hero: "Exact Hero Name", position: "Roam", why: "One short sentence." }],
-        plan: "One or two sentences on pick order."
+        summary: "Two sentences on what the enemy draft threatens and what our team still needs.",
+        slots: [
+          {
+            position: "Roam",
+            options: [
+              { hero: "Exact Hero Name", confidence: "high", why: "One sentence citing the evidence.", risk: "One short sentence." },
+              { hero: "Exact Hero Name", confidence: "medium", why: "One sentence.", risk: "One short sentence." },
+              { hero: "Exact Hero Name", confidence: "medium", why: "One sentence.", risk: "One short sentence." }
+            ]
+          }
+        ],
+        plan: "One sentence on which position to lock first."
       },
       null,
       2
     ),
-    'position must be one of our open positions, written as "Roam", "Marksman", "Jungler", "Mage" or "Fighter".',
-    'confidence must be "low", "medium" or "high" and reflects how much the supplied data supports your answer.'
+    'position must be written as "Roam", "Marksman", "Jungler", "Mage" or "Fighter".'
   ].join("\n");
 
   const byPosition = POSITIONS.map((p) => {
@@ -110,15 +105,11 @@ export function buildMessages(
   });
   const openNames = draft.open.map((p) => POSITION_LABEL[p]);
   const unavailable = [...draft.bans, ...draft.enemy, ...teamHeroes(draft)].map((h) => h.name);
-
-  let ask: string;
-  if (draft.open.length <= 2) {
-    ask = `Recommend exactly one hero for each open position (${openNames.join(" and ")}), so ${need} hero${need === 1 ? "" : "es"} in "picks"${
-      need === 2 ? ", listed in the order the team should lock them in" : ""
-    }.`;
-  } else {
-    ask = `Our team has ${draft.open.length} open positions (${openNames.join(", ")}). Recommend exactly 2 heroes in "picks" for the 2 open positions that matter most right now, one hero per position, in the order the team should lock them in.`;
-  }
+  const slotsAsked = Object.keys(candidates) as Position[];
+  const ask =
+    draft.open.length <= 2
+      ? `Give one slot per open position (${openNames.join(" and ")}), each with ${OPTIONS_PER_POSITION} options.`
+      : `Our team has ${draft.open.length} open positions. Give slots for the 2 that matter most right now, chosen from those with candidates below, each with ${OPTIONS_PER_POSITION} options, the slot to lock first listed first.`;
 
   const user = [
     `Banned heroes: ${list(draft.bans)}`,
@@ -126,10 +117,13 @@ export function buildMessages(
     "Our picks by position:",
     ...byPosition,
     `Open positions: ${openNames.join(", ")}`,
-    `Heroes that are not available: ${unavailable.length ? unavailable.join(", ") : "none"}`,
+    `Not available (banned or picked): ${unavailable.length ? unavailable.join(", ") : "none"}`,
     rulesBlock(applied),
     "",
-    `${ask} Then give up to 3 "backups" that also fit an open position. Return the JSON object only.`
+    "CANDIDATES (with pro evidence)",
+    ...slotsAsked.map((p) => candidateBlock(p, candidates[p] ?? [])),
+    "",
+    `${ask} Return the JSON object only.`
   ].join("\n");
 
   return [
@@ -144,6 +138,6 @@ export function retryMessage(problems: string[]): Message {
     content:
       "Your last reply had problems:\n" +
       problems.map((p) => `- ${p}`).join("\n") +
-      "\nReturn the corrected JSON object only. Use only available heroes that are played in our open positions."
+      `\nReturn the corrected JSON object only: ${OPTIONS_PER_POSITION} options per slot, each from that position's candidate list.`
   };
 }

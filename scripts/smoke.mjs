@@ -11,7 +11,8 @@ const post = async (body, headers = {}) => {
   return { status: r.status, json: await r.json().catch(() => null) };
 };
 const lastCall = async () => (await fetch(MOCK + "/__last")).json();
-const heroes = (r) => JSON.stringify(r.json?.analysis?.picks?.map((p) => `${p.hero}/${p.position}`));
+const heroes = (r) => JSON.stringify(r.json?.analysis?.slots?.map((s) => `${s.position}: ${s.options.map((o) => o.hero).join(", ")}`));
+const allOptions = (r) => (r.json?.analysis?.slots ?? []).flatMap((s) => s.options.map((o) => o.hero));
 
 // Open positions: jungler and mage.
 const draft = {
@@ -22,9 +23,10 @@ const draft = {
 
 await setMode("good");
 let r = await post(draft);
-check("two open positions -> 2 picks, one per position", r.status === 200 && r.json.analysis.picks.length === 2 && r.json.analysis.picks.map((p) => p.position).sort().join() === "jungler,mage", heroes(r));
+check("two open positions -> 2 slots of 3 options", r.status === 200 && r.json.analysis.slots.length === 2 && r.json.analysis.slots.every((s) => s.options.length === 3) && r.json.analysis.slots.map((s) => s.position).sort().join() === "jungler,mage", heroes(r));
+check("options carry pro evidence and tags", r.json.analysis.slots.every((s) => s.options.every((o) => o.evidence && Array.isArray(o.tags) && o.tags.length)));
+check("response credits the pro data source", r.json.meta.pro && r.json.meta.pro.source === "Liquipedia" && r.json.meta.pro.license.includes("CC BY-SA"));
 check("response lists the open positions", JSON.stringify(r.json.open) === '["jungler","mage"]');
-check("backups returned with a position", r.json.analysis.backups.length >= 1 && r.json.analysis.backups.every((b) => b.position));
 check("meta carries patch + model", r.json.meta.patch === "2.2.16" && r.json.meta.model === "deepseek-flash", JSON.stringify(r.json.meta));
 let lc = await lastCall();
 check("API key sent as bearer token", lc.last.auth === "Bearer test-key");
@@ -32,30 +34,36 @@ check("hits the chat completions path", lc.last.url === "/chat/completions");
 check("JSON mode requested", lc.last.body.response_format?.type === "json_object");
 check("DeepSeek thinking is turned off", lc.last.body.thinking?.type === "disabled" && !("reasoning_effort" in lc.last.body));
 const sys = lc.last.body.messages[0].content, usr = lc.last.body.messages[1].content;
-check("prompt includes patch + notes + roster", sys.includes("Patch 2.2.16") && sys.includes("Masha was reworked") && sys.includes("Hirara (Assassin; lanes Jungle)"));
-check("prompt has corrected roles and lanes", sys.includes("Nolan (Assassin") && sys.includes("Barats (Tank/Fighter; lanes Jungle/EXP)"));
-check("prompt says to trust the listed roles", sys.includes("do not call a hero tanky or a frontliner unless its roles include Tank"));
+check("prompt includes patch notes and the pro data summary", sys.includes("Patch 2.2.16") && sys.includes("Masha was reworked") && sys.includes("pro games up to") && sys.includes("Team Liquid PH"));
+check("full tier dump is gone; candidates instead", !sys.includes("ROSTER AND TIERS") && usr.includes("CANDIDATES (with pro evidence)") && usr.includes("choose 3 from these candidates only"));
+check("candidate lines carry pro numbers", /pro picks in (jungle|mid lane), \d+ wins/.test(usr));
+check("prompt says to trust the listed roles", sys.includes("Do not call a hero tanky or a frontliner unless its roles include Tank"));
 check("prompt mentions JSON (required by JSON mode)", /json/i.test(sys));
 check("prompt lists our picks by position", usr.includes("- Roam: Tigreal") && usr.includes("- Jungler: OPEN") && usr.includes("- Mage (mid lane): OPEN"));
-check("prompt names the open positions", usr.includes("Open positions: Jungler, Mage (mid lane)") && usr.includes("one hero for each open position"));
+check("prompt names the open positions", usr.includes("Open positions: Jungler, Mage (mid lane)") && usr.includes("one slot per open position"));
 
 r = await post({ ...draft, teamPicks: { roam: "Tigreal", marksman: "Miya", fighter: "Bane", jungler: "Khufra" } });
-check("one open position -> 1 pick for it", r.status === 200 && r.json.analysis.picks.length === 1 && r.json.analysis.picks[0].position === "mage", heroes(r));
+check("one open position -> 1 slot of 3 for it", r.status === 200 && r.json.analysis.slots.length === 1 && r.json.analysis.slots[0].position === "mage" && r.json.analysis.slots[0].options.length === 3, heroes(r));
 
 r = await post({ ...draft, teamPicks: { roam: "Tigreal", marksman: "Miya" } });
 lc = await lastCall();
-check("three open positions -> asks for the 2 that matter most", r.status === 200 && r.json.need === 2 && lc.last.body.messages[1].content.includes("2 open positions that matter most"));
+check("three open positions -> asks for the 2 that matter most", r.status === 200 && r.json.need === 2 && lc.last.body.messages[1].content.includes("Give slots for the 2 that matter most"));
 
 await setMode("wrong_position_then_good");
 r = await post(draft);
 lc = await lastCall();
-check("hero in the wrong position triggers a retry", lc.calls === 2 && JSON.stringify(lc.last.body.messages).includes("Barats is not played as") && r.status === 200, heroes(r));
-check("the wrong-position hero is not shown", !r.json.analysis.picks.some((p) => p.hero === "Barats"));
+check("hero off the candidate list triggers a retry", lc.calls === 2 && JSON.stringify(lc.last.body.messages).includes("Barats is not on the candidate list for Mage") && r.status === 200, heroes(r));
+check("the off-list hero is not shown", !allOptions(r).includes("Barats"));
+
+await setMode("short_then_good");
+r = await post(draft);
+lc = await lastCall();
+check("fewer than 3 options triggers a retry", lc.calls === 2 && JSON.stringify(lc.last.body.messages).includes("give exactly 3") && r.json.analysis.slots.every((s) => s.options.length === 3));
 
 await setMode("bad_then_good");
 r = await post(draft);
 lc = await lastCall();
-check("invented/banned heroes trigger one retry and recover", r.status === 200 && lc.calls === 2 && r.json.meta.retried === true && r.json.analysis.picks.length === 2, "calls=" + lc.calls);
+check("invented/banned heroes trigger one retry and recover", r.status === 200 && lc.calls === 2 && r.json.meta.retried === true && r.json.analysis.slots.length === 2 && !allOptions(r).includes("Hayabusa"), "calls=" + lc.calls);
 check("retry message names the problems", JSON.stringify(lc.last.body.messages).includes("Notahero"));
 
 await setMode("always_bad");
@@ -121,20 +129,21 @@ await setMode("follow_rules");
 r = await post(glooDraft);
 lc = await lastCall();
 let u = lc.last.body.messages[1].content;
-check("Gloo rule reaches the prompt", u.includes("OUR TEAM'S COUNTER RULES") && u.includes("Enemy picked Gloo. Counter with: Vexana or Faramis."));
-check("rule followed -> no retry, counter picked as Mage", lc.calls === 1 && r.json.analysis.picks.some((p) => p.hero === "Vexana" && p.position === "mage"), heroes(r));
+check("Gloo rule reaches the prompt", u.includes("OUR COACH'S COUNTER RULES") && u.includes("Enemy picked Gloo. Counter with: Vexana or Faramis."));
+check("rule counters are on the candidate list with the reason", /- Vexana \(Mage[^\n]*our coach's counter to Gloo/.test(u));
+check("rule followed -> no retry, counter offered as Mage", lc.calls === 1 && r.json.analysis.slots.some((s) => s.position === "mage" && s.options.some((o) => o.hero === "Vexana")), heroes(r));
 
-await setMode("good");
+await setMode("ignore_rules_then_good");
 r = await post(glooDraft);
 lc = await lastCall();
-check("rule ignored -> one retry naming the rule", lc.calls === 2 && r.json.meta.retried === true && JSON.stringify(lc.last.body.messages).includes("counter rule says to pick Vexana or Faramis"));
-check("still returns an answer after the retry", r.status === 200 && r.json.analysis.picks.length === 2);
+check("rule ignored -> one retry naming the rule", lc.calls === 2 && r.json.meta.retried === true && JSON.stringify(lc.last.body.messages).includes("counter rule says to offer Vexana or Faramis") && allOptions(r).some((h) => ["Vexana", "Faramis"].includes(h)), heroes(r));
+check("still returns an answer after the retry", r.status === 200 && r.json.analysis.slots.length === 2);
 
 await setMode("follow_rules");
 r = await post({ ...glooDraft, bans: ["Vexana"] });
 lc = await lastCall();
 u = lc.last.body.messages[1].content;
-check("banned counter is skipped", u.includes("Counter with: Faramis.") && u.includes("(Vexana banned or taken.)") && r.json.analysis.picks.some((p) => p.hero === "Faramis"), heroes(r));
+check("banned counter is skipped", u.includes("Counter with: Faramis.") && !u.includes("Counter with: Vexana") && allOptions(r).includes("Faramis"), heroes(r));
 
 await setMode("good");
 r = await post({ ...glooDraft, teamPicks: { roam: "Tigreal", marksman: "Miya", mage: "Vexana" } });
@@ -159,13 +168,13 @@ lc = await lastCall();
 u = lc.last.body.messages[1].content;
 check("saved draft: only Roam is open", r.status === 200 && r.json.need === 1 && JSON.stringify(r.json.open) === '["roam"]' && u.includes("Open positions: Roam"));
 check("saved draft: Gloo rule sees our Faramis, no retry", r.json.rules[0]?.teamHas === "Faramis" && lc.calls === 1 && u.includes("Our team already has Faramis"));
-check("saved draft: suggestion is a Roam hero, not banned or picked", r.json.analysis.picks[0].position === "roam" && !saved.expect.notPicked.includes(r.json.analysis.picks[0].hero), heroes(r));
-check("saved draft: prompt calls Nolan an Assassin", u.includes("Nolan (Assassin;") && !u.includes("Nolan (Tank"));
+check("saved draft: 3 Roam options, none banned or picked", r.json.analysis.slots[0].position === "roam" && r.json.analysis.slots[0].options.length === 3 && !allOptions(r).some((h) => saved.expect.notPicked.includes(h)), heroes(r));
+check("saved draft: prompt calls Nolan an Assassin", u.includes("Nolan (Assassin)") && !u.includes("Nolan (Tank"));
 
 await setMode("wrong_position_then_good");
 r = await post(saved.draft);
 lc = await lastCall();
-check("saved draft: Barats as Roam is rejected", lc.calls === 2 && JSON.stringify(lc.last.body.messages).includes("Barats is not played as Roam (lanes: Jungle/EXP)") && r.json.analysis.picks[0].hero !== "Barats", heroes(r));
+check("saved draft: Barats is not a Roam candidate and is rejected", lc.calls === 2 && JSON.stringify(lc.last.body.messages).includes("Barats is not on the candidate list for Roam") && !allOptions(r).includes("Barats"), heroes(r));
 
 // Rate limit: keep sending until the limiter answers.
 let limited = 0;

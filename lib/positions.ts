@@ -1,4 +1,5 @@
 import type { Hero } from "./context";
+import { metaPositions } from "./meta";
 
 // Our team's five positions, in the order shown on the form.
 export const POSITIONS = ["roam", "marksman", "jungler", "mage", "fighter"] as const;
@@ -43,9 +44,11 @@ export function positionFromText(text: unknown): Position | undefined {
   return undefined;
 }
 
-// Whether a hero is played in a position. Known lanes from the patch data win;
-// otherwise the hero's roles decide.
+// Whether a hero is played in a position. Pro league usage wins (so a fighter played in gold
+// lane by pros fits Marksman); with too little pro data, known lanes decide, then roles.
 export function fitsPosition(hero: Hero, position: Position): boolean {
+  const pro = metaPositions(hero.name);
+  if (pro) return pro.includes(position);
   if (hero.lanes?.length) return hero.lanes.includes(LANE[position]);
   return hero.roles.some((r) => ROLE_FIT[position].includes(r));
 }

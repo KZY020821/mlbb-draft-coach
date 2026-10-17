@@ -14,16 +14,36 @@ const TEAM_SLOTS: { key: PositionKey; label: string; lane?: string }[] = [
 ];
 const SLOT_LABEL = Object.fromEntries(TEAM_SLOTS.map((s) => [s.key, s.label])) as Record<PositionKey, string>;
 
-type Pick = { hero: string; position: PositionKey; why: string; risk: string };
-type Backup = { hero: string; position: PositionKey; why: string };
+type Tag = "pro" | "focus" | "rule" | "pair" | "tier";
+type Option = {
+  hero: string;
+  confidence: "high" | "medium" | "low";
+  why: string;
+  risk: string;
+  tags: Tag[];
+  evidence: string;
+  picks: number;
+  wins: number;
+  focusPicks: number;
+  focusWins: number;
+};
+type Slot = { position: PositionKey; options: Option[] };
 type Rule = { enemy: string; available: string[]; unavailable: string[]; offPosition: string[]; why: string; teamHas: string | null };
 type Result = {
-  analysis: { summary: string; confidence: "low" | "medium" | "high"; picks: Pick[]; backups: Backup[]; plan: string };
+  analysis: { summary: string; plan: string; slots: Slot[] };
   need: number;
   partial: boolean;
   open: PositionKey[];
   rules: Rule[];
-  meta: { patch: string; season: string; dataAsOf: string; dataAgeDays: number; model: string; retried: boolean };
+  meta: {
+    patch: string;
+    season: string;
+    dataAsOf: string;
+    dataAgeDays: number;
+    model: string;
+    retried: boolean;
+    pro: { league: string; games: number; focusTeam: string; focusGames: number; latestGame: string; source: string; license: string };
+  };
 };
 
 type Props = { heroes: string[]; passcodeRequired: boolean; staleDays: number };
@@ -277,33 +297,43 @@ function Results({ result }: { result: Result }) {
   const { analysis: a, meta } = result;
   const rules = result.rules ?? [];
   const ruleFor = (hero: string) => rules.find((r) => r.available.includes(hero));
-  const title =
-    result.need === 1 ? `Pick for ${SLOT_LABEL[a.picks[0]?.position ?? result.open[0]] ?? "your last slot"}` : "Your next two picks";
+  const pro = meta.pro;
   return (
     <section className="results" aria-label="Recommendation">
       <div className="results-head">
-        <h2>{title}</h2>
-        <span className={`conf conf-${a.confidence}`}>Confidence: {a.confidence}</span>
+        <h2>{a.slots.length === 1 ? `Options for ${SLOT_LABEL[a.slots[0].position]}` : "Options for your open positions"}</h2>
       </div>
       {a.summary && <p className="summary">{a.summary}</p>}
-      {result.partial && (
-        <p className="note">Only {a.picks.length} of {result.need} suggested picks fit this draft. Ask again for a full answer.</p>
-      )}
+      {result.partial && <p className="note">Some positions came back with fewer than three usable options. Ask again for a full set.</p>}
 
-      <ol className="picks">
-        {a.picks.map((p, i) => (
-          <li key={p.hero} className="pick">
-            <div className="pick-head">
-              <span className="rank">{result.need === 2 ? (i === 0 ? "First" : "Then") : "Pick"}</span>
-              <strong>{p.hero}</strong>
-              <span className="pos">{SLOT_LABEL[p.position]}</span>
-              {ruleFor(p.hero) && <span className="rule-tag">Your rule vs {ruleFor(p.hero)!.enemy}</span>}
-            </div>
-            {p.why && <p>{p.why}</p>}
-            {p.risk && <p className="risk">Risk: {p.risk}</p>}
-          </li>
-        ))}
-      </ol>
+      {a.slots.map((s, si) => (
+        <div key={s.position} className="slot">
+          <h3 className="slot-title">
+            {a.slots.length > 1 && <span className="rank">{si === 0 ? "Lock first" : "Then"}</span>} {SLOT_LABEL[s.position]}
+            <span className="slot-hint"> · pick the one you play best</span>
+          </h3>
+          <ol className="picks">
+            {s.options.map((o, i) => (
+              <li key={o.hero} className="pick">
+                <div className="pick-head">
+                  <span className="rank">#{i + 1}</span>
+                  <strong>{o.hero}</strong>
+                  <span className={`conf conf-${o.confidence}`}>{o.confidence}</span>
+                  {o.focusPicks > 0 && (
+                    <span className="pos">
+                      {pro.focusTeam} {o.focusWins}-{o.focusPicks - o.focusWins}
+                    </span>
+                  )}
+                  {ruleFor(o.hero) && <span className="rule-tag">Your rule vs {ruleFor(o.hero)!.enemy}</span>}
+                </div>
+                {o.evidence && <p className="evidence">{o.evidence}</p>}
+                {o.why && <p>{o.why}</p>}
+                {o.risk && <p className="risk">Risk: {o.risk}</p>}
+              </li>
+            ))}
+          </ol>
+        </div>
+      ))}
 
       {rules.length > 0 && (
         <div className="rules">
@@ -329,23 +359,19 @@ function Results({ result }: { result: Result }) {
         </p>
       )}
 
-      {a.backups.length > 0 && (
-        <div className="backups">
-          <h3>Backups</h3>
-          <ul>
-            {a.backups.map((b) => (
-              <li key={b.hero}>
-                <strong>{b.hero}</strong> <span className="muted">({SLOT_LABEL[b.position]})</span>
-                {b.why ? ` · ${b.why}` : ""}
-              </li>
-            ))}
-          </ul>
-        </div>
-      )}
-
       <p className="fineprint">
-        Based on patch {meta.patch} ({meta.season}) data as of {meta.dataAsOf}, analyzed by {meta.model}. This is an AI estimate from supplied data, not live win
-        rates. Check the current patch before you lock in.
+        {pro.games > 0 ? (
+          <>
+            Pro data: {pro.league}, {pro.games} games up to {pro.latestGame} ({pro.focusGames} by {pro.focusTeam}, weighted higher), from{" "}
+            <a href="https://liquipedia.net/mobilelegends/" target="_blank" rel="noreferrer">
+              Liquipedia
+            </a>{" "}
+            ({pro.license}). Positions are inferred from picks.{" "}
+          </>
+        ) : (
+          <>No pro data loaded yet, so options come from the tier list. </>
+        )}
+        Patch {meta.patch} ({meta.season}), analyzed by {meta.model}. An AI estimate, not live win rates.
       </p>
     </section>
   );

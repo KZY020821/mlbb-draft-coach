@@ -24,24 +24,27 @@ for (const file of files) {
 
   const a = body.analysis;
   console.log(`   open positions: ${body.open.join(", ")}`);
-  a.picks.forEach((p, i) => console.log(`   pick ${i + 1}: ${p.hero} (${p.position}) - ${p.why}${p.risk ? ` Risk: ${p.risk}` : ""}`));
-  if (a.backups.length) console.log("   backups:", a.backups.map((b) => `${b.hero} (${b.position})`).join(", "));
-  if (body.rules.length) console.log("   rules:", body.rules.map((r) => (r.teamHas ? `${r.enemy} already countered by ${r.teamHas}` : `${r.enemy} -> ${r.available.join(" or ")}`)).join("; "));
-  console.log(`   confidence: ${a.confidence} | retried: ${body.meta.retried} | model: ${body.meta.model}`);
+  for (const slot of a.slots) {
+    console.log(`   ${slot.position}:`);
+    slot.options.forEach((o, i) => console.log(`     ${i + 1}. ${o.hero} [${o.confidence}${o.tags.length ? ", " + o.tags.join("/") : ""}] - ${o.evidence}\n        ${o.why}`));
+  }
+  if (body.rules.length) console.log("   rules:", body.rules.map((r) => (r.teamHas ? `${r.enemy} already countered by ${r.teamHas}` : `${r.enemy} -> ${r.available.join(" or ") || "none fits"}`)).join("; "));
+  console.log(`   retried: ${body.meta.retried} | model: ${body.meta.model} | pro data: ${body.meta.pro.games} games to ${body.meta.pro.latestGame}`);
 
   const e = t.expect || {};
   const problems = [];
   if (e.need && body.need !== e.need) problems.push(`expected ${e.need} pick(s), got ${body.need}`);
   if (e.positions) {
-    const got = a.picks.map((p) => p.position).sort().join(",");
-    if (got !== [...e.positions].sort().join(",")) problems.push(`expected picks for ${e.positions.join(", ")}, got ${got || "none"}`);
+    const got = a.slots.map((s) => s.position).sort().join(",");
+    if (got !== [...e.positions].sort().join(",")) problems.push(`expected options for ${e.positions.join(", ")}, got ${got || "none"}`);
   }
+  for (const slot of a.slots) if (slot.options.length !== 3) problems.push(`${slot.position} has ${slot.options.length} options, expected 3`);
   for (const r of e.rules || []) {
     const got = body.rules.find((x) => x.enemy === r.enemy);
     if (!got) problems.push(`rule for ${r.enemy} did not apply`);
     else if ("teamHas" in r && got.teamHas !== r.teamHas) problems.push(`rule for ${r.enemy}: expected teamHas ${r.teamHas}, got ${got.teamHas}`);
   }
-  for (const p of a.picks) if ((e.notPicked || []).includes(p.hero)) problems.push(`${p.hero} is already banned or picked`);
+  for (const o of a.slots.flatMap((x) => x.options)) if ((e.notPicked || []).includes(o.hero)) problems.push(`${o.hero} should not be suggested here`);
   if (problems.length) { failed++; problems.forEach((p) => console.log("   FAIL:", p)); } else console.log("   PASS");
 }
 process.exit(failed ? 1 : 0);

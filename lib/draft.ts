@@ -1,6 +1,6 @@
 import type { Hero } from "./context";
 import { resolveHero, type HeroIndex } from "./heroes";
-import { POSITIONS, POSITION_LABEL, fitsPosition, positionFromText, type Position } from "./positions";
+import { POSITIONS, POSITION_LABEL, positionFromText, type Position } from "./positions";
 import type { AppliedRule } from "./rules";
 
 export type TeamPick = { position: Position; hero: Hero };
@@ -104,29 +104,34 @@ export function teamHeroes(draft: Draft): Hero[] {
   return draft.team.map((t) => t.hero);
 }
 
-export type Pick = { hero: string; position: Position; why: string; risk: string };
-export type Backup = { hero: string; position: Position; why: string };
-export type Analysis = {
-  summary: string;
-  confidence: "low" | "medium" | "high";
-  picks: Pick[];
-  backups: Backup[];
-  plan: string;
-};
+export type Confidence = "high" | "medium" | "low";
+export type Option = { hero: string; confidence: Confidence; why: string; risk: string };
+export type Slot = { position: Position; options: Option[] };
+export type Analysis = { summary: string; slots: Slot[]; plan: string };
 
 export type Checked = {
   analysis: Analysis;
   problems: string[];
+  complete: boolean; // every requested position has 3 usable options
   ruleIgnored: boolean;
 };
+
+export const OPTIONS_PER_POSITION = 3;
 
 function text(v: unknown, max = 600): string {
   return typeof v === "string" ? v.trim().slice(0, max) : "";
 }
 
-// Parse the model's JSON and keep only heroes that exist, are still available,
-// and are played in the open position they were suggested for.
-export function checkAnalysis(raw: string, index: HeroIndex, draft: Draft, need: number, applied: AppliedRule[] = []): Checked {
+// Parse the model's JSON and keep only options that come from that position's candidate list,
+// are still available, and are not repeated.
+export function checkAnalysis(
+  raw: string,
+  index: HeroIndex,
+  draft: Draft,
+  need: number,
+  candidates: Partial<Record<Position, { hero: string }[]>>,
+  applied: AppliedRule[] = []
+): Checked {
   const problems: string[] = [];
   let data: Record<string, unknown> = {};
   try {
@@ -140,92 +145,69 @@ export function checkAnalysis(raw: string, index: HeroIndex, draft: Draft, need:
   const unavailable = new Set([...draft.bans, ...draft.enemy, ...teamHeroes(draft)].map((h) => h.name));
   const used = new Set<string>();
   const openList = draft.open.map((p) => POSITION_LABEL[p]).join(", ");
+  const slots: Slot[] = [];
 
-  function usable(name: unknown): Hero | undefined {
-    const hero = resolveHero(index, name);
-    if (!hero) {
-      problems.push(`"${String(name)}" is not a hero in the roster.`);
-      return undefined;
-    }
-    if (unavailable.has(hero.name)) {
-      problems.push(`${hero.name} is already banned or picked.`);
-      return undefined;
-    }
-    if (used.has(hero.name)) {
-      problems.push(`${hero.name} was listed twice.`);
-      return undefined;
-    }
-    return hero;
-  }
-
-  // The position a suggestion is for: what the model said, or the only open one.
-  function positionFor(hero: Hero, said: unknown, taken: Set<Position>): Position | undefined {
-    let position = positionFromText(said);
+  for (const item of Array.isArray(data.slots) ? data.slots : []) {
+    if (slots.length >= need) break;
+    const rec = (item ?? {}) as Record<string, unknown>;
+    let position = positionFromText(rec.position);
     if (!position && draft.open.length === 1) position = draft.open[0];
     if (!position || !draft.open.includes(position)) {
-      problems.push(`${hero.name} was suggested for "${String(said ?? "")}", but the open positions are: ${openList}.`);
-      return undefined;
+      problems.push(`A slot was for "${String(rec.position ?? "")}", but the open positions are: ${openList}.`);
+      continue;
     }
-    if (taken.has(position)) {
-      problems.push(`More than one pick was suggested for ${POSITION_LABEL[position]}. Suggest one hero per open position.`);
-      return undefined;
+    if (slots.some((s) => s.position === position)) {
+      problems.push(`${POSITION_LABEL[position]} was given twice. Give one slot per open position.`);
+      continue;
     }
-    if (!fitsPosition(hero, position)) {
-      const lanes = hero.lanes?.length ? `lanes: ${hero.lanes.join("/")}` : `roles: ${hero.roles.join("/")}`;
-      problems.push(`${hero.name} is not played as ${POSITION_LABEL[position]} (${lanes}).`);
-      return undefined;
+    const allowed = new Set((candidates[position] ?? []).map((c) => c.hero));
+    const options: Option[] = [];
+    for (const o of Array.isArray(rec.options) ? rec.options : []) {
+      if (options.length >= OPTIONS_PER_POSITION) break;
+      const orec = (o ?? {}) as Record<string, unknown>;
+      const hero = resolveHero(index, orec.hero);
+      if (!hero) {
+        problems.push(`"${String(orec.hero)}" is not a hero in the roster.`);
+        continue;
+      }
+      if (unavailable.has(hero.name)) {
+        problems.push(`${hero.name} is already banned or picked.`);
+        continue;
+      }
+      if (used.has(hero.name)) {
+        problems.push(`${hero.name} was listed more than once.`);
+        continue;
+      }
+      if (!allowed.has(hero.name)) {
+        problems.push(`${hero.name} is not on the candidate list for ${POSITION_LABEL[position]}.`);
+        continue;
+      }
+      used.add(hero.name);
+      const conf = text(orec.confidence, 10).toLowerCase();
+      options.push({
+        hero: hero.name,
+        confidence: conf === "high" || conf === "low" ? conf : "medium",
+        why: text(orec.why, 400),
+        risk: text(orec.risk, 200)
+      });
     }
-    return position;
+    if (options.length < OPTIONS_PER_POSITION) {
+      problems.push(`${POSITION_LABEL[position]} has ${options.length} usable option${options.length === 1 ? "" : "s"}; give exactly ${OPTIONS_PER_POSITION} from its candidate list.`);
+    }
+    if (options.length) slots.push({ position, options });
   }
+  if (slots.length < need) problems.push(`Only ${slots.length} of ${need} open position${need === 1 ? "" : "s"} got options.`);
 
-  const picks: Pick[] = [];
-  const filled = new Set<Position>();
-  for (const item of Array.isArray(data.picks) ? data.picks : []) {
-    if (picks.length >= need) break;
-    const rec = (item ?? {}) as Record<string, unknown>;
-    const hero = usable(rec.hero);
-    if (!hero) continue;
-    const position = positionFor(hero, rec.position, filled);
-    if (!position) continue;
-    used.add(hero.name);
-    filled.add(position);
-    picks.push({ hero: hero.name, position, why: text(rec.why), risk: text(rec.risk, 300) });
-  }
-  if (picks.length < need) problems.push(`Only ${picks.length} of ${need} requested picks were usable.`);
-
-  // At least one open counter rule should be honoured in the picks.
+  // An open counter rule is honoured when one of its counters is among the options.
   const openRules = applied.filter((r) => !r.teamHas && r.available.length);
-  const counters = new Set(openRules.flatMap((r) => r.available));
-  const ruleIgnored = openRules.length > 0 && !picks.some((p) => counters.has(p.hero));
+  const offered = new Set(slots.flatMap((s) => s.options.map((o) => o.hero)));
+  const ruleIgnored = openRules.length > 0 && !openRules.some((r) => r.available.some((h) => offered.has(h)));
   if (ruleIgnored) {
     for (const r of openRules) {
-      problems.push(`The enemy picked ${r.enemy}. Our team's counter rule says to pick ${r.available.join(" or ")}, but none of them is in picks.`);
+      problems.push(`The enemy picked ${r.enemy}. Our team's counter rule says to offer ${r.available.join(" or ")}, but none of them is among the options.`);
     }
   }
 
-  // Backups may repeat a position; they only need to fit an open one.
-  const backups: Backup[] = [];
-  for (const item of Array.isArray(data.backups) ? data.backups : []) {
-    if (backups.length >= 3) break;
-    const rec = (item ?? {}) as Record<string, unknown>;
-    const hero = usable(rec.hero);
-    if (!hero) continue;
-    const position = positionFor(hero, rec.position, new Set());
-    if (!position) continue;
-    used.add(hero.name);
-    backups.push({ hero: hero.name, position, why: text(rec.why, 300) });
-  }
-
-  const conf = text(data.confidence, 10).toLowerCase();
-  return {
-    analysis: {
-      summary: text(data.summary),
-      confidence: conf === "high" || conf === "medium" || conf === "low" ? conf : "medium",
-      picks,
-      backups,
-      plan: text(data.plan)
-    },
-    problems,
-    ruleIgnored
-  };
+  const complete = slots.length === need && slots.every((s) => s.options.length === OPTIONS_PER_POSITION);
+  return { analysis: { summary: text(data.summary), slots, plan: text(data.plan) }, problems, complete, ruleIgnored };
 }
