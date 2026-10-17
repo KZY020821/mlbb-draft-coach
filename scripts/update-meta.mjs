@@ -20,11 +20,28 @@ const API = "https://liquipedia.net/mobilelegends/api.php";
 
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
+// In GitHub Actions, "::error::" lines become annotations that are readable without the full log.
+const inActions = Boolean(process.env.GITHUB_ACTIONS);
+function report(message) {
+  console.error(inActions ? `::error::${message.replace(/\r?\n/g, " ")}` : message);
+}
+process.on("uncaughtException", (e) => {
+  report(`update-meta failed: ${e?.stack || e}`);
+  process.exit(1);
+});
+
 async function fetchWikitext(title) {
   const url = `${API}?action=query&prop=revisions&rvprop=content|timestamp&rvslots=main&format=json&formatversion=2&titles=${encodeURIComponent(title)}`;
   const res = await fetch(url, { headers: { "User-Agent": USER_AGENT, "Accept-Encoding": "gzip" } });
-  if (!res.ok) throw new Error(`Liquipedia returned HTTP ${res.status} for ${title}`);
-  const page = (await res.json())?.query?.pages?.[0];
+  const body = await res.text();
+  if (!res.ok) throw new Error(`Liquipedia returned HTTP ${res.status} for ${title}: ${body.slice(0, 200)}`);
+  let json;
+  try {
+    json = JSON.parse(body);
+  } catch {
+    throw new Error(`Liquipedia sent a non-JSON reply for ${title}: ${body.slice(0, 200)}`);
+  }
+  const page = json?.query?.pages?.[0];
   if (!page || page.missing) return null;
   return page.revisions?.[0]?.slots?.main?.content ?? null;
 }
@@ -54,7 +71,7 @@ for (const [i, title] of config.pages.entries()) {
 }
 
 if (!games.length) {
-  console.error("No games found; leaving the data files unchanged.");
+  report("No games found; leaving the data files unchanged.");
   process.exit(fromDir ? 1 : 0);
 }
 
