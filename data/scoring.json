@@ -6,6 +6,6 @@
     "counter": 0.3,
     "synergy": 0.15
   },
-  "focusTieBreak": 0.03,
+  "focusTieBreak": 0,
   "minCounterGames": 3
 }

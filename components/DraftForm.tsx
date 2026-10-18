@@ -414,7 +414,7 @@ function Results({ result }: { result: Result }) {
       <p className="fineprint">
         {pro.games > 0 ? (
           <>
-            Pro data: {pro.league}, {pro.games} games up to {pro.latestGame} ({pro.focusGames} by {pro.focusTeam}, weighted slightly higher), from{" "}
+            Pro data: {pro.league}, {pro.games} games up to {pro.latestGame} ({pro.focusGames} by {pro.focusTeam}), from{" "}
             <a href="https://liquipedia.net/mobilelegends/" target="_blank" rel="noreferrer">
               Liquipedia
             </a>{" "}
