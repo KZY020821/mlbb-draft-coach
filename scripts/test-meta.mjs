@@ -3,7 +3,7 @@
 import { readFileSync } from "node:fs";
 import { parseMatches, parseDate, teamName } from "./meta/parse.mjs";
 import { buildMeta, teamId } from "./meta/build.mjs";
-import { infoboxLogo, pagesToTry } from "./meta/teams.mjs";
+import { infoboxLogo, pagesToTry, rankSearchTitles, searchTerm } from "./meta/teams.mjs";
 
 const root = new URL("..", import.meta.url).pathname;
 const roster = JSON.parse(readFileSync(root + "data/context.json", "utf8")).heroes;
@@ -63,6 +63,17 @@ check("team ids", teamId("id", "RRQ Hoshi") === "id-rrqhoshi" && both.teams.some
 
 check("logo: dark-mode file preferred", infoboxLogo(readFileSync(root + "tests/meta/team-page.wiki", "utf8")) === "Team Liquid 2024 darkmode.png");
 check("logo: light file when no dark one", infoboxLogo("{{Infobox team\n|image=File:ONIC.png\n}}") === "ONIC.png" && infoboxLogo("no infobox") === "");
+check("logo: search term drops the region tag", searchTerm("Aurora PH") === "Aurora" && searchTerm("RRQ Tora") === "RRQ Tora" && searchTerm("IG") === "IG");
+check(
+  "logo: search results keep this region, drop other regions and subpages",
+  rankSearchTitles(["ONIC", "ONIC Philippines", "ONIC Esports", "ONIC Esports/Results", "ONIC Indonesia"], "id", { id: "Indonesia", ph: "Philippines", my: "Malaysia" }).join() ===
+    "ONIC Indonesia,ONIC,ONIC Esports"
+);
+check("short hero names from the ID and MY pages resolve", (() => {
+  const g = { ...games[0], picks: [["bea", "nova", "xb", "mathil", "lance"], games[0].picks[1]], bans: [["haya", "phove"], []] };
+  const m = buildMeta([g], roster, {}).meta;
+  return m.unknownHeroes.length === 0 && ["Beatrix", "Novaria", "X.Borg", "Mathilda", "Lancelot"].every((h) => m.heroes[h]?.picks === 1) && m.heroes.Hayabusa?.bans === 1;
+})());
 check("logo: pages tried in order", pagesToTry({ name: "ONIC PH", pages: ["onic ph"] }, "ONIC Philippines").join() === "ONIC Philippines,Onic ph,ONIC PH");
 
 const totalH2H = (h, e) => meta.matchups?.[h]?.[e]?.[0] ?? 0;

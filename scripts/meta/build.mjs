@@ -54,9 +54,15 @@ export function buildMeta(games, roster, opts = {}) {
 
   const byId = new Map(roster.map((h) => [idOf(h.name), h]));
   const unknown = new Set();
+  // Other short names: the one roster hero whose name starts with it (at least 3 letters).
+  const byPrefix = (id) => {
+    if (id.length < 3) return undefined;
+    const hits = [...byId].filter(([k]) => k.startsWith(id));
+    return hits.length === 1 ? hits[0][1] : undefined;
+  };
   const resolve = (raw) => {
     const id = idOf(raw);
-    const hero = byId.get(id) ?? (HERO_ALIASES[id] ? byId.get(idOf(HERO_ALIASES[id])) : undefined);
+    const hero = byId.get(id) ?? (HERO_ALIASES[id] ? byId.get(idOf(HERO_ALIASES[id])) : byPrefix(id));
     if (!hero) unknown.add(raw);
     return hero ? hero.name : null;
   };

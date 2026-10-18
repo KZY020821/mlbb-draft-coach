@@ -13,7 +13,7 @@ import { readFileSync, writeFileSync, existsSync, mkdirSync, unlinkSync } from "
 import { join } from "node:path";
 import { parseMatches } from "./meta/parse.mjs";
 import { buildMeta } from "./meta/build.mjs";
-import { infoboxLogo, pagesToTry } from "./meta/teams.mjs";
+import { infoboxLogo, pagesToTry, rankSearchTitles, searchTerm } from "./meta/teams.mjs";
 
 const root = new URL("..", import.meta.url).pathname;
 const config = JSON.parse(readFileSync(join(root, "data/meta-config.json"), "utf8"));
@@ -75,7 +75,8 @@ async function query(titles, params) {
     const pages = new Map((q.pages ?? []).map((p) => [p.title, p]));
     for (const t of chunk) {
       const page = pages.get(step(q.redirects, step(q.normalized, t)));
-      out.set(t, page && !page.missing && !page.invalid ? page : null);
+      // Logo files live in Liquipedia's shared file store, so they read as "missing" here but still have imageinfo.
+      out.set(t, page && !page.invalid && (!page.missing || page.known || page.imageinfo) ? page : null);
     }
   }
   return out;
@@ -163,7 +164,36 @@ async function updateLogos(teams) {
         break;
       }
     }
-    if (!want.has(t.id)) console.log(`No logo found for ${t.name} (${t.id}); tried ${tries.get(t.id).join(", ")}.`);
+  }
+
+  // Teams whose page wasn't found by name: search page titles starting with the name
+  // ("Aurora PH" -> "Aurora..."), keeping pages for this team's region over other regions.
+  const unfound = teams.filter((t) => !want.has(t.id) && !config.teamPages?.[t.id]);
+  if (unfound.length) {
+    const regions = Object.fromEntries(config.leagues.map((l) => [l.id, l.region]));
+    const options = new Map();
+    for (const t of unfound) {
+      const res = await get(
+        `${API}?action=query&format=json&formatversion=2&list=prefixsearch&psnamespace=0&pslimit=10&pssearch=${encodeURIComponent(searchTerm(t.name))}`,
+        `search for ${t.name}`
+      );
+      const titles = ((await res.json())?.query?.prefixsearch ?? []).map((x) => x.title);
+      options.set(t.id, rankSearchTitles(titles, t.league, regions));
+    }
+    const found = await query([...new Set([...options.values()].flat())], "prop=revisions&rvprop=content&rvslots=main");
+    for (const t of unfound) {
+      for (const title of options.get(t.id)) {
+        const file = infoboxLogo(contentOf(found.get(title)) ?? "");
+        if (file) {
+          want.set(t.id, { page: found.get(title).title, file });
+          console.log(`Found ${t.name} (${t.id}) by search: ${found.get(title).title}. If that's the wrong team, set teamPages in data/meta-config.json.`);
+          break;
+        }
+      }
+    }
+  }
+  for (const t of teams) {
+    if (!want.has(t.id)) console.log(`No logo found for ${t.name} (${t.id}); tried ${tries.get(t.id).join(", ")} and a title search.`);
   }
   const stale = [...want].filter(([id, w]) => !(logos[id]?.file === w.file && hasFile(logos[id])));
   if (!stale.length) return console.log("Team logos are up to date.");
