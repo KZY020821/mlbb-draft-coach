@@ -57,7 +57,7 @@ After each run, `scripts/check-health.mjs` looks for things a person has to fix,
 - a league has no games, or no new games for 14 days (season over or new pages),
 - Liquipedia has a page for a league's next season,
 - Liquipedia lists a hero the app doesn't know,
-- a team's logo could not be found (fix: add its Liquipedia page title to `teamPages` in `data/meta-config.json`).
+- a team's logo could not be found (fix: add its Liquipedia page title to `teamPages` in `data/meta-config.json`, or leave the team out of the picker with `hideTeams`).
 
 Liquipedia asks API clients to put contact details in their User-Agent. Add a repository secret `LIQUIPEDIA_CONTACT` (for example an email address) and the job includes it; without it the job identifies itself by the repository link only. Logos are looked up only for teams that don't have one yet, and for every team in the first week of each month.
 
@@ -140,7 +140,7 @@ Hero names must match the roster (case and spacing do not matter). The results p
 
 ## Patch data
 
-`data/context.json` is a snapshot (patch 2.2.16, Season 42, as of 2026-10-12). The page warns when it is more than 7 days old. `getContext()` in `lib/context.ts` is the single place to change when the data comes from a daily refresh job instead of this file.
+`data/context.json` is a snapshot (patch 2.2.16, Season 42, as of 2026-10-18). The page warns when it is more than 7 days old. `getContext()` in `lib/context.ts` is the single place to change when the data comes from a daily refresh job instead of this file.
 
 ## Tests
 

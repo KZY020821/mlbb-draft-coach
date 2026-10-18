@@ -1,4 +1,5 @@
 import raw from "@/data/meta.json";
+import config from "@/data/meta-config.json";
 
 // Pro league stats (MPL ID, PH and MY pooled) built every Tuesday by scripts/update-meta.mjs
 // from Liquipedia (CC BY-SA 3.0).
@@ -55,13 +56,16 @@ export function getMeta(): Meta {
 // The teams a player can choose to draft like, without their pick data (for the page).
 export type TeamChoice = Pick<Team, "id" | "league" | "name" | "games" | "wins" | "logo">;
 
+// Teams left out of the picker (data/meta-config.json, hideTeams). Their games still count in the league stats.
+const HIDDEN = new Set<string>((config as { hideTeams?: string[] }).hideTeams ?? []);
+
 export function teamChoices(meta: Meta = getMeta()): { leagues: League[]; teams: TeamChoice[] } {
-  const teams = (meta.teams ?? []).map(({ id, league, name, games, wins, logo }) => ({ id, league, name, games, wins, logo }));
+  const teams = (meta.teams ?? []).filter((t) => !HIDDEN.has(t.id)).map(({ id, league, name, games, wins, logo }) => ({ id, league, name, games, wins, logo }));
   return { leagues: meta.leagues ?? [], teams };
 }
 
 export function findTeam(id: unknown, meta: Meta = getMeta()): Team | null {
-  if (typeof id !== "string" || !id) return null;
+  if (typeof id !== "string" || !id || HIDDEN.has(id)) return null;
   return meta.teams?.find((t) => t.id === id) ?? null;
 }
 

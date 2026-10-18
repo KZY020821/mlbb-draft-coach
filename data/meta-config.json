@@ -1,28 +1,41 @@
 {
-  "about": "Leagues read by scripts/update-meta.mjs every Tuesday. When a new season starts, change name and pages. teamPages sets a team's Liquipedia page by hand (key is the team id, e.g. \"ph-teamliquidph\") when its logo can't be found.",
+  "about": "Leagues read by scripts/update-meta.mjs every Tuesday. When a new season starts, change name and pages. teamPages sets a team's Liquipedia page by hand (key is the team id, e.g. \"ph-teamliquidph\") when its logo can't be found. hideTeams lists team ids left out of the pro team picker (their games still count in the league stats).",
   "leagues": [
     {
       "id": "id",
       "name": "MPL Indonesia Season 18",
       "short": "MPL ID",
       "region": "Indonesia",
-      "pages": ["MPL/Indonesia/Season_18/Regular_Season", "MPL/Indonesia/Season_18/Playoffs"]
+      "pages": [
+        "MPL/Indonesia/Season_18/Regular_Season",
+        "MPL/Indonesia/Season_18/Playoffs"
+      ]
     },
     {
       "id": "ph",
       "name": "MPL Philippines Season 18",
       "short": "MPL PH",
       "region": "Philippines",
-      "pages": ["MPL/Philippines/Season_18/Regular_Season", "MPL/Philippines/Season_18/Playoffs"]
+      "pages": [
+        "MPL/Philippines/Season_18/Regular_Season",
+        "MPL/Philippines/Season_18/Playoffs"
+      ]
     },
     {
       "id": "my",
       "name": "MPL Malaysia Season 18",
       "short": "MPL MY",
       "region": "Malaysia",
-      "pages": ["MPL/Malaysia/Season_18/Regular_Season", "MPL/Malaysia/Season_18/Playoffs"]
+      "pages": [
+        "MPL/Malaysia/Season_18/Regular_Season",
+        "MPL/Malaysia/Season_18/Playoffs"
+      ]
     }
   ],
   "halfLifeDays": 28,
-  "teamPages": {}
+  "teamPages": {},
+  "hideTeams": [
+    "my-rrqtora",
+    "my-acesports"
+  ]
 }
