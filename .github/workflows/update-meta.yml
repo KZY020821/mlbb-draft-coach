@@ -6,6 +6,11 @@ on:
   schedule:
     - cron: "17 0 * * 2" # every Tuesday, 08:17 Malaysia/Philippine time (00:17 UTC), after the weekend matches
   workflow_dispatch:
+    inputs:
+      test_email:
+        description: "Send a test alert email even if nothing needs fixing"
+        type: boolean
+        default: false
   push:
     branches: [main]
     paths:
@@ -71,6 +76,15 @@ jobs:
               echo
               echo "Last lines of the log:"
               tail -n 25 build.log 2>/dev/null || echo "(the build step did not start)"
+            } > email.txt
+          elif [ "${{ inputs.test_email }}" = "true" ]; then
+            SUBJECT="MLBB Draft Coach: test alert"
+            {
+              echo "This is a test. Alerts from the weekly data update will arrive like this."
+              echo
+              if [ -s alerts.txt ]; then cat alerts.txt; else echo "Right now nothing needs fixing."; fi
+              echo
+              echo "Run: $RUN_URL"
             } > email.txt
           elif [ -s alerts.txt ]; then
             SUBJECT="MLBB Draft Coach: something needs updating"
