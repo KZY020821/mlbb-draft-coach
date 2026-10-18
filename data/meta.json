@@ -7,10 +7,10 @@
    "https://liquipedia.net/mobilelegends/MPL/Philippines/Season_18/Regular_Season",
    "https://liquipedia.net/mobilelegends/MPL/Philippines/Season_18/Playoffs"
   ],
-  "fetchedAt": "2026-10-17T12:18:20.676Z"
+  "fetchedAt": "2026-10-18T03:22:54.476Z"
  },
  "focusTeam": "Team Liquid PH",
- "focusWeight": 3,
+ "focusWeight": 1.25,
  "halfLifeDays": 28,
  "games": 127,
  "focusGames": 28,
@@ -29,7 +29,7 @@
      "wins": 19,
      "focusPicks": 1,
      "focusWins": 1,
-     "weight": 17.32,
+     "weight": 16.73,
      "lastPlayed": "2026-10-11"
     },
     "fighter": {
@@ -37,7 +37,7 @@
      "wins": 13,
      "focusPicks": 2,
      "focusWins": 2,
-     "weight": 14.02,
+     "weight": 12.8,
      "lastPlayed": "2026-10-08"
     }
    }
@@ -52,7 +52,7 @@
      "wins": 21,
      "focusPicks": 3,
      "focusWins": 3,
-     "weight": 17.64,
+     "weight": 15.66,
      "lastPlayed": "2026-10-04"
     }
    }
@@ -67,7 +67,7 @@
      "wins": 41,
      "focusPicks": 7,
      "focusWins": 3,
-     "weight": 57.66,
+     "weight": 50.42,
      "lastPlayed": "2026-10-09"
     }
    }
@@ -90,7 +90,7 @@
      "wins": 7,
      "focusPicks": 2,
      "focusWins": 2,
-     "weight": 4.76,
+     "weight": 3.76,
      "lastPlayed": "2026-09-27"
     }
    }
@@ -105,7 +105,7 @@
      "wins": 6,
      "focusPicks": 1,
      "focusWins": 1,
-     "weight": 12.49,
+     "weight": 10.82,
      "lastPlayed": "2026-10-09"
     }
    }
@@ -120,7 +120,7 @@
      "wins": 10,
      "focusPicks": 4,
      "focusWins": 3,
-     "weight": 10.35,
+     "weight": 6.99,
      "lastPlayed": "2026-09-19"
     },
     "mage": {
@@ -143,7 +143,7 @@
      "wins": 10,
      "focusPicks": 3,
      "focusWins": 2,
-     "weight": 13.23,
+     "weight": 10.65,
      "lastPlayed": "2026-10-08"
     }
    }
@@ -158,7 +158,7 @@
      "wins": 29,
      "focusPicks": 6,
      "focusWins": 6,
-     "weight": 36.91,
+     "weight": 30.13,
      "lastPlayed": "2026-10-09"
     }
    }
@@ -173,7 +173,7 @@
      "wins": 10,
      "focusPicks": 7,
      "focusWins": 5,
-     "weight": 13.24,
+     "weight": 8.81,
      "lastPlayed": "2026-09-20"
     }
    }
@@ -188,7 +188,7 @@
      "wins": 19,
      "focusPicks": 2,
      "focusWins": 1,
-     "weight": 21.01,
+     "weight": 19.29,
      "lastPlayed": "2026-10-09"
     }
    }
@@ -218,7 +218,7 @@
      "wins": 11,
      "focusPicks": 5,
      "focusWins": 2,
-     "weight": 17.99,
+     "weight": 14.03,
      "lastPlayed": "2026-10-03"
     },
     "roam": {
@@ -226,7 +226,7 @@
      "wins": 8,
      "focusPicks": 2,
      "focusWins": 1,
-     "weight": 13.06,
+     "weight": 11.35,
      "lastPlayed": "2026-10-09"
     }
    }
@@ -286,7 +286,7 @@
      "wins": 21,
      "focusPicks": 10,
      "focusWins": 8,
-     "weight": 20.88,
+     "weight": 14.03,
      "lastPlayed": "2026-09-26"
     }
    }
@@ -301,7 +301,7 @@
      "wins": 27,
      "focusPicks": 7,
      "focusWins": 7,
-     "weight": 29.35,
+     "weight": 24.06,
      "lastPlayed": "2026-10-11"
     },
     "marksman": {
@@ -309,7 +309,7 @@
      "wins": 7,
      "focusPicks": 2,
      "focusWins": 1,
-     "weight": 8.71,
+     "weight": 7.11,
      "lastPlayed": "2026-10-09"
     }
    }
@@ -324,7 +324,7 @@
      "wins": 18,
      "focusPicks": 4,
      "focusWins": 4,
-     "weight": 20.79,
+     "weight": 17.95,
      "lastPlayed": "2026-10-11"
     }
    }
@@ -339,7 +339,7 @@
      "wins": 11,
      "focusPicks": 3,
      "focusWins": 2,
-     "weight": 14.25,
+     "weight": 12.55,
      "lastPlayed": "2026-10-09"
     },
     "fighter": {
@@ -347,7 +347,7 @@
      "wins": 3,
      "focusPicks": 1,
      "focusWins": 1,
-     "weight": 6.84,
+     "weight": 5.8,
      "lastPlayed": "2026-10-09"
     }
    }
@@ -377,7 +377,7 @@
      "wins": 30,
      "focusPicks": 8,
      "focusWins": 8,
-     "weight": 38.41,
+     "weight": 31.87,
      "lastPlayed": "2026-10-09"
     }
    }
@@ -392,7 +392,7 @@
      "wins": 2,
      "focusPicks": 1,
      "focusWins": 0,
-     "weight": 3.59,
+     "weight": 3.1,
      "lastPlayed": "2026-10-03"
     },
     "fighter": {
@@ -415,7 +415,7 @@
      "wins": 7,
      "focusPicks": 1,
      "focusWins": 0,
-     "weight": 10.1,
+     "weight": 9.6,
      "lastPlayed": "2026-10-03"
     }
    }
@@ -430,7 +430,7 @@
      "wins": 16,
      "focusPicks": 4,
      "focusWins": 2,
-     "weight": 19.23,
+     "weight": 16.4,
      "lastPlayed": "2026-10-11"
     }
    }
@@ -460,7 +460,7 @@
      "wins": 5,
      "focusPicks": 2,
      "focusWins": 1,
-     "weight": 6.69,
+     "weight": 5.68,
      "lastPlayed": "2026-10-09"
     }
    }
@@ -475,7 +475,7 @@
      "wins": 10,
      "focusPicks": 5,
      "focusWins": 4,
-     "weight": 10.73,
+     "weight": 7.59,
      "lastPlayed": "2026-10-08"
     },
     "roam": {
@@ -483,7 +483,7 @@
      "wins": 4,
      "focusPicks": 1,
      "focusWins": 1,
-     "weight": 6.75,
+     "weight": 5.09,
      "lastPlayed": "2026-10-09"
     }
    }
@@ -498,7 +498,7 @@
      "wins": 18,
      "focusPicks": 1,
      "focusWins": 1,
-     "weight": 26.69,
+     "weight": 25.98,
      "lastPlayed": "2026-10-09"
     }
    }
@@ -513,7 +513,7 @@
      "wins": 16,
      "focusPicks": 1,
      "focusWins": 1,
-     "weight": 24.79,
+     "weight": 23.16,
      "lastPlayed": "2026-10-11"
     },
     "fighter": {
@@ -551,7 +551,7 @@
      "wins": 7,
      "focusPicks": 2,
      "focusWins": 2,
-     "weight": 12.91,
+     "weight": 10.25,
      "lastPlayed": "2026-10-11"
     }
    }
@@ -566,7 +566,7 @@
      "wins": 3,
      "focusPicks": 2,
      "focusWins": 2,
-     "weight": 5.08,
+     "weight": 3.05,
      "lastPlayed": "2026-09-20"
     }
    }
@@ -641,7 +641,7 @@
      "wins": 1,
      "focusPicks": 1,
      "focusWins": 0,
-     "weight": 3.4,
+     "weight": 2.39,
      "lastPlayed": "2026-09-25"
     },
     "mage": {
@@ -664,7 +664,7 @@
      "wins": 10,
      "focusPicks": 1,
      "focusWins": 1,
-     "weight": 11.43,
+     "weight": 9.96,
      "lastPlayed": "2026-10-04"
     },
     "fighter": {
@@ -702,7 +702,7 @@
      "wins": 2,
      "focusPicks": 1,
      "focusWins": 1,
-     "weight": 5.41,
+     "weight": 3.94,
      "lastPlayed": "2026-10-09"
     },
     "fighter": {
@@ -710,7 +710,7 @@
      "wins": 1,
      "focusPicks": 1,
      "focusWins": 1,
-     "weight": 3.71,
+     "weight": 2.09,
      "lastPlayed": "2026-10-08"
     }
    }
@@ -725,7 +725,7 @@
      "wins": 11,
      "focusPicks": 5,
      "focusWins": 5,
-     "weight": 15.62,
+     "weight": 11.31,
      "lastPlayed": "2026-10-11"
     }
    }
@@ -770,7 +770,7 @@
      "wins": 2,
      "focusPicks": 2,
      "focusWins": 2,
-     "weight": 5.68,
+     "weight": 2.54,
      "lastPlayed": "2026-10-09"
     }
    }
@@ -785,7 +785,7 @@
      "wins": 15,
      "focusPicks": 5,
      "focusWins": 4,
-     "weight": 25.79,
+     "weight": 18.77,
      "lastPlayed": "2026-10-09"
     }
    }
@@ -815,7 +815,7 @@
      "wins": 22,
      "focusPicks": 9,
      "focusWins": 9,
-     "weight": 40.56,
+     "weight": 32.38,
      "lastPlayed": "2026-10-09"
     }
    }
@@ -876,7 +876,7 @@
      "wins": 7,
      "focusPicks": 2,
      "focusWins": 2,
-     "weight": 6.62,
+     "weight": 5.03,
      "lastPlayed": "2026-09-18"
     }
    }
@@ -929,7 +929,7 @@
      "wins": 7,
      "focusPicks": 1,
      "focusWins": 1,
-     "weight": 9.93,
+     "weight": 8.26,
      "lastPlayed": "2026-10-09"
     },
     "fighter": {
@@ -952,7 +952,7 @@
      "wins": 6,
      "focusPicks": 2,
      "focusWins": 2,
-     "weight": 11.83,
+     "weight": 8.74,
      "lastPlayed": "2026-10-11"
     }
    }
@@ -1240,7 +1240,7 @@
      "wins": 3,
      "focusPicks": 1,
      "focusWins": 1,
-     "weight": 4.04,
+     "weight": 2.41,
      "lastPlayed": "2026-10-08"
     }
    }
@@ -1255,7 +1255,7 @@
      "wins": 2,
      "focusPicks": 1,
      "focusWins": 1,
-     "weight": 4.08,
+     "weight": 2.61,
      "lastPlayed": "2026-10-04"
     },
     "marksman": {
@@ -1263,7 +1263,7 @@
      "wins": 6,
      "focusPicks": 2,
      "focusWins": 2,
-     "weight": 9.61,
+     "weight": 6.52,
      "lastPlayed": "2026-10-11"
     },
     "jungler": {
@@ -1301,7 +1301,7 @@
      "wins": 2,
      "focusPicks": 1,
      "focusWins": 1,
-     "weight": 5.33,
+     "weight": 4.29,
      "lastPlayed": "2026-09-25"
     }
    }
@@ -1316,7 +1316,7 @@
      "wins": 3,
      "focusPicks": 1,
      "focusWins": 1,
-     "weight": 3.8,
+     "weight": 2.32,
      "lastPlayed": "2026-10-04"
     }
    }
@@ -1346,7 +1346,7 @@
      "wins": 10,
      "focusPicks": 1,
      "focusWins": 1,
-     "weight": 18.2,
+     "weight": 16.73,
      "lastPlayed": "2026-10-11"
     },
     "jungler": {
@@ -1407,7 +1407,7 @@
      "wins": 4,
      "focusPicks": 3,
      "focusWins": 3,
-     "weight": 11.75,
+     "weight": 6.8,
      "lastPlayed": "2026-10-09"
     }
    }
@@ -1468,59 +1468,59 @@
   "roam": [
    {
     "hero": "Minotaur",
-    "score": 43.06
+    "score": 34.37
    },
    {
     "hero": "Gatotkaca",
-    "score": 25.25
+    "score": 23.59
    },
    {
     "hero": "Belerick",
-    "score": 19.72
+    "score": 19.05
    },
    {
     "hero": "Marcel",
-    "score": 15.96
-   },
-   {
-    "hero": "Carmilla",
     "score": 14.06
    },
    {
-    "hero": "Gloo",
-    "score": 13.39
+    "hero": "Carmilla",
+    "score": 12.21
    },
    {
-    "hero": "Mathilda",
-    "score": 12.12
+    "hero": "Gloo",
+    "score": 11.67
    },
    {
     "hero": "Hylos",
-    "score": 10.92
+    "score": 9.09
+   },
+   {
+    "hero": "Mathilda",
+    "score": 8.19
    },
    {
     "hero": "Atlas",
-    "score": 7.43
+    "score": 5.6
    },
    {
     "hero": "Rafaela",
-    "score": 5.92
+    "score": 4.67
    },
    {
     "hero": "Hilda",
-    "score": 5.31
+    "score": 3.17
    },
    {
     "hero": "Badang",
-    "score": 3.46
-   },
-   {
-    "hero": "Angela",
-    "score": 3.17
+    "score": 2.99
    },
    {
     "hero": "Kaja",
     "score": 2.48
+   },
+   {
+    "hero": "Angela",
+    "score": 2.23
    },
    {
     "hero": "Khaleed",
@@ -1549,56 +1549,56 @@
   ],
   "marksman": [
    {
-    "hero": "Clint",
-    "score": 26.65
-   },
-   {
     "hero": "Obsidia",
     "score": 21.71
    },
    {
     "hero": "Claude",
-    "score": 21.55
+    "score": 19.13
    },
    {
     "hero": "Aulus",
-    "score": 20.02
+    "score": 18.4
+   },
+   {
+    "hero": "Clint",
+    "score": 17.91
    },
    {
     "hero": "Melissa",
-    "score": 13.82
-   },
-   {
-    "hero": "Cici",
-    "score": 13.46
-   },
-   {
-    "hero": "Freya",
-    "score": 12.76
+    "score": 11.12
    },
    {
     "hero": "Brody",
     "score": 11.09
    },
    {
-    "hero": "Paquito",
-    "score": 10.45
-   },
-   {
-    "hero": "Moskov",
-    "score": 9.85
-   },
-   {
     "hero": "Miya",
     "score": 9.52
    },
    {
-    "hero": "Karrie",
-    "score": 5.59
+    "hero": "Moskov",
+    "score": 9.36
+   },
+   {
+    "hero": "Freya",
+    "score": 8.65
+   },
+   {
+    "hero": "Paquito",
+    "score": 8.53
+   },
+   {
+    "hero": "Cici",
+    "score": 7.79
    },
    {
     "hero": "Bruno",
-    "score": 5.14
+    "score": 4.13
+   },
+   {
+    "hero": "Karrie",
+    "score": 3.36
    },
    {
     "hero": "Chou",
@@ -1628,35 +1628,35 @@
   "jungler": [
    {
     "hero": "Hirara",
-    "score": 58.67
+    "score": 51.3
    },
    {
     "hero": "Nolan",
-    "score": 45.98
+    "score": 37.54
    },
    {
     "hero": "Paquito",
-    "score": 34.63
+    "score": 28.39
    },
    {
     "hero": "Suyou",
-    "score": 17.49
-   },
-   {
-    "hero": "Harley",
-    "score": 7.36
+    "score": 12.67
    },
    {
     "hero": "Fanny",
     "score": 7.07
    },
    {
-    "hero": "Lukas",
-    "score": 5.65
+    "hero": "Harley",
+    "score": 6.25
    },
    {
     "hero": "Yi Sun-shin",
     "score": 4.58
+   },
+   {
+    "hero": "Lukas",
+    "score": 4.12
    },
    {
     "hero": "Hayabusa",
@@ -1694,27 +1694,27 @@
   "mage": [
    {
     "hero": "Eudora",
-    "score": 43.88
-   },
-   {
-    "hero": "Zhuxin",
-    "score": 30.09
+    "score": 36.41
    },
    {
     "hero": "Valentina",
-    "score": 28.15
+    "score": 27.4
+   },
+   {
+    "hero": "Zhuxin",
+    "score": 21.9
    },
    {
     "hero": "Selena",
-    "score": 21.15
-   },
-   {
-    "hero": "Novaria",
-    "score": 14.3
+    "score": 18.04
    },
    {
     "hero": "Kimmy",
-    "score": 13.41
+    "score": 9.91
+   },
+   {
+    "hero": "Novaria",
+    "score": 9.51
    },
    {
     "hero": "Rafaela",
@@ -1725,16 +1725,16 @@
     "score": 6.95
    },
    {
-    "hero": "Yve",
-    "score": 4.99
-   },
-   {
     "hero": "Lylia",
     "score": 3.25
    },
    {
     "hero": "Cecilion",
     "score": 3.25
+   },
+   {
+    "hero": "Yve",
+    "score": 3.05
    },
    {
     "hero": "Mathilda",
@@ -1775,52 +1775,44 @@
   ],
   "fighter": [
    {
-    "hero": "Uranus",
-    "score": 23.71
+    "hero": "Barats",
+    "score": 21.22
    },
    {
-    "hero": "Barats",
-    "score": 23.11
+    "hero": "Uranus",
+    "score": 20.47
    },
    {
     "hero": "Carmilla",
-    "score": 18.86
+    "score": 14.71
    },
    {
     "hero": "Belerick",
-    "score": 15.66
-   },
-   {
-    "hero": "Atlas",
-    "score": 13.59
-   },
-   {
-    "hero": "Esmeralda",
-    "score": 12.59
+    "score": 14.3
    },
    {
     "hero": "Alice",
-    "score": 12.49
+    "score": 10.82
+   },
+   {
+    "hero": "Esmeralda",
+    "score": 9.99
+   },
+   {
+    "hero": "Atlas",
+    "score": 9.61
    },
    {
     "hero": "Ruby",
-    "score": 7.94
+    "score": 6.04
    },
    {
     "hero": "Marcel",
-    "score": 6.95
-   },
-   {
-    "hero": "Arlott",
-    "score": 6.65
+    "score": 5.9
    },
    {
     "hero": "Masha",
     "score": 5.38
-   },
-   {
-    "hero": "Freya",
-    "score": 4.49
    },
    {
     "hero": "Phoveus",
@@ -1831,12 +1823,12 @@
     "score": 4.11
    },
    {
-    "hero": "Lukas",
-    "score": 4.08
-   },
-   {
     "hero": "Hylos",
     "score": 3.42
+   },
+   {
+    "hero": "Arlott",
+    "score": 2.98
    },
    {
     "hero": "Sora",
@@ -1844,6 +1836,10 @@
    },
    {
     "hero": "Khufra",
+    "score": 2.87
+   },
+   {
+    "hero": "Freya",
     "score": 2.87
    },
    {
@@ -1857,6 +1853,10 @@
    {
     "hero": "Gloo",
     "score": 2.43
+   },
+   {
+    "hero": "Lukas",
+    "score": 2.3
    },
    {
     "hero": "Chou",
@@ -1879,17 +1879,6 @@
  "pairs": [
   {
    "heroes": [
-    "Carmilla",
-    "Hirara"
-   ],
-   "games": 21,
-   "wins": 10,
-   "focusGames": 5,
-   "focusWins": 1,
-   "weight": 15.77
-  },
-  {
-   "heroes": [
     "Belerick",
     "Hirara"
    ],
@@ -1897,51 +1886,18 @@
    "wins": 11,
    "focusGames": 1,
    "focusWins": 1,
-   "weight": 12.68
+   "weight": 12.09
   },
   {
    "heroes": [
-    "Eudora",
-    "Paquito"
+    "Carmilla",
+    "Hirara"
    ],
-   "games": 17,
-   "wins": 12,
-   "focusGames": 4,
-   "focusWins": 4,
-   "weight": 12.6
-  },
-  {
-   "heroes": [
-    "Minotaur",
-    "Nolan"
-   ],
-   "games": 12,
-   "wins": 8,
-   "focusGames": 4,
-   "focusWins": 4,
-   "weight": 11.41
-  },
-  {
-   "heroes": [
-    "Minotaur",
-    "Valentina"
-   ],
-   "games": 13,
-   "wins": 5,
-   "focusGames": 1,
+   "games": 21,
+   "wins": 10,
+   "focusGames": 5,
    "focusWins": 1,
-   "weight": 10.67
-  },
-  {
-   "heroes": [
-    "Belerick",
-    "Paquito"
-   ],
-   "games": 18,
-   "wins": 11,
-   "focusGames": 2,
-   "focusWins": 2,
-   "weight": 10.03
+   "weight": 11.67
   },
   {
    "heroes": [
@@ -1957,79 +1913,24 @@
   {
    "heroes": [
     "Minotaur",
-    "Paquito"
-   ],
-   "games": 12,
-   "wins": 4,
-   "focusGames": 2,
-   "focusWins": 2,
-   "weight": 9.81
-  },
-  {
-   "heroes": [
-    "Eudora",
-    "Minotaur"
-   ],
-   "games": 10,
-   "wins": 5,
-   "focusGames": 3,
-   "focusWins": 3,
-   "weight": 9.6
-  },
-  {
-   "heroes": [
-    "Paquito",
-    "Uranus"
-   ],
-   "games": 12,
-   "wins": 8,
-   "focusGames": 3,
-   "focusWins": 3,
-   "weight": 9.44
-  },
-  {
-   "heroes": [
-    "Hirara",
-    "Minotaur"
+    "Valentina"
    ],
    "games": 13,
    "wins": 5,
    "focusGames": 1,
    "focusWins": 1,
-   "weight": 9.41
+   "weight": 9.95
   },
   {
    "heroes": [
-    "Gatotkaca",
-    "Nolan"
-   ],
-   "games": 10,
-   "wins": 4,
-   "focusGames": 1,
-   "focusWins": 1,
-   "weight": 9.33
-  },
-  {
-   "heroes": [
-    "Barats",
-    "Hirara"
-   ],
-   "games": 16,
-   "wins": 8,
-   "focusGames": 1,
-   "focusWins": 0,
-   "weight": 9.27
-  },
-  {
-   "heroes": [
-    "Clint",
+    "Eudora",
     "Paquito"
    ],
-   "games": 14,
-   "wins": 10,
+   "games": 17,
+   "wins": 12,
    "focusGames": 4,
    "focusWins": 4,
-   "weight": 9.13
+   "weight": 9.16
   },
   {
    "heroes": [
@@ -2044,80 +1945,69 @@
   },
   {
    "heroes": [
-    "Clint",
-    "Eudora"
+    "Belerick",
+    "Paquito"
    ],
-   "games": 11,
-   "wins": 9,
-   "focusGames": 5,
-   "focusWins": 5,
-   "weight": 8.76
-  },
-  {
-   "heroes": [
-    "Freya",
-    "Kimmy"
-   ],
-   "games": 6,
-   "wins": 5,
+   "games": 18,
+   "wins": 11,
    "focusGames": 2,
    "focusWins": 2,
-   "weight": 8.66
+   "weight": 8.93
   },
   {
    "heroes": [
-    "Cici",
-    "Zhuxin"
+    "Barats",
+    "Hirara"
    ],
-   "games": 3,
-   "wins": 3,
-   "focusGames": 3,
-   "focusWins": 3,
-   "weight": 8.5
+   "games": 16,
+   "wins": 8,
+   "focusGames": 1,
+   "focusWins": 0,
+   "weight": 8.28
   },
   {
    "heroes": [
-    "Eudora",
-    "Marcel"
+    "Minotaur",
+    "Paquito"
    ],
    "games": 12,
-   "wins": 9,
+   "wins": 4,
    "focusGames": 2,
    "focusWins": 2,
-   "weight": 8.35
-  },
-  {
-   "heroes": [
-    "Atlas",
-    "Suyou"
-   ],
-   "games": 7,
-   "wins": 6,
-   "focusGames": 5,
-   "focusWins": 5,
-   "weight": 8.15
+   "weight": 7.97
   },
   {
    "heroes": [
     "Hirara",
-    "Selena"
+    "Minotaur"
    ],
-   "games": 14,
-   "wins": 6,
-   "focusGames": 2,
-   "focusWins": 0,
-   "weight": 8.13
+   "games": 13,
+   "wins": 5,
+   "focusGames": 1,
+   "focusWins": 1,
+   "weight": 7.94
   },
   {
    "heroes": [
-    "Nolan",
-    "Zhuxin"
+    "Minotaur",
+    "Nolan"
    ],
-   "games": 6,
-   "wins": 5,
-   "focusGames": 2,
-   "focusWins": 2,
+   "games": 12,
+   "wins": 8,
+   "focusGames": 4,
+   "focusWins": 4,
    "weight": 7.87
+  },
+  {
+   "heroes": [
+    "Gatotkaca",
+    "Nolan"
+   ],
+   "games": 10,
+   "wins": 4,
+   "focusGames": 1,
+   "focusWins": 1,
+   "weight": 7.71
   },
   {
    "heroes": [
@@ -2140,17 +2030,6 @@
    "focusGames": 0,
    "focusWins": 0,
    "weight": 7.63
-  },
-  {
-   "heroes": [
-    "Atlas",
-    "Eudora"
-   ],
-   "games": 9,
-   "wins": 6,
-   "focusGames": 3,
-   "focusWins": 3,
-   "weight": 7.61
   },
   {
    "heroes": [
@@ -2177,24 +2056,24 @@
   {
    "heroes": [
     "Eudora",
-    "Nolan"
+    "Marcel"
    ],
-   "games": 9,
-   "wins": 6,
-   "focusGames": 1,
-   "focusWins": 1,
-   "weight": 7.43
+   "games": 12,
+   "wins": 9,
+   "focusGames": 2,
+   "focusWins": 2,
+   "weight": 7.14
   },
   {
    "heroes": [
-    "Carmilla",
-    "Selena"
+    "Paquito",
+    "Uranus"
    ],
-   "games": 10,
-   "wins": 5,
-   "focusGames": 2,
-   "focusWins": 0,
-   "weight": 7.24
+   "games": 12,
+   "wins": 8,
+   "focusGames": 3,
+   "focusWins": 3,
+   "weight": 7.1
   },
   {
    "heroes": [
@@ -2209,14 +2088,14 @@
   },
   {
    "heroes": [
-    "Hirara",
-    "Zhuxin"
+    "Eudora",
+    "Minotaur"
    ],
-   "games": 6,
-   "wins": 3,
-   "focusGames": 2,
-   "focusWins": 1,
-   "weight": 7.03
+   "games": 10,
+   "wins": 5,
+   "focusGames": 3,
+   "focusWins": 3,
+   "weight": 6.84
   },
   {
    "heroes": [
@@ -2232,112 +2111,35 @@
   {
    "heroes": [
     "Hirara",
-    "Hylos"
+    "Selena"
    ],
-   "games": 8,
-   "wins": 4,
-   "focusGames": 1,
-   "focusWins": 1,
-   "weight": 6.68
-  },
-  {
-   "heroes": [
-    "Carmilla",
-    "Paquito"
-   ],
-   "games": 7,
-   "wins": 4,
-   "focusGames": 3,
-   "focusWins": 2,
-   "weight": 6.64
-  },
-  {
-   "heroes": [
-    "Clint",
-    "Uranus"
-   ],
-   "games": 10,
-   "wins": 9,
-   "focusGames": 3,
-   "focusWins": 3,
-   "weight": 6.63
-  },
-  {
-   "heroes": [
-    "Freya",
-    "Gatotkaca"
-   ],
-   "games": 6,
-   "wins": 4,
-   "focusGames": 1,
-   "focusWins": 1,
-   "weight": 6.63
-  },
-  {
-   "heroes": [
-    "Hirara",
-    "Novaria"
-   ],
-   "games": 12,
-   "wins": 5,
+   "games": 14,
+   "wins": 6,
    "focusGames": 2,
-   "focusWins": 1,
-   "weight": 6.55
+   "focusWins": 0,
+   "weight": 6.62
   },
   {
    "heroes": [
-    "Alice",
-    "Hirara"
+    "Eudora",
+    "Nolan"
    ],
-   "games": 8,
-   "wins": 3,
+   "games": 9,
+   "wins": 6,
    "focusGames": 1,
    "focusWins": 1,
    "weight": 6.39
   },
   {
    "heroes": [
-    "Eudora",
-    "Uranus"
+    "Clint",
+    "Paquito"
    ],
-   "games": 8,
-   "wins": 6,
-   "focusGames": 2,
-   "focusWins": 2,
-   "weight": 6.15
-  },
-  {
-   "heroes": [
-    "Nolan",
-    "Valentina"
-   ],
-   "games": 8,
-   "wins": 5,
-   "focusGames": 1,
-   "focusWins": 1,
-   "weight": 6.09
-  },
-  {
-   "heroes": [
-    "Belerick",
-    "Nolan"
-   ],
-   "games": 9,
-   "wins": 4,
-   "focusGames": 1,
-   "focusWins": 1,
-   "weight": 5.96
-  },
-  {
-   "heroes": [
-    "Belerick",
-    "Valentina"
-   ],
-   "games": 8,
-   "wins": 5,
-   "focusGames": 1,
-   "focusWins": 1,
-   "weight": 5.89
+   "games": 14,
+   "wins": 10,
+   "focusGames": 4,
+   "focusWins": 4,
+   "weight": 6.19
   },
   {
    "heroes": [
@@ -2352,33 +2154,44 @@
   },
   {
    "heroes": [
-    "Belerick",
-    "Claude"
+    "Carmilla",
+    "Selena"
    ],
-   "games": 14,
-   "wins": 9,
-   "focusGames": 1,
-   "focusWins": 1,
-   "weight": 5.76
-  },
-  {
-   "heroes": [
-    "Hirara",
-    "Mathilda"
-   ],
-   "games": 12,
-   "wins": 4,
-   "focusGames": 1,
+   "games": 10,
+   "wins": 5,
+   "focusGames": 2,
    "focusWins": 0,
-   "weight": 5.67
+   "weight": 5.73
   },
   {
    "heroes": [
-    "Marcel",
-    "Paquito"
+    "Atlas",
+    "Eudora"
+   ],
+   "games": 9,
+   "wins": 6,
+   "focusGames": 3,
+   "focusWins": 3,
+   "weight": 5.56
+  },
+  {
+   "heroes": [
+    "Freya",
+    "Kimmy"
+   ],
+   "games": 6,
+   "wins": 5,
+   "focusGames": 2,
+   "focusWins": 2,
+   "weight": 5.56
+  },
+  {
+   "heroes": [
+    "Nolan",
+    "Valentina"
    ],
    "games": 8,
-   "wins": 4,
+   "wins": 5,
    "focusGames": 1,
    "focusWins": 1,
    "weight": 5.38
@@ -2386,57 +2199,35 @@
   {
    "heroes": [
     "Belerick",
-    "Melissa"
+    "Claude"
+   ],
+   "games": 14,
+   "wins": 9,
+   "focusGames": 1,
+   "focusWins": 1,
+   "weight": 5.26
+  },
+  {
+   "heroes": [
+    "Belerick",
+    "Nolan"
    ],
    "games": 9,
    "wins": 4,
    "focusGames": 1,
    "focusWins": 1,
-   "weight": 5.36
-  },
-  {
-   "heroes": [
-    "Eudora",
-    "Suyou"
-   ],
-   "games": 6,
-   "wins": 5,
-   "focusGames": 3,
-   "focusWins": 3,
-   "weight": 5.29
-  },
-  {
-   "heroes": [
-    "Paquito",
-    "Rafaela"
-   ],
-   "games": 11,
-   "wins": 9,
-   "focusGames": 2,
-   "focusWins": 2,
-   "weight": 5.27
-  },
-  {
-   "heroes": [
-    "Angela",
-    "Hirara"
-   ],
-   "games": 10,
-   "wins": 4,
-   "focusGames": 1,
-   "focusWins": 0,
    "weight": 5.24
   },
   {
    "heroes": [
-    "Gatotkaca",
-    "Kimmy"
+    "Nolan",
+    "Zhuxin"
    ],
-   "games": 4,
-   "wins": 3,
-   "focusGames": 1,
-   "focusWins": 1,
-   "weight": 5.19
+   "games": 6,
+   "wins": 5,
+   "focusGames": 2,
+   "focusWins": 2,
+   "weight": 5.21
   },
   {
    "heroes": [
@@ -2451,25 +2242,14 @@
   },
   {
    "heroes": [
-    "Esmeralda",
-    "Nolan"
+    "Belerick",
+    "Valentina"
    ],
-   "games": 3,
-   "wins": 3,
-   "focusGames": 2,
-   "focusWins": 2,
-   "weight": 5.15
-  },
-  {
-   "heroes": [
-    "Eudora",
-    "Ruby"
-   ],
-   "games": 7,
+   "games": 8,
    "wins": 5,
-   "focusGames": 2,
-   "focusWins": 2,
-   "weight": 5.1
+   "focusGames": 1,
+   "focusWins": 1,
+   "weight": 5.17
   },
   {
    "heroes": [
@@ -2481,17 +2261,6 @@
    "focusGames": 0,
    "focusWins": 0,
    "weight": 5.09
-  },
-  {
-   "heroes": [
-    "Marcel",
-    "Nolan"
-   ],
-   "games": 5,
-   "wins": 4,
-   "focusGames": 1,
-   "focusWins": 1,
-   "weight": 5.08
   },
   {
    "heroes": [
@@ -2513,17 +2282,6 @@
    "wins": 4,
    "focusGames": 0,
    "focusWins": 0,
-   "weight": 5.07
-  },
-  {
-   "heroes": [
-    "Alice",
-    "Zhuxin"
-   ],
-   "games": 4,
-   "wins": 3,
-   "focusGames": 1,
-   "focusWins": 1,
    "weight": 5.07
   },
   {
@@ -2539,28 +2297,6 @@
   },
   {
    "heroes": [
-    "Marcel",
-    "Minotaur"
-   ],
-   "games": 5,
-   "wins": 2,
-   "focusGames": 1,
-   "focusWins": 1,
-   "weight": 5.04
-  },
-  {
-   "heroes": [
-    "Hirara",
-    "Moskov"
-   ],
-   "games": 11,
-   "wins": 2,
-   "focusGames": 1,
-   "focusWins": 0,
-   "weight": 5.03
-  },
-  {
-   "heroes": [
     "Aulus",
     "Marcel"
    ],
@@ -2572,14 +2308,47 @@
   },
   {
    "heroes": [
-    "Minotaur",
-    "Selena"
+    "Hirara",
+    "Hylos"
    ],
-   "games": 7,
+   "games": 8,
    "wins": 4,
-   "focusGames": 2,
-   "focusWins": 2,
+   "focusGames": 1,
+   "focusWins": 1,
+   "weight": 5.01
+  },
+  {
+   "heroes": [
+    "Freya",
+    "Gatotkaca"
+   ],
+   "games": 6,
+   "wins": 4,
+   "focusGames": 1,
+   "focusWins": 1,
    "weight": 5
+  },
+  {
+   "heroes": [
+    "Clint",
+    "Eudora"
+   ],
+   "games": 11,
+   "wins": 9,
+   "focusGames": 5,
+   "focusWins": 5,
+   "weight": 4.99
+  },
+  {
+   "heroes": [
+    "Hirara",
+    "Novaria"
+   ],
+   "games": 12,
+   "wins": 5,
+   "focusGames": 2,
+   "focusWins": 1,
+   "weight": 4.98
   },
   {
    "heroes": [
@@ -2594,25 +2363,14 @@
   },
   {
    "heroes": [
-    "Hirara",
+    "Marcel",
     "Paquito"
    ],
-   "games": 6,
+   "games": 8,
    "wins": 4,
-   "focusGames": 2,
+   "focusGames": 1,
    "focusWins": 1,
-   "weight": 4.88
-  },
-  {
-   "heroes": [
-    "Atlas",
-    "Clint"
-   ],
-   "games": 6,
-   "wins": 4,
-   "focusGames": 4,
-   "focusWins": 3,
-   "weight": 4.82
+   "weight": 4.78
   },
   {
    "heroes": [
@@ -2627,58 +2385,25 @@
   },
   {
    "heroes": [
-    "Carmilla",
-    "Zhuxin"
+    "Clint",
+    "Uranus"
    ],
-   "games": 5,
-   "wins": 2,
-   "focusGames": 1,
-   "focusWins": 0,
-   "weight": 4.78
+   "games": 10,
+   "wins": 9,
+   "focusGames": 3,
+   "focusWins": 3,
+   "weight": 4.77
   },
   {
    "heroes": [
-    "Mathilda",
-    "Paquito"
+    "Alice",
+    "Hirara"
    ],
-   "games": 6,
-   "wins": 4,
-   "focusGames": 2,
-   "focusWins": 2,
-   "weight": 4.76
-  },
-  {
-   "heroes": [
-    "Esmeralda",
-    "Gatotkaca"
-   ],
-   "games": 5,
-   "wins": 1,
+   "games": 8,
+   "wins": 3,
    "focusGames": 1,
    "focusWins": 1,
    "weight": 4.72
-  },
-  {
-   "heroes": [
-    "Novaria",
-    "Paquito"
-   ],
-   "games": 5,
-   "wins": 4,
-   "focusGames": 4,
-   "focusWins": 4,
-   "weight": 4.69
-  },
-  {
-   "heroes": [
-    "Melissa",
-    "Minotaur"
-   ],
-   "games": 6,
-   "wins": 4,
-   "focusGames": 2,
-   "focusWins": 2,
-   "weight": 4.67
   },
   {
    "heroes": [
@@ -2693,25 +2418,25 @@
   },
   {
    "heroes": [
-    "Barats",
-    "Nolan"
+    "Belerick",
+    "Melissa"
    ],
-   "games": 7,
-   "wins": 6,
+   "games": 9,
+   "wins": 4,
    "focusGames": 1,
    "focusWins": 1,
-   "weight": 4.66
+   "weight": 4.65
   },
   {
    "heroes": [
-    "Barats",
-    "Claude"
+    "Hirara",
+    "Mathilda"
    ],
-   "games": 8,
-   "wins": 6,
+   "games": 12,
+   "wins": 4,
    "focusGames": 1,
-   "focusWins": 1,
-   "weight": 4.66
+   "focusWins": 0,
+   "weight": 4.65
   },
   {
    "heroes": [
@@ -2726,6 +2451,17 @@
   },
   {
    "heroes": [
+    "Hirara",
+    "Moskov"
+   ],
+   "games": 11,
+   "wins": 2,
+   "focusGames": 1,
+   "focusWins": 0,
+   "weight": 4.53
+  },
+  {
+   "heroes": [
     "Obsidia",
     "Valentina"
    ],
@@ -2734,61 +2470,6 @@
    "focusGames": 0,
    "focusWins": 0,
    "weight": 4.52
-  },
-  {
-   "heroes": [
-    "Minotaur",
-    "Zhuxin"
-   ],
-   "games": 6,
-   "wins": 2,
-   "focusGames": 1,
-   "focusWins": 1,
-   "weight": 4.48
-  },
-  {
-   "heroes": [
-    "Carmilla",
-    "Novaria"
-   ],
-   "games": 4,
-   "wins": 2,
-   "focusGames": 3,
-   "focusWins": 2,
-   "weight": 4.46
-  },
-  {
-   "heroes": [
-    "Mathilda",
-    "Uranus"
-   ],
-   "games": 4,
-   "wins": 3,
-   "focusGames": 3,
-   "focusWins": 3,
-   "weight": 4.44
-  },
-  {
-   "heroes": [
-    "Kimmy",
-    "Nolan"
-   ],
-   "games": 3,
-   "wins": 2,
-   "focusGames": 1,
-   "focusWins": 1,
-   "weight": 4.42
-  },
-  {
-   "heroes": [
-    "Aulus",
-    "Lukas"
-   ],
-   "games": 3,
-   "wins": 2,
-   "focusGames": 1,
-   "focusWins": 1,
-   "weight": 4.4
   },
   {
    "heroes": [
@@ -2814,25 +2495,14 @@
   },
   {
    "heroes": [
-    "Atlas",
+    "Hirara",
     "Zhuxin"
    ],
-   "games": 3,
+   "games": 6,
    "wins": 3,
-   "focusGames": 1,
+   "focusGames": 2,
    "focusWins": 1,
    "weight": 4.35
-  },
-  {
-   "heroes": [
-    "Barats",
-    "Minotaur"
-   ],
-   "games": 5,
-   "wins": 2,
-   "focusGames": 1,
-   "focusWins": 1,
-   "weight": 4.34
   },
   {
    "heroes": [
@@ -2847,6 +2517,17 @@
   },
   {
    "heroes": [
+    "Eudora",
+    "Uranus"
+   ],
+   "games": 8,
+   "wins": 6,
+   "focusGames": 2,
+   "focusWins": 2,
+   "weight": 4.3
+  },
+  {
+   "heroes": [
     "Gatotkaca",
     "Uranus"
    ],
@@ -2858,14 +2539,25 @@
   },
   {
    "heroes": [
-    "Clint",
-    "Novaria"
+    "Paquito",
+    "Rafaela"
    ],
-   "games": 4,
-   "wins": 2,
-   "focusGames": 4,
+   "games": 11,
+   "wins": 9,
+   "focusGames": 2,
    "focusWins": 2,
-   "weight": 4.27
+   "weight": 4.26
+  },
+  {
+   "heroes": [
+    "Angela",
+    "Hirara"
+   ],
+   "games": 10,
+   "wins": 4,
+   "focusGames": 1,
+   "focusWins": 0,
+   "weight": 4.23
   },
   {
    "heroes": [
@@ -2880,36 +2572,14 @@
   },
   {
    "heroes": [
-    "Belerick",
-    "Rafaela"
+    "Carmilla",
+    "Paquito"
    ],
-   "games": 11,
-   "wins": 7,
-   "focusGames": 1,
-   "focusWins": 1,
-   "weight": 4.22
-  },
-  {
-   "heroes": [
-    "Hylos",
-    "Zhuxin"
-   ],
-   "games": 3,
-   "wins": 1,
-   "focusGames": 1,
-   "focusWins": 1,
-   "weight": 4.2
-  },
-  {
-   "heroes": [
-    "Claude",
-    "Eudora"
-   ],
-   "games": 6,
-   "wins": 3,
-   "focusGames": 1,
-   "focusWins": 1,
-   "weight": 4.19
+   "games": 7,
+   "wins": 4,
+   "focusGames": 3,
+   "focusWins": 2,
+   "weight": 4.18
   },
   {
    "heroes": [
@@ -2935,17 +2605,6 @@
   },
   {
    "heroes": [
-    "Esmeralda",
-    "Kimmy"
-   ],
-   "games": 3,
-   "wins": 1,
-   "focusGames": 1,
-   "focusWins": 1,
-   "weight": 4.13
-  },
-  {
-   "heroes": [
     "Hirara",
     "Miya"
    ],
@@ -2957,25 +2616,14 @@
   },
   {
    "heroes": [
-    "Esmeralda",
-    "Eudora"
+    "Marcel",
+    "Nolan"
    ],
    "games": 5,
-   "wins": 3,
+   "wins": 4,
    "focusGames": 1,
    "focusWins": 1,
-   "weight": 4.07
-  },
-  {
-   "heroes": [
-    "Aulus",
-    "Kimmy"
-   ],
-   "games": 3,
-   "wins": 2,
-   "focusGames": 1,
-   "focusWins": 1,
-   "weight": 4.07
+   "weight": 4.04
   },
   {
    "heroes": [
@@ -2990,14 +2638,14 @@
   },
   {
    "heroes": [
-    "Clint",
+    "Marcel",
     "Minotaur"
    ],
-   "games": 4,
-   "wins": 4,
-   "focusGames": 2,
-   "focusWins": 2,
-   "weight": 3.98
+   "games": 5,
+   "wins": 2,
+   "focusGames": 1,
+   "focusWins": 1,
+   "weight": 4
   },
   {
    "heroes": [
@@ -3024,35 +2672,24 @@
   {
    "heroes": [
     "Barats",
-    "Novaria"
-   ],
-   "games": 6,
-   "wins": 2,
-   "focusGames": 1,
-   "focusWins": 0,
-   "weight": 3.92
-  },
-  {
-   "heroes": [
-    "Melissa",
     "Nolan"
    ],
-   "games": 6,
-   "wins": 3,
+   "games": 7,
+   "wins": 6,
    "focusGames": 1,
    "focusWins": 1,
-   "weight": 3.91
+   "weight": 3.93
   },
   {
    "heroes": [
-    "Eudora",
-    "Mathilda"
+    "Barats",
+    "Claude"
    ],
-   "games": 4,
-   "wins": 2,
-   "focusGames": 2,
-   "focusWins": 2,
-   "weight": 3.91
+   "games": 8,
+   "wins": 6,
+   "focusGames": 1,
+   "focusWins": 1,
+   "weight": 3.92
   },
   {
    "heroes": [
@@ -3078,6 +2715,17 @@
   },
   {
    "heroes": [
+    "Atlas",
+    "Suyou"
+   ],
+   "games": 7,
+   "wins": 6,
+   "focusGames": 5,
+   "focusWins": 5,
+   "weight": 3.84
+  },
+  {
+   "heroes": [
     "Gloo",
     "Obsidia"
    ],
@@ -3086,17 +2734,6 @@
    "focusGames": 0,
    "focusWins": 0,
    "weight": 3.84
-  },
-  {
-   "heroes": [
-    "Paquito",
-    "Zhuxin"
-   ],
-   "games": 4,
-   "wins": 2,
-   "focusGames": 1,
-   "focusWins": 0,
-   "weight": 3.83
   },
   {
    "heroes": [
@@ -3111,146 +2748,47 @@
   },
   {
    "heroes": [
-    "Esmeralda",
-    "Freya"
-   ],
-   "games": 2,
-   "wins": 1,
-   "focusGames": 1,
-   "focusWins": 1,
-   "weight": 3.79
-  },
-  {
-   "heroes": [
-    "Atlas",
-    "Cici"
-   ],
-   "games": 2,
-   "wins": 2,
-   "focusGames": 1,
-   "focusWins": 1,
-   "weight": 3.78
-  },
-  {
-   "heroes": [
-    "Cici",
-    "Hirara"
-   ],
-   "games": 2,
-   "wins": 2,
-   "focusGames": 1,
-   "focusWins": 1,
-   "weight": 3.78
-  },
-  {
-   "heroes": [
-    "Clint",
-    "Marcel"
+    "Carmilla",
+    "Zhuxin"
    ],
    "games": 5,
-   "wins": 4,
-   "focusGames": 3,
-   "focusWins": 2,
-   "weight": 3.74
-  },
-  {
-   "heroes": [
-    "Freya",
-    "Nolan"
-   ],
-   "games": 2,
    "wins": 2,
-   "focusGames": 1,
-   "focusWins": 1,
-   "weight": 3.74
-  },
-  {
-   "heroes": [
-    "Hirara",
-    "Melissa"
-   ],
-   "games": 5,
-   "wins": 4,
    "focusGames": 1,
    "focusWins": 0,
-   "weight": 3.73
+   "weight": 3.76
+  },
+  {
+   "heroes": [
+    "Belerick",
+    "Rafaela"
+   ],
+   "games": 11,
+   "wins": 7,
+   "focusGames": 1,
+   "focusWins": 1,
+   "weight": 3.71
   },
   {
    "heroes": [
     "Minotaur",
-    "Suyou"
-   ],
-   "games": 4,
-   "wins": 2,
-   "focusGames": 2,
-   "focusWins": 2,
-   "weight": 3.72
-  },
-  {
-   "heroes": [
-    "Claude",
-    "Minotaur"
-   ],
-   "games": 4,
-   "wins": 2,
-   "focusGames": 2,
-   "focusWins": 2,
-   "weight": 3.71
-  },
-  {
-   "heroes": [
-    "Lukas",
-    "Nolan"
-   ],
-   "games": 2,
-   "wins": 1,
-   "focusGames": 1,
-   "focusWins": 1,
-   "weight": 3.71
-  },
-  {
-   "heroes": [
-    "Clint",
-    "Rafaela"
+    "Selena"
    ],
    "games": 7,
-   "wins": 7,
-   "focusGames": 1,
-   "focusWins": 1,
-   "weight": 3.69
+   "wins": 4,
+   "focusGames": 2,
+   "focusWins": 2,
+   "weight": 3.67
   },
   {
    "heroes": [
-    "Esmeralda",
+    "Barats",
     "Minotaur"
    ],
-   "games": 4,
-   "wins": 3,
-   "focusGames": 1,
-   "focusWins": 1,
-   "weight": 3.69
-  },
-  {
-   "heroes": [
-    "Suyou",
-    "Zhuxin"
-   ],
-   "games": 3,
+   "games": 5,
    "wins": 2,
    "focusGames": 1,
    "focusWins": 1,
-   "weight": 3.65
-  },
-  {
-   "heroes": [
-    "Carmilla",
-    "Clint"
-   ],
-   "games": 3,
-   "wins": 1,
-   "focusGames": 2,
-   "focusWins": 1,
-   "weight": 3.62
+   "weight": 3.6
   },
   {
    "heroes": [
@@ -3265,47 +2803,36 @@
   },
   {
    "heroes": [
-    "Freya",
-    "Hirara"
+    "Gatotkaca",
+    "Kimmy"
+   ],
+   "games": 4,
+   "wins": 3,
+   "focusGames": 1,
+   "focusWins": 1,
+   "weight": 3.56
+  },
+  {
+   "heroes": [
+    "Cici",
+    "Zhuxin"
    ],
    "games": 3,
-   "wins": 2,
-   "focusGames": 1,
-   "focusWins": 1,
-   "weight": 3.59
-  },
-  {
-   "heroes": [
-    "Atlas",
-    "Marcel"
-   ],
-   "games": 4,
    "wins": 3,
-   "focusGames": 2,
-   "focusWins": 1,
-   "weight": 3.52
+   "focusGames": 3,
+   "focusWins": 3,
+   "weight": 3.54
   },
   {
    "heroes": [
-    "Nolan",
-    "Selena"
-   ],
-   "games": 5,
-   "wins": 3,
-   "focusGames": 1,
-   "focusWins": 1,
-   "weight": 3.51
-  },
-  {
-   "heroes": [
-    "Paquito",
+    "Eudora",
     "Ruby"
    ],
-   "games": 4,
-   "wins": 4,
+   "games": 7,
+   "wins": 5,
    "focusGames": 2,
    "focusWins": 2,
-   "weight": 3.5
+   "weight": 3.51
   },
   {
    "heroes": [
@@ -3316,28 +2843,6 @@
    "wins": 4,
    "focusGames": 0,
    "focusWins": 0,
-   "weight": 3.49
-  },
-  {
-   "heroes": [
-    "Carmilla",
-    "Melissa"
-   ],
-   "games": 3,
-   "wins": 1,
-   "focusGames": 2,
-   "focusWins": 1,
-   "weight": 3.49
-  },
-  {
-   "heroes": [
-    "Lukas",
-    "Zhuxin"
-   ],
-   "games": 2,
-   "wins": 1,
-   "focusGames": 1,
-   "focusWins": 1,
    "weight": 3.49
   },
   {
@@ -3353,25 +2858,14 @@
   },
   {
    "heroes": [
-    "Aulus",
-    "Freya"
+    "Claude",
+    "Eudora"
    ],
-   "games": 2,
-   "wins": 1,
+   "games": 6,
+   "wins": 3,
    "focusGames": 1,
    "focusWins": 1,
-   "weight": 3.47
-  },
-  {
-   "heroes": [
-    "Freya",
-    "Minotaur"
-   ],
-   "games": 2,
-   "wins": 1,
-   "focusGames": 1,
-   "focusWins": 1,
-   "weight": 3.47
+   "weight": 3.46
   },
   {
    "heroes": [
@@ -3383,6 +2877,17 @@
    "focusGames": 0,
    "focusWins": 0,
    "weight": 3.46
+  },
+  {
+   "heroes": [
+    "Minotaur",
+    "Zhuxin"
+   ],
+   "games": 6,
+   "wins": 2,
+   "focusGames": 1,
+   "focusWins": 1,
+   "weight": 3.44
   },
   {
    "heroes": [
@@ -3408,13 +2913,13 @@
   },
   {
    "heroes": [
-    "Belerick",
-    "Novaria"
+    "Alice",
+    "Zhuxin"
    ],
-   "games": 6,
+   "games": 4,
    "wins": 3,
-   "focusGames": 2,
-   "focusWins": 2,
+   "focusGames": 1,
+   "focusWins": 1,
    "weight": 3.41
   },
   {
@@ -3463,17 +2968,6 @@
   },
   {
    "heroes": [
-    "Clint",
-    "Hirara"
-   ],
-   "games": 5,
-   "wins": 2,
-   "focusGames": 1,
-   "focusWins": 0,
-   "weight": 3.3
-  },
-  {
-   "heroes": [
     "Minotaur",
     "Uranus"
    ],
@@ -3496,14 +2990,14 @@
   },
   {
    "heroes": [
-    "Clint",
-    "Suyou"
+    "Hirara",
+    "Paquito"
    ],
-   "games": 3,
-   "wins": 3,
-   "focusGames": 3,
-   "focusWins": 3,
-   "weight": 3.27
+   "games": 6,
+   "wins": 4,
+   "focusGames": 2,
+   "focusWins": 1,
+   "weight": 3.28
   },
   {
    "heroes": [
@@ -3518,6 +3012,17 @@
   },
   {
    "heroes": [
+    "Eudora",
+    "Suyou"
+   ],
+   "games": 6,
+   "wins": 5,
+   "focusGames": 3,
+   "focusWins": 3,
+   "weight": 3.24
+  },
+  {
+   "heroes": [
     "Gatotkaca",
     "Zhuxin"
    ],
@@ -3529,6 +3034,28 @@
   },
   {
    "heroes": [
+    "Melissa",
+    "Nolan"
+   ],
+   "games": 6,
+   "wins": 3,
+   "focusGames": 1,
+   "focusWins": 1,
+   "weight": 3.2
+  },
+  {
+   "heroes": [
+    "Clint",
+    "Rafaela"
+   ],
+   "games": 7,
+   "wins": 7,
+   "focusGames": 1,
+   "focusWins": 1,
+   "weight": 3.2
+  },
+  {
+   "heroes": [
     "Brody",
     "Marcel"
    ],
@@ -3537,28 +3064,6 @@
    "focusGames": 0,
    "focusWins": 0,
    "weight": 3.2
-  },
-  {
-   "heroes": [
-    "Barats",
-    "Clint"
-   ],
-   "games": 5,
-   "wins": 2,
-   "focusGames": 1,
-   "focusWins": 0,
-   "weight": 3.19
-  },
-  {
-   "heroes": [
-    "Clint",
-    "Selena"
-   ],
-   "games": 5,
-   "wins": 3,
-   "focusGames": 1,
-   "focusWins": 1,
-   "weight": 3.17
   },
   {
    "heroes": [
@@ -3584,47 +3089,25 @@
   },
   {
    "heroes": [
-    "Freya",
-    "Gloo"
+    "Melissa",
+    "Minotaur"
    ],
-   "games": 2,
-   "wins": 2,
-   "focusGames": 1,
-   "focusWins": 1,
-   "weight": 3.1
-  },
-  {
-   "heroes": [
-    "Gloo",
-    "Kimmy"
-   ],
-   "games": 2,
-   "wins": 2,
-   "focusGames": 1,
-   "focusWins": 1,
-   "weight": 3.1
-  },
-  {
-   "heroes": [
-    "Clint",
-    "Ruby"
-   ],
-   "games": 3,
-   "wins": 3,
+   "games": 6,
+   "wins": 4,
    "focusGames": 2,
    "focusWins": 2,
-   "weight": 3.09
+   "weight": 3.1
   },
   {
    "heroes": [
-    "Carmilla",
-    "Eudora"
+    "Esmeralda",
+    "Gatotkaca"
    ],
-   "games": 4,
-   "wins": 3,
+   "games": 5,
+   "wins": 1,
    "focusGames": 1,
    "focusWins": 1,
-   "weight": 3.08
+   "weight": 3.09
   },
   {
    "heroes": [
@@ -3639,44 +3122,11 @@
   },
   {
    "heroes": [
-    "Belerick",
-    "Minotaur"
+    "Esmeralda",
+    "Eudora"
    ],
-   "games": 4,
-   "wins": 2,
-   "focusGames": 1,
-   "focusWins": 1,
-   "weight": 3.05
-  },
-  {
-   "heroes": [
-    "Claude",
-    "Paquito"
-   ],
-   "games": 7,
-   "wins": 6,
-   "focusGames": 1,
-   "focusWins": 1,
-   "weight": 3.04
-  },
-  {
-   "heroes": [
-    "Clint",
-    "Mathilda"
-   ],
-   "games": 4,
+   "games": 5,
    "wins": 3,
-   "focusGames": 2,
-   "focusWins": 2,
-   "weight": 3.03
-  },
-  {
-   "heroes": [
-    "Carmilla",
-    "Minotaur"
-   ],
-   "games": 4,
-   "wins": 2,
    "focusGames": 1,
    "focusWins": 1,
    "weight": 3.03
@@ -3738,14 +3188,36 @@
   },
   {
    "heroes": [
-    "Bruno",
-    "Eudora"
+    "Barats",
+    "Novaria"
+   ],
+   "games": 6,
+   "wins": 2,
+   "focusGames": 1,
+   "focusWins": 0,
+   "weight": 2.93
+  },
+  {
+   "heroes": [
+    "Aulus",
+    "Lukas"
    ],
    "games": 3,
-   "wins": 1,
+   "wins": 2,
    "focusGames": 1,
    "focusWins": 1,
-   "weight": 2.94
+   "weight": 2.93
+  },
+  {
+   "heroes": [
+    "Mathilda",
+    "Paquito"
+   ],
+   "games": 6,
+   "wins": 4,
+   "focusGames": 2,
+   "focusWins": 2,
+   "weight": 2.91
   },
   {
    "heroes": [
@@ -3757,17 +3229,6 @@
    "focusGames": 0,
    "focusWins": 0,
    "weight": 2.91
-  },
-  {
-   "heroes": [
-    "Belerick",
-    "Carmilla"
-   ],
-   "games": 5,
-   "wins": 2,
-   "focusGames": 1,
-   "focusWins": 1,
-   "weight": 2.89
   },
   {
    "heroes": [
@@ -3804,17 +3265,6 @@
   },
   {
    "heroes": [
-    "Rafaela",
-    "Uranus"
-   ],
-   "games": 5,
-   "wins": 4,
-   "focusGames": 1,
-   "focusWins": 1,
-   "weight": 2.86
-  },
-  {
-   "heroes": [
     "Gatotkaca",
     "Paquito"
    ],
@@ -3822,94 +3272,6 @@
    "wins": 2,
    "focusGames": 0,
    "focusWins": 0,
-   "weight": 2.86
-  },
-  {
-   "heroes": [
-    "Arlott",
-    "Atlas"
-   ],
-   "games": 1,
-   "wins": 1,
-   "focusGames": 1,
-   "focusWins": 1,
-   "weight": 2.86
-  },
-  {
-   "heroes": [
-    "Arlott",
-    "Cici"
-   ],
-   "games": 1,
-   "wins": 1,
-   "focusGames": 1,
-   "focusWins": 1,
-   "weight": 2.86
-  },
-  {
-   "heroes": [
-    "Arlott",
-    "Suyou"
-   ],
-   "games": 1,
-   "wins": 1,
-   "focusGames": 1,
-   "focusWins": 1,
-   "weight": 2.86
-  },
-  {
-   "heroes": [
-    "Arlott",
-    "Zhuxin"
-   ],
-   "games": 1,
-   "wins": 1,
-   "focusGames": 1,
-   "focusWins": 1,
-   "weight": 2.86
-  },
-  {
-   "heroes": [
-    "Cici",
-    "Suyou"
-   ],
-   "games": 1,
-   "wins": 1,
-   "focusGames": 1,
-   "focusWins": 1,
-   "weight": 2.86
-  },
-  {
-   "heroes": [
-    "Alice",
-    "Cici"
-   ],
-   "games": 1,
-   "wins": 1,
-   "focusGames": 1,
-   "focusWins": 1,
-   "weight": 2.86
-  },
-  {
-   "heroes": [
-    "Alice",
-    "Hylos"
-   ],
-   "games": 1,
-   "wins": 1,
-   "focusGames": 1,
-   "focusWins": 1,
-   "weight": 2.86
-  },
-  {
-   "heroes": [
-    "Cici",
-    "Hylos"
-   ],
-   "games": 1,
-   "wins": 1,
-   "focusGames": 1,
-   "focusWins": 1,
    "weight": 2.86
   },
   {
@@ -3936,17 +3298,6 @@
   },
   {
    "heroes": [
-    "Arlott",
-    "Hirara"
-   ],
-   "games": 2,
-   "wins": 1,
-   "focusGames": 1,
-   "focusWins": 1,
-   "weight": 2.82
-  },
-  {
-   "heroes": [
     "Belerick",
     "Marcel"
    ],
@@ -3958,69 +3309,36 @@
   },
   {
    "heroes": [
-    "Cici",
-    "Hilda"
-   ],
-   "games": 1,
-   "wins": 1,
-   "focusGames": 1,
-   "focusWins": 1,
-   "weight": 2.79
-  },
-  {
-   "heroes": [
-    "Cici",
-    "Lukas"
-   ],
-   "games": 1,
-   "wins": 1,
-   "focusGames": 1,
-   "focusWins": 1,
-   "weight": 2.79
-  },
-  {
-   "heroes": [
-    "Cici",
-    "Nolan"
-   ],
-   "games": 1,
-   "wins": 1,
-   "focusGames": 1,
-   "focusWins": 1,
-   "weight": 2.79
-  },
-  {
-   "heroes": [
-    "Hilda",
-    "Lukas"
-   ],
-   "games": 1,
-   "wins": 1,
-   "focusGames": 1,
-   "focusWins": 1,
-   "weight": 2.79
-  },
-  {
-   "heroes": [
-    "Hilda",
-    "Nolan"
-   ],
-   "games": 1,
-   "wins": 1,
-   "focusGames": 1,
-   "focusWins": 1,
-   "weight": 2.79
-  },
-  {
-   "heroes": [
-    "Hilda",
+    "Paquito",
     "Zhuxin"
    ],
-   "games": 1,
-   "wins": 1,
+   "games": 4,
+   "wins": 2,
+   "focusGames": 1,
+   "focusWins": 0,
+   "weight": 2.81
+  },
+  {
+   "heroes": [
+    "Kimmy",
+    "Nolan"
+   ],
+   "games": 3,
+   "wins": 2,
    "focusGames": 1,
    "focusWins": 1,
-   "weight": 2.79
+   "weight": 2.8
+  },
+  {
+   "heroes": [
+    "Nolan",
+    "Selena"
+   ],
+   "games": 5,
+   "wins": 3,
+   "focusGames": 1,
+   "focusWins": 1,
+   "weight": 2.78
   },
   {
    "heroes": [
@@ -4046,25 +3364,14 @@
   },
   {
    "heroes": [
-    "Carmilla",
-    "Moskov"
+    "Hirara",
+    "Melissa"
    ],
-   "games": 4,
-   "wins": 1,
+   "games": 5,
+   "wins": 4,
    "focusGames": 1,
    "focusWins": 0,
    "weight": 2.71
-  },
-  {
-   "heroes": [
-    "Marcel",
-    "Novaria"
-   ],
-   "games": 5,
-   "wins": 0,
-   "focusGames": 1,
-   "focusWins": 0,
-   "weight": 2.7
   },
   {
    "heroes": [
@@ -4075,6 +3382,17 @@
    "wins": 3,
    "focusGames": 0,
    "focusWins": 0,
+   "weight": 2.68
+  },
+  {
+   "heroes": [
+    "Atlas",
+    "Zhuxin"
+   ],
+   "games": 3,
+   "wins": 3,
+   "focusGames": 1,
+   "focusWins": 1,
    "weight": 2.68
   },
   {
@@ -4090,17 +3408,6 @@
   },
   {
    "heroes": [
-    "Eudora",
-    "Karrie"
-   ],
-   "games": 3,
-   "wins": 1,
-   "focusGames": 1,
-   "focusWins": 1,
-   "weight": 2.66
-  },
-  {
-   "heroes": [
     "Belerick",
     "Suyou"
    ],
@@ -4108,6 +3415,17 @@
    "wins": 3,
    "focusGames": 0,
    "focusWins": 0,
+   "weight": 2.65
+  },
+  {
+   "heroes": [
+    "Esmeralda",
+    "Minotaur"
+   ],
+   "games": 4,
+   "wins": 3,
+   "focusGames": 1,
+   "focusWins": 1,
    "weight": 2.65
   },
   {
@@ -4123,36 +3441,25 @@
   },
   {
    "heroes": [
-    "Claude",
-    "Selena"
-   ],
-   "games": 4,
-   "wins": 2,
-   "focusGames": 1,
-   "focusWins": 1,
-   "weight": 2.63
-  },
-  {
-   "heroes": [
-    "Mathilda",
-    "Melissa"
-   ],
-   "games": 4,
-   "wins": 2,
-   "focusGames": 1,
-   "focusWins": 0,
-   "weight": 2.62
-  },
-  {
-   "heroes": [
-    "Angela",
-    "Paquito"
+    "Aulus",
+    "Kimmy"
    ],
    "games": 3,
    "wins": 2,
    "focusGames": 1,
-   "focusWins": 0,
-   "weight": 2.59
+   "focusWins": 1,
+   "weight": 2.6
+  },
+  {
+   "heroes": [
+    "Clint",
+    "Selena"
+   ],
+   "games": 5,
+   "wins": 3,
+   "focusGames": 1,
+   "focusWins": 1,
+   "weight": 2.58
   },
   {
    "heroes": [
@@ -4164,17 +3471,6 @@
    "focusGames": 0,
    "focusWins": 0,
    "weight": 2.57
-  },
-  {
-   "heroes": [
-    "Melissa",
-    "Novaria"
-   ],
-   "games": 4,
-   "wins": 3,
-   "focusGames": 1,
-   "focusWins": 1,
-   "weight": 2.56
   },
   {
    "heroes": [
@@ -4211,6 +3507,28 @@
   },
   {
    "heroes": [
+    "Hylos",
+    "Zhuxin"
+   ],
+   "games": 3,
+   "wins": 1,
+   "focusGames": 1,
+   "focusWins": 1,
+   "weight": 2.54
+  },
+  {
+   "heroes": [
+    "Claude",
+    "Paquito"
+   ],
+   "games": 7,
+   "wins": 6,
+   "focusGames": 1,
+   "focusWins": 1,
+   "weight": 2.53
+  },
+  {
+   "heroes": [
     "Eudora",
     "Moskov"
    ],
@@ -4229,17 +3547,6 @@
    "wins": 1,
    "focusGames": 0,
    "focusWins": 0,
-   "weight": 2.53
-  },
-  {
-   "heroes": [
-    "Claude",
-    "Nolan"
-   ],
-   "games": 3,
-   "wins": 3,
-   "focusGames": 1,
-   "focusWins": 1,
    "weight": 2.53
   },
   {
@@ -4266,116 +3573,6 @@
   },
   {
    "heroes": [
-    "Aulus",
-    "Gloo"
-   ],
-   "games": 1,
-   "wins": 1,
-   "focusGames": 1,
-   "focusWins": 1,
-   "weight": 2.52
-  },
-  {
-   "heroes": [
-    "Freya",
-    "Lukas"
-   ],
-   "games": 1,
-   "wins": 1,
-   "focusGames": 1,
-   "focusWins": 1,
-   "weight": 2.52
-  },
-  {
-   "heroes": [
-    "Gloo",
-    "Lukas"
-   ],
-   "games": 1,
-   "wins": 1,
-   "focusGames": 1,
-   "focusWins": 1,
-   "weight": 2.52
-  },
-  {
-   "heroes": [
-    "Kimmy",
-    "Lukas"
-   ],
-   "games": 1,
-   "wins": 1,
-   "focusGames": 1,
-   "focusWins": 1,
-   "weight": 2.52
-  },
-  {
-   "heroes": [
-    "Arlott",
-    "Freya"
-   ],
-   "games": 1,
-   "wins": 1,
-   "focusGames": 1,
-   "focusWins": 1,
-   "weight": 2.52
-  },
-  {
-   "heroes": [
-    "Arlott",
-    "Minotaur"
-   ],
-   "games": 1,
-   "wins": 1,
-   "focusGames": 1,
-   "focusWins": 1,
-   "weight": 2.52
-  },
-  {
-   "heroes": [
-    "Arlott",
-    "Yve"
-   ],
-   "games": 1,
-   "wins": 1,
-   "focusGames": 1,
-   "focusWins": 1,
-   "weight": 2.52
-  },
-  {
-   "heroes": [
-    "Freya",
-    "Yve"
-   ],
-   "games": 1,
-   "wins": 1,
-   "focusGames": 1,
-   "focusWins": 1,
-   "weight": 2.52
-  },
-  {
-   "heroes": [
-    "Hirara",
-    "Yve"
-   ],
-   "games": 1,
-   "wins": 1,
-   "focusGames": 1,
-   "focusWins": 1,
-   "weight": 2.52
-  },
-  {
-   "heroes": [
-    "Minotaur",
-    "Yve"
-   ],
-   "games": 1,
-   "wins": 1,
-   "focusGames": 1,
-   "focusWins": 1,
-   "weight": 2.52
-  },
-  {
-   "heroes": [
     "Carmilla",
     "Fanny"
    ],
@@ -4387,14 +3584,25 @@
   },
   {
    "heroes": [
-    "Mathilda",
-    "Selena"
+    "Esmeralda",
+    "Kimmy"
    ],
    "games": 3,
    "wins": 1,
    "focusGames": 1,
-   "focusWins": 0,
-   "weight": 2.49
+   "focusWins": 1,
+   "weight": 2.51
+  },
+  {
+   "heroes": [
+    "Esmeralda",
+    "Nolan"
+   ],
+   "games": 3,
+   "wins": 3,
+   "focusGames": 2,
+   "focusWins": 2,
+   "weight": 2.48
   },
   {
    "heroes": [
@@ -4409,28 +3617,6 @@
   },
   {
    "heroes": [
-    "Bruno",
-    "Minotaur"
-   ],
-   "games": 2,
-   "wins": 1,
-   "focusGames": 1,
-   "focusWins": 1,
-   "weight": 2.46
-  },
-  {
-   "heroes": [
-    "Bruno",
-    "Nolan"
-   ],
-   "games": 2,
-   "wins": 1,
-   "focusGames": 1,
-   "focusWins": 1,
-   "weight": 2.46
-  },
-  {
-   "heroes": [
     "Atlas",
     "Paquito"
    ],
@@ -4439,17 +3625,6 @@
    "focusGames": 0,
    "focusWins": 0,
    "weight": 2.45
-  },
-  {
-   "heroes": [
-    "Melissa",
-    "Valentina"
-   ],
-   "games": 3,
-   "wins": 2,
-   "focusGames": 1,
-   "focusWins": 1,
-   "weight": 2.44
   },
   {
    "heroes": [
@@ -4475,36 +3650,47 @@
   },
   {
    "heroes": [
-    "Carmilla",
-    "Mathilda"
+    "Atlas",
+    "Clint"
    ],
-   "games": 3,
-   "wins": 1,
-   "focusGames": 1,
-   "focusWins": 0,
-   "weight": 2.43
-  },
-  {
-   "heroes": [
-    "Melissa",
-    "Selena"
-   ],
-   "games": 3,
-   "wins": 1,
-   "focusGames": 1,
-   "focusWins": 0,
+   "games": 6,
+   "wins": 4,
+   "focusGames": 4,
+   "focusWins": 3,
    "weight": 2.42
   },
   {
    "heroes": [
-    "Angela",
-    "Zhuxin"
+    "Atlas",
+    "Marcel"
    ],
-   "games": 2,
-   "wins": 0,
-   "focusGames": 1,
-   "focusWins": 0,
-   "weight": 2.41
+   "games": 4,
+   "wins": 3,
+   "focusGames": 2,
+   "focusWins": 1,
+   "weight": 2.42
+  },
+  {
+   "heroes": [
+    "Clint",
+    "Minotaur"
+   ],
+   "games": 4,
+   "wins": 4,
+   "focusGames": 2,
+   "focusWins": 2,
+   "weight": 2.4
+  },
+  {
+   "heroes": [
+    "Minotaur",
+    "Suyou"
+   ],
+   "games": 4,
+   "wins": 2,
+   "focusGames": 2,
+   "focusWins": 2,
+   "weight": 2.4
   },
   {
    "heroes": [
@@ -4519,13 +3705,13 @@
   },
   {
    "heroes": [
-    "Badang",
-    "Hirara"
+    "Rafaela",
+    "Uranus"
    ],
    "games": 5,
-   "wins": 1,
+   "wins": 4,
    "focusGames": 1,
-   "focusWins": 0,
+   "focusWins": 1,
    "weight": 2.37
   },
   {
@@ -4541,11 +3727,11 @@
   },
   {
    "heroes": [
-    "Atlas",
-    "Claude"
+    "Carmilla",
+    "Eudora"
    ],
-   "games": 3,
-   "wins": 2,
+   "games": 4,
+   "wins": 3,
    "focusGames": 1,
    "focusWins": 1,
    "weight": 2.36
@@ -4560,6 +3746,17 @@
    "focusGames": 0,
    "focusWins": 0,
    "weight": 2.34
+  },
+  {
+   "heroes": [
+    "Belerick",
+    "Minotaur"
+   ],
+   "games": 4,
+   "wins": 2,
+   "focusGames": 1,
+   "focusWins": 1,
+   "weight": 2.33
   },
   {
    "heroes": [
@@ -4618,14 +3815,36 @@
   },
   {
    "heroes": [
-    "Melissa",
-    "Paquito"
+    "Clint",
+    "Hirara"
    ],
-   "games": 3,
-   "wins": 1,
+   "games": 5,
+   "wins": 2,
+   "focusGames": 1,
+   "focusWins": 0,
+   "weight": 2.31
+  },
+  {
+   "heroes": [
+    "Belerick",
+    "Novaria"
+   ],
+   "games": 6,
+   "wins": 3,
+   "focusGames": 2,
+   "focusWins": 2,
+   "weight": 2.31
+  },
+  {
+   "heroes": [
+    "Belerick",
+    "Carmilla"
+   ],
+   "games": 5,
+   "wins": 2,
    "focusGames": 1,
    "focusWins": 1,
-   "weight": 2.29
+   "weight": 2.3
   },
   {
    "heroes": [
@@ -4684,17 +3903,6 @@
   },
   {
    "heroes": [
-    "Atlas",
-    "Minotaur"
-   ],
-   "games": 2,
-   "wins": 2,
-   "focusGames": 2,
-   "focusWins": 2,
-   "weight": 2.27
-  },
-  {
-   "heroes": [
     "Selena",
     "Uranus"
    ],
@@ -4728,6 +3936,17 @@
   },
   {
    "heroes": [
+    "Novaria",
+    "Paquito"
+   ],
+   "games": 5,
+   "wins": 4,
+   "focusGames": 4,
+   "focusWins": 4,
+   "weight": 2.25
+  },
+  {
+   "heroes": [
     "Melissa",
     "Suyou"
    ],
@@ -4739,13 +3958,13 @@
   },
   {
    "heroes": [
-    "Barats",
-    "Selena"
+    "Claude",
+    "Minotaur"
    ],
-   "games": 3,
+   "games": 4,
    "wins": 2,
-   "focusGames": 1,
-   "focusWins": 1,
+   "focusGames": 2,
+   "focusWins": 2,
    "weight": 2.24
   },
   {
@@ -4772,6 +3991,17 @@
   },
   {
    "heroes": [
+    "Carmilla",
+    "Moskov"
+   ],
+   "games": 4,
+   "wins": 1,
+   "focusGames": 1,
+   "focusWins": 0,
+   "weight": 2.22
+  },
+  {
+   "heroes": [
     "Miya",
     "Valentina"
    ],
@@ -4794,11 +4024,22 @@
   },
   {
    "heroes": [
-    "Barats",
-    "Carmilla"
+    "Marcel",
+    "Novaria"
    ],
-   "games": 2,
-   "wins": 1,
+   "games": 5,
+   "wins": 0,
+   "focusGames": 1,
+   "focusWins": 0,
+   "weight": 2.2
+  },
+  {
+   "heroes": [
+    "Barats",
+    "Clint"
+   ],
+   "games": 5,
+   "wins": 2,
    "focusGames": 1,
    "focusWins": 0,
    "weight": 2.2
@@ -4816,14 +4057,14 @@
   },
   {
    "heroes": [
-    "Karrie",
-    "Paquito"
+    "Carmilla",
+    "Minotaur"
    ],
-   "games": 2,
-   "wins": 1,
+   "games": 4,
+   "wins": 2,
    "focusGames": 1,
    "focusWins": 1,
-   "weight": 2.19
+   "weight": 2.18
   },
   {
    "heroes": [
@@ -4838,17 +4079,6 @@
   },
   {
    "heroes": [
-    "Karrie",
-    "Uranus"
-   ],
-   "games": 2,
-   "wins": 1,
-   "focusGames": 1,
-   "focusWins": 1,
-   "weight": 2.17
-  },
-  {
-   "heroes": [
     "Barats",
     "Harley"
    ],
@@ -4856,6 +4086,17 @@
    "wins": 1,
    "focusGames": 0,
    "focusWins": 0,
+   "weight": 2.16
+  },
+  {
+   "heroes": [
+    "Esmeralda",
+    "Freya"
+   ],
+   "games": 2,
+   "wins": 1,
+   "focusGames": 1,
+   "focusWins": 1,
    "weight": 2.16
   },
   {
@@ -4882,11 +4123,66 @@
   },
   {
    "heroes": [
-    "Claude",
-    "Rafaela"
+    "Freya",
+    "Hirara"
    ],
-   "games": 5,
-   "wins": 4,
+   "games": 3,
+   "wins": 2,
+   "focusGames": 1,
+   "focusWins": 1,
+   "weight": 2.12
+  },
+  {
+   "heroes": [
+    "Atlas",
+    "Cici"
+   ],
+   "games": 2,
+   "wins": 2,
+   "focusGames": 1,
+   "focusWins": 1,
+   "weight": 2.12
+  },
+  {
+   "heroes": [
+    "Cici",
+    "Hirara"
+   ],
+   "games": 2,
+   "wins": 2,
+   "focusGames": 1,
+   "focusWins": 1,
+   "weight": 2.12
+  },
+  {
+   "heroes": [
+    "Freya",
+    "Nolan"
+   ],
+   "games": 2,
+   "wins": 2,
+   "focusGames": 1,
+   "focusWins": 1,
+   "weight": 2.11
+  },
+  {
+   "heroes": [
+    "Mathilda",
+    "Uranus"
+   ],
+   "games": 4,
+   "wins": 3,
+   "focusGames": 3,
+   "focusWins": 3,
+   "weight": 2.09
+  },
+  {
+   "heroes": [
+    "Lukas",
+    "Nolan"
+   ],
+   "games": 2,
+   "wins": 1,
    "focusGames": 1,
    "focusWins": 1,
    "weight": 2.09
@@ -4915,17 +4211,6 @@
   },
   {
    "heroes": [
-    "Karrie",
-    "Nolan"
-   ],
-   "games": 2,
-   "wins": 2,
-   "focusGames": 1,
-   "focusWins": 1,
-   "weight": 2.07
-  },
-  {
-   "heroes": [
     "Belerick",
     "Gloo"
    ],
@@ -4948,24 +4233,13 @@
   },
   {
    "heroes": [
-    "Novaria",
-    "Uranus"
+    "Eudora",
+    "Mathilda"
    ],
-   "games": 3,
+   "games": 4,
    "wins": 2,
    "focusGames": 2,
    "focusWins": 2,
-   "weight": 2.06
-  },
-  {
-   "heroes": [
-    "Minotaur",
-    "Novaria"
-   ],
-   "games": 2,
-   "wins": 1,
-   "focusGames": 1,
-   "focusWins": 1,
    "weight": 2.06
   },
   {
@@ -4992,24 +4266,13 @@
   },
   {
    "heroes": [
-    "Selena",
-    "Suyou"
+    "Clint",
+    "Marcel"
    ],
-   "games": 4,
-   "wins": 2,
-   "focusGames": 1,
-   "focusWins": 1,
-   "weight": 2.05
-  },
-  {
-   "heroes": [
-    "Claude",
-    "Novaria"
-   ],
-   "games": 4,
-   "wins": 2,
-   "focusGames": 1,
-   "focusWins": 1,
+   "games": 5,
+   "wins": 4,
+   "focusGames": 3,
+   "focusWins": 2,
    "weight": 2.04
   },
   {
@@ -5036,17 +4299,6 @@
   },
   {
    "heroes": [
-    "Karrie",
-    "Mathilda"
-   ],
-   "games": 2,
-   "wins": 1,
-   "focusGames": 1,
-   "focusWins": 1,
-   "weight": 2.04
-  },
-  {
-   "heroes": [
     "Aulus",
     "Zhuxin"
    ],
@@ -5055,6 +4307,17 @@
    "focusGames": 0,
    "focusWins": 0,
    "weight": 2.04
+  },
+  {
+   "heroes": [
+    "Carmilla",
+    "Novaria"
+   ],
+   "games": 4,
+   "wins": 2,
+   "focusGames": 3,
+   "focusWins": 2,
+   "weight": 2.03
   },
   {
    "heroes": [
@@ -5080,17 +4343,6 @@
   },
   {
    "heroes": [
-    "Claude",
-    "Suyou"
-   ],
-   "games": 3,
-   "wins": 2,
-   "focusGames": 1,
-   "focusWins": 1,
-   "weight": 2.02
-  },
-  {
-   "heroes": [
     "Atlas",
     "Miya"
    ],
@@ -5110,6 +4362,39 @@
    "focusGames": 0,
    "focusWins": 0,
    "weight": 2
+  },
+  {
+   "heroes": [
+    "Aulus",
+    "Freya"
+   ],
+   "games": 2,
+   "wins": 1,
+   "focusGames": 1,
+   "focusWins": 1,
+   "weight": 2
+  },
+  {
+   "heroes": [
+    "Freya",
+    "Minotaur"
+   ],
+   "games": 2,
+   "wins": 1,
+   "focusGames": 1,
+   "focusWins": 1,
+   "weight": 2
+  },
+  {
+   "heroes": [
+    "Suyou",
+    "Zhuxin"
+   ],
+   "games": 3,
+   "wins": 2,
+   "focusGames": 1,
+   "focusWins": 1,
+   "weight": 1.99
   },
   {
    "heroes": [
@@ -5143,6 +4428,50 @@
    "focusGames": 0,
    "focusWins": 0,
    "weight": 1.94
+  },
+  {
+   "heroes": [
+    "Carmilla",
+    "Clint"
+   ],
+   "games": 3,
+   "wins": 1,
+   "focusGames": 2,
+   "focusWins": 1,
+   "weight": 1.91
+  },
+  {
+   "heroes": [
+    "Claude",
+    "Selena"
+   ],
+   "games": 4,
+   "wins": 2,
+   "focusGames": 1,
+   "focusWins": 1,
+   "weight": 1.9
+  },
+  {
+   "heroes": [
+    "Paquito",
+    "Ruby"
+   ],
+   "games": 4,
+   "wins": 4,
+   "focusGames": 2,
+   "focusWins": 2,
+   "weight": 1.9
+  },
+  {
+   "heroes": [
+    "Bruno",
+    "Eudora"
+   ],
+   "games": 3,
+   "wins": 1,
+   "focusGames": 1,
+   "focusWins": 1,
+   "weight": 1.9
   },
   {
    "heroes": [
@@ -5245,6 +4574,28 @@
   },
   {
    "heroes": [
+    "Badang",
+    "Hirara"
+   ],
+   "games": 5,
+   "wins": 1,
+   "focusGames": 1,
+   "focusWins": 0,
+   "weight": 1.87
+  },
+  {
+   "heroes": [
+    "Lukas",
+    "Zhuxin"
+   ],
+   "games": 2,
+   "wins": 1,
+   "focusGames": 1,
+   "focusWins": 1,
+   "weight": 1.87
+  },
+  {
+   "heroes": [
     "Fanny",
     "Selena"
    ],
@@ -5278,17 +4629,6 @@
   },
   {
    "heroes": [
-    "Atlas",
-    "Selena"
-   ],
-   "games": 3,
-   "wins": 3,
-   "focusGames": 1,
-   "focusWins": 1,
-   "weight": 1.84
-  },
-  {
-   "heroes": [
     "Aulus",
     "Selena"
    ],
@@ -5307,17 +4647,6 @@
    "wins": 1,
    "focusGames": 0,
    "focusWins": 0,
-   "weight": 1.83
-  },
-  {
-   "heroes": [
-    "Carmilla",
-    "Suyou"
-   ],
-   "games": 2,
-   "wins": 1,
-   "focusGames": 1,
-   "focusWins": 1,
    "weight": 1.83
   },
   {
@@ -5344,17 +4673,6 @@
   },
   {
    "heroes": [
-    "Atlas",
-    "Harley"
-   ],
-   "games": 2,
-   "wins": 1,
-   "focusGames": 1,
-   "focusWins": 0,
-   "weight": 1.8
-  },
-  {
-   "heroes": [
     "Paquito",
     "Phoveus"
    ],
@@ -5362,6 +4680,17 @@
    "wins": 3,
    "focusGames": 0,
    "focusWins": 0,
+   "weight": 1.8
+  },
+  {
+   "heroes": [
+    "Claude",
+    "Nolan"
+   ],
+   "games": 3,
+   "wins": 3,
+   "focusGames": 1,
+   "focusWins": 1,
    "weight": 1.8
   },
   {
@@ -5410,57 +4739,13 @@
   },
   {
    "heroes": [
-    "Karrie",
-    "Marcel"
+    "Clint",
+    "Novaria"
    ],
-   "games": 1,
-   "wins": 1,
-   "focusGames": 1,
-   "focusWins": 1,
-   "weight": 1.78
-  },
-  {
-   "heroes": [
-    "Karrie",
-    "Minotaur"
-   ],
-   "games": 1,
-   "wins": 1,
-   "focusGames": 1,
-   "focusWins": 1,
-   "weight": 1.78
-  },
-  {
-   "heroes": [
-    "Karrie",
-    "Zhuxin"
-   ],
-   "games": 1,
-   "wins": 1,
-   "focusGames": 1,
-   "focusWins": 1,
-   "weight": 1.78
-  },
-  {
-   "heroes": [
-    "Marcel",
-    "Zhuxin"
-   ],
-   "games": 1,
-   "wins": 1,
-   "focusGames": 1,
-   "focusWins": 1,
-   "weight": 1.78
-  },
-  {
-   "heroes": [
-    "Bruno",
-    "Esmeralda"
-   ],
-   "games": 1,
-   "wins": 1,
-   "focusGames": 1,
-   "focusWins": 1,
+   "games": 4,
+   "wins": 2,
+   "focusGames": 4,
+   "focusWins": 2,
    "weight": 1.78
   },
   {
@@ -5531,17 +4816,6 @@
   },
   {
    "heroes": [
-    "Angela",
-    "Carmilla"
-   ],
-   "games": 1,
-   "wins": 0,
-   "focusGames": 1,
-   "focusWins": 0,
-   "weight": 1.74
-  },
-  {
-   "heroes": [
     "Gatotkaca",
     "Minotaur"
    ],
@@ -5550,17 +4824,6 @@
    "focusGames": 0,
    "focusWins": 0,
    "weight": 1.73
-  },
-  {
-   "heroes": [
-    "Novaria",
-    "Rafaela"
-   ],
-   "games": 2,
-   "wins": 2,
-   "focusGames": 2,
-   "focusWins": 2,
-   "weight": 1.72
   },
   {
    "heroes": [
@@ -5575,28 +4838,6 @@
   },
   {
    "heroes": [
-    "Clint",
-    "Harley"
-   ],
-   "games": 2,
-   "wins": 1,
-   "focusGames": 2,
-   "focusWins": 1,
-   "weight": 1.72
-  },
-  {
-   "heroes": [
-    "Harley",
-    "Novaria"
-   ],
-   "games": 2,
-   "wins": 1,
-   "focusGames": 2,
-   "focusWins": 1,
-   "weight": 1.72
-  },
-  {
-   "heroes": [
     "Esmeralda",
     "Melissa"
    ],
@@ -5604,6 +4845,17 @@
    "wins": 2,
    "focusGames": 0,
    "focusWins": 0,
+   "weight": 1.72
+  },
+  {
+   "heroes": [
+    "Melissa",
+    "Valentina"
+   ],
+   "games": 3,
+   "wins": 2,
+   "focusGames": 1,
+   "focusWins": 1,
    "weight": 1.72
   },
   {
@@ -5652,6 +4904,17 @@
   },
   {
    "heroes": [
+    "Melissa",
+    "Novaria"
+   ],
+   "games": 4,
+   "wins": 3,
+   "focusGames": 1,
+   "focusWins": 1,
+   "weight": 1.7
+  },
+  {
+   "heroes": [
     "Belerick",
     "Bruno"
    ],
@@ -5659,17 +4922,6 @@
    "wins": 1,
    "focusGames": 0,
    "focusWins": 0,
-   "weight": 1.7
-  },
-  {
-   "heroes": [
-    "Minotaur",
-    "Ruby"
-   ],
-   "games": 1,
-   "wins": 1,
-   "focusGames": 1,
-   "focusWins": 1,
    "weight": 1.7
   },
   {
@@ -5718,6 +4970,17 @@
   },
   {
    "heroes": [
+    "Clint",
+    "Mathilda"
+   ],
+   "games": 4,
+   "wins": 3,
+   "focusGames": 2,
+   "focusWins": 2,
+   "weight": 1.67
+  },
+  {
+   "heroes": [
     "Atlas",
     "Moskov"
    ],
@@ -5725,6 +4988,17 @@
    "wins": 2,
    "focusGames": 0,
    "focusWins": 0,
+   "weight": 1.67
+  },
+  {
+   "heroes": [
+    "Eudora",
+    "Karrie"
+   ],
+   "games": 3,
+   "wins": 1,
+   "focusGames": 1,
+   "focusWins": 1,
    "weight": 1.67
   },
   {
@@ -5861,6 +5135,17 @@
   },
   {
    "heroes": [
+    "Atlas",
+    "Claude"
+   ],
+   "games": 3,
+   "wins": 2,
+   "focusGames": 1,
+   "focusWins": 1,
+   "weight": 1.63
+  },
+  {
+   "heroes": [
     "Clint",
     "Gatotkaca"
    ],
@@ -5869,6 +5154,39 @@
    "focusGames": 0,
    "focusWins": 0,
    "weight": 1.63
+  },
+  {
+   "heroes": [
+    "Freya",
+    "Gloo"
+   ],
+   "games": 2,
+   "wins": 2,
+   "focusGames": 1,
+   "focusWins": 1,
+   "weight": 1.63
+  },
+  {
+   "heroes": [
+    "Gloo",
+    "Kimmy"
+   ],
+   "games": 2,
+   "wins": 2,
+   "focusGames": 1,
+   "focusWins": 1,
+   "weight": 1.63
+  },
+  {
+   "heroes": [
+    "Carmilla",
+    "Melissa"
+   ],
+   "games": 3,
+   "wins": 1,
+   "focusGames": 2,
+   "focusWins": 1,
+   "weight": 1.62
   },
   {
    "heroes": [
@@ -5916,6 +5234,17 @@
   },
   {
    "heroes": [
+    "Mathilda",
+    "Melissa"
+   ],
+   "games": 4,
+   "wins": 2,
+   "focusGames": 1,
+   "focusWins": 0,
+   "weight": 1.6
+  },
+  {
+   "heroes": [
     "Hirara",
     "Phoveus"
    ],
@@ -5949,6 +5278,17 @@
   },
   {
    "heroes": [
+    "Claude",
+    "Rafaela"
+   ],
+   "games": 5,
+   "wins": 4,
+   "focusGames": 1,
+   "focusWins": 1,
+   "weight": 1.58
+  },
+  {
+   "heroes": [
     "Cecilion",
     "Hirara"
    ],
@@ -5971,14 +5311,14 @@
   },
   {
    "heroes": [
-    "Moskov",
-    "Selena"
+    "Angela",
+    "Paquito"
    ],
    "games": 3,
-   "wins": 1,
+   "wins": 2,
    "focusGames": 1,
    "focusWins": 0,
-   "weight": 1.56
+   "weight": 1.57
   },
   {
    "heroes": [
@@ -5993,17 +5333,6 @@
   },
   {
    "heroes": [
-    "Harley",
-    "Marcel"
-   ],
-   "games": 2,
-   "wins": 1,
-   "focusGames": 1,
-   "focusWins": 0,
-   "weight": 1.54
-  },
-  {
-   "heroes": [
     "Gatotkaca",
     "Novaria"
    ],
@@ -6012,6 +5341,17 @@
    "focusGames": 0,
    "focusWins": 0,
    "weight": 1.54
+  },
+  {
+   "heroes": [
+    "Claude",
+    "Novaria"
+   ],
+   "games": 4,
+   "wins": 2,
+   "focusGames": 1,
+   "focusWins": 1,
+   "weight": 1.53
   },
   {
    "heroes": [
@@ -6034,17 +5374,6 @@
    "focusGames": 0,
    "focusWins": 0,
    "weight": 1.53
-  },
-  {
-   "heroes": [
-    "Mathilda",
-    "Novaria"
-   ],
-   "games": 3,
-   "wins": 3,
-   "focusGames": 1,
-   "focusWins": 1,
-   "weight": 1.51
   },
   {
    "heroes": [
@@ -6092,6 +5421,17 @@
   },
   {
    "heroes": [
+    "Barats",
+    "Selena"
+   ],
+   "games": 3,
+   "wins": 2,
+   "focusGames": 1,
+   "focusWins": 1,
+   "weight": 1.5
+  },
+  {
+   "heroes": [
     "Belerick",
     "Uranus"
    ],
@@ -6100,6 +5440,17 @@
    "focusGames": 0,
    "focusWins": 0,
    "weight": 1.5
+  },
+  {
+   "heroes": [
+    "Clint",
+    "Ruby"
+   ],
+   "games": 3,
+   "wins": 3,
+   "focusGames": 2,
+   "focusWins": 2,
+   "weight": 1.49
   },
   {
    "heroes": [
@@ -6125,6 +5476,17 @@
   },
   {
    "heroes": [
+    "Mathilda",
+    "Selena"
+   ],
+   "games": 3,
+   "wins": 1,
+   "focusGames": 1,
+   "focusWins": 0,
+   "weight": 1.48
+  },
+  {
+   "heroes": [
     "Gatotkaca",
     "Moskov"
    ],
@@ -6144,6 +5506,17 @@
    "focusGames": 0,
    "focusWins": 0,
    "weight": 1.48
+  },
+  {
+   "heroes": [
+    "Selena",
+    "Suyou"
+   ],
+   "games": 4,
+   "wins": 2,
+   "focusGames": 1,
+   "focusWins": 1,
+   "weight": 1.46
   },
   {
    "heroes": [
@@ -6169,17 +5542,6 @@
   },
   {
    "heroes": [
-    "Marcel",
-    "Suyou"
-   ],
-   "games": 2,
-   "wins": 1,
-   "focusGames": 1,
-   "focusWins": 1,
-   "weight": 1.44
-  },
-  {
-   "heroes": [
     "Freya",
     "Paquito"
    ],
@@ -6198,6 +5560,17 @@
    "wins": 1,
    "focusGames": 0,
    "focusWins": 0,
+   "weight": 1.43
+  },
+  {
+   "heroes": [
+    "Melissa",
+    "Paquito"
+   ],
+   "games": 3,
+   "wins": 1,
+   "focusGames": 1,
+   "focusWins": 1,
    "weight": 1.43
   },
   {
@@ -6235,6 +5608,28 @@
   },
   {
    "heroes": [
+    "Bruno",
+    "Minotaur"
+   ],
+   "games": 2,
+   "wins": 1,
+   "focusGames": 1,
+   "focusWins": 1,
+   "weight": 1.42
+  },
+  {
+   "heroes": [
+    "Bruno",
+    "Nolan"
+   ],
+   "games": 2,
+   "wins": 1,
+   "focusGames": 1,
+   "focusWins": 1,
+   "weight": 1.42
+  },
+  {
+   "heroes": [
     "Gatotkaca",
     "Mathilda"
    ],
@@ -6252,6 +5647,28 @@
    "games": 3,
    "wins": 2,
    "focusGames": 0,
+   "focusWins": 0,
+   "weight": 1.41
+  },
+  {
+   "heroes": [
+    "Melissa",
+    "Selena"
+   ],
+   "games": 3,
+   "wins": 1,
+   "focusGames": 1,
+   "focusWins": 0,
+   "weight": 1.41
+  },
+  {
+   "heroes": [
+    "Carmilla",
+    "Mathilda"
+   ],
+   "games": 3,
+   "wins": 1,
+   "focusGames": 1,
    "focusWins": 0,
    "weight": 1.41
   },
@@ -6276,6 +5693,5445 @@
    "focusGames": 0,
    "focusWins": 0,
    "weight": 1.41
+  },
+  {
+   "heroes": [
+    "Angela",
+    "Zhuxin"
+   ],
+   "games": 2,
+   "wins": 0,
+   "focusGames": 1,
+   "focusWins": 0,
+   "weight": 1.4
+  },
+  {
+   "heroes": [
+    "Harley",
+    "Minotaur"
+   ],
+   "games": 2,
+   "wins": 2,
+   "focusGames": 0,
+   "focusWins": 0,
+   "weight": 1.4
+  },
+  {
+   "heroes": [
+    "Brody",
+    "Mathilda"
+   ],
+   "games": 4,
+   "wins": 1,
+   "focusGames": 0,
+   "focusWins": 0,
+   "weight": 1.38
+  },
+  {
+   "heroes": [
+    "Cecilion",
+    "Obsidia"
+   ],
+   "games": 2,
+   "wins": 0,
+   "focusGames": 0,
+   "focusWins": 0,
+   "weight": 1.38
+  },
+  {
+   "heroes": [
+    "Mathilda",
+    "Moskov"
+   ],
+   "games": 4,
+   "wins": 0,
+   "focusGames": 0,
+   "focusWins": 0,
+   "weight": 1.37
+  },
+  {
+   "heroes": [
+    "Esmeralda",
+    "Moskov"
+   ],
+   "games": 3,
+   "wins": 0,
+   "focusGames": 0,
+   "focusWins": 0,
+   "weight": 1.37
+  },
+  {
+   "heroes": [
+    "Belerick",
+    "Mathilda"
+   ],
+   "games": 4,
+   "wins": 2,
+   "focusGames": 0,
+   "focusWins": 0,
+   "weight": 1.36
+  },
+  {
+   "heroes": [
+    "Clint",
+    "Suyou"
+   ],
+   "games": 3,
+   "wins": 3,
+   "focusGames": 3,
+   "focusWins": 3,
+   "weight": 1.36
+  },
+  {
+   "heroes": [
+    "Aulus",
+    "Moskov"
+   ],
+   "games": 2,
+   "wins": 0,
+   "focusGames": 0,
+   "focusWins": 0,
+   "weight": 1.36
+  },
+  {
+   "heroes": [
+    "Moskov",
+    "Zhuxin"
+   ],
+   "games": 2,
+   "wins": 0,
+   "focusGames": 0,
+   "focusWins": 0,
+   "weight": 1.36
+  },
+  {
+   "heroes": [
+    "Alice",
+    "Eudora"
+   ],
+   "games": 2,
+   "wins": 1,
+   "focusGames": 0,
+   "focusWins": 0,
+   "weight": 1.36
+  },
+  {
+   "heroes": [
+    "Masha",
+    "Valentina"
+   ],
+   "games": 2,
+   "wins": 2,
+   "focusGames": 0,
+   "focusWins": 0,
+   "weight": 1.36
+  },
+  {
+   "heroes": [
+    "Arlott",
+    "Hirara"
+   ],
+   "games": 2,
+   "wins": 1,
+   "focusGames": 1,
+   "focusWins": 1,
+   "weight": 1.35
+  },
+  {
+   "heroes": [
+    "Aulus",
+    "Hylos"
+   ],
+   "games": 2,
+   "wins": 0,
+   "focusGames": 0,
+   "focusWins": 0,
+   "weight": 1.35
+  },
+  {
+   "heroes": [
+    "Gatotkaca",
+    "Suyou"
+   ],
+   "games": 2,
+   "wins": 0,
+   "focusGames": 0,
+   "focusWins": 0,
+   "weight": 1.34
+  },
+  {
+   "heroes": [
+    "Paquito",
+    "Yi Sun-shin"
+   ],
+   "games": 2,
+   "wins": 0,
+   "focusGames": 0,
+   "focusWins": 0,
+   "weight": 1.34
+  },
+  {
+   "heroes": [
+    "Carmilla",
+    "Miya"
+   ],
+   "games": 3,
+   "wins": 3,
+   "focusGames": 0,
+   "focusWins": 0,
+   "weight": 1.32
+  },
+  {
+   "heroes": [
+    "Belerick",
+    "Obsidia"
+   ],
+   "games": 2,
+   "wins": 1,
+   "focusGames": 0,
+   "focusWins": 0,
+   "weight": 1.32
+  },
+  {
+   "heroes": [
+    "Moskov",
+    "Nolan"
+   ],
+   "games": 2,
+   "wins": 1,
+   "focusGames": 0,
+   "focusWins": 0,
+   "weight": 1.32
+  },
+  {
+   "heroes": [
+    "Atlas",
+    "Harley"
+   ],
+   "games": 2,
+   "wins": 1,
+   "focusGames": 1,
+   "focusWins": 0,
+   "weight": 1.31
+  },
+  {
+   "heroes": [
+    "Gloo",
+    "Selena"
+   ],
+   "games": 3,
+   "wins": 2,
+   "focusGames": 0,
+   "focusWins": 0,
+   "weight": 1.31
+  },
+  {
+   "heroes": [
+    "Hylos",
+    "Paquito"
+   ],
+   "games": 3,
+   "wins": 2,
+   "focusGames": 0,
+   "focusWins": 0,
+   "weight": 1.31
+  },
+  {
+   "heroes": [
+    "Gloo",
+    "Miya"
+   ],
+   "games": 3,
+   "wins": 1,
+   "focusGames": 0,
+   "focusWins": 0,
+   "weight": 1.31
+  },
+  {
+   "heroes": [
+    "Minotaur",
+    "Vexana"
+   ],
+   "games": 2,
+   "wins": 1,
+   "focusGames": 0,
+   "focusWins": 0,
+   "weight": 1.31
+  },
+  {
+   "heroes": [
+    "Brody",
+    "Cecilion"
+   ],
+   "games": 3,
+   "wins": 0,
+   "focusGames": 0,
+   "focusWins": 0,
+   "weight": 1.3
+  },
+  {
+   "heroes": [
+    "Melissa",
+    "Zhuxin"
+   ],
+   "games": 3,
+   "wins": 1,
+   "focusGames": 0,
+   "focusWins": 0,
+   "weight": 1.29
+  },
+  {
+   "heroes": [
+    "Barats",
+    "Suyou"
+   ],
+   "games": 3,
+   "wins": 1,
+   "focusGames": 0,
+   "focusWins": 0,
+   "weight": 1.29
+  },
+  {
+   "heroes": [
+    "Hylos",
+    "Selena"
+   ],
+   "games": 3,
+   "wins": 1,
+   "focusGames": 0,
+   "focusWins": 0,
+   "weight": 1.29
+  },
+  {
+   "heroes": [
+    "Eudora",
+    "Gloo"
+   ],
+   "games": 2,
+   "wins": 1,
+   "focusGames": 0,
+   "focusWins": 0,
+   "weight": 1.29
+  },
+  {
+   "heroes": [
+    "Claude",
+    "Suyou"
+   ],
+   "games": 3,
+   "wins": 2,
+   "focusGames": 1,
+   "focusWins": 1,
+   "weight": 1.28
+  },
+  {
+   "heroes": [
+    "Belerick",
+    "Kimmy"
+   ],
+   "games": 2,
+   "wins": 0,
+   "focusGames": 0,
+   "focusWins": 0,
+   "weight": 1.28
+  },
+  {
+   "heroes": [
+    "Barats",
+    "Gatotkaca"
+   ],
+   "games": 2,
+   "wins": 1,
+   "focusGames": 0,
+   "focusWins": 0,
+   "weight": 1.28
+  },
+  {
+   "heroes": [
+    "Gloo",
+    "Minotaur"
+   ],
+   "games": 2,
+   "wins": 2,
+   "focusGames": 0,
+   "focusWins": 0,
+   "weight": 1.27
+  },
+  {
+   "heroes": [
+    "Atlas",
+    "Selena"
+   ],
+   "games": 3,
+   "wins": 3,
+   "focusGames": 1,
+   "focusWins": 1,
+   "weight": 1.25
+  },
+  {
+   "heroes": [
+    "Brody",
+    "Novaria"
+   ],
+   "games": 3,
+   "wins": 1,
+   "focusGames": 0,
+   "focusWins": 0,
+   "weight": 1.24
+  },
+  {
+   "heroes": [
+    "Carmilla",
+    "Hylos"
+   ],
+   "games": 3,
+   "wins": 1,
+   "focusGames": 0,
+   "focusWins": 0,
+   "weight": 1.24
+  },
+  {
+   "heroes": [
+    "Hanabi",
+    "Mathilda"
+   ],
+   "games": 3,
+   "wins": 3,
+   "focusGames": 0,
+   "focusWins": 0,
+   "weight": 1.24
+  },
+  {
+   "heroes": [
+    "Brody",
+    "Paquito"
+   ],
+   "games": 3,
+   "wins": 1,
+   "focusGames": 0,
+   "focusWins": 0,
+   "weight": 1.23
+  },
+  {
+   "heroes": [
+    "Hirara",
+    "Khufra"
+   ],
+   "games": 2,
+   "wins": 2,
+   "focusGames": 0,
+   "focusWins": 0,
+   "weight": 1.23
+  },
+  {
+   "heroes": [
+    "Chou",
+    "Hylos"
+   ],
+   "games": 2,
+   "wins": 1,
+   "focusGames": 0,
+   "focusWins": 0,
+   "weight": 1.22
+  },
+  {
+   "heroes": [
+    "Barats",
+    "Zhuxin"
+   ],
+   "games": 2,
+   "wins": 0,
+   "focusGames": 0,
+   "focusWins": 0,
+   "weight": 1.22
+  },
+  {
+   "heroes": [
+    "Obsidia",
+    "Uranus"
+   ],
+   "games": 2,
+   "wins": 1,
+   "focusGames": 0,
+   "focusWins": 0,
+   "weight": 1.21
+  },
+  {
+   "heroes": [
+    "Marcel",
+    "Melissa"
+   ],
+   "games": 2,
+   "wins": 1,
+   "focusGames": 0,
+   "focusWins": 0,
+   "weight": 1.21
+  },
+  {
+   "heroes": [
+    "Barats",
+    "Carmilla"
+   ],
+   "games": 2,
+   "wins": 1,
+   "focusGames": 1,
+   "focusWins": 0,
+   "weight": 1.21
+  },
+  {
+   "heroes": [
+    "Moskov",
+    "Rafaela"
+   ],
+   "games": 3,
+   "wins": 1,
+   "focusGames": 0,
+   "focusWins": 0,
+   "weight": 1.2
+  },
+  {
+   "heroes": [
+    "Karrie",
+    "Paquito"
+   ],
+   "games": 2,
+   "wins": 1,
+   "focusGames": 1,
+   "focusWins": 1,
+   "weight": 1.2
+  },
+  {
+   "heroes": [
+    "Minotaur",
+    "Novaria"
+   ],
+   "games": 2,
+   "wins": 1,
+   "focusGames": 1,
+   "focusWins": 1,
+   "weight": 1.2
+  },
+  {
+   "heroes": [
+    "Brody",
+    "Zhuxin"
+   ],
+   "games": 2,
+   "wins": 0,
+   "focusGames": 0,
+   "focusWins": 0,
+   "weight": 1.19
+  },
+  {
+   "heroes": [
+    "Eudora",
+    "Melissa"
+   ],
+   "games": 2,
+   "wins": 1,
+   "focusGames": 0,
+   "focusWins": 0,
+   "weight": 1.19
+  },
+  {
+   "heroes": [
+    "Arlott",
+    "Atlas"
+   ],
+   "games": 1,
+   "wins": 1,
+   "focusGames": 1,
+   "focusWins": 1,
+   "weight": 1.19
+  },
+  {
+   "heroes": [
+    "Arlott",
+    "Cici"
+   ],
+   "games": 1,
+   "wins": 1,
+   "focusGames": 1,
+   "focusWins": 1,
+   "weight": 1.19
+  },
+  {
+   "heroes": [
+    "Arlott",
+    "Suyou"
+   ],
+   "games": 1,
+   "wins": 1,
+   "focusGames": 1,
+   "focusWins": 1,
+   "weight": 1.19
+  },
+  {
+   "heroes": [
+    "Arlott",
+    "Zhuxin"
+   ],
+   "games": 1,
+   "wins": 1,
+   "focusGames": 1,
+   "focusWins": 1,
+   "weight": 1.19
   }
- ]
+ ],
+ "matchups": {
+  "Alice": {
+   "Barats": [
+    2,
+    1
+   ],
+   "Nolan": [
+    7,
+    2
+   ],
+   "Melissa": [
+    2,
+    1
+   ],
+   "Belerick": [
+    4,
+    2
+   ],
+   "Vexana": [
+    2,
+    1
+   ],
+   "Paquito": [
+    7,
+    2
+   ],
+   "Rafaela": [
+    2,
+    0
+   ],
+   "Valentina": [
+    4,
+    2
+   ],
+   "Clint": [
+    3,
+    1
+   ],
+   "Atlas": [
+    3,
+    1
+   ],
+   "Uranus": [
+    2,
+    1
+   ],
+   "Moskov": [
+    2,
+    2
+   ],
+   "Eudora": [
+    4,
+    1
+   ],
+   "Marcel": [
+    3,
+    0
+   ],
+   "Aulus": [
+    5,
+    2
+   ],
+   "Minotaur": [
+    5,
+    3
+   ],
+   "Masha": [
+    3,
+    1
+   ],
+   "Yi Sun-shin": [
+    3,
+    1
+   ],
+   "Kalea": [
+    2,
+    1
+   ]
+  },
+  "Hirara": {
+   "Barats": [
+    16,
+    8
+   ],
+   "Nolan": [
+    28,
+    10
+   ],
+   "Novaria": [
+    8,
+    4
+   ],
+   "Melissa": [
+    16,
+    10
+   ],
+   "Mathilda": [
+    9,
+    4
+   ],
+   "Carmilla": [
+    9,
+    5
+   ],
+   "Lylia": [
+    3,
+    3
+   ],
+   "Belerick": [
+    24,
+    7
+   ],
+   "Uranus": [
+    18,
+    7
+   ],
+   "Paquito": [
+    40,
+    15
+   ],
+   "Clint": [
+    21,
+    5
+   ],
+   "Rafaela": [
+    16,
+    3
+   ],
+   "Fanny": [
+    6,
+    3
+   ],
+   "Claude": [
+    15,
+    3
+   ],
+   "Atlas": [
+    12,
+    4
+   ],
+   "Harley": [
+    4,
+    3
+   ],
+   "Marcel": [
+    9,
+    4
+   ],
+   "Selena": [
+    13,
+    6
+   ],
+   "Karrie": [
+    3,
+    1
+   ],
+   "Esmeralda": [
+    10,
+    4
+   ],
+   "Vexana": [
+    5,
+    3
+   ],
+   "Eudora": [
+    28,
+    8
+   ],
+   "Moskov": [
+    5,
+    1
+   ],
+   "Lukas": [
+    3,
+    2
+   ],
+   "Gatotkaca": [
+    20,
+    12
+   ],
+   "Suyou": [
+    16,
+    7
+   ],
+   "Zhuxin": [
+    10,
+    4
+   ],
+   "Minotaur": [
+    22,
+    11
+   ],
+   "Valentina": [
+    11,
+    7
+   ],
+   "Brody": [
+    7,
+    6
+   ],
+   "Ruby": [
+    7,
+    1
+   ],
+   "Gloo": [
+    6,
+    0
+   ],
+   "Hylos": [
+    6,
+    3
+   ],
+   "Khaleed": [
+    2,
+    1
+   ],
+   "Pharsa": [
+    2,
+    0
+   ],
+   "Badang": [
+    2,
+    1
+   ],
+   "Yi Sun-shin": [
+    5,
+    4
+   ],
+   "Kalea": [
+    4,
+    2
+   ],
+   "Chou": [
+    2,
+    2
+   ],
+   "Cecilion": [
+    2,
+    1
+   ],
+   "Miya": [
+    7,
+    5
+   ],
+   "Hilda": [
+    2,
+    1
+   ],
+   "Freya": [
+    5,
+    1
+   ],
+   "Obsidia": [
+    7,
+    2
+   ],
+   "Bruno": [
+    4,
+    2
+   ],
+   "Kimmy": [
+    4,
+    0
+   ],
+   "Cici": [
+    2,
+    2
+   ],
+   "Aulus": [
+    4,
+    1
+   ]
+  },
+  "Rafaela": {
+   "Barats": [
+    8,
+    4
+   ],
+   "Nolan": [
+    4,
+    1
+   ],
+   "Novaria": [
+    5,
+    4
+   ],
+   "Melissa": [
+    5,
+    2
+   ],
+   "Mathilda": [
+    3,
+    1
+   ],
+   "Belerick": [
+    6,
+    4
+   ],
+   "Hirara": [
+    16,
+    13
+   ],
+   "Eudora": [
+    7,
+    5
+   ],
+   "Brody": [
+    4,
+    4
+   ],
+   "Marcel": [
+    5,
+    5
+   ],
+   "Carmilla": [
+    3,
+    2
+   ],
+   "Selena": [
+    3,
+    2
+   ],
+   "Moskov": [
+    3,
+    3
+   ],
+   "Badang": [
+    2,
+    2
+   ],
+   "Atlas": [
+    3,
+    2
+   ],
+   "Clint": [
+    3,
+    2
+   ],
+   "Gatotkaca": [
+    2,
+    2
+   ],
+   "Valentina": [
+    2,
+    2
+   ],
+   "Angela": [
+    3,
+    2
+   ],
+   "Alice": [
+    2,
+    2
+   ],
+   "Claude": [
+    3,
+    2
+   ],
+   "Gloo": [
+    2,
+    1
+   ],
+   "Kaja": [
+    2,
+    1
+   ],
+   "Uranus": [
+    2,
+    2
+   ],
+   "Paquito": [
+    3,
+    1
+   ],
+   "Ruby": [
+    4,
+    3
+   ],
+   "Suyou": [
+    2,
+    2
+   ]
+  },
+  "Claude": {
+   "Barats": [
+    3,
+    2
+   ],
+   "Nolan": [
+    7,
+    3
+   ],
+   "Novaria": [
+    2,
+    0
+   ],
+   "Melissa": [
+    6,
+    4
+   ],
+   "Mathilda": [
+    9,
+    4
+   ],
+   "Carmilla": [
+    5,
+    3
+   ],
+   "Hirara": [
+    15,
+    12
+   ],
+   "Selena": [
+    6,
+    5
+   ],
+   "Moskov": [
+    5,
+    5
+   ],
+   "Badang": [
+    2,
+    2
+   ],
+   "Valentina": [
+    6,
+    5
+   ],
+   "Clint": [
+    6,
+    3
+   ],
+   "Belerick": [
+    8,
+    4
+   ],
+   "Vexana": [
+    3,
+    2
+   ],
+   "Paquito": [
+    7,
+    4
+   ],
+   "Rafaela": [
+    3,
+    1
+   ],
+   "Uranus": [
+    7,
+    5
+   ],
+   "Brody": [
+    2,
+    1
+   ],
+   "Suyou": [
+    2,
+    1
+   ],
+   "Gatotkaca": [
+    4,
+    3
+   ],
+   "Esmeralda": [
+    4,
+    4
+   ],
+   "Atlas": [
+    2,
+    1
+   ],
+   "Karrie": [
+    2,
+    2
+   ],
+   "Hanabi": [
+    2,
+    0
+   ],
+   "Hylos": [
+    3,
+    2
+   ],
+   "Minotaur": [
+    6,
+    4
+   ],
+   "Eudora": [
+    6,
+    4
+   ],
+   "Gloo": [
+    3,
+    1
+   ],
+   "Yi Sun-shin": [
+    2,
+    1
+   ],
+   "Bruno": [
+    2,
+    2
+   ],
+   "Aulus": [
+    3,
+    1
+   ],
+   "Zhuxin": [
+    2,
+    1
+   ],
+   "Masha": [
+    2,
+    1
+   ]
+  },
+  "Belerick": {
+   "Barats": [
+    14,
+    6
+   ],
+   "Nolan": [
+    7,
+    3
+   ],
+   "Novaria": [
+    6,
+    1
+   ],
+   "Melissa": [
+    4,
+    2
+   ],
+   "Mathilda": [
+    11,
+    6
+   ],
+   "Hirara": [
+    24,
+    17
+   ],
+   "Beatrix": [
+    2,
+    0
+   ],
+   "Kaja": [
+    3,
+    1
+   ],
+   "Uranus": [
+    9,
+    3
+   ],
+   "Paquito": [
+    14,
+    5
+   ],
+   "Clint": [
+    12,
+    3
+   ],
+   "Rafaela": [
+    6,
+    2
+   ],
+   "Carmilla": [
+    9,
+    5
+   ],
+   "Selena": [
+    10,
+    7
+   ],
+   "Moskov": [
+    7,
+    6
+   ],
+   "Badang": [
+    3,
+    2
+   ],
+   "Esmeralda": [
+    5,
+    5
+   ],
+   "Eudora": [
+    13,
+    7
+   ],
+   "Gatotkaca": [
+    15,
+    11
+   ],
+   "Valentina": [
+    10,
+    5
+   ],
+   "Angela": [
+    4,
+    4
+   ],
+   "Alice": [
+    4,
+    2
+   ],
+   "Claude": [
+    8,
+    4
+   ],
+   "Brody": [
+    5,
+    4
+   ],
+   "Lukas": [
+    3,
+    2
+   ],
+   "Vexana": [
+    2,
+    1
+   ],
+   "Cecilion": [
+    2,
+    2
+   ],
+   "Harley": [
+    3,
+    2
+   ],
+   "Atlas": [
+    12,
+    5
+   ],
+   "Suyou": [
+    5,
+    2
+   ],
+   "Minotaur": [
+    12,
+    5
+   ],
+   "Chou": [
+    3,
+    1
+   ],
+   "Karrie": [
+    2,
+    2
+   ],
+   "Phoveus": [
+    3,
+    3
+   ],
+   "Hanabi": [
+    2,
+    0
+   ],
+   "Marcel": [
+    3,
+    0
+   ],
+   "Miya": [
+    4,
+    3
+   ],
+   "Fanny": [
+    2,
+    1
+   ],
+   "Obsidia": [
+    5,
+    2
+   ],
+   "Hylos": [
+    2,
+    1
+   ],
+   "Freya": [
+    2,
+    1
+   ],
+   "Zhuxin": [
+    4,
+    1
+   ],
+   "Cici": [
+    2,
+    2
+   ],
+   "Aulus": [
+    2,
+    0
+   ]
+  },
+  "Barats": {
+   "Alice": [
+    2,
+    1
+   ],
+   "Hirara": [
+    16,
+    8
+   ],
+   "Rafaela": [
+    8,
+    4
+   ],
+   "Claude": [
+    3,
+    1
+   ],
+   "Belerick": [
+    14,
+    8
+   ],
+   "Carmilla": [
+    7,
+    3
+   ],
+   "Nolan": [
+    7,
+    2
+   ],
+   "Melissa": [
+    4,
+    3
+   ],
+   "Selena": [
+    8,
+    4
+   ],
+   "Moskov": [
+    3,
+    1
+   ],
+   "Atlas": [
+    2,
+    1
+   ],
+   "Novaria": [
+    4,
+    2
+   ],
+   "Clint": [
+    3,
+    2
+   ],
+   "Marcel": [
+    3,
+    1
+   ],
+   "Hanabi": [
+    2,
+    1
+   ],
+   "Gatotkaca": [
+    8,
+    2
+   ],
+   "Paquito": [
+    11,
+    7
+   ],
+   "Esmeralda": [
+    5,
+    4
+   ],
+   "Angela": [
+    2,
+    0
+   ],
+   "Gloo": [
+    6,
+    2
+   ],
+   "Hylos": [
+    6,
+    4
+   ],
+   "Mathilda": [
+    3,
+    2
+   ],
+   "Uranus": [
+    5,
+    2
+   ],
+   "Obsidia": [
+    6,
+    3
+   ],
+   "Miya": [
+    3,
+    1
+   ],
+   "Khufra": [
+    2,
+    0
+   ],
+   "Eudora": [
+    9,
+    5
+   ],
+   "Fanny": [
+    3,
+    0
+   ],
+   "Bruno": [
+    4,
+    2
+   ],
+   "Aulus": [
+    2,
+    1
+   ],
+   "Yi Sun-shin": [
+    2,
+    2
+   ],
+   "Minotaur": [
+    5,
+    2
+   ],
+   "Zhuxin": [
+    3,
+    0
+   ],
+   "Cici": [
+    2,
+    2
+   ],
+   "Freya": [
+    2,
+    0
+   ]
+  },
+  "Nolan": {
+   "Alice": [
+    7,
+    5
+   ],
+   "Hirara": [
+    28,
+    18
+   ],
+   "Rafaela": [
+    4,
+    3
+   ],
+   "Claude": [
+    7,
+    4
+   ],
+   "Belerick": [
+    7,
+    4
+   ],
+   "Barats": [
+    7,
+    5
+   ],
+   "Esmeralda": [
+    3,
+    3
+   ],
+   "Eudora": [
+    13,
+    10
+   ],
+   "Gatotkaca": [
+    11,
+    8
+   ],
+   "Gloo": [
+    3,
+    2
+   ],
+   "Atlas": [
+    3,
+    1
+   ],
+   "Uranus": [
+    3,
+    2
+   ],
+   "Paquito": [
+    6,
+    5
+   ],
+   "Mathilda": [
+    3,
+    3
+   ],
+   "Obsidia": [
+    5,
+    4
+   ],
+   "Miya": [
+    3,
+    3
+   ],
+   "Brody": [
+    5,
+    4
+   ],
+   "Marcel": [
+    9,
+    6
+   ],
+   "Minotaur": [
+    11,
+    6
+   ],
+   "Sora": [
+    3,
+    3
+   ],
+   "Moskov": [
+    3,
+    2
+   ],
+   "Ruby": [
+    2,
+    2
+   ],
+   "Carmilla": [
+    8,
+    5
+   ],
+   "Valentina": [
+    9,
+    4
+   ],
+   "Cecilion": [
+    2,
+    2
+   ],
+   "Selena": [
+    3,
+    2
+   ],
+   "Melissa": [
+    2,
+    1
+   ],
+   "Aulus": [
+    11,
+    7
+   ],
+   "Hayabusa": [
+    3,
+    3
+   ],
+   "Kalea": [
+    2,
+    1
+   ],
+   "Zhuxin": [
+    4,
+    1
+   ],
+   "Freya": [
+    2,
+    0
+   ],
+   "Harley": [
+    2,
+    1
+   ],
+   "Cici": [
+    2,
+    1
+   ],
+   "Phoveus": [
+    2,
+    2
+   ],
+   "Yi Sun-shin": [
+    2,
+    1
+   ]
+  },
+  "Novaria": {
+   "Hirara": [
+    8,
+    4
+   ],
+   "Rafaela": [
+    5,
+    1
+   ],
+   "Claude": [
+    2,
+    2
+   ],
+   "Belerick": [
+    6,
+    5
+   ],
+   "Eudora": [
+    7,
+    2
+   ],
+   "Brody": [
+    5,
+    4
+   ],
+   "Marcel": [
+    3,
+    2
+   ],
+   "Barats": [
+    4,
+    2
+   ],
+   "Valentina": [
+    3,
+    2
+   ],
+   "Paquito": [
+    5,
+    2
+   ],
+   "Clint": [
+    5,
+    1
+   ],
+   "Atlas": [
+    2,
+    1
+   ],
+   "Esmeralda": [
+    3,
+    2
+   ],
+   "Mathilda": [
+    2,
+    2
+   ],
+   "Melissa": [
+    3,
+    2
+   ],
+   "Gatotkaca": [
+    3,
+    1
+   ],
+   "Fanny": [
+    2,
+    0
+   ],
+   "Selena": [
+    4,
+    1
+   ],
+   "Gloo": [
+    2,
+    0
+   ],
+   "Suyou": [
+    2,
+    1
+   ],
+   "Uranus": [
+    4,
+    1
+   ],
+   "Carmilla": [
+    3,
+    0
+   ],
+   "Minotaur": [
+    2,
+    0
+   ],
+   "Bruno": [
+    2,
+    0
+   ]
+  },
+  "Melissa": {
+   "Alice": [
+    2,
+    1
+   ],
+   "Hirara": [
+    16,
+    6
+   ],
+   "Rafaela": [
+    5,
+    3
+   ],
+   "Claude": [
+    6,
+    2
+   ],
+   "Belerick": [
+    4,
+    2
+   ],
+   "Barats": [
+    4,
+    1
+   ],
+   "Aurora": [
+    2,
+    1
+   ],
+   "Beatrix": [
+    2,
+    0
+   ],
+   "Kaja": [
+    4,
+    1
+   ],
+   "Novaria": [
+    3,
+    1
+   ],
+   "Brody": [
+    5,
+    3
+   ],
+   "Vexana": [
+    3,
+    1
+   ],
+   "Marcel": [
+    3,
+    3
+   ],
+   "Uranus": [
+    3,
+    2
+   ],
+   "Paquito": [
+    3,
+    2
+   ],
+   "Miya": [
+    4,
+    1
+   ],
+   "Minotaur": [
+    2,
+    0
+   ],
+   "Atlas": [
+    3,
+    2
+   ],
+   "Eudora": [
+    4,
+    3
+   ],
+   "Gatotkaca": [
+    5,
+    4
+   ],
+   "Carmilla": [
+    3,
+    0
+   ],
+   "Gloo": [
+    2,
+    0
+   ],
+   "Freya": [
+    3,
+    1
+   ],
+   "Moskov": [
+    2,
+    2
+   ],
+   "Nolan": [
+    2,
+    1
+   ]
+  },
+  "Mathilda": {
+   "Hirara": [
+    9,
+    5
+   ],
+   "Rafaela": [
+    3,
+    2
+   ],
+   "Claude": [
+    9,
+    5
+   ],
+   "Belerick": [
+    11,
+    5
+   ],
+   "Esmeralda": [
+    2,
+    0
+   ],
+   "Paquito": [
+    6,
+    1
+   ],
+   "Vexana": [
+    2,
+    0
+   ],
+   "Eudora": [
+    4,
+    1
+   ],
+   "Brody": [
+    5,
+    3
+   ],
+   "Atlas": [
+    3,
+    1
+   ],
+   "Novaria": [
+    2,
+    0
+   ],
+   "Kaja": [
+    2,
+    0
+   ],
+   "Marcel": [
+    2,
+    1
+   ],
+   "Suyou": [
+    4,
+    2
+   ],
+   "Selena": [
+    6,
+    4
+   ],
+   "Clint": [
+    4,
+    0
+   ],
+   "Minotaur": [
+    4,
+    2
+   ],
+   "Carmilla": [
+    2,
+    1
+   ],
+   "Uranus": [
+    2,
+    1
+   ],
+   "Valentina": [
+    3,
+    1
+   ],
+   "Ruby": [
+    2,
+    0
+   ],
+   "Zhuxin": [
+    2,
+    1
+   ],
+   "Barats": [
+    3,
+    1
+   ],
+   "Nolan": [
+    3,
+    0
+   ],
+   "Beatrix": [
+    2,
+    1
+   ],
+   "Gloo": [
+    2,
+    1
+   ]
+  },
+  "Carmilla": {
+   "Barats": [
+    7,
+    4
+   ],
+   "Hirara": [
+    9,
+    4
+   ],
+   "Aurora": [
+    2,
+    1
+   ],
+   "Kaja": [
+    2,
+    1
+   ],
+   "Fanny": [
+    3,
+    1
+   ],
+   "Rafaela": [
+    3,
+    1
+   ],
+   "Claude": [
+    5,
+    2
+   ],
+   "Belerick": [
+    9,
+    4
+   ],
+   "Paquito": [
+    14,
+    6
+   ],
+   "Eudora": [
+    11,
+    1
+   ],
+   "Clint": [
+    5,
+    1
+   ],
+   "Harley": [
+    4,
+    2
+   ],
+   "Valentina": [
+    8,
+    5
+   ],
+   "Brody": [
+    2,
+    2
+   ],
+   "Mathilda": [
+    2,
+    1
+   ],
+   "Selena": [
+    3,
+    1
+   ],
+   "Minotaur": [
+    13,
+    8
+   ],
+   "Phoveus": [
+    2,
+    1
+   ],
+   "Vexana": [
+    2,
+    1
+   ],
+   "Novaria": [
+    3,
+    3
+   ],
+   "Badang": [
+    3,
+    3
+   ],
+   "Lylia": [
+    3,
+    2
+   ],
+   "Melissa": [
+    3,
+    3
+   ],
+   "Chou": [
+    2,
+    1
+   ],
+   "Suyou": [
+    3,
+    1
+   ],
+   "Marcel": [
+    7,
+    3
+   ],
+   "Uranus": [
+    10,
+    5
+   ],
+   "Karrie": [
+    2,
+    1
+   ],
+   "Zhuxin": [
+    5,
+    3
+   ],
+   "Moskov": [
+    3,
+    2
+   ],
+   "Gatotkaca": [
+    6,
+    3
+   ],
+   "Yi Sun-shin": [
+    3,
+    1
+   ],
+   "Miya": [
+    2,
+    0
+   ],
+   "Esmeralda": [
+    3,
+    1
+   ],
+   "Obsidia": [
+    5,
+    2
+   ],
+   "Bruno": [
+    2,
+    1
+   ],
+   "Nolan": [
+    8,
+    3
+   ],
+   "Gloo": [
+    4,
+    0
+   ],
+   "Kimmy": [
+    2,
+    1
+   ],
+   "Hylos": [
+    2,
+    1
+   ],
+   "Aulus": [
+    5,
+    3
+   ],
+   "Masha": [
+    3,
+    0
+   ],
+   "Atlas": [
+    3,
+    0
+   ],
+   "Hayabusa": [
+    2,
+    2
+   ]
+  },
+  "Lylia": {
+   "Hirara": [
+    3,
+    0
+   ],
+   "Moskov": [
+    3,
+    1
+   ],
+   "Esmeralda": [
+    2,
+    1
+   ],
+   "Zhuxin": [
+    2,
+    1
+   ],
+   "Carmilla": [
+    3,
+    1
+   ],
+   "Aulus": [
+    2,
+    2
+   ]
+  },
+  "Aurora": {
+   "Carmilla": [
+    2,
+    1
+   ],
+   "Melissa": [
+    2,
+    1
+   ]
+  },
+  "Beatrix": {
+   "Melissa": [
+    2,
+    2
+   ],
+   "Belerick": [
+    2,
+    2
+   ],
+   "Paquito": [
+    2,
+    1
+   ],
+   "Mathilda": [
+    2,
+    1
+   ]
+  },
+  "Kaja": {
+   "Carmilla": [
+    2,
+    1
+   ],
+   "Melissa": [
+    4,
+    3
+   ],
+   "Belerick": [
+    3,
+    2
+   ],
+   "Esmeralda": [
+    2,
+    2
+   ],
+   "Mathilda": [
+    2,
+    2
+   ],
+   "Gatotkaca": [
+    2,
+    2
+   ],
+   "Rafaela": [
+    2,
+    1
+   ],
+   "Paquito": [
+    3,
+    1
+   ]
+  },
+  "Uranus": {
+   "Belerick": [
+    9,
+    6
+   ],
+   "Hirara": [
+    18,
+    11
+   ],
+   "Eudora": [
+    7,
+    5
+   ],
+   "Brody": [
+    7,
+    6
+   ],
+   "Marcel": [
+    3,
+    2
+   ],
+   "Dyrroth": [
+    3,
+    1
+   ],
+   "Atlas": [
+    2,
+    2
+   ],
+   "Paquito": [
+    6,
+    2
+   ],
+   "Rafaela": [
+    2,
+    0
+   ],
+   "Claude": [
+    7,
+    2
+   ],
+   "Mathilda": [
+    2,
+    1
+   ],
+   "Clint": [
+    2,
+    1
+   ],
+   "Ruby": [
+    5,
+    3
+   ],
+   "Selena": [
+    4,
+    1
+   ],
+   "Melissa": [
+    3,
+    1
+   ],
+   "Gloo": [
+    4,
+    3
+   ],
+   "Alice": [
+    2,
+    1
+   ],
+   "Novaria": [
+    4,
+    3
+   ],
+   "Gatotkaca": [
+    5,
+    2
+   ],
+   "Suyou": [
+    2,
+    2
+   ],
+   "Valentina": [
+    6,
+    5
+   ],
+   "Barats": [
+    5,
+    3
+   ],
+   "Nolan": [
+    3,
+    1
+   ],
+   "Carmilla": [
+    10,
+    5
+   ],
+   "Cecilion": [
+    3,
+    2
+   ],
+   "Hylos": [
+    3,
+    2
+   ],
+   "Freya": [
+    3,
+    1
+   ],
+   "Minotaur": [
+    5,
+    4
+   ],
+   "Obsidia": [
+    6,
+    4
+   ],
+   "Kimmy": [
+    2,
+    1
+   ]
+  },
+  "Paquito": {
+   "Belerick": [
+    14,
+    9
+   ],
+   "Hirara": [
+    40,
+    25
+   ],
+   "Eudora": [
+    6,
+    3
+   ],
+   "Brody": [
+    13,
+    10
+   ],
+   "Marcel": [
+    4,
+    1
+   ],
+   "Valentina": [
+    13,
+    8
+   ],
+   "Moskov": [
+    5,
+    5
+   ],
+   "Mathilda": [
+    6,
+    5
+   ],
+   "Carmilla": [
+    14,
+    8
+   ],
+   "Novaria": [
+    5,
+    3
+   ],
+   "Gatotkaca": [
+    6,
+    3
+   ],
+   "Barats": [
+    11,
+    4
+   ],
+   "Clint": [
+    3,
+    1
+   ],
+   "Angela": [
+    4,
+    3
+   ],
+   "Alice": [
+    7,
+    5
+   ],
+   "Claude": [
+    7,
+    3
+   ],
+   "Gloo": [
+    8,
+    5
+   ],
+   "Badang": [
+    3,
+    2
+   ],
+   "Uranus": [
+    6,
+    4
+   ],
+   "Cecilion": [
+    2,
+    2
+   ],
+   "Kaja": [
+    3,
+    2
+   ],
+   "Harley": [
+    2,
+    1
+   ],
+   "Chou": [
+    3,
+    1
+   ],
+   "Hylos": [
+    4,
+    2
+   ],
+   "Zhuxin": [
+    4,
+    2
+   ],
+   "Minotaur": [
+    10,
+    6
+   ],
+   "Phoveus": [
+    3,
+    3
+   ],
+   "Selena": [
+    8,
+    5
+   ],
+   "Kimmy": [
+    5,
+    3
+   ],
+   "Rafaela": [
+    3,
+    2
+   ],
+   "Yi Sun-shin": [
+    2,
+    1
+   ],
+   "Melissa": [
+    3,
+    1
+   ],
+   "Esmeralda": [
+    3,
+    2
+   ],
+   "Miya": [
+    3,
+    2
+   ],
+   "Nolan": [
+    6,
+    1
+   ],
+   "Beatrix": [
+    2,
+    1
+   ],
+   "Vexana": [
+    4,
+    1
+   ],
+   "Freya": [
+    4,
+    2
+   ],
+   "Suyou": [
+    3,
+    3
+   ],
+   "Obsidia": [
+    8,
+    3
+   ],
+   "Bruno": [
+    2,
+    2
+   ],
+   "Aulus": [
+    5,
+    2
+   ],
+   "Lukas": [
+    2,
+    1
+   ]
+  },
+  "Clint": {
+   "Belerick": [
+    12,
+    9
+   ],
+   "Hirara": [
+    21,
+    16
+   ],
+   "Eudora": [
+    9,
+    8
+   ],
+   "Brody": [
+    10,
+    8
+   ],
+   "Marcel": [
+    3,
+    2
+   ],
+   "Barats": [
+    3,
+    1
+   ],
+   "Valentina": [
+    4,
+    0
+   ],
+   "Rafaela": [
+    3,
+    1
+   ],
+   "Carmilla": [
+    5,
+    4
+   ],
+   "Novaria": [
+    5,
+    4
+   ],
+   "Gatotkaca": [
+    5,
+    4
+   ],
+   "Paquito": [
+    3,
+    2
+   ],
+   "Claude": [
+    6,
+    3
+   ],
+   "Esmeralda": [
+    3,
+    2
+   ],
+   "Mathilda": [
+    4,
+    4
+   ],
+   "Moskov": [
+    4,
+    3
+   ],
+   "Uranus": [
+    2,
+    1
+   ],
+   "Badang": [
+    3,
+    1
+   ],
+   "Alice": [
+    3,
+    2
+   ],
+   "Minotaur": [
+    3,
+    1
+   ],
+   "Kimmy": [
+    2,
+    2
+   ],
+   "Phoveus": [
+    2,
+    2
+   ],
+   "Selena": [
+    2,
+    1
+   ],
+   "Ruby": [
+    3,
+    3
+   ],
+   "Cecilion": [
+    3,
+    3
+   ],
+   "Hylos": [
+    2,
+    2
+   ],
+   "Hilda": [
+    2,
+    1
+   ],
+   "Bruno": [
+    3,
+    2
+   ],
+   "Obsidia": [
+    2,
+    1
+   ]
+  },
+  "Eudora": {
+   "Uranus": [
+    7,
+    2
+   ],
+   "Paquito": [
+    6,
+    3
+   ],
+   "Novaria": [
+    7,
+    5
+   ],
+   "Clint": [
+    9,
+    1
+   ],
+   "Rafaela": [
+    7,
+    2
+   ],
+   "Dyrroth": [
+    2,
+    0
+   ],
+   "Nolan": [
+    13,
+    3
+   ],
+   "Selena": [
+    8,
+    6
+   ],
+   "Karrie": [
+    2,
+    0
+   ],
+   "Belerick": [
+    13,
+    6
+   ],
+   "Carmilla": [
+    11,
+    10
+   ],
+   "Hirara": [
+    28,
+    20
+   ],
+   "Gatotkaca": [
+    10,
+    6
+   ],
+   "Harley": [
+    3,
+    1
+   ],
+   "Mathilda": [
+    4,
+    3
+   ],
+   "Valentina": [
+    13,
+    6
+   ],
+   "Brody": [
+    5,
+    4
+   ],
+   "Badang": [
+    3,
+    2
+   ],
+   "Zhuxin": [
+    8,
+    3
+   ],
+   "Minotaur": [
+    13,
+    7
+   ],
+   "Esmeralda": [
+    3,
+    2
+   ],
+   "Kimmy": [
+    2,
+    1
+   ],
+   "Moskov": [
+    5,
+    4
+   ],
+   "Phoveus": [
+    2,
+    2
+   ],
+   "Alice": [
+    4,
+    3
+   ],
+   "Yi Sun-shin": [
+    2,
+    2
+   ],
+   "Angela": [
+    2,
+    2
+   ],
+   "Miya": [
+    5,
+    5
+   ],
+   "Atlas": [
+    3,
+    1
+   ],
+   "Claude": [
+    6,
+    2
+   ],
+   "Melissa": [
+    4,
+    1
+   ],
+   "Cecilion": [
+    4,
+    3
+   ],
+   "Hylos": [
+    5,
+    3
+   ],
+   "Barats": [
+    9,
+    4
+   ],
+   "Gloo": [
+    6,
+    2
+   ],
+   "Vexana": [
+    3,
+    1
+   ],
+   "Obsidia": [
+    7,
+    5
+   ],
+   "Bruno": [
+    2,
+    2
+   ],
+   "Freya": [
+    3,
+    1
+   ],
+   "Marcel": [
+    3,
+    1
+   ],
+   "Aulus": [
+    7,
+    4
+   ],
+   "Lukas": [
+    4,
+    2
+   ]
+  },
+  "Brody": {
+   "Uranus": [
+    7,
+    1
+   ],
+   "Paquito": [
+    13,
+    3
+   ],
+   "Novaria": [
+    5,
+    1
+   ],
+   "Clint": [
+    10,
+    2
+   ],
+   "Rafaela": [
+    4,
+    0
+   ],
+   "Atlas": [
+    3,
+    2
+   ],
+   "Harley": [
+    2,
+    1
+   ],
+   "Marcel": [
+    4,
+    1
+   ],
+   "Mathilda": [
+    5,
+    2
+   ],
+   "Belerick": [
+    5,
+    1
+   ],
+   "Esmeralda": [
+    4,
+    2
+   ],
+   "Melissa": [
+    5,
+    2
+   ],
+   "Gatotkaca": [
+    4,
+    2
+   ],
+   "Claude": [
+    2,
+    1
+   ],
+   "Zhuxin": [
+    4,
+    1
+   ],
+   "Carmilla": [
+    2,
+    0
+   ],
+   "Hirara": [
+    7,
+    1
+   ],
+   "Eudora": [
+    5,
+    1
+   ],
+   "Ruby": [
+    3,
+    0
+   ],
+   "Selena": [
+    5,
+    2
+   ],
+   "Gloo": [
+    3,
+    0
+   ],
+   "Minotaur": [
+    8,
+    3
+   ],
+   "Angela": [
+    2,
+    1
+   ],
+   "Miya": [
+    2,
+    2
+   ],
+   "Nolan": [
+    5,
+    1
+   ],
+   "Obsidia": [
+    2,
+    0
+   ]
+  },
+  "Marcel": {
+   "Uranus": [
+    3,
+    1
+   ],
+   "Paquito": [
+    4,
+    3
+   ],
+   "Novaria": [
+    3,
+    1
+   ],
+   "Clint": [
+    3,
+    1
+   ],
+   "Rafaela": [
+    5,
+    0
+   ],
+   "Barats": [
+    3,
+    2
+   ],
+   "Hirara": [
+    9,
+    5
+   ],
+   "Valentina": [
+    5,
+    3
+   ],
+   "Brody": [
+    4,
+    3
+   ],
+   "Esmeralda": [
+    4,
+    1
+   ],
+   "Suyou": [
+    3,
+    1
+   ],
+   "Zhuxin": [
+    4,
+    1
+   ],
+   "Melissa": [
+    3,
+    0
+   ],
+   "Mathilda": [
+    2,
+    1
+   ],
+   "Selena": [
+    6,
+    4
+   ],
+   "Gloo": [
+    5,
+    1
+   ],
+   "Minotaur": [
+    6,
+    3
+   ],
+   "Kimmy": [
+    2,
+    1
+   ],
+   "Alice": [
+    3,
+    3
+   ],
+   "Yi Sun-shin": [
+    2,
+    2
+   ],
+   "Belerick": [
+    3,
+    3
+   ],
+   "Gatotkaca": [
+    6,
+    3
+   ],
+   "Carmilla": [
+    7,
+    4
+   ],
+   "Miya": [
+    5,
+    4
+   ],
+   "Cecilion": [
+    2,
+    2
+   ],
+   "Hylos": [
+    2,
+    1
+   ],
+   "Nolan": [
+    9,
+    3
+   ],
+   "Obsidia": [
+    6,
+    3
+   ],
+   "Eudora": [
+    3,
+    2
+   ],
+   "Atlas": [
+    2,
+    1
+   ],
+   "Aulus": [
+    2,
+    1
+   ],
+   "Lukas": [
+    3,
+    1
+   ],
+   "Cici": [
+    2,
+    0
+   ]
+  },
+  "Selena": {
+   "Barats": [
+    8,
+    4
+   ],
+   "Fanny": [
+    2,
+    1
+   ],
+   "Rafaela": [
+    3,
+    1
+   ],
+   "Claude": [
+    6,
+    1
+   ],
+   "Belerick": [
+    10,
+    3
+   ],
+   "Esmeralda": [
+    6,
+    5
+   ],
+   "Hirara": [
+    13,
+    7
+   ],
+   "Eudora": [
+    8,
+    2
+   ],
+   "Gatotkaca": [
+    8,
+    6
+   ],
+   "Mathilda": [
+    6,
+    2
+   ],
+   "Moskov": [
+    3,
+    1
+   ],
+   "Uranus": [
+    4,
+    3
+   ],
+   "Novaria": [
+    4,
+    3
+   ],
+   "Brody": [
+    5,
+    3
+   ],
+   "Marcel": [
+    6,
+    2
+   ],
+   "Carmilla": [
+    3,
+    2
+   ],
+   "Ruby": [
+    2,
+    0
+   ],
+   "Paquito": [
+    8,
+    3
+   ],
+   "Clint": [
+    2,
+    1
+   ],
+   "Chou": [
+    3,
+    2
+   ],
+   "Hanabi": [
+    2,
+    0
+   ],
+   "Suyou": [
+    4,
+    2
+   ],
+   "Valentina": [
+    8,
+    3
+   ],
+   "Yi Sun-shin": [
+    2,
+    2
+   ],
+   "Miya": [
+    3,
+    2
+   ],
+   "Gloo": [
+    3,
+    1
+   ],
+   "Obsidia": [
+    2,
+    1
+   ],
+   "Minotaur": [
+    4,
+    2
+   ],
+   "Nolan": [
+    3,
+    1
+   ]
+  },
+  "Moskov": {
+   "Barats": [
+    3,
+    2
+   ],
+   "Fanny": [
+    5,
+    2
+   ],
+   "Rafaela": [
+    3,
+    0
+   ],
+   "Claude": [
+    5,
+    0
+   ],
+   "Belerick": [
+    7,
+    1
+   ],
+   "Paquito": [
+    5,
+    0
+   ],
+   "Hirara": [
+    5,
+    4
+   ],
+   "Lylia": [
+    3,
+    2
+   ],
+   "Badang": [
+    2,
+    2
+   ],
+   "Atlas": [
+    2,
+    0
+   ],
+   "Suyou": [
+    2,
+    0
+   ],
+   "Selena": [
+    3,
+    2
+   ],
+   "Clint": [
+    4,
+    1
+   ],
+   "Minotaur": [
+    4,
+    1
+   ],
+   "Eudora": [
+    5,
+    1
+   ],
+   "Alice": [
+    2,
+    0
+   ],
+   "Gatotkaca": [
+    5,
+    3
+   ],
+   "Miya": [
+    3,
+    3
+   ],
+   "Gloo": [
+    2,
+    1
+   ],
+   "Carmilla": [
+    3,
+    1
+   ],
+   "Melissa": [
+    2,
+    0
+   ],
+   "Nolan": [
+    3,
+    1
+   ],
+   "Zhuxin": [
+    2,
+    0
+   ],
+   "Obsidia": [
+    4,
+    1
+   ]
+  },
+  "Badang": {
+   "Fanny": [
+    2,
+    0
+   ],
+   "Rafaela": [
+    2,
+    0
+   ],
+   "Claude": [
+    2,
+    0
+   ],
+   "Belerick": [
+    3,
+    1
+   ],
+   "Paquito": [
+    3,
+    1
+   ],
+   "Moskov": [
+    2,
+    0
+   ],
+   "Eudora": [
+    3,
+    1
+   ],
+   "Clint": [
+    3,
+    2
+   ],
+   "Hylos": [
+    3,
+    1
+   ],
+   "Hirara": [
+    2,
+    1
+   ],
+   "Carmilla": [
+    3,
+    0
+   ]
+  },
+  "Fanny": {
+   "Carmilla": [
+    3,
+    2
+   ],
+   "Hirara": [
+    6,
+    3
+   ],
+   "Selena": [
+    2,
+    1
+   ],
+   "Moskov": [
+    5,
+    3
+   ],
+   "Badang": [
+    2,
+    2
+   ],
+   "Novaria": [
+    2,
+    2
+   ],
+   "Miya": [
+    2,
+    1
+   ],
+   "Hylos": [
+    3,
+    2
+   ],
+   "Barats": [
+    3,
+    3
+   ],
+   "Suyou": [
+    2,
+    1
+   ],
+   "Valentina": [
+    3,
+    2
+   ],
+   "Belerick": [
+    2,
+    1
+   ],
+   "Zhuxin": [
+    2,
+    2
+   ]
+  },
+  "Atlas": {
+   "Barats": [
+    2,
+    1
+   ],
+   "Hirara": [
+    12,
+    8
+   ],
+   "Valentina": [
+    8,
+    5
+   ],
+   "Brody": [
+    3,
+    1
+   ],
+   "Rafaela": [
+    3,
+    1
+   ],
+   "Uranus": [
+    2,
+    0
+   ],
+   "Novaria": [
+    2,
+    1
+   ],
+   "Mathilda": [
+    3,
+    2
+   ],
+   "Esmeralda": [
+    2,
+    2
+   ],
+   "Moskov": [
+    2,
+    2
+   ],
+   "Belerick": [
+    12,
+    7
+   ],
+   "Alice": [
+    3,
+    2
+   ],
+   "Angela": [
+    2,
+    1
+   ],
+   "Claude": [
+    2,
+    1
+   ],
+   "Kimmy": [
+    2,
+    2
+   ],
+   "Gatotkaca": [
+    4,
+    3
+   ],
+   "Miya": [
+    4,
+    3
+   ],
+   "Minotaur": [
+    4,
+    2
+   ],
+   "Eudora": [
+    3,
+    2
+   ],
+   "Nolan": [
+    3,
+    2
+   ],
+   "Melissa": [
+    3,
+    1
+   ],
+   "Obsidia": [
+    3,
+    2
+   ],
+   "Carmilla": [
+    3,
+    3
+   ],
+   "Marcel": [
+    2,
+    1
+   ],
+   "Lukas": [
+    2,
+    2
+   ],
+   "Aulus": [
+    2,
+    2
+   ]
+  },
+  "Harley": {
+   "Hirara": [
+    4,
+    1
+   ],
+   "Valentina": [
+    2,
+    1
+   ],
+   "Brody": [
+    2,
+    1
+   ],
+   "Eudora": [
+    3,
+    2
+   ],
+   "Belerick": [
+    3,
+    1
+   ],
+   "Gloo": [
+    2,
+    1
+   ],
+   "Carmilla": [
+    4,
+    2
+   ],
+   "Paquito": [
+    2,
+    1
+   ],
+   "Gatotkaca": [
+    2,
+    1
+   ],
+   "Hylos": [
+    2,
+    1
+   ],
+   "Nolan": [
+    2,
+    1
+   ]
+  },
+  "Valentina": {
+   "Atlas": [
+    8,
+    3
+   ],
+   "Harley": [
+    2,
+    1
+   ],
+   "Novaria": [
+    3,
+    1
+   ],
+   "Clint": [
+    4,
+    4
+   ],
+   "Marcel": [
+    5,
+    2
+   ],
+   "Paquito": [
+    13,
+    5
+   ],
+   "Claude": [
+    6,
+    1
+   ],
+   "Belerick": [
+    10,
+    5
+   ],
+   "Rafaela": [
+    2,
+    0
+   ],
+   "Carmilla": [
+    8,
+    3
+   ],
+   "Hirara": [
+    11,
+    4
+   ],
+   "Eudora": [
+    13,
+    7
+   ],
+   "Mathilda": [
+    3,
+    2
+   ],
+   "Alice": [
+    4,
+    2
+   ],
+   "Hylos": [
+    7,
+    4
+   ],
+   "Selena": [
+    8,
+    5
+   ],
+   "Chou": [
+    2,
+    1
+   ],
+   "Uranus": [
+    6,
+    1
+   ],
+   "Miya": [
+    5,
+    3
+   ],
+   "Minotaur": [
+    7,
+    5
+   ],
+   "Gatotkaca": [
+    9,
+    5
+   ],
+   "Obsidia": [
+    10,
+    3
+   ],
+   "Fanny": [
+    3,
+    1
+   ],
+   "Nolan": [
+    9,
+    5
+   ],
+   "Phoveus": [
+    3,
+    2
+   ],
+   "Aulus": [
+    2,
+    2
+   ],
+   "Cici": [
+    3,
+    1
+   ],
+   "Gloo": [
+    3,
+    1
+   ],
+   "Zhuxin": [
+    6,
+    0
+   ],
+   "Khufra": [
+    2,
+    0
+   ],
+   "Kimmy": [
+    3,
+    2
+   ],
+   "Freya": [
+    2,
+    0
+   ]
+  },
+  "Esmeralda": {
+   "Dyrroth": [
+    2,
+    1
+   ],
+   "Nolan": [
+    3,
+    0
+   ],
+   "Selena": [
+    6,
+    1
+   ],
+   "Belerick": [
+    5,
+    0
+   ],
+   "Hirara": [
+    10,
+    6
+   ],
+   "Mathilda": [
+    2,
+    2
+   ],
+   "Novaria": [
+    3,
+    1
+   ],
+   "Brody": [
+    4,
+    2
+   ],
+   "Kaja": [
+    2,
+    0
+   ],
+   "Barats": [
+    5,
+    1
+   ],
+   "Vexana": [
+    3,
+    2
+   ],
+   "Lylia": [
+    2,
+    1
+   ],
+   "Marcel": [
+    4,
+    3
+   ],
+   "Atlas": [
+    2,
+    0
+   ],
+   "Suyou": [
+    2,
+    0
+   ],
+   "Clint": [
+    3,
+    1
+   ],
+   "Minotaur": [
+    2,
+    0
+   ],
+   "Claude": [
+    4,
+    0
+   ],
+   "Eudora": [
+    3,
+    1
+   ],
+   "Paquito": [
+    3,
+    1
+   ],
+   "Freya": [
+    3,
+    2
+   ],
+   "Carmilla": [
+    3,
+    2
+   ],
+   "Gloo": [
+    2,
+    0
+   ],
+   "Aulus": [
+    3,
+    1
+   ]
+  },
+  "Gatotkaca": {
+   "Nolan": [
+    11,
+    3
+   ],
+   "Selena": [
+    8,
+    2
+   ],
+   "Belerick": [
+    15,
+    4
+   ],
+   "Barats": [
+    8,
+    6
+   ],
+   "Paquito": [
+    6,
+    3
+   ],
+   "Eudora": [
+    10,
+    4
+   ],
+   "Clint": [
+    5,
+    1
+   ],
+   "Rafaela": [
+    2,
+    0
+   ],
+   "Hirara": [
+    20,
+    8
+   ],
+   "Novaria": [
+    3,
+    2
+   ],
+   "Brody": [
+    4,
+    2
+   ],
+   "Kaja": [
+    2,
+    0
+   ],
+   "Claude": [
+    4,
+    1
+   ],
+   "Ruby": [
+    3,
+    1
+   ],
+   "Harley": [
+    2,
+    1
+   ],
+   "Zhuxin": [
+    5,
+    3
+   ],
+   "Atlas": [
+    4,
+    1
+   ],
+   "Suyou": [
+    6,
+    4
+   ],
+   "Moskov": [
+    5,
+    2
+   ],
+   "Uranus": [
+    5,
+    3
+   ],
+   "Marcel": [
+    6,
+    3
+   ],
+   "Valentina": [
+    9,
+    4
+   ],
+   "Melissa": [
+    5,
+    1
+   ],
+   "Minotaur": [
+    15,
+    5
+   ],
+   "Miya": [
+    4,
+    4
+   ],
+   "Gloo": [
+    5,
+    1
+   ],
+   "Hylos": [
+    4,
+    3
+   ],
+   "Vexana": [
+    2,
+    1
+   ],
+   "Chou": [
+    2,
+    2
+   ],
+   "Obsidia": [
+    5,
+    2
+   ],
+   "Carmilla": [
+    6,
+    3
+   ],
+   "Aulus": [
+    2,
+    1
+   ]
+  },
+  "Dyrroth": {
+   "Esmeralda": [
+    2,
+    1
+   ],
+   "Eudora": [
+    2,
+    2
+   ],
+   "Uranus": [
+    3,
+    2
+   ]
+  },
+  "Karrie": {
+   "Hirara": [
+    3,
+    2
+   ],
+   "Eudora": [
+    2,
+    2
+   ],
+   "Claude": [
+    2,
+    0
+   ],
+   "Belerick": [
+    2,
+    0
+   ],
+   "Carmilla": [
+    2,
+    1
+   ]
+  },
+  "Vexana": {
+   "Hirara": [
+    5,
+    2
+   ],
+   "Mathilda": [
+    2,
+    2
+   ],
+   "Alice": [
+    2,
+    1
+   ],
+   "Angela": [
+    2,
+    1
+   ],
+   "Claude": [
+    3,
+    1
+   ],
+   "Gloo": [
+    2,
+    1
+   ],
+   "Esmeralda": [
+    3,
+    1
+   ],
+   "Melissa": [
+    3,
+    2
+   ],
+   "Belerick": [
+    2,
+    1
+   ],
+   "Carmilla": [
+    2,
+    1
+   ],
+   "Freya": [
+    2,
+    1
+   ],
+   "Paquito": [
+    4,
+    3
+   ],
+   "Eudora": [
+    3,
+    2
+   ],
+   "Gatotkaca": [
+    2,
+    1
+   ],
+   "Zhuxin": [
+    2,
+    1
+   ],
+   "Minotaur": [
+    3,
+    2
+   ]
+  },
+  "Hanabi": {
+   "Barats": [
+    2,
+    1
+   ],
+   "Belerick": [
+    2,
+    2
+   ],
+   "Selena": [
+    2,
+    2
+   ],
+   "Claude": [
+    2,
+    2
+   ]
+  },
+  "Angela": {
+   "Belerick": [
+    4,
+    0
+   ],
+   "Paquito": [
+    4,
+    1
+   ],
+   "Rafaela": [
+    3,
+    1
+   ],
+   "Vexana": [
+    2,
+    1
+   ],
+   "Barats": [
+    2,
+    2
+   ],
+   "Atlas": [
+    2,
+    1
+   ],
+   "Brody": [
+    2,
+    1
+   ],
+   "Suyou": [
+    3,
+    1
+   ],
+   "Eudora": [
+    2,
+    0
+   ],
+   "Kalea": [
+    2,
+    0
+   ]
+  },
+  "Gloo": {
+   "Nolan": [
+    3,
+    1
+   ],
+   "Vexana": [
+    2,
+    1
+   ],
+   "Paquito": [
+    8,
+    3
+   ],
+   "Rafaela": [
+    2,
+    1
+   ],
+   "Barats": [
+    6,
+    4
+   ],
+   "Harley": [
+    2,
+    1
+   ],
+   "Uranus": [
+    4,
+    1
+   ],
+   "Hirara": [
+    6,
+    6
+   ],
+   "Novaria": [
+    2,
+    2
+   ],
+   "Brody": [
+    3,
+    3
+   ],
+   "Marcel": [
+    5,
+    4
+   ],
+   "Melissa": [
+    2,
+    2
+   ],
+   "Selena": [
+    3,
+    2
+   ],
+   "Claude": [
+    3,
+    2
+   ],
+   "Minotaur": [
+    4,
+    2
+   ],
+   "Gatotkaca": [
+    5,
+    4
+   ],
+   "Eudora": [
+    6,
+    4
+   ],
+   "Moskov": [
+    2,
+    1
+   ],
+   "Mathilda": [
+    2,
+    1
+   ],
+   "Carmilla": [
+    4,
+    4
+   ],
+   "Zhuxin": [
+    4,
+    2
+   ],
+   "Esmeralda": [
+    2,
+    2
+   ],
+   "Aulus": [
+    3,
+    2
+   ],
+   "Valentina": [
+    3,
+    2
+   ],
+   "Hayabusa": [
+    2,
+    2
+   ]
+  },
+  "Lukas": {
+   "Belerick": [
+    3,
+    1
+   ],
+   "Hirara": [
+    3,
+    1
+   ],
+   "Aulus": [
+    2,
+    1
+   ],
+   "Eudora": [
+    4,
+    2
+   ],
+   "Minotaur": [
+    2,
+    2
+   ],
+   "Marcel": [
+    3,
+    2
+   ],
+   "Paquito": [
+    2,
+    1
+   ],
+   "Atlas": [
+    2,
+    0
+   ]
+  },
+  "Suyou": {
+   "Hirara": [
+    16,
+    9
+   ],
+   "Marcel": [
+    3,
+    2
+   ],
+   "Esmeralda": [
+    2,
+    2
+   ],
+   "Mathilda": [
+    4,
+    2
+   ],
+   "Moskov": [
+    2,
+    2
+   ],
+   "Belerick": [
+    5,
+    3
+   ],
+   "Claude": [
+    2,
+    1
+   ],
+   "Kimmy": [
+    2,
+    1
+   ],
+   "Gatotkaca": [
+    6,
+    2
+   ],
+   "Chou": [
+    2,
+    2
+   ],
+   "Angela": [
+    3,
+    2
+   ],
+   "Novaria": [
+    2,
+    1
+   ],
+   "Hylos": [
+    2,
+    2
+   ],
+   "Selena": [
+    4,
+    2
+   ],
+   "Uranus": [
+    2,
+    0
+   ],
+   "Rafaela": [
+    2,
+    0
+   ],
+   "Miya": [
+    2,
+    0
+   ],
+   "Minotaur": [
+    3,
+    2
+   ],
+   "Carmilla": [
+    3,
+    2
+   ],
+   "Fanny": [
+    2,
+    1
+   ],
+   "Obsidia": [
+    4,
+    2
+   ],
+   "Phoveus": [
+    3,
+    1
+   ],
+   "Paquito": [
+    3,
+    0
+   ],
+   "Zhuxin": [
+    2,
+    1
+   ],
+   "Aulus": [
+    3,
+    2
+   ],
+   "Freya": [
+    2,
+    1
+   ]
+  },
+  "Cecilion": {
+   "Paquito": [
+    2,
+    0
+   ],
+   "Belerick": [
+    2,
+    0
+   ],
+   "Uranus": [
+    3,
+    1
+   ],
+   "Hirara": [
+    2,
+    1
+   ],
+   "Eudora": [
+    4,
+    1
+   ],
+   "Clint": [
+    3,
+    0
+   ],
+   "Marcel": [
+    2,
+    0
+   ],
+   "Minotaur": [
+    2,
+    0
+   ],
+   "Nolan": [
+    2,
+    0
+   ]
+  },
+  "Arlott": {
+   "Zhuxin": [
+    2,
+    1
+   ]
+  },
+  "Zhuxin": {
+   "Arlott": [
+    2,
+    1
+   ],
+   "Hirara": [
+    10,
+    6
+   ],
+   "Lylia": [
+    2,
+    1
+   ],
+   "Brody": [
+    4,
+    3
+   ],
+   "Marcel": [
+    4,
+    3
+   ],
+   "Mathilda": [
+    2,
+    1
+   ],
+   "Gatotkaca": [
+    5,
+    2
+   ],
+   "Paquito": [
+    4,
+    2
+   ],
+   "Eudora": [
+    8,
+    5
+   ],
+   "Hylos": [
+    2,
+    1
+   ],
+   "Freya": [
+    5,
+    1
+   ],
+   "Vexana": [
+    2,
+    1
+   ],
+   "Carmilla": [
+    5,
+    2
+   ],
+   "Yi Sun-shin": [
+    3,
+    1
+   ],
+   "Kimmy": [
+    2,
+    0
+   ],
+   "Gloo": [
+    4,
+    2
+   ],
+   "Suyou": [
+    2,
+    1
+   ],
+   "Moskov": [
+    2,
+    2
+   ],
+   "Barats": [
+    3,
+    3
+   ],
+   "Hayabusa": [
+    2,
+    2
+   ],
+   "Kalea": [
+    3,
+    2
+   ],
+   "Fanny": [
+    2,
+    0
+   ],
+   "Obsidia": [
+    3,
+    1
+   ],
+   "Masha": [
+    3,
+    1
+   ],
+   "Nolan": [
+    4,
+    3
+   ],
+   "Claude": [
+    2,
+    1
+   ],
+   "Belerick": [
+    4,
+    3
+   ],
+   "Yve": [
+    2,
+    0
+   ],
+   "Aulus": [
+    4,
+    3
+   ],
+   "Valentina": [
+    6,
+    6
+   ],
+   "Minotaur": [
+    7,
+    6
+   ]
+  },
+  "Minotaur": {
+   "Esmeralda": [
+    2,
+    2
+   ],
+   "Hirara": [
+    22,
+    11
+   ],
+   "Mathilda": [
+    4,
+    2
+   ],
+   "Moskov": [
+    4,
+    3
+   ],
+   "Belerick": [
+    12,
+    7
+   ],
+   "Carmilla": [
+    13,
+    5
+   ],
+   "Brody": [
+    8,
+    5
+   ],
+   "Ruby": [
+    3,
+    1
+   ],
+   "Paquito": [
+    10,
+    4
+   ],
+   "Eudora": [
+    13,
+    6
+   ],
+   "Clint": [
+    3,
+    2
+   ],
+   "Marcel": [
+    6,
+    3
+   ],
+   "Suyou": [
+    3,
+    1
+   ],
+   "Valentina": [
+    7,
+    2
+   ],
+   "Melissa": [
+    2,
+    2
+   ],
+   "Atlas": [
+    4,
+    2
+   ],
+   "Claude": [
+    6,
+    2
+   ],
+   "Hylos": [
+    5,
+    1
+   ],
+   "Gatotkaca": [
+    15,
+    10
+   ],
+   "Miya": [
+    2,
+    1
+   ],
+   "Gloo": [
+    4,
+    2
+   ],
+   "Freya": [
+    6,
+    2
+   ],
+   "Vexana": [
+    3,
+    1
+   ],
+   "Phoveus": [
+    2,
+    0
+   ],
+   "Novaria": [
+    2,
+    2
+   ],
+   "Uranus": [
+    5,
+    1
+   ],
+   "Nolan": [
+    11,
+    5
+   ],
+   "Sora": [
+    2,
+    1
+   ],
+   "Cecilion": [
+    2,
+    2
+   ],
+   "Bruno": [
+    2,
+    2
+   ],
+   "Selena": [
+    4,
+    2
+   ],
+   "Aulus": [
+    3,
+    0
+   ],
+   "Barats": [
+    5,
+    3
+   ],
+   "Hayabusa": [
+    2,
+    1
+   ],
+   "Alice": [
+    5,
+    2
+   ],
+   "Obsidia": [
+    7,
+    2
+   ],
+   "Zhuxin": [
+    7,
+    1
+   ],
+   "Lukas": [
+    2,
+    0
+   ],
+   "Kimmy": [
+    3,
+    1
+   ],
+   "Cici": [
+    3,
+    0
+   ]
+  },
+  "Chou": {
+   "Paquito": [
+    3,
+    2
+   ],
+   "Belerick": [
+    3,
+    2
+   ],
+   "Suyou": [
+    2,
+    0
+   ],
+   "Selena": [
+    3,
+    1
+   ],
+   "Valentina": [
+    2,
+    1
+   ],
+   "Carmilla": [
+    2,
+    1
+   ],
+   "Hirara": [
+    2,
+    0
+   ],
+   "Phoveus": [
+    2,
+    1
+   ],
+   "Gatotkaca": [
+    2,
+    0
+   ]
+  },
+  "Ruby": {
+   "Hirara": [
+    7,
+    6
+   ],
+   "Mathilda": [
+    2,
+    2
+   ],
+   "Gatotkaca": [
+    3,
+    2
+   ],
+   "Uranus": [
+    5,
+    2
+   ],
+   "Brody": [
+    3,
+    3
+   ],
+   "Minotaur": [
+    3,
+    2
+   ],
+   "Selena": [
+    2,
+    2
+   ],
+   "Rafaela": [
+    4,
+    1
+   ],
+   "Miya": [
+    2,
+    1
+   ],
+   "Clint": [
+    3,
+    0
+   ],
+   "Nolan": [
+    2,
+    0
+   ]
+  },
+  "Phoveus": {
+   "Carmilla": [
+    2,
+    1
+   ],
+   "Hylos": [
+    2,
+    1
+   ],
+   "Paquito": [
+    3,
+    0
+   ],
+   "Eudora": [
+    2,
+    0
+   ],
+   "Clint": [
+    2,
+    0
+   ],
+   "Belerick": [
+    3,
+    0
+   ],
+   "Minotaur": [
+    2,
+    2
+   ],
+   "Suyou": [
+    3,
+    2
+   ],
+   "Chou": [
+    2,
+    1
+   ],
+   "Valentina": [
+    3,
+    1
+   ],
+   "Nolan": [
+    2,
+    0
+   ]
+  },
+  "Hylos": {
+   "Phoveus": [
+    2,
+    1
+   ],
+   "Hirara": [
+    6,
+    3
+   ],
+   "Paquito": [
+    4,
+    2
+   ],
+   "Barats": [
+    6,
+    2
+   ],
+   "Suyou": [
+    2,
+    0
+   ],
+   "Valentina": [
+    7,
+    3
+   ],
+   "Claude": [
+    3,
+    1
+   ],
+   "Badang": [
+    3,
+    2
+   ],
+   "Yi Sun-shin": [
+    2,
+    2
+   ],
+   "Zhuxin": [
+    2,
+    1
+   ],
+   "Minotaur": [
+    5,
+    4
+   ],
+   "Uranus": [
+    3,
+    1
+   ],
+   "Eudora": [
+    5,
+    2
+   ],
+   "Clint": [
+    2,
+    0
+   ],
+   "Marcel": [
+    2,
+    1
+   ],
+   "Gatotkaca": [
+    4,
+    1
+   ],
+   "Fanny": [
+    3,
+    1
+   ],
+   "Miya": [
+    2,
+    2
+   ],
+   "Belerick": [
+    2,
+    1
+   ],
+   "Obsidia": [
+    4,
+    1
+   ],
+   "Carmilla": [
+    2,
+    1
+   ],
+   "Kalea": [
+    2,
+    1
+   ],
+   "Aulus": [
+    3,
+    2
+   ],
+   "Harley": [
+    2,
+    1
+   ]
+  },
+  "Kimmy": {
+   "Atlas": [
+    2,
+    0
+   ],
+   "Suyou": [
+    2,
+    1
+   ],
+   "Eudora": [
+    2,
+    1
+   ],
+   "Clint": [
+    2,
+    0
+   ],
+   "Marcel": [
+    2,
+    1
+   ],
+   "Paquito": [
+    5,
+    2
+   ],
+   "Carmilla": [
+    2,
+    1
+   ],
+   "Hirara": [
+    4,
+    4
+   ],
+   "Zhuxin": [
+    2,
+    2
+   ],
+   "Uranus": [
+    2,
+    1
+   ],
+   "Obsidia": [
+    2,
+    2
+   ],
+   "Minotaur": [
+    3,
+    2
+   ],
+   "Sora": [
+    2,
+    1
+   ],
+   "Valentina": [
+    3,
+    1
+   ],
+   "Aulus": [
+    3,
+    1
+   ]
+  },
+  "Khaleed": {
+   "Hirara": [
+    2,
+    1
+   ]
+  },
+  "Yi Sun-shin": {
+   "Paquito": [
+    2,
+    1
+   ],
+   "Eudora": [
+    2,
+    0
+   ],
+   "Marcel": [
+    2,
+    0
+   ],
+   "Hylos": [
+    2,
+    0
+   ],
+   "Hirara": [
+    5,
+    1
+   ],
+   "Selena": [
+    2,
+    0
+   ],
+   "Carmilla": [
+    3,
+    2
+   ],
+   "Zhuxin": [
+    3,
+    2
+   ],
+   "Barats": [
+    2,
+    0
+   ],
+   "Claude": [
+    2,
+    1
+   ],
+   "Alice": [
+    3,
+    2
+   ],
+   "Nolan": [
+    2,
+    1
+   ]
+  },
+  "Pharsa": {
+   "Hirara": [
+    2,
+    2
+   ]
+  },
+  "Sora": {
+   "Minotaur": [
+    2,
+    1
+   ],
+   "Nolan": [
+    3,
+    0
+   ],
+   "Kimmy": [
+    2,
+    1
+   ]
+  },
+  "Miya": {
+   "Ruby": [
+    2,
+    1
+   ],
+   "Suyou": [
+    2,
+    2
+   ],
+   "Valentina": [
+    5,
+    2
+   ],
+   "Melissa": [
+    4,
+    3
+   ],
+   "Atlas": [
+    4,
+    1
+   ],
+   "Belerick": [
+    4,
+    1
+   ],
+   "Paquito": [
+    3,
+    1
+   ],
+   "Eudora": [
+    5,
+    0
+   ],
+   "Brody": [
+    2,
+    0
+   ],
+   "Barats": [
+    3,
+    2
+   ],
+   "Fanny": [
+    2,
+    1
+   ],
+   "Marcel": [
+    5,
+    1
+   ],
+   "Nolan": [
+    3,
+    0
+   ],
+   "Selena": [
+    3,
+    1
+   ],
+   "Minotaur": [
+    2,
+    1
+   ],
+   "Gatotkaca": [
+    4,
+    0
+   ],
+   "Moskov": [
+    3,
+    0
+   ],
+   "Hirara": [
+    7,
+    2
+   ],
+   "Hylos": [
+    2,
+    0
+   ],
+   "Obsidia": [
+    5,
+    3
+   ],
+   "Carmilla": [
+    2,
+    2
+   ]
+  },
+  "Kalea": {
+   "Hirara": [
+    4,
+    2
+   ],
+   "Angela": [
+    2,
+    2
+   ],
+   "Nolan": [
+    2,
+    1
+   ],
+   "Zhuxin": [
+    3,
+    1
+   ],
+   "Hylos": [
+    2,
+    1
+   ],
+   "Alice": [
+    2,
+    1
+   ]
+  },
+  "Obsidia": {
+   "Barats": [
+    6,
+    3
+   ],
+   "Nolan": [
+    5,
+    1
+   ],
+   "Valentina": [
+    10,
+    7
+   ],
+   "Suyou": [
+    4,
+    2
+   ],
+   "Miya": [
+    5,
+    2
+   ],
+   "Belerick": [
+    5,
+    3
+   ],
+   "Gatotkaca": [
+    5,
+    3
+   ],
+   "Paquito": [
+    8,
+    5
+   ],
+   "Marcel": [
+    6,
+    3
+   ],
+   "Uranus": [
+    6,
+    2
+   ],
+   "Eudora": [
+    7,
+    2
+   ],
+   "Hirara": [
+    7,
+    5
+   ],
+   "Selena": [
+    2,
+    1
+   ],
+   "Carmilla": [
+    5,
+    3
+   ],
+   "Freya": [
+    3,
+    1
+   ],
+   "Aulus": [
+    7,
+    4
+   ],
+   "Moskov": [
+    4,
+    3
+   ],
+   "Hylos": [
+    4,
+    3
+   ],
+   "Zhuxin": [
+    3,
+    2
+   ],
+   "Minotaur": [
+    7,
+    5
+   ],
+   "Masha": [
+    2,
+    0
+   ],
+   "Clint": [
+    2,
+    1
+   ],
+   "Atlas": [
+    3,
+    1
+   ],
+   "Brody": [
+    2,
+    2
+   ],
+   "Hayabusa": [
+    2,
+    2
+   ],
+   "Kimmy": [
+    2,
+    0
+   ]
+  },
+  "Khufra": {
+   "Barats": [
+    2,
+    2
+   ],
+   "Valentina": [
+    2,
+    2
+   ]
+  },
+  "Hilda": {
+   "Hirara": [
+    2,
+    1
+   ],
+   "Clint": [
+    2,
+    1
+   ],
+   "Aulus": [
+    2,
+    2
+   ]
+  },
+  "Freya": {
+   "Esmeralda": [
+    3,
+    1
+   ],
+   "Hirara": [
+    5,
+    4
+   ],
+   "Vexana": [
+    2,
+    1
+   ],
+   "Melissa": [
+    3,
+    2
+   ],
+   "Minotaur": [
+    6,
+    4
+   ],
+   "Uranus": [
+    3,
+    2
+   ],
+   "Paquito": [
+    4,
+    2
+   ],
+   "Zhuxin": [
+    5,
+    4
+   ],
+   "Eudora": [
+    3,
+    2
+   ],
+   "Obsidia": [
+    3,
+    2
+   ],
+   "Nolan": [
+    2,
+    2
+   ],
+   "Belerick": [
+    2,
+    1
+   ],
+   "Barats": [
+    2,
+    2
+   ],
+   "Aulus": [
+    2,
+    1
+   ],
+   "Valentina": [
+    2,
+    2
+   ],
+   "Suyou": [
+    2,
+    1
+   ]
+  },
+  "Bruno": {
+   "Barats": [
+    4,
+    2
+   ],
+   "Hirara": [
+    4,
+    2
+   ],
+   "Novaria": [
+    2,
+    2
+   ],
+   "Clint": [
+    3,
+    1
+   ],
+   "Carmilla": [
+    2,
+    1
+   ],
+   "Paquito": [
+    2,
+    0
+   ],
+   "Eudora": [
+    2,
+    0
+   ],
+   "Minotaur": [
+    2,
+    0
+   ],
+   "Claude": [
+    2,
+    0
+   ]
+  },
+  "Yve": {
+   "Zhuxin": [
+    2,
+    2
+   ]
+  },
+  "Aulus": {
+   "Barats": [
+    2,
+    1
+   ],
+   "Nolan": [
+    11,
+    4
+   ],
+   "Obsidia": [
+    7,
+    3
+   ],
+   "Minotaur": [
+    3,
+    3
+   ],
+   "Alice": [
+    5,
+    3
+   ],
+   "Eudora": [
+    7,
+    3
+   ],
+   "Carmilla": [
+    5,
+    2
+   ],
+   "Hilda": [
+    2,
+    0
+   ],
+   "Suyou": [
+    3,
+    1
+   ],
+   "Masha": [
+    2,
+    0
+   ],
+   "Lylia": [
+    2,
+    0
+   ],
+   "Claude": [
+    3,
+    2
+   ],
+   "Gloo": [
+    3,
+    1
+   ],
+   "Hylos": [
+    3,
+    1
+   ],
+   "Valentina": [
+    2,
+    0
+   ],
+   "Lukas": [
+    2,
+    1
+   ],
+   "Zhuxin": [
+    4,
+    1
+   ],
+   "Hirara": [
+    4,
+    3
+   ],
+   "Paquito": [
+    5,
+    3
+   ],
+   "Cici": [
+    4,
+    1
+   ],
+   "Esmeralda": [
+    3,
+    2
+   ],
+   "Marcel": [
+    2,
+    1
+   ],
+   "Kimmy": [
+    3,
+    2
+   ],
+   "Freya": [
+    2,
+    1
+   ],
+   "Gatotkaca": [
+    2,
+    1
+   ],
+   "Belerick": [
+    2,
+    2
+   ],
+   "Atlas": [
+    2,
+    0
+   ]
+  },
+  "Hayabusa": {
+   "Minotaur": [
+    2,
+    1
+   ],
+   "Nolan": [
+    3,
+    0
+   ],
+   "Zhuxin": [
+    2,
+    0
+   ],
+   "Carmilla": [
+    2,
+    0
+   ],
+   "Obsidia": [
+    2,
+    0
+   ],
+   "Gloo": [
+    2,
+    0
+   ]
+  },
+  "Masha": {
+   "Obsidia": [
+    2,
+    2
+   ],
+   "Carmilla": [
+    3,
+    3
+   ],
+   "Aulus": [
+    2,
+    2
+   ],
+   "Zhuxin": [
+    3,
+    2
+   ],
+   "Alice": [
+    3,
+    2
+   ],
+   "Claude": [
+    2,
+    1
+   ]
+  },
+  "Cici": {
+   "Barats": [
+    2,
+    0
+   ],
+   "Hirara": [
+    2,
+    0
+   ],
+   "Valentina": [
+    3,
+    2
+   ],
+   "Belerick": [
+    2,
+    0
+   ],
+   "Nolan": [
+    2,
+    1
+   ],
+   "Aulus": [
+    4,
+    3
+   ],
+   "Minotaur": [
+    3,
+    3
+   ],
+   "Marcel": [
+    2,
+    2
+   ]
+  }
+ }
 }
