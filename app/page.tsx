@@ -4,6 +4,7 @@ import { passcodeRequired } from "@/lib/guard";
 import { accountsEnabled, currentUser } from "@/lib/session";
 import { accountFor, type Account } from "@/lib/access";
 import AccountBar from "@/components/AccountBar";
+import { SiteFooter } from "@/components/LegalPage";
 
 export const dynamic = "force-dynamic";
 
@@ -39,6 +40,7 @@ export default async function Home() {
         accountsOn={accountsOn}
         account={account}
       />
+      <SiteFooter />
     </main>
   );
 }

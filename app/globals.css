@@ -159,3 +159,11 @@ table.data td.num, table.data th.num { text-align: right; }
 .admin .tabs a { padding: 6px 12px; border-radius: 8px; border: 1px solid var(--line); color: var(--fg); text-decoration: none; font-size: 14px; }
 .admin .tabs a.on { background: var(--gold); color: #1a1405; border-color: var(--gold); }
 .admin .switch { display: flex; gap: 8px; align-items: center; }
+
+/* Legal pages and footer */
+.site-footer { display: flex; flex-wrap: wrap; gap: 6px 16px; padding: 12px 0 24px; color: var(--muted); font-size: 13px; border-top: 1px solid var(--line); }
+.site-footer a { color: var(--fg); }
+.prose { line-height: 1.6; }
+.prose h2 { font-size: 20px; margin: 18px 0 6px; }
+.prose ul { padding-left: 20px; display: grid; gap: 6px; }
+.prose a { color: var(--ours); }
