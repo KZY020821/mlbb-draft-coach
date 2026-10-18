@@ -155,7 +155,9 @@ async function updateLogos(allTeams) {
   // Logos rarely change, so only teams without one are looked up each week, and every team in the
   // first week of the month (or with --refresh-logos). Fewer requests to Liquipedia.
   const refreshAll = args.includes("--refresh-logos") || new Date().getUTCDate() <= 7;
-  const teams = refreshAll ? allTeams : allTeams.filter((t) => !hasFile(logos[t.id]));
+  // Teams hidden from the picker (hideTeams in meta-config.json) need no logo.
+  const shown = allTeams.filter((t) => !(config.hideTeams ?? []).includes(t.id));
+  const teams = refreshAll ? shown : shown.filter((t) => !hasFile(logos[t.id]));
   if (!teams.length) return console.log("Every team has a logo; checking them all again in the first week of next month.");
   // Find each team's page and its logo file name.
   // A page found before is tried alone, so later weeks need fewer requests.

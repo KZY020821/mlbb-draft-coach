@@ -41,7 +41,8 @@ for (const league of config.leagues) {
   }
 }
 
-const noLogo = (meta.teams ?? []).filter((t) => !t.logo);
+const hidden = new Set(config.hideTeams ?? []); // left out of the picker, so a missing logo doesn't matter
+const noLogo = (meta.teams ?? []).filter((t) => !t.logo && !hidden.has(t.id));
 if (noLogo.length) {
   alerts.push(
     `No logo found for: ${noLogo.map((t) => `${t.name} (${t.id})`).join(", ")}. The site shows their initials instead. ` +
