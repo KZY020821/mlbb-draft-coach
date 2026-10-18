@@ -19,6 +19,13 @@ export function accountsEnabled(): boolean {
   return dbConfigured() && secret().length >= 32 && Boolean(process.env.GOOGLE_CLIENT_ID && process.env.GOOGLE_CLIENT_SECRET);
 }
 
+// Some sign-in settings are present but not all (or AUTH_SECRET is too short). The AI coach then
+// refuses to run rather than quietly opening to everyone at the owner's cost.
+export function accountsMisconfigured(): boolean {
+  const any = [process.env.GOOGLE_CLIENT_ID, process.env.GOOGLE_CLIENT_SECRET, process.env.AUTH_SECRET].some((v) => (v ?? "").trim());
+  return any && !accountsEnabled();
+}
+
 export const b64url = (buf: Buffer) => buf.toString("base64url");
 export const randomToken = (bytes = 32) => b64url(randomBytes(bytes));
 export const sha256 = (s: string) => b64url(createHash("sha256").update(s).digest());
@@ -54,7 +61,7 @@ export function cookieOptions(maxAgeSec: number) {
   return {
     httpOnly: true,
     sameSite: "lax" as const,
-    secure: appUrl().startsWith("https://"),
+    secure: !appUrl().startsWith("http://"), // HTTPS-only unless APP_URL is plain http (local tests)
     path: "/",
     maxAge: maxAgeSec
   };

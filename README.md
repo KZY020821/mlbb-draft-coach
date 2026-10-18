@@ -35,6 +35,8 @@ When the account settings below are all present, the AI coach needs Google sign-
 | `OWNER_EMAIL` | The only account that can open `/admin`. |
 | `APP_URL` | The public site address, e.g. `https://mlbb-draft-coach-six.vercel.app`. |
 
+If some of these are set but not all (or `AUTH_SECRET` is shorter than 32 characters), the AI coach refuses to run instead of opening to everyone, and the server log says what is missing.
+
 ## Settings
 
 All are environment variables, listed with defaults in `.env.example`: `DEEPSEEK_API_KEY`, `DEEPSEEK_BASE_URL`, `DEEPSEEK_MODEL` (default `deepseek-flash`), `APP_PASSCODE`, `RATE_LIMIT_PER_10MIN`.

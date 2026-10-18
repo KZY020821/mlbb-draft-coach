@@ -3,7 +3,7 @@ import { buildIndex } from "@/lib/heroes";
 import { parseRequest, checkAnalysis, type Checked } from "@/lib/draft";
 import { buildMessages, retryMessage } from "@/lib/prompt";
 import { chatJson, getApiKey, getModel, UpstreamError, addUsage, NO_USAGE, type Usage } from "@/lib/deepseek";
-import { accountsEnabled, currentUser, type User } from "@/lib/session";
+import { accountsEnabled, accountsMisconfigured, currentUser, type User } from "@/lib/session";
 import { dbConfigured } from "@/lib/db";
 import { accountFor, costUsd, gate, logAnalysis, refundTrial, type AccessKind } from "@/lib/access";
 import { getSettings, DEFAULT_SETTINGS, type Settings } from "@/lib/settings";
@@ -59,6 +59,11 @@ export async function POST(req: Request) {
   const apiKey = getApiKey();
   if (!apiKey) {
     return fail(503, "not_configured", "The DeepSeek API key is not set on the server. Add DEEPSEEK_API_KEY to the environment.");
+  }
+
+  if (accountsMisconfigured()) {
+    console.error("[analyze] sign-in is partly configured: set DATABASE_URL, GOOGLE_CLIENT_ID, GOOGLE_CLIENT_SECRET and AUTH_SECRET (32+ characters)");
+    return fail(503, "not_configured", "The analysis service is not available right now. Tell the site owner.");
   }
 
   // With accounts switched on, every analysis needs a signed-in user with access.
