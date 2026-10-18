@@ -34,7 +34,8 @@ check("hits the chat completions path", lc.last.url === "/chat/completions");
 check("JSON mode requested", lc.last.body.response_format?.type === "json_object");
 check("DeepSeek thinking is turned off", lc.last.body.thinking?.type === "disabled" && !("reasoning_effort" in lc.last.body));
 const sys = lc.last.body.messages[0].content, usr = lc.last.body.messages[1].content;
-check("prompt includes patch notes and the pro data summary", sys.includes("Patch 2.2.16") && sys.includes("Masha was reworked") && sys.includes("pro games up to") && sys.includes("Team Liquid PH"));
+check("prompt includes patch notes and the pro data summary", sys.includes("Patch 2.2.16") && sys.includes("Masha was reworked") && sys.includes("pro games up to") && sys.includes("MPL"));
+check("no pro team chosen -> no team gets extra weight", sys.includes("One team's record is not a reason on its own") && !sys.includes("chose to draft like") && r.json.meta.pro.team === null);
 check("full tier dump is gone; candidates instead", !sys.includes("ROSTER AND TIERS") && usr.includes("CANDIDATES (with pro evidence)") && usr.includes("choose 3 from these candidates only"));
 check("candidate lines carry pro numbers", /pro picks in (jungle|mid lane), \d+ wins/.test(usr));
 check("prompt says to trust the listed roles", sys.includes("Do not call a hero tanky or a frontliner unless its roles include Tank"));
@@ -175,6 +176,22 @@ await setMode("wrong_position_then_good");
 r = await post(saved.draft);
 lc = await lastCall();
 check("saved draft: Barats is not a Roam candidate and is rejected", lc.calls === 2 && JSON.stringify(lc.last.body.messages).includes("Barats is not on the candidate list for Roam") && !allOptions(r).includes("Barats"), heroes(r));
+
+// A pro team to draft like (any team in data/meta.json).
+const proTeam = JSON.parse(readFileSync(new URL("../data/meta.json", import.meta.url), "utf8")).teams?.[0];
+if (proTeam) {
+  await setMode("good");
+  r = await post({ ...draft, team: proTeam.id });
+  lc = await lastCall();
+  const [s2, u2] = [lc.last.body.messages[0].content, lc.last.body.messages[1].content];
+  check("chosen pro team reaches the prompt", s2.includes(`chose to draft like ${proTeam.name}`) && !s2.includes("One team's record is not a reason on its own"));
+  check("candidates say how the chosen team did with each hero", u2.includes(`${proTeam.name} played it here`) || u2.includes(`${proTeam.name} has not played it here`));
+  check("response names the chosen team", r.status === 200 && r.json.meta.pro.team?.id === proTeam.id && "logo" in r.json.meta.pro.team);
+  r = await post({ ...draft, team: "xx-not-a-team" });
+  check("unknown team id is ignored, not an error", r.status === 200 && r.json.meta.pro.team === null);
+} else {
+  check("data/meta.json lists pro teams", false);
+}
 
 // Rate limit: keep sending until the limiter answers.
 let limited = 0;

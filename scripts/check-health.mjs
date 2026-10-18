@@ -13,7 +13,7 @@ const now = process.env.HEALTH_NOW ? Date.parse(process.env.HEALTH_NOW) : Date.n
 const daysSince = (iso) => Math.floor((now - new Date(`${iso}T00:00:00Z`).getTime()) / 86_400_000);
 
 const PATCH_MAX_DAYS = 7; // same point at which the site starts warning players
-const GAMES_MAX_DAYS = 14; // MPL PH plays every weekend outside breaks
+const GAMES_MAX_DAYS = 14; // the MPL leagues play every weekend outside breaks
 
 const alerts = [];
 
@@ -25,16 +25,28 @@ if (patchAge > PATCH_MAX_DAYS) {
   );
 }
 
-if (!meta.games) {
-  alerts.push(`The pro data has no games. Check the league pages in data/meta-config.json: ${config.pages.join(", ")}.`);
-} else {
-  const gameAge = daysSince(meta.latestGame);
+// Each league on its own, so one league ending its season is noticed even while the others play.
+for (const league of config.leagues) {
+  const built = meta.leagues?.find((l) => l.id === league.id);
+  if (!built?.games) {
+    alerts.push(`${league.name} has no games in the pro data. Check its pages in data/meta-config.json: ${league.pages.join(", ")}.`);
+    continue;
+  }
+  const gameAge = daysSince(built.latestGame);
   if (gameAge > GAMES_MAX_DAYS) {
     alerts.push(
-      `No new pro games for ${gameAge} days (latest ${meta.latestGame} in ${config.league}). ` +
-        `The season may have ended or moved to new Liquipedia pages. Update the pages in data/meta-config.json.`
+      `No new ${league.short} games for ${gameAge} days (latest ${built.latestGame} in ${league.name}). ` +
+        `The season may have ended or moved to new Liquipedia pages. Update its pages in data/meta-config.json.`
     );
   }
+}
+
+const noLogo = (meta.teams ?? []).filter((t) => !t.logo);
+if (noLogo.length) {
+  alerts.push(
+    `No logo found for: ${noLogo.map((t) => `${t.name} (${t.id})`).join(", ")}. The site shows their initials instead. ` +
+      `Add each team's Liquipedia page to "teamPages" in data/meta-config.json, e.g. "${noLogo[0].id}": "Exact Page Title".`
+  );
 }
 
 if (meta.unknownHeroes?.length) {
@@ -44,26 +56,35 @@ if (meta.unknownHeroes?.length) {
   );
 }
 
-// A page for the next season means the league has moved on.
-const season = Number(config.league.match(/Season\s+(\d+)/i)?.[1]);
-if (!offline && season) {
-  const base = config.pages[0]?.replace(/Season_\d+.*$/, "") ?? "MPL/Philippines/";
-  const next = `${base}Season_${season + 1}`;
+// A page for a league's next season means it has moved on. One request covers every league.
+const nextSeason = config.leagues
+  .map((league) => {
+    const season = Number(league.name.match(/Season\s+(\d+)/i)?.[1]);
+    const base = league.pages[0]?.replace(/Season_\d+.*$/, "");
+    return season && base ? { league, season: season + 1, title: `${base}Season_${season + 1}` } : null;
+  })
+  .filter(Boolean);
+if (!offline && nextSeason.length) {
   try {
-    const url = `https://liquipedia.net/mobilelegends/api.php?action=query&prop=info&format=json&formatversion=2&titles=${encodeURIComponent(next)}`;
+    const titles = nextSeason.map((n) => n.title);
+    const url = `https://liquipedia.net/mobilelegends/api.php?action=query&prop=info&format=json&formatversion=2&titles=${titles.map(encodeURIComponent).join("|")}`;
     const res = await fetch(url, {
       headers: { "User-Agent": "MLBBDraftCoach/1.0 (https://github.com/KZY020821/mlbb-draft-coach)", "Accept-Encoding": "gzip" }
     });
     if (res.ok) {
-      const page = (await res.json())?.query?.pages?.[0];
-      if (page && !page.missing) {
-        alerts.push(
-          `Liquipedia now has a page for Season ${season + 1} (${next}). When its matches start, change "league" and "pages" in data/meta-config.json to the new season.`
-        );
+      const q = (await res.json())?.query ?? {};
+      const found = new Set((q.pages ?? []).filter((p) => !p.missing && !p.invalid).map((p) => p.title));
+      for (const n of nextSeason) {
+        const title = q.normalized?.find((x) => x.from === n.title)?.to ?? n.title;
+        if (found.has(title)) {
+          alerts.push(
+            `Liquipedia now has a page for ${n.league.short} Season ${n.season} (${n.title}). When its matches start, change that league's "name" and "pages" in data/meta-config.json to the new season.`
+          );
+        }
       }
     }
   } catch (e) {
-    console.log(`Could not check for a new season page: ${e.message}`);
+    console.log(`Could not check for new season pages: ${e.message}`);
   }
 }
 

@@ -1,13 +1,12 @@
 import raw from "@/data/meta.json";
 
-// Pro league stats built daily by scripts/update-meta.mjs from Liquipedia (CC BY-SA 3.0).
+// Pro league stats (MPL ID, PH and MY pooled) built every Tuesday by scripts/update-meta.mjs
+// from Liquipedia (CC BY-SA 3.0).
 export type PositionKey = "roam" | "marksman" | "jungler" | "mage" | "fighter";
 
 export type PositionStat = {
   picks: number;
   wins: number;
-  focusPicks: number;
-  focusWins: number;
   weight: number;
   lastPlayed: string;
 };
@@ -19,16 +18,29 @@ export type HeroMeta = {
   positions: Partial<Record<PositionKey, PositionStat>>;
 };
 
-export type Pair = { heroes: [string, string]; games: number; wins: number; focusGames: number; focusWins: number; weight: number };
+export type Pair = { heroes: [string, string]; games: number; wins: number; weight: number };
+
+export type League = { id: string; name: string; short: string; region: string; games: number; latestGame: string; teams: number };
+
+// One pro team's own picks: heroes[hero][position] = [picks, wins, recency weight].
+export type Team = {
+  id: string; // league + name, e.g. "ph-teamliquidph"
+  league: string;
+  name: string;
+  games: number;
+  wins: number;
+  lastPlayed: string;
+  logo: string | null; // under public/, e.g. "/teams/ph-teamliquidph.png"
+  heroes: Record<string, Partial<Record<PositionKey, [number, number, number]>>>;
+};
 
 export type Meta = {
   league: string;
   source: { name: string; license: string; pages: string[]; fetchedAt: string };
-  focusTeam: string;
-  focusWeight: number;
   games: number;
-  focusGames: number;
   latestGame: string;
+  leagues?: League[];
+  teams?: Team[];
   positionConfidence: number;
   heroes: Record<string, HeroMeta>;
   ranking: Record<PositionKey, { hero: string; score: number }[]>;
@@ -38,6 +50,23 @@ export type Meta = {
 
 export function getMeta(): Meta {
   return raw as unknown as Meta;
+}
+
+// The teams a player can choose to draft like, without their pick data (for the page).
+export type TeamChoice = Pick<Team, "id" | "league" | "name" | "games" | "wins" | "logo">;
+
+export function teamChoices(meta: Meta = getMeta()): { leagues: League[]; teams: TeamChoice[] } {
+  const teams = (meta.teams ?? []).map(({ id, league, name, games, wins, logo }) => ({ id, league, name, games, wins, logo }));
+  return { leagues: meta.leagues ?? [], teams };
+}
+
+export function findTeam(id: unknown, meta: Meta = getMeta()): Team | null {
+  if (typeof id !== "string" || !id) return null;
+  return meta.teams?.find((t) => t.id === id) ?? null;
+}
+
+export function leagueOf(team: Team, meta: Meta = getMeta()): League | undefined {
+  return meta.leagues?.find((l) => l.id === team.league);
 }
 
 export function hasMeta(meta: Meta = getMeta()): boolean {

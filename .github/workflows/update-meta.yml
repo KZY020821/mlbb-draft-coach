@@ -1,7 +1,8 @@
 name: Update pro meta data
 
-# Pulls MPL PH drafts from the Liquipedia API, infers positions, rebuilds data/meta.json
-# and data/pro-games.json, and commits them. The commit redeploys the site on Vercel.
+# Pulls MPL ID, PH and MY drafts from the Liquipedia API, infers positions, rebuilds data/meta.json
+# and data/pro-games.json, refreshes team logos in public/teams, and commits them.
+# The commit redeploys the site on Vercel.
 on:
   schedule:
     - cron: "17 0 * * 2" # every Tuesday, 08:17 Malaysia/Philippine time (00:17 UTC), after the weekend matches
@@ -48,7 +49,7 @@ jobs:
         run: |
           git config user.name "meta-bot"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/meta.json data/pro-games.json
+          git add data/meta.json data/pro-games.json data/team-logos.json public/teams
           if git diff --cached --quiet; then
             echo "No data changes."
           else

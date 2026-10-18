@@ -2,6 +2,8 @@
 
 import { useEffect, useMemo, useState } from "react";
 import type { Account } from "@/lib/access";
+import type { League, TeamChoice } from "@/lib/meta";
+import TeamPicker, { TeamLogo } from "./TeamPicker";
 
 type PositionKey = "roam" | "marksman" | "jungler" | "mage" | "fighter";
 
@@ -15,7 +17,7 @@ const TEAM_SLOTS: { key: PositionKey; label: string; lane?: string }[] = [
 ];
 const SLOT_LABEL = Object.fromEntries(TEAM_SLOTS.map((s) => [s.key, s.label])) as Record<PositionKey, string>;
 
-type Tag = "pro" | "focus" | "rule" | "pair" | "counter" | "tier";
+type Tag = "pro" | "team" | "rule" | "pair" | "counter" | "tier";
 type Option = {
   hero: string;
   confidence: "high" | "medium" | "low";
@@ -26,8 +28,8 @@ type Option = {
   score?: number;
   picks: number;
   wins: number;
-  focusPicks: number;
-  focusWins: number;
+  teamPicks: number;
+  teamWins: number;
 };
 type Slot = { position: PositionKey; options: Option[] };
 type Rule = { enemy: string; available: string[]; unavailable: string[]; offPosition: string[]; why: string; teamHas: string | null };
@@ -46,11 +48,30 @@ type Result = {
     dataAgeDays: number;
     model: string;
     retried: boolean;
-    pro: { league: string; games: number; focusTeam: string; focusGames: number; latestGame: string; source: string; license: string };
+    pro: {
+      league: string;
+      games: number;
+      leagues?: { short: string; games: number }[];
+      team: { id: string; name: string; league: string; logo: string | null } | null;
+      latestGame: string;
+      source: string;
+      license: string;
+    };
   };
 };
 
-type Props = { heroes: string[]; passcodeRequired: boolean; staleDays: number; accountsOn: boolean; account: Account | null };
+type Props = {
+  heroes: string[];
+  passcodeRequired: boolean;
+  staleDays: number;
+  accountsOn: boolean;
+  account: Account | null;
+  leagues: League[];
+  teams: TeamChoice[];
+};
+
+// The chosen pro team is remembered in this browser only.
+const TEAM_KEY = "proTeam";
 
 const rmOf = (sen: number) => `RM${(sen / 100).toFixed(2).replace(/\.00$/, "")}`;
 
@@ -90,7 +111,7 @@ const listOf = (names: string[]) =>
 
 type Group = "bans" | "enemy" | "team";
 
-export default function DraftForm({ heroes, passcodeRequired, staleDays, accountsOn, account: initialAccount }: Props) {
+export default function DraftForm({ heroes, passcodeRequired, staleDays, accountsOn, account: initialAccount, leagues, teams }: Props) {
   const [account, setAccount] = useState<Account | null>(initialAccount);
   const [needSignIn, setNeedSignIn] = useState(false);
   const [bans, setBans] = useState<string[]>(blank(10));
@@ -100,6 +121,7 @@ export default function DraftForm({ heroes, passcodeRequired, staleDays, account
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState("");
   const [result, setResult] = useState<Result | null>(null);
+  const [proTeam, setProTeam] = useState("");
 
   const known = useMemo(() => new Set(heroes.map(idOf)), [heroes]);
 
@@ -116,6 +138,25 @@ export default function DraftForm({ heroes, passcodeRequired, staleDays, account
       setTeam(TEAM_SLOTS.map((s) => (fromLink(params, s.key, 1, canonical) ?? [""])[0]));
     }
   }, [heroes]);
+
+  // The pro team: ?team=ph-teamliquidph in the link, else the one chosen last time in this browser.
+  useEffect(() => {
+    const fromUrl = new URLSearchParams(window.location.search).get("team");
+    let saved = "";
+    try {
+      saved = window.localStorage.getItem(TEAM_KEY) ?? "";
+    } catch {}
+    const id = [fromUrl, saved].find((x) => x && teams.some((t) => t.id === x));
+    if (id) setProTeam(id);
+  }, [teams]);
+
+  function chooseTeam(id: string) {
+    setProTeam(id);
+    try {
+      if (id) window.localStorage.setItem(TEAM_KEY, id);
+      else window.localStorage.removeItem(TEAM_KEY);
+    } catch {}
+  }
 
   // Per-box state: "empty", "ok", "unknown" or "dupe".
   const status = useMemo(() => {
@@ -170,7 +211,8 @@ export default function DraftForm({ heroes, passcodeRequired, staleDays, account
         body: JSON.stringify({
           bans: bans.map((v) => v.trim()).filter(Boolean),
           enemyPicks: enemy.map((v) => v.trim()).filter(Boolean),
-          teamPicks
+          teamPicks,
+          ...(proTeam ? { team: proTeam } : {})
         })
       });
       const data = await res.json().catch(() => null);
@@ -246,6 +288,8 @@ export default function DraftForm({ heroes, passcodeRequired, staleDays, account
             <option key={h} value={h} />
           ))}
         </datalist>
+
+        <TeamPicker leagues={leagues} teams={teams} value={proTeam} onChange={chooseTeam} />
 
         <section className="panel">
           <div className="panel-head">
@@ -347,6 +391,11 @@ function Results({ result }: { result: Result }) {
     <section className="results" aria-label="Recommendation">
       <div className="results-head">
         <h2>{a.slots.length === 1 ? `Options for ${SLOT_LABEL[a.slots[0].position]}` : "Options for your open positions"}</h2>
+        {pro.team && (
+          <span className="drafting-like">
+            <TeamLogo team={pro.team} size={22} /> Drafting like {pro.team.name}
+          </span>
+        )}
       </div>
       {a.summary && <p className="summary">{a.summary}</p>}
       {result.partial && <p className="note">Some positions came back with fewer than three usable options. Ask again for a full set.</p>}
@@ -366,6 +415,11 @@ function Results({ result }: { result: Result }) {
                   <span className={`conf conf-${o.confidence}`}>{o.confidence}</span>
                   {typeof o.score === "number" && <span className="pos" title="Pro data score out of 100">Score {o.score}</span>}
                   {o.tags?.includes("counter") && <span className="pos counter-tag">Counter</span>}
+                  {pro.team && o.tags?.includes("team") && (
+                    <span className="pos team-tag" title={`${pro.team.name} played it here ${o.teamPicks} times`}>
+                      <TeamLogo team={pro.team} size={14} /> {pro.team.name} pick
+                    </span>
+                  )}
                   {ruleFor(o.hero) && <span className="rule-tag">Your rule vs {ruleFor(o.hero)!.enemy}</span>}
                   {result.analysisId ? (
                     <button
@@ -414,7 +468,9 @@ function Results({ result }: { result: Result }) {
       <p className="fineprint">
         {pro.games > 0 ? (
           <>
-            Pro data: {pro.league}, {pro.games} games up to {pro.latestGame} ({pro.focusGames} by {pro.focusTeam}), from{" "}
+            Pro data:{" "}
+            {pro.leagues?.length ? pro.leagues.map((l) => `${l.short} ${l.games}`).join(", ") + " games" : `${pro.league}, ${pro.games} games`} up to{" "}
+            {pro.latestGame}, from{" "}
             <a href="https://liquipedia.net/mobilelegends/" target="_blank" rel="noreferrer">
               Liquipedia
             </a>{" "}

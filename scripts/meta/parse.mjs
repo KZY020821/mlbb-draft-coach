@@ -1,5 +1,5 @@
 // Parses Liquipedia match wikitext ({{Match}} with {{Map}} games) into plain game records.
-// Pure functions with no Node or browser APIs, so the same code runs in the daily job and in tests.
+// Pure functions with no Node or browser APIs, so the same code runs in the weekly job and in tests.
 
 // Liquipedia short names that do not match a roster name directly.
 export const HERO_ALIASES = {
@@ -96,7 +96,8 @@ export function parseDate(raw) {
   return `${m[3]}-${String(mo + 1).padStart(2, "0")}-${m[2].padStart(2, "0")}`;
 }
 
-// games: [{ match, date, game, teams:[a,b], sides:[...], winner: 0|1, picks:[[5],[5]], bans:[[..],[..]] }]
+// games: [{ match, date, game, teams:[a,b], teamPages:[a,b], sides:[...], winner: 0|1, picks:[[5],[5]], bans:[[..],[..]] }]
+// teamPages keeps the names as written on the page (usually the team's Liquipedia page), for finding logos.
 // Heroes are left as Liquipedia ids here; the builder maps them to roster names.
 export function parseMatches(wikitext, source) {
   const games = [];
@@ -109,6 +110,7 @@ export function parseMatches(wikitext, source) {
     if (!t1 || !t2) continue;
     matchNo++;
     const teams = [teamName(t1[2]), teamName(t2[2])];
+    const teamPages = [t1[2].trim(), t2[2].trim()];
     const date = parseDate(param(head, "date"));
     let game = 0;
     for (const map of templates(match, "Map")) {
@@ -122,6 +124,7 @@ export function parseMatches(wikitext, source) {
         date,
         game,
         teams,
+        teamPages,
         sides: [param(map, "team1side"), param(map, "team2side")],
         winner: winner === "1" ? 0 : 1,
         picks,

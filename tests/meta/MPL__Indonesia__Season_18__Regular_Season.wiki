@@ -1,0 +1,18 @@
+{{Matchlist|width=350px |id=TESTID |title=Week 1
+|M1={{Match
+    |bestof=3
+    |opponent1={{TeamOpponent|RRQ Hoshi}}
+    |opponent2={{TeamOpponent|ONIC}}
+    |date= October 10,2026 - 17:00 {{Abbr/WIB}}
+    |map1={{Map|team1side=blue |team2side=red |winner=1
+        |t1h1=atlas |t1h2=claude |t1h3=hirara |t1h4=zhuxin |t1h5=arlott
+        |t2h1=khufra |t2h2=karrie |t2h3=suyou |t2h4=valentina |t2h5=chou
+        |t1b1=fanny |t1b2=masha
+        |t2b1=paquito |t2b2=lukas
+    }}
+    |map2={{Map|team1side=red |team2side=blue |winner=1
+        |t1h1=atlas |t1h2=claude |t1h3=hirara |t1h4=novaria |t1h5=freya
+        |t2h1=gloo |t2h2=karrie |t2h3=suyou |t2h4=kagura |t2h5=chou
+    }}
+}}
+}}

@@ -1,0 +1,8 @@
+{{Infobox team
+|name=Team Liquid PH
+|image=Team Liquid 2024 lightmode.png
+|imagedark=Team Liquid 2024 darkmode.png
+|location=Philippines
+}}
+'''Team Liquid PH''' is a Filipino team.
+{{Infobox player |image=Someone.jpg}}
