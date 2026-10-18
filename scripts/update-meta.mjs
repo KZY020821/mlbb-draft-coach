@@ -32,8 +32,19 @@ process.on("uncaughtException", (e) => {
 
 async function fetchWikitext(title) {
   const url = `${API}?action=query&prop=revisions&rvprop=content|timestamp&rvslots=main&format=json&formatversion=2&titles=${encodeURIComponent(title)}`;
-  const res = await fetch(url, { headers: { "User-Agent": USER_AGENT, "Accept-Encoding": "gzip" } });
-  const body = await res.text();
+  // When Liquipedia rate limits us, wait (its Retry-After, or 2 then 5 then 10 minutes) and try again.
+  const waits = [120, 300, 600];
+  let res;
+  let body = "";
+  for (let attempt = 0; ; attempt++) {
+    res = await fetch(url, { headers: { "User-Agent": USER_AGENT, "Accept-Encoding": "gzip" } });
+    body = await res.text();
+    if ((res.status !== 429 && res.status !== 503) || attempt >= waits.length) break;
+    const after = Number(res.headers.get("retry-after"));
+    const wait = Number.isFinite(after) && after > 0 ? Math.min(after, 900) : waits[attempt];
+    console.log(`Liquipedia returned ${res.status} for ${title}; waiting ${wait}s before retrying.`);
+    await sleep(wait * 1000);
+  }
   if (!res.ok) throw new Error(`Liquipedia returned HTTP ${res.status} for ${title}: ${body.slice(0, 200)}`);
   let json;
   try {
