@@ -4,6 +4,7 @@
 // (.github/workflows/update-meta.yml), or by hand:
 //   node scripts/update-meta.mjs                    fetch from the Liquipedia API
 //   node scripts/update-meta.mjs --from-dir <dir>   use saved wikitext files instead, no logos (tests)
+//   node scripts/update-meta.mjs --refresh-logos    check every team's logo, not only missing ones
 //
 // Liquipedia API rules followed here: an identifying User-Agent, gzip, at most one request
 // every 2 seconds, several pages per request, and action=query (not action=parse).
@@ -18,7 +19,9 @@ import { infoboxLogo, pagesToTry, rankSearchTitles, searchTerm } from "./meta/te
 const root = new URL("..", import.meta.url).pathname;
 const config = JSON.parse(readFileSync(join(root, "data/meta-config.json"), "utf8"));
 const roster = JSON.parse(readFileSync(join(root, "data/context.json"), "utf8")).heroes;
-const USER_AGENT = "MLBBDraftCoach/1.0 (https://github.com/KZY020821/mlbb-draft-coach)";
+// Liquipedia asks for contact details in the User-Agent. Set them in the LIQUIPEDIA_CONTACT repository secret.
+const CONTACT = process.env.LIQUIPEDIA_CONTACT?.trim();
+const USER_AGENT = `MLBBDraftCoach/1.0 (https://github.com/KZY020821/mlbb-draft-coach${CONTACT ? `; ${CONTACT}` : ""})`;
 const API = "https://liquipedia.net/mobilelegends/api.php";
 
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
@@ -147,8 +150,13 @@ if (!fromDir) {
   }
 }
 
-async function updateLogos(teams) {
+async function updateLogos(allTeams) {
   mkdirSync(logoDir, { recursive: true });
+  // Logos rarely change, so only teams without one are looked up each week, and every team in the
+  // first week of the month (or with --refresh-logos). Fewer requests to Liquipedia.
+  const refreshAll = args.includes("--refresh-logos") || new Date().getUTCDate() <= 7;
+  const teams = refreshAll ? allTeams : allTeams.filter((t) => !hasFile(logos[t.id]));
+  if (!teams.length) return console.log("Every team has a logo; checking them all again in the first week of next month.");
   // Find each team's page and its logo file name.
   // A page found before is tried alone, so later weeks need fewer requests.
   const tries = new Map(

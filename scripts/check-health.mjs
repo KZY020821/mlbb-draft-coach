@@ -69,7 +69,10 @@ if (!offline && nextSeason.length) {
     const titles = nextSeason.map((n) => n.title);
     const url = `https://liquipedia.net/mobilelegends/api.php?action=query&prop=info&format=json&formatversion=2&titles=${titles.map(encodeURIComponent).join("|")}`;
     const res = await fetch(url, {
-      headers: { "User-Agent": "MLBBDraftCoach/1.0 (https://github.com/KZY020821/mlbb-draft-coach)", "Accept-Encoding": "gzip" }
+      headers: {
+        "User-Agent": `MLBBDraftCoach/1.0 (https://github.com/KZY020821/mlbb-draft-coach${process.env.LIQUIPEDIA_CONTACT?.trim() ? `; ${process.env.LIQUIPEDIA_CONTACT.trim()}` : ""})`,
+        "Accept-Encoding": "gzip"
+      }
     });
     if (res.ok) {
       const q = (await res.json())?.query ?? {};
