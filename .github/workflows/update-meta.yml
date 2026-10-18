@@ -42,6 +42,8 @@ jobs:
       - name: Check the pipeline
         run: node scripts/test-meta.mjs
       - name: Build meta data from Liquipedia
+        env:
+          LIQUIPEDIA_CONTACT: ${{ secrets.LIQUIPEDIA_CONTACT }}
         run: |
           set -o pipefail
           node scripts/update-meta.mjs 2>&1 | tee build.log
@@ -57,6 +59,8 @@ jobs:
             git push
           fi
       - name: Check for things that need a person
+        env:
+          LIQUIPEDIA_CONTACT: ${{ secrets.LIQUIPEDIA_CONTACT }}
         run: node scripts/check-health.mjs
       # Emails the owner when any step failed or a check found something. Needs the
       # SMTP_USER, SMTP_PASSWORD (Gmail app password) and ALERT_EMAIL repository secrets.

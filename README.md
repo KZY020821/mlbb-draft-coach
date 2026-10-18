@@ -59,6 +59,8 @@ After each run, `scripts/check-health.mjs` looks for things a person has to fix,
 - Liquipedia lists a hero the app doesn't know,
 - a team's logo could not be found (fix: add its Liquipedia page title to `teamPages` in `data/meta-config.json`).
 
+Liquipedia asks API clients to put contact details in their User-Agent. Add a repository secret `LIQUIPEDIA_CONTACT` (for example an email address) and the job includes it; without it the job identifies itself by the repository link only. Logos are looked up only for teams that don't have one yet, and for every team in the first week of each month.
+
 Email needs three repository secrets (Settings > Secrets and variables > Actions): `SMTP_USER` (the Gmail address that sends), `SMTP_PASSWORD` (a Gmail app password for it) and `ALERT_EMAIL` (where alerts go). Without them the run shows a warning instead.
 
 Settings (leagues and their pages, half-life, team page overrides) are in `data/meta-config.json`. When a new season starts, change each league's `name` and `pages`. The inferred lineups are in `data/pro-games.json`. Data from Liquipedia is licensed CC BY-SA 3.0 and credited on the results page. Team logos belong to their teams and are shown only to identify them.
