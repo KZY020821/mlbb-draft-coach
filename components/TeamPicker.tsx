@@ -2,6 +2,8 @@
 
 import { useState } from "react";
 import type { League, TeamChoice } from "@/lib/meta";
+import Dropdown from "./Dropdown";
+import Flag from "./Flag";
 
 // Region tags and filler words left out of a team's initials: "Team Liquid PH" -> "TL".
 const FILLER = new Set(["team", "esports", "gaming", "ph", "id", "my", "the"]);
@@ -37,68 +39,77 @@ type Props = {
   onChange: (id: string) => void;
 };
 
+// League order in the picker.
+const LEAGUE_ORDER = ["my", "id", "ph"];
+
+const record = (t: TeamChoice) => `${t.games} ${t.games === 1 ? "game" : "games"} · ${t.wins}-${t.games - t.wins}`;
+
+// Two steps: the league (with its country's flag), then one of its teams (with the team's logo).
 export default function TeamPicker({ leagues, teams, value, onChange }: Props) {
   const selected = teams.find((t) => t.id === value) ?? null;
-  const shown = leagues.filter((l) => teams.some((t) => t.league === l.id));
-  const [tab, setTab] = useState(selected?.league ?? shown[0]?.id ?? "");
-  const active = shown.some((l) => l.id === tab) ? tab : (selected?.league ?? shown[0]?.id ?? "");
-  const league = shown.find((l) => l.id === active);
+  const shown = leagues
+    .filter((l) => teams.some((t) => t.league === l.id))
+    .sort((a, b) => LEAGUE_ORDER.indexOf(a.id) - LEAGUE_ORDER.indexOf(b.id));
+  const [pickedLeague, setPickedLeague] = useState("");
+  const league = selected?.league ?? pickedLeague;
+
+  function chooseLeague(id: string) {
+    setPickedLeague(id);
+    if (selected && selected.league !== id) onChange("");
+  }
 
   return (
     <section className="panel team-panel" aria-labelledby="team-title">
       <div className="panel-head">
-        <h2 id="team-title">Draft like a pro team</h2>
-        <span className="count">{selected ? "Selected" : "Optional"}</span>
+        <h2 id="team-title">
+          <span className="step">1</span>Draft like a pro team
+        </h2>
+        <span className="count">Optional</span>
       </div>
-      {selected ? (
-        <p className="team-current">
-          <TeamLogo team={selected} size={28} />
-          <span>
-            Suggestions lean towards the heroes <strong>{selected.name}</strong> plays in each position.
-          </span>
-          <button type="button" className="ghost small" onClick={() => onChange("")}>
-            No team
-          </button>
-        </p>
-      ) : (
-        <p className="note">Pick a team and the suggestions lean towards the heroes it plays. Without one, every team counts the same.</p>
-      )}
 
       {shown.length === 0 ? (
         <p className="note">The team list appears after the next weekly pro data update.</p>
       ) : (
         <>
-          <div className="league-tabs" role="tablist" aria-label="League">
-            {shown.map((l) => (
+          <div className="team-selects">
+            <Dropdown
+              label="League"
+              placeholder="Choose a league"
+              value={league}
+              onChange={chooseLeague}
+              options={shown.map((l) => ({ value: l.id, label: l.region, detail: l.short, icon: <Flag league={l.id} /> }))}
+            />
+            <Dropdown
+              label="Team"
+              placeholder={league ? "Choose a team" : "Choose a league first"}
+              disabled={!league}
+              value={value}
+              onChange={onChange}
+              options={teams
+                .filter((t) => t.league === league)
+                .map((t) => ({ value: t.id, label: t.name, detail: record(t), icon: <TeamLogo team={t} size={28} /> }))}
+            />
+          </div>
+          {selected ? (
+            <div className="team-current">
+              <TeamLogo team={selected} size={36} />
+              <p>
+                Suggestions lean towards the heroes <strong>{selected.name}</strong> plays in each position.
+              </p>
               <button
-                key={l.id}
                 type="button"
-                role="tab"
-                aria-selected={l.id === active}
-                className={`league-tab${l.id === active ? " on" : ""}`}
-                onClick={() => setTab(l.id)}
+                className="ghost small"
+                onClick={() => {
+                  setPickedLeague(selected.league);
+                  onChange("");
+                }}
               >
-                {l.region}
-                <span className="league-short">{l.short}</span>
+                Clear
               </button>
-            ))}
-          </div>
-          <div className="team-grid" role="radiogroup" aria-label={league ? `${league.name} teams` : "Teams"}>
-            {teams
-              .filter((t) => t.league === active)
-              .map((t) => (
-                <label key={t.id} className={`team-card${t.id === value ? " on" : ""}`}>
-                  <input type="radio" name="pro-team" value={t.id} checked={t.id === value} onChange={() => onChange(t.id)} />
-                  <TeamLogo team={t} />
-                  <span className="team-text">
-                    <span className="team-name">{t.name}</span>
-                    <span className="team-meta">
-                      {t.games} {t.games === 1 ? "game" : "games"} · {t.wins}-{t.games - t.wins}
-                    </span>
-                  </span>
-                </label>
-              ))}
-          </div>
+            </div>
+          ) : (
+            <p className="note">Pick a team and the suggestions lean towards the heroes it plays. Without one, every team counts the same.</p>
+          )}
         </>
       )}
     </section>

@@ -65,7 +65,7 @@ Settings (leagues and their pages, half-life, team page overrides) are in `data/
 
 ## Draft like a pro team
 
-Above the bans, players can pick a pro team from MPL Indonesia, Philippines or Malaysia (tabs by league, each team with its logo and record). The choice is optional, remembered in that browser, and can be set in a link with `?team=<team id>`, e.g. `?team=ph-teamliquidph`. Without a team, no team gets extra weight.
+Above the bans, players can pick a pro team in two dropdowns: first the league (Malaysia, Indonesia or Philippines, each with its flag), then one of its teams (with its logo and record). The choice is optional, remembered in that browser, and can be set in a link with `?team=<team id>`, e.g. `?team=ph-teamliquidph`. Without a team, no team gets extra weight.
 
 With a team chosen, 30% of each candidate's score comes from that team (`team.weight` in `data/scoring.json`): mostly how often it plays the hero in that position compared with its most played hero there, and partly its record with it. The other four parts share the remaining 70%. The prompt tells the model which team the player drafts like, to prefer that team's heroes when candidates are close, and not to pass over a clear counter just because the team hasn't played it. Each option's evidence shows the team's record with the hero, and heroes the team played there at least twice get a badge with its logo.
 
