@@ -24,16 +24,27 @@ export default async function Home() {
   }
   return (
     <main className="shell">
-      <AccountBar accountsOn={accountsOn} account={account} />
-      <header className="top">
-        <p className="kicker">Mobile Legends: Bang Bang</p>
-        <h1>MLBB Draft Coach</h1>
+      <div className="topbar">
+        <a className="brand" href="/">
+          <img src="/icon.svg" alt="" width={30} height={30} />
+          <span>MLBB Draft Coach</span>
+        </a>
+        <AccountBar accountsOn={accountsOn} account={account} />
+      </div>
+      <header className="hero">
+        <p className="kicker">Mobile Legends: Bang Bang · Draft assistant</p>
+        <h1>
+          Lock in the <span className="grad">right last pick.</span>
+        </h1>
         <p className="lede">
-          Enter the bans and picks from your draft. The analysis reads the current patch data and MPL Indonesia, Philippines and Malaysia drafts, and suggests the best last pick or two.
+          Enter the bans and picks from your draft. The coach reads the current patch and MPL Indonesia, Philippines and Malaysia drafts, and
+          suggests three heroes for each open position.
         </p>
-        <p className="patch">
-          Patch {ctx.meta.patch} · {ctx.meta.season} · Data as of {ctx.meta.dataAsOf}
-        </p>
+        <ul className="hero-meta" aria-label="Data">
+          <li>Patch {ctx.meta.patch}</li>
+          <li>{ctx.meta.season}</li>
+          <li>Data as of {ctx.meta.dataAsOf}</li>
+        </ul>
       </header>
       <DraftForm
         heroes={ctx.heroes.map((h) => h.name).sort((a, b) => a.localeCompare(b))}

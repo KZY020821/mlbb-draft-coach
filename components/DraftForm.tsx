@@ -293,7 +293,9 @@ export default function DraftForm({ heroes, passcodeRequired, staleDays, account
 
         <section className="panel">
           <div className="panel-head">
-            <h2>Bans</h2>
+            <h2>
+              <span className="step">2</span>Bans
+            </h2>
             <span className="count">{filled(bans)} / 10</span>
           </div>
           {renderBoxes("bans", bans, status.bans, "Ban")}
@@ -302,14 +304,18 @@ export default function DraftForm({ heroes, passcodeRequired, staleDays, account
         <div className="pair">
           <section className="panel enemy">
             <div className="panel-head">
-              <h2>Enemy picks</h2>
+              <h2>
+                <span className="step">3</span>Enemy picks
+              </h2>
               <span className="count">{filled(enemy)} / 5</span>
             </div>
             {renderBoxes("enemy", enemy, status.enemy, "Enemy")}
           </section>
           <section className="panel ours">
             <div className="panel-head">
-              <h2>Our picks</h2>
+              <h2>
+                <span className="step">4</span>Our picks
+              </h2>
               <span className="count">{filled(team)} / 5</span>
             </div>
             <div className="boxes">
@@ -410,7 +416,9 @@ function Results({ result }: { result: Result }) {
             {s.options.map((o, i) => (
               <li key={o.hero} className="pick">
                 <div className="pick-head">
-                  <span className="rank">#{i + 1}</span>
+                  <span className="rank-badge" aria-label={`Option ${i + 1}`}>
+                    {i + 1}
+                  </span>
                   <strong>{o.hero}</strong>
                   <span className={`conf conf-${o.confidence}`}>{o.confidence}</span>
                   {typeof o.score === "number" && <span className="pos" title="Pro data score out of 100">Score {o.score}</span>}
