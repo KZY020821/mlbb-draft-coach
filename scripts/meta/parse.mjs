@@ -13,7 +13,26 @@ export const HERO_ALIASES = {
   pnk: "Popol & Kupa",
   change: "Chang'e",
   gatot: "Gatotkaca",
-  luoyi: "Luo Yi"
+  luoyi: "Luo Yi",
+  // Short names used on the MPL ID and MY pages.
+  arlot: "Arlott",
+  bea: "Beatrix",
+  bene: "Benedetta",
+  ceci: "Cecilion",
+  dyr: "Dyrroth",
+  esme: "Esmeralda",
+  haya: "Hayabusa",
+  lance: "Lancelot",
+  leo: "Leomord",
+  mathil: "Mathilda",
+  melis: "Melissa",
+  mino: "Minotaur",
+  nova: "Novaria",
+  paq: "Paquito",
+  phove: "Phoveus",
+  rafa: "Rafaela",
+  valen: "Valentina",
+  xb: "X.Borg"
 };
 
 // Spellings of the same team seen on Liquipedia pages, mapped to one name.
