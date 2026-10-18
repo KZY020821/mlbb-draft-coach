@@ -43,7 +43,7 @@ The app uses one fast model with DeepSeek's "thinking" mode turned off, because 
 
 ## Pro meta data (MPL PH, Team Liquid PH weighted)
 
-`data/meta.json` holds pro league stats that drive the suggestions. A GitHub Action (`.github/workflows/update-meta.yml`) rebuilds it daily at 00:30 Philippine time, and whenever the pipeline or its settings change:
+`data/meta.json` holds pro league stats that drive the suggestions. A GitHub Action (`.github/workflows/update-meta.yml`) rebuilds it every Tuesday at 08:17 Malaysia/Philippine time, after the weekend matches, and whenever the pipeline or its settings change:
 
 1. `scripts/update-meta.mjs` reads the MPL Philippines Season 18 pages through the [Liquipedia](https://liquipedia.net/mobilelegends/) API (identifying User-Agent, gzip, one request per 2.5 seconds). Each game gives both teams' picks, bans, sides and the winner.
 2. Liquipedia does not say who played which position, so `scripts/meta/build.mjs` infers it: every lineup must fill all five positions once, and each hero's likely positions are learned across all lineups, starting from its roles. Each lineup gets a confidence; corrections go in `data/position-overrides.json`.

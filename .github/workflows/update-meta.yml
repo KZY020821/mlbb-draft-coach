@@ -4,7 +4,7 @@ name: Update pro meta data
 # and data/pro-games.json, and commits them. The commit redeploys the site on Vercel.
 on:
   schedule:
-    - cron: "30 16 * * *" # daily, 00:30 Philippine time
+    - cron: "17 0 * * 2" # every Tuesday, 08:17 Malaysia/Philippine time (00:17 UTC), after the weekend matches
   workflow_dispatch:
   push:
     branches: [main]
