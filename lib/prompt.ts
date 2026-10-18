@@ -33,7 +33,7 @@ function rulesBlock(applied: AppliedRule[]): string {
 function candidateBlock(position: Position, list: Candidate[]): string {
   return [
     `${POSITION_LABEL[position]} — choose ${OPTIONS_PER_POSITION} from these candidates only:`,
-    ...list.map((c) => `- ${c.hero} (${c.roles.join("/")}; tier ${c.tier || "-"}): ${c.evidence}`)
+    ...list.map((c) => `- ${c.hero} (${c.roles.join("/")}; tier ${c.tier || "-"}; score ${c.score}): ${c.evidence}`)
   ].join("\n");
 }
 
@@ -48,7 +48,7 @@ export function buildMessages(
   const m = ctx.meta;
   const meta = getMeta();
   const proLine = hasMeta(meta)
-    ? `${meta.league}: ${meta.games} pro games up to ${meta.latestGame}, including ${meta.focusGames} by ${meta.focusTeam}, the team whose drafts we follow most closely. Positions in the pro data are inferred from picks.`
+    ? `${meta.league}: ${meta.games} pro games up to ${meta.latestGame}, including ${meta.focusGames} by ${meta.focusTeam}. Positions in the pro data are inferred from picks.`
     : "No pro league data is loaded yet, so the candidates come from the tier list only.";
   const topBans = Object.entries(meta.heroes)
     .sort((a, b) => b[1].bans - a[1].bans)
@@ -62,8 +62,9 @@ export function buildMessages(
     "",
     "How to decide:",
     `- For each open position, choose exactly ${OPTIONS_PER_POSITION} heroes from that position's candidate list, ranked best first. Never pick a hero that is not on the list.`,
-    "- Follow the current pro meta first: how often pros pick a hero in that position and how it does, how often the focus team picks it, and how it pairs with our current picks. Treat small samples (1 to 3 games) as weak evidence.",
-    "- Then weigh the enemy draft: what it threatens and what counters it, and what our team still lacks.",
+    "- Each candidate has a score (0-100) built from the whole league's pro data: how much pros play it in that position, its win rate there, how its team did against the heroes the enemy has picked now, and how it did alongside our current picks. Candidates are listed best score first, after any of our coach's counters. Start from the top of the list and move a lower hero up only for a clear reason in this draft (a counter to a specific enemy hero, or something our team lacks).",
+    "- Counter picks matter as much as popularity: weigh the head-to-head records against the enemy's current picks and what the enemy draft threatens.",
+    "- One team's record is not a reason on its own. Treat any single team's picks, and any sample of 1 to 3 games, as weak evidence.",
     "- Offer three options that a player could each realistically play, so a player can choose the hero they play best. Avoid three near-identical heroes when a strong alternative style exists on the list.",
     "- The roles listed are correct. Do not call a hero tanky or a frontliner unless its roles include Tank.",
     `- These heroes are recent and their abilities were not verified, so do not describe their abilities in detail: ${m.unverifiedKits.join(", ")}.`,

@@ -47,13 +47,22 @@ The app uses one fast model with DeepSeek's "thinking" mode turned off, because 
 
 1. `scripts/update-meta.mjs` reads the MPL Philippines Season 18 pages through the [Liquipedia](https://liquipedia.net/mobilelegends/) API (identifying User-Agent, gzip, one request per 2.5 seconds). Each game gives both teams' picks, bans, sides and the winner.
 2. Liquipedia does not say who played which position, so `scripts/meta/build.mjs` infers it: every lineup must fill all five positions once, and each hero's likely positions are learned across all lineups, starting from its roles. Each lineup gets a confidence; corrections go in `data/position-overrides.json`.
-3. Per hero and position it counts pro picks and wins, weighted by recency (28-day half-life) and with Team Liquid PH's games counted 3x, plus which heroes are picked together.
+3. Per hero and position it counts pro picks and wins, weighted by recency (28-day half-life) and with Team Liquid PH's games counted 1.25x, plus which heroes are picked together and how each hero's team did against each enemy hero (head-to-head).
 
 Settings (league pages, focus team, weight, half-life) are in `data/meta-config.json`. The inferred lineups are in `data/pro-games.json`. Data from Liquipedia is licensed CC BY-SA 3.0 and credited on the results page.
 
 ## How suggestions are made
 
-For each open position the server builds a shortlist of up to 12 heroes that are available and played there by pros: your counter rules first, then Team Liquid PH's own picks in that position, heroes pros pair with your current picks, then the most-played heroes in that position. DeepSeek ranks 3 options per open position from that shortlist only, so a player can choose the one they play best. Each option shows its pro evidence. When pro data is missing, the shortlist falls back to the tier list.
+For each open position the server scores every available hero that pros play there (0 to 100) and keeps the best 12, with your coach's counter rules always included and listed first. The score, set in `data/scoring.json`, is:
+
+| Part | Weight | What it measures |
+| --- | --- | --- |
+| Popularity | 35% | How much pros play the hero in that position, recent games counting more |
+| Win rate | 20% | Its pro win rate there, pulled towards 50% when the sample is small |
+| Counter | 30% | How its team did in pro games against the heroes the enemy has picked now |
+| Synergy | 15% | How it did alongside your current picks |
+
+Team Liquid PH's games count 1.25x in popularity, and their own record adds at most 3 points, so it only breaks near-ties. DeepSeek ranks 3 options per open position from that shortlist, starting from the top, so a player can choose the one they play best. Each option shows its score and pro evidence. When pro data is missing, the shortlist falls back to the tier list.
 
 ## How an analysis works
 

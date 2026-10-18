@@ -152,7 +152,7 @@ export async function POST(req: Request) {
       position: s.position,
       options: s.options.map((o) => {
         const c = (candidates[s.position] ?? []).find((x) => x.hero === o.hero);
-        return { ...o, tags: c?.tags ?? [], evidence: c?.evidence ?? "", picks: c?.picks ?? 0, wins: c?.wins ?? 0, focusPicks: c?.focusPicks ?? 0, focusWins: c?.focusWins ?? 0 };
+        return { ...o, tags: c?.tags ?? [], evidence: c?.evidence ?? "", score: c?.score ?? null, picks: c?.picks ?? 0, wins: c?.wins ?? 0, focusPicks: c?.focusPicks ?? 0, focusWins: c?.focusWins ?? 0 };
       })
     }));
 

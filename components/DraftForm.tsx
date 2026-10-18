@@ -15,7 +15,7 @@ const TEAM_SLOTS: { key: PositionKey; label: string; lane?: string }[] = [
 ];
 const SLOT_LABEL = Object.fromEntries(TEAM_SLOTS.map((s) => [s.key, s.label])) as Record<PositionKey, string>;
 
-type Tag = "pro" | "focus" | "rule" | "pair" | "tier";
+type Tag = "pro" | "focus" | "rule" | "pair" | "counter" | "tier";
 type Option = {
   hero: string;
   confidence: "high" | "medium" | "low";
@@ -23,6 +23,7 @@ type Option = {
   risk: string;
   tags: Tag[];
   evidence: string;
+  score?: number;
   picks: number;
   wins: number;
   focusPicks: number;
@@ -363,11 +364,8 @@ function Results({ result }: { result: Result }) {
                   <span className="rank">#{i + 1}</span>
                   <strong>{o.hero}</strong>
                   <span className={`conf conf-${o.confidence}`}>{o.confidence}</span>
-                  {o.focusPicks > 0 && (
-                    <span className="pos">
-                      {pro.focusTeam} {o.focusWins}-{o.focusPicks - o.focusWins}
-                    </span>
-                  )}
+                  {typeof o.score === "number" && <span className="pos" title="Pro data score out of 100">Score {o.score}</span>}
+                  {o.tags?.includes("counter") && <span className="pos counter-tag">Counter</span>}
                   {ruleFor(o.hero) && <span className="rule-tag">Your rule vs {ruleFor(o.hero)!.enemy}</span>}
                   {result.analysisId ? (
                     <button
@@ -416,7 +414,7 @@ function Results({ result }: { result: Result }) {
       <p className="fineprint">
         {pro.games > 0 ? (
           <>
-            Pro data: {pro.league}, {pro.games} games up to {pro.latestGame} ({pro.focusGames} by {pro.focusTeam}, weighted higher), from{" "}
+            Pro data: {pro.league}, {pro.games} games up to {pro.latestGame} ({pro.focusGames} by {pro.focusTeam}, weighted slightly higher), from{" "}
             <a href="https://liquipedia.net/mobilelegends/" target="_blank" rel="noreferrer">
               Liquipedia
             </a>{" "}

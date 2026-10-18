@@ -1,7 +1,10 @@
 {
   "league": "MPL Philippines Season 18",
-  "pages": ["MPL/Philippines/Season_18/Regular_Season", "MPL/Philippines/Season_18/Playoffs"],
+  "pages": [
+    "MPL/Philippines/Season_18/Regular_Season",
+    "MPL/Philippines/Season_18/Playoffs"
+  ],
   "focusTeam": "Team Liquid PH",
-  "focusWeight": 3,
+  "focusWeight": 1.25,
   "halfLifeDays": 28
 }

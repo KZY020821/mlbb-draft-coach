@@ -166,6 +166,28 @@ export function buildMeta(games, roster, opts = {}) {
     }
   }
 
+  // Head-to-head: how each hero's team did when the other team had a given hero.
+  // matchups[hero][enemy] = [games, wins]. Recency is not applied, so small samples stay readable.
+  const byGame = {};
+  for (const l of assigned) (byGame[`${l.game.match}#${l.game.game}#${l.game.date}`] ||= []).push(l);
+  const vs = {};
+  for (const sides of Object.values(byGame)) {
+    if (sides.length !== 2) continue;
+    for (const [a, b] of [[sides[0], sides[1]], [sides[1], sides[0]]]) {
+      for (const h of a.heroes) {
+        for (const e of b.heroes) {
+          const m = ((vs[h] ||= {})[e] ||= [0, 0]);
+          m[0]++;
+          m[1] += a.won ? 1 : 0;
+        }
+      }
+    }
+  }
+  const matchups = {};
+  for (const [h, row] of Object.entries(vs)) {
+    for (const [e, gw] of Object.entries(row)) if (gw[0] >= 2) (matchups[h] ||= {})[e] = gw;
+  }
+
   const round = (x) => Math.round(x * 100) / 100;
   const heroes = {};
   for (const [h, byPos] of Object.entries(stats)) {
@@ -217,7 +239,8 @@ export function buildMeta(games, roster, opts = {}) {
       unknownHeroes: [...unknown].sort(),
       heroes,
       ranking,
-      pairs: pairList
+      pairs: pairList,
+      matchups
     },
     lineups: assigned.map((l) => ({
       date: l.game.date,

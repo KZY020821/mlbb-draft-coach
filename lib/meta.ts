@@ -33,6 +33,7 @@ export type Meta = {
   heroes: Record<string, HeroMeta>;
   ranking: Record<PositionKey, { hero: string; score: number }[]>;
   pairs: Pair[];
+  matchups?: Record<string, Record<string, [number, number]>>; // hero -> enemy -> [games, wins]
 };
 
 export function getMeta(): Meta {

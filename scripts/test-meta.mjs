@@ -41,6 +41,13 @@ check("focus team counted", meta.focusGames === 3 && meta.heroes.Atlas.positions
 check("focus games weigh more", meta.heroes.Atlas.positions.roam.weight > meta.heroes.Khufra.positions.roam.weight * 2);
 check("pairs recorded for the focus team", meta.pairs.some((p) => p.heroes.join() === "Arlott,Atlas" && p.focusGames === 2 && p.focusWins === 2));
 
+const totalH2H = (h, e) => meta.matchups?.[h]?.[e]?.[0] ?? 0;
+const someLineup = lineups[0];
+const opp = lineups.find((l) => l.date === someLineup.date && l.match === someLineup.match && l.game === someLineup.game && l.team !== someLineup.team);
+const [ha, hb] = [Object.values(someLineup.positions)[0], Object.values(opp.positions)[0]];
+check("head-to-head records are built for opposing heroes", typeof meta.matchups === "object" && (totalH2H(ha, hb) >= 2 || Object.keys(meta.matchups).length > 0));
+check("head-to-head wins mirror each other", Object.entries(meta.matchups).every(([h, row]) => Object.entries(row).every(([e, [g, w]]) => !meta.matchups[e]?.[h] || meta.matchups[e][h][0] === g && meta.matchups[e][h][1] === g - w)));
+
 const fixed = buildMeta(games, roster, {
   focusTeam: "Team Liquid PH",
   overrides: [{ date: "2026-10-11", team: "Team Liquid PH", positions: { roam: "Atlas", marksman: "Cici", jungler: "Suyou", mage: "Zhuxin", fighter: "Arlott" } }]
