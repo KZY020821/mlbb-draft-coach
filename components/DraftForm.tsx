@@ -3,6 +3,7 @@
 import { useEffect, useMemo, useState } from "react";
 import type { Account } from "@/lib/access";
 import type { League, TeamChoice } from "@/lib/meta";
+import { HERO_ALIASES } from "@/lib/heroes";
 import TeamPicker, { TeamLogo } from "./TeamPicker";
 
 type PositionKey = "roam" | "marksman" | "jungler" | "mage" | "fighter";
@@ -85,11 +86,21 @@ function planLine(a: Account): string {
     : `Your free analyses are used. The Coach plan is ${rmOf(a.priceSen)} a month; subscriptions are opening soon.`;
 }
 
-const idOf = (s: string) =>
+const rawId = (s: string) =>
   s
     .toLowerCase()
     .replace(/\band\b/g, " ")
     .replace(/[^a-z0-9]/g, "");
+
+// A hero's id, with other spellings ("Soyou") mapped to the roster name ("Suyou").
+const ALIAS_ID = new Map(Object.entries(HERO_ALIASES).map(([alias, name]) => [rawId(alias), rawId(name)]));
+const idOf = (s: string) => {
+  const id = rawId(s);
+  return ALIAS_ID.get(id) ?? id;
+};
+
+// Shown next to a hero in the suggestions, so typing "Soy" also finds Suyou.
+const ALIAS_LABEL = new Map(Object.entries(HERO_ALIASES).map(([alias, name]) => [name, `${name} · ${alias}`]));
 
 const blank = (n: number) => Array.from({ length: n }, () => "");
 
@@ -285,7 +296,7 @@ export default function DraftForm({ heroes, passcodeRequired, staleDays, account
       <form onSubmit={submit} className="form" noValidate>
         <datalist id="hero-list">
           {heroes.map((h) => (
-            <option key={h} value={h} />
+            <option key={h} value={h} label={ALIAS_LABEL.get(h)} />
           ))}
         </datalist>
 

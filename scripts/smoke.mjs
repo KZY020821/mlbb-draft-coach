@@ -113,6 +113,10 @@ r = await post({ ...draft, bans: ["popol and kupa", "POPOL & KUPA"] });
 check("name matching is forgiving but still catches duplicates", r.status === 400 && r.json.error.message.includes("Popol & Kupa"));
 r = await post({ ...draft, bans: ["  hayabusa  ", "FREYA"], teamPicks: { roam: " tigreal ", marksman: "MIYA", fighter: "bane" } });
 check("whitespace and case are tolerated", r.status === 200);
+r = await post({ ...draft, enemyPicks: ["Ling", "Soyou"] });
+check("Soyou is accepted as Suyou", r.status === 200 && r.json.meta && (await lastCall()).last.body.messages[1].content.includes("Enemy picks: Ling (Assassin), Suyou ("));
+r = await post({ ...draft, enemyPicks: ["Suyou", "soyou"] });
+check("Soyou and Suyou are the same hero", r.status === 400 && r.json.error.message.includes("Suyou"));
 
 const big = await fetch(APP + "/api/analyze", { method: "POST", body: "x".repeat(5000) });
 check("oversized body -> 413", big.status === 413);
