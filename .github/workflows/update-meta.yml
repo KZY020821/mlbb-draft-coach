@@ -11,6 +11,8 @@ on:
     paths:
       - "scripts/meta/**"
       - "scripts/update-meta.mjs"
+      - "scripts/check-health.mjs"
+      - "scripts/send-alert.mjs"
       - "data/meta-config.json"
       - "data/position-overrides.json"
       - ".github/workflows/update-meta.yml"
@@ -34,7 +36,9 @@ jobs:
       - name: Check the pipeline
         run: node scripts/test-meta.mjs
       - name: Build meta data from Liquipedia
-        run: node scripts/update-meta.mjs
+        run: |
+          set -o pipefail
+          node scripts/update-meta.mjs 2>&1 | tee build.log
       - name: Commit if the data changed
         run: |
           git config user.name "meta-bot"
@@ -46,3 +50,34 @@ jobs:
             git commit -m "Update pro meta data from Liquipedia"
             git push
           fi
+      - name: Check for things that need a person
+        run: node scripts/check-health.mjs
+      # Emails the owner when any step failed or a check found something. Needs the
+      # SMTP_USER, SMTP_PASSWORD (Gmail app password) and ALERT_EMAIL repository secrets.
+      - name: Email the owner if something needs fixing
+        if: always()
+        env:
+          SMTP_USER: ${{ secrets.SMTP_USER }}
+          SMTP_PASSWORD: ${{ secrets.SMTP_PASSWORD }}
+          ALERT_EMAIL: ${{ secrets.ALERT_EMAIL }}
+        run: |
+          RUN_URL="$GITHUB_SERVER_URL/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID"
+          if [ "${{ job.status }}" != "success" ]; then
+            SUBJECT="MLBB Draft Coach: the weekly data update failed"
+            {
+              echo "The weekly pro data update did not finish, so the site is still using the previous data."
+              echo
+              echo "Run: $RUN_URL"
+              echo
+              echo "Last lines of the log:"
+              tail -n 25 build.log 2>/dev/null || echo "(the build step did not start)"
+            } > email.txt
+          elif [ -s alerts.txt ]; then
+            SUBJECT="MLBB Draft Coach: something needs updating"
+            { cat alerts.txt; echo; echo; echo "Run: $RUN_URL"; } > email.txt
+          else
+            echo "Nothing to report."
+            exit 0
+          fi
+          npm install --no-save --no-audit --no-fund nodemailer@6.9.16 > /dev/null
+          node scripts/send-alert.mjs "$SUBJECT" email.txt

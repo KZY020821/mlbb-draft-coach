@@ -49,6 +49,16 @@ The app uses one fast model with DeepSeek's "thinking" mode turned off, because 
 2. Liquipedia does not say who played which position, so `scripts/meta/build.mjs` infers it: every lineup must fill all five positions once, and each hero's likely positions are learned across all lineups, starting from its roles. Each lineup gets a confidence; corrections go in `data/position-overrides.json`.
 3. Per hero and position it counts pro picks and wins, weighted by recency (28-day half-life) and with every team's games counted the same (Team Liquid PH's record is still shown), plus which heroes are picked together and how each hero's team did against each enemy hero (head-to-head).
 
+After each run, `scripts/check-health.mjs` looks for things a person has to fix, and the job emails the owner when the run failed or a check found something:
+
+- the run itself failed (for example Liquipedia kept refusing requests),
+- the patch data in `data/context.json` is more than 7 days old,
+- no new pro games for 14 days (season over or new pages),
+- Liquipedia has a page for the next season,
+- Liquipedia lists a hero the app doesn't know.
+
+Email needs three repository secrets (Settings > Secrets and variables > Actions): `SMTP_USER` (the Gmail address that sends), `SMTP_PASSWORD` (a Gmail app password for it) and `ALERT_EMAIL` (where alerts go). Without them the run shows a warning instead.
+
 Settings (league pages, focus team, weight, half-life) are in `data/meta-config.json`. The inferred lineups are in `data/pro-games.json`. Data from Liquipedia is licensed CC BY-SA 3.0 and credited on the results page.
 
 ## How suggestions are made
