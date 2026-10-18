@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useMemo, useState } from "react";
+import type { Account } from "@/lib/access";
 
 type PositionKey = "roam" | "marksman" | "jungler" | "mage" | "fighter";
 
@@ -31,6 +32,8 @@ type Slot = { position: PositionKey; options: Option[] };
 type Rule = { enemy: string; available: string[]; unavailable: string[]; offPosition: string[]; why: string; teamHas: string | null };
 type Result = {
   analysis: { summary: string; plan: string; slots: Slot[] };
+  analysisId?: number | null;
+  account?: Account | null;
   need: number;
   partial: boolean;
   open: PositionKey[];
@@ -46,7 +49,19 @@ type Result = {
   };
 };
 
-type Props = { heroes: string[]; passcodeRequired: boolean; staleDays: number };
+type Props = { heroes: string[]; passcodeRequired: boolean; staleDays: number; accountsOn: boolean; account: Account | null };
+
+const rmOf = (sen: number) => `RM${(sen / 100).toFixed(2).replace(/\.00$/, "")}`;
+
+// One line about what this account can do, shown under the Analyze button.
+function planLine(a: Account): string {
+  if (a.plan === "owner") return "Owner account: unlimited analyses.";
+  if (a.plan === "comp") return "Free access: analyses are on us.";
+  if (a.plan === "subscriber") return `Coach plan${a.periodEnd ? ` until ${new Date(a.periodEnd).toLocaleDateString()}` : ""}.`;
+  return a.trialLeft > 0
+    ? `Free analyses left: ${a.trialLeft} of ${a.trialTotal}.`
+    : `Your free analyses are used. The Coach plan is ${rmOf(a.priceSen)} a month; subscriptions are opening soon.`;
+}
 
 const idOf = (s: string) =>
   s
@@ -74,7 +89,9 @@ const listOf = (names: string[]) =>
 
 type Group = "bans" | "enemy" | "team";
 
-export default function DraftForm({ heroes, passcodeRequired, staleDays }: Props) {
+export default function DraftForm({ heroes, passcodeRequired, staleDays, accountsOn, account: initialAccount }: Props) {
+  const [account, setAccount] = useState<Account | null>(initialAccount);
+  const [needSignIn, setNeedSignIn] = useState(false);
   const [bans, setBans] = useState<string[]>(blank(10));
   const [enemy, setEnemy] = useState<string[]>(blank(5));
   const [team, setTeam] = useState<string[]>(blank(5)); // same order as TEAM_SLOTS
@@ -125,6 +142,8 @@ export default function DraftForm({ heroes, passcodeRequired, staleDays }: Props
   else if (openSlots.length === 0) blocker = "Your team already has five picks.";
   else if (total === 0) blocker = "Enter at least one ban or pick.";
   else if (passcodeRequired && !passcode.trim()) blocker = "Enter the passcode.";
+  else if (accountsOn && !account) blocker = "Sign in with Google to run the analysis. Every account gets free analyses.";
+  else if (account && account.plan === "free" && account.trialLeft <= 0) blocker = planLine(account);
 
   const openNote =
     openSlots.length <= 2
@@ -156,8 +175,11 @@ export default function DraftForm({ heroes, passcodeRequired, staleDays }: Props
       const data = await res.json().catch(() => null);
       if (!res.ok) {
         setError(data?.error?.message ?? "The analysis failed. Try again.");
+        if (data?.error?.code === "sign_in") setNeedSignIn(true);
+        if (data?.error?.code === "subscribe" && account) setAccount({ ...account, trialLeft: 0 });
       } else {
         setResult(data as Result);
+        if (data?.account) setAccount(data.account);
       }
     } catch {
       setError("Could not reach the server. Check your connection and try again.");
@@ -279,12 +301,24 @@ export default function DraftForm({ heroes, passcodeRequired, staleDays }: Props
           <p className="note" aria-live="polite">
             {blocker || (busy ? "Reading the patch data and your draft. This usually takes a few seconds." : openNote)}
           </p>
+          {accountsOn && !account && (
+            <a className="primary signin" href="/api/auth/google">
+              Sign in with Google
+            </a>
+          )}
+          {account && !blocker && <p className="note plan-line">{planLine(account)}</p>}
         </section>
       </form>
 
       {error && (
         <p className="error" role="alert">
           {error}
+          {needSignIn && (
+            <>
+              {" "}
+              <a href="/api/auth/google">Sign in with Google</a>
+            </>
+          )}
         </p>
       )}
 
@@ -295,6 +329,16 @@ export default function DraftForm({ heroes, passcodeRequired, staleDays }: Props
 
 function Results({ result }: { result: Result }) {
   const { analysis: a, meta } = result;
+  const [picked, setPicked] = useState<Record<string, string>>({});
+  async function markPicked(position: string, hero: string) {
+    if (!result.analysisId) return;
+    setPicked((p) => ({ ...p, [position]: hero }));
+    await fetch("/api/picked", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ analysisId: result.analysisId, hero })
+    }).catch(() => undefined);
+  }
   const rules = result.rules ?? [];
   const ruleFor = (hero: string) => rules.find((r) => r.available.includes(hero));
   const pro = meta.pro;
@@ -325,6 +369,16 @@ function Results({ result }: { result: Result }) {
                     </span>
                   )}
                   {ruleFor(o.hero) && <span className="rule-tag">Your rule vs {ruleFor(o.hero)!.enemy}</span>}
+                  {result.analysisId ? (
+                    <button
+                      type="button"
+                      className={`pick-btn${picked[s.position] === o.hero ? " on" : ""}`}
+                      onClick={() => markPicked(s.position, o.hero)}
+                      aria-pressed={picked[s.position] === o.hero}
+                    >
+                      {picked[s.position] === o.hero ? "Picked" : "I picked this"}
+                    </button>
+                  ) : null}
                 </div>
                 {o.evidence && <p className="evidence">{o.evidence}</p>}
                 {o.why && <p>{o.why}</p>}

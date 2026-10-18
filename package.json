@@ -9,10 +9,12 @@
     "test": "node scripts/smoke.mjs",
     "open-draft": "node scripts/open-draft.mjs",
     "test:meta": "node scripts/test-meta.mjs",
-    "update-meta": "node scripts/update-meta.mjs"
+    "update-meta": "node scripts/update-meta.mjs",
+    "test:accounts": "node scripts/test-accounts.mjs"
   },
   "dependencies": {
     "next": "16.4.0",
+    "postgres": "^3.4.9",
     "react": "19.3.0",
     "react-dom": "19.3.0"
   },

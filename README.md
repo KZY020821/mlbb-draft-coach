@@ -18,6 +18,23 @@ Until the key is replaced, the app loads but the analysis returns "The DeepSeek 
 2. Under Project Settings > Environment Variables, add `DEEPSEEK_API_KEY` with the real key. Add `APP_PASSCODE` if you want the page limited to your team.
 3. Deploy.
 
+## Accounts, free analyses and the admin page
+
+When the account settings below are all present, the AI coach needs Google sign-in. Without them the site works as before (open, with the optional passcode).
+
+- **Sign-in:** Google OAuth with PKCE and a signed state cookie (`app/api/auth/*`). Only verified Google emails are accepted. The session is an httpOnly, signed cookie that lasts 30 days.
+- **Access, in order:** the owner (`OWNER_EMAIL`) is always free and unlimited; emails on the free list are free within the fair-use limits; accounts with an active Coach plan; otherwise each account gets 2 free analyses (reserved atomically, and given back if an analysis fails). After that the API answers 402 with the current price.
+- **Logging:** every analysis is stored with its tokens, cost, time, draft, suggestions and which hero the player marked as picked (`POST /api/picked`).
+- **Admin (`/admin`, owner only, 404 for everyone else):** profit by month (revenue − payment fees − AI cost − fixed costs), the Coach price (changes always start on the 1st of next month, Malaysia time), DeepSeek balance and usage, the AI on/off switch, the monthly AI budget and fair-use limits, the free-email list, accounts (with "record a payment" for bank transfers until online payments are connected) and picks data.
+
+| Variable | What it is |
+| --- | --- |
+| `DATABASE_URL` | Postgres connection string. Set automatically when you connect a Neon database in Vercel > Storage. Tables are created on first use. |
+| `GOOGLE_CLIENT_ID`, `GOOGLE_CLIENT_SECRET` | From a Google Cloud OAuth client (Web application) with the redirect URI `https://<your-site>/api/auth/callback/google`. |
+| `AUTH_SECRET` | A random string of at least 32 characters that signs the session cookies. |
+| `OWNER_EMAIL` | The only account that can open `/admin`. |
+| `APP_URL` | The public site address, e.g. `https://mlbb-draft-coach-six.vercel.app`. |
+
 ## Settings
 
 All are environment variables, listed with defaults in `.env.example`: `DEEPSEEK_API_KEY`, `DEEPSEEK_BASE_URL`, `DEEPSEEK_MODEL` (default `deepseek-flash`), `APP_PASSCODE`, `RATE_LIMIT_PER_10MIN`.
@@ -101,6 +118,18 @@ Hero names must match the roster (case and spacing do not matter). The results p
 node scripts/mock-deepseek.mjs &                      # stand-in for the DeepSeek API
 DEEPSEEK_API_KEY=test-key DEEPSEEK_BASE_URL=http://127.0.0.1:4010 RATE_LIMIT_PER_10MIN=60 npm start -- -p 3100 &
 npm test                                              # runs scripts/smoke.mjs against it
+```
+
+Accounts (needs a local Postgres on port 5544):
+
+```bash
+node scripts/mock-google.mjs &                        # stand-in for Google sign-in
+DATABASE_URL=postgres://postgres@127.0.0.1:5544/postgres \
+GOOGLE_CLIENT_ID=test-google-client GOOGLE_CLIENT_SECRET=test-google-secret \
+AUTH_SECRET=test-secret-0123456789-abcdefghijklmnop-xyz OWNER_EMAIL=owner@example.com APP_URL=http://127.0.0.1:3200 \
+GOOGLE_AUTH_URL=http://127.0.0.1:4020/auth GOOGLE_TOKEN_URL=http://127.0.0.1:4020/token GOOGLE_USERINFO_URL=http://127.0.0.1:4020/userinfo \
+DEEPSEEK_API_KEY=test-key DEEPSEEK_BASE_URL=http://127.0.0.1:4010 RATE_LIMIT_PER_10MIN=500 npm start -- -p 3200 &
+npm run test:accounts                                 # wipes the test database tables first
 ```
 
 ## Known limits

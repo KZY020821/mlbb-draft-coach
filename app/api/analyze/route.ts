@@ -2,7 +2,11 @@ import { getContext, dataAgeDays } from "@/lib/context";
 import { buildIndex } from "@/lib/heroes";
 import { parseRequest, checkAnalysis, type Checked } from "@/lib/draft";
 import { buildMessages, retryMessage } from "@/lib/prompt";
-import { chatJson, getApiKey, getModel, UpstreamError } from "@/lib/deepseek";
+import { chatJson, getApiKey, getModel, UpstreamError, addUsage, NO_USAGE, type Usage } from "@/lib/deepseek";
+import { accountsEnabled, currentUser, type User } from "@/lib/session";
+import { dbConfigured } from "@/lib/db";
+import { accountFor, costUsd, gate, logAnalysis, refundTrial, type AccessKind } from "@/lib/access";
+import { getSettings, DEFAULT_SETTINGS, type Settings } from "@/lib/settings";
 import { clientId, passcodeOk, rateLimit } from "@/lib/guard";
 import { applyRules, getRules } from "@/lib/rules";
 import { buildCandidates } from "@/lib/candidates";
@@ -55,6 +59,54 @@ export async function POST(req: Request) {
     return fail(503, "not_configured", "The DeepSeek API key is not set on the server. Add DEEPSEEK_API_KEY to the environment.");
   }
 
+  // With accounts switched on, every analysis needs a signed-in user with access.
+  let user: User | null = null;
+  let access: AccessKind = "open";
+  let settings: Settings = DEFAULT_SETTINGS;
+  if (accountsEnabled()) {
+    user = await currentUser();
+    if (!user) return fail(401, "sign_in", "Sign in with Google to run the AI coach. Every account gets free analyses to try it.");
+    const g = await gate(user);
+    if (!g.ok) return fail(g.status, g.code, g.message, g.extra);
+    access = g.access;
+    settings = g.settings;
+  } else if (dbConfigured()) {
+    settings = await getSettings().catch(() => DEFAULT_SETTINGS);
+  }
+
+  const started = Date.now();
+  let usage: Usage = NO_USAGE;
+  const track = async (p: Promise<{ content: string; usage: Usage }>) => {
+    const r = await p;
+    usage = addUsage(usage, r.usage);
+    return r.content;
+  };
+  const record = (status: "ok" | "error", extra: { retried?: boolean; errorCode?: string; result?: unknown }) =>
+    dbConfigured()
+      ? logAnalysis({
+          userId: user?.id ?? null,
+          status,
+          access,
+          model,
+          usage,
+          costUsd: costUsd(usage, settings),
+          latencyMs: Date.now() - started,
+          retried: extra.retried ?? false,
+          errorCode: extra.errorCode,
+          draft: {
+            bans: parsed.draft.bans.map((h) => h.name),
+            enemy: parsed.draft.enemy.map((h) => h.name),
+            team: Object.fromEntries(parsed.draft.team.map((t) => [t.position, t.hero.name]))
+          },
+          open: parsed.draft.open,
+          result: extra.result
+        })
+      : Promise.resolve(null);
+  const failed = async (errorCode: string, retried = false) => {
+    if (access === "trial" && user) await refundTrial(user).catch((e) => console.error("[analyze] refund failed", e));
+    await record("error", { errorCode, retried });
+  };
+
   const model = getModel();
   const rules = getRules();
   const applied = applyRules(rules, index, parsed.draft);
@@ -62,8 +114,8 @@ export async function POST(req: Request) {
   const messages = buildMessages(ctx, parsed.draft, parsed.need, candidates, applied, rules.principles);
 
   try {
-    let reply = await chatJson({ model, messages, apiKey }).catch(async (e) => {
-      if (e instanceof UpstreamError && e.code === "empty") return chatJson({ model, messages, apiKey });
+    let reply = await track(chatJson({ model, messages, apiKey })).catch(async (e) => {
+      if (e instanceof UpstreamError && e.code === "empty") return track(chatJson({ model, messages, apiKey }));
       throw e;
     });
     let checked = checkAnalysis(reply, index, parsed.draft, parsed.need, candidates, applied);
@@ -73,11 +125,13 @@ export async function POST(req: Request) {
     if (!checked.complete || checked.ruleIgnored) {
       retried = true;
       try {
-        const second = await chatJson({
-          model,
-          messages: [...messages, { role: "assistant", content: reply }, retryMessage(checked.problems)],
-          apiKey
-        });
+        const second = await track(
+          chatJson({
+            model,
+            messages: [...messages, { role: "assistant", content: reply }, retryMessage(checked.problems)],
+            apiKey
+          })
+        );
         const rechecked = checkAnalysis(second, index, parsed.draft, parsed.need, candidates, applied);
         // Keep the second answer unless it lost usable options.
         if (optionCount(rechecked) >= optionCount(checked)) checked = rechecked;
@@ -89,6 +143,7 @@ export async function POST(req: Request) {
     }
 
     if (optionCount(checked) === 0) {
+      await failed("unusable_reply", retried);
       return fail(502, "unusable_reply", "DeepSeek did not return options that fit this draft. Try again.");
     }
 
@@ -102,8 +157,13 @@ export async function POST(req: Request) {
     }));
 
     const meta = getMeta();
+    const analysis = { summary: checked.analysis.summary, plan: checked.analysis.plan, slots };
+    const analysisId = await record("ok", { retried, result: analysis });
+    const account = user ? await accountFor(user).catch(() => null) : null;
     return Response.json({
-      analysis: { summary: checked.analysis.summary, plan: checked.analysis.plan, slots },
+      analysis,
+      analysisId,
+      account,
       need: parsed.need,
       partial: !checked.complete,
       open: parsed.draft.open,
@@ -127,6 +187,7 @@ export async function POST(req: Request) {
       }
     });
   } catch (e) {
+    await failed(e instanceof UpstreamError ? e.code : "server_error");
     if (e instanceof UpstreamError) {
       const status = e.code === "busy" ? 503 : e.code === "timeout" ? 504 : 502;
       // Key and billing problems are for the site owner, so keep the visitor message generic.

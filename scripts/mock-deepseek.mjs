@@ -63,6 +63,11 @@ http
       res.end(JSON.stringify({ calls, last }));
       return;
     }
+    if (req.url === "/user/balance") {
+      res.setHeader("content-type", "application/json");
+      res.end(JSON.stringify({ is_available: true, balance_infos: [{ currency: "USD", total_balance: "9.87", granted_balance: "0.00", topped_up_balance: "9.87" }] }));
+      return;
+    }
     let body = "";
     req.on("data", (c) => (body += c));
     req.on("end", () => {
@@ -72,7 +77,10 @@ http
       const userText = parsed.messages.filter((m) => m.role === "user")[0].content;
       const reply = (content) => {
         res.setHeader("content-type", "application/json");
-        res.end(JSON.stringify({ choices: [{ message: { role: "assistant", content } }] }));
+        res.end(JSON.stringify({
+          choices: [{ message: { role: "assistant", content } }],
+          usage: { prompt_tokens: 3000, prompt_cache_hit_tokens: 1000, prompt_cache_miss_tokens: 2000, completion_tokens: 400 }
+        }));
       };
       if (mode === "401") { res.statusCode = 401; return res.end("{}"); }
       if (mode === "402") { res.statusCode = 402; return res.end("{}"); }
