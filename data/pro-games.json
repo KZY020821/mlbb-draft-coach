@@ -26,7 +26,7 @@
     "marksman": "Melissa",
     "roam": "Belerick"
    },
-   "confidence": 0.99
+   "confidence": 1
   },
   {
    "date": "2026-08-14",
@@ -77,7 +77,7 @@
     "marksman": "Brody",
     "roam": "Mathilda"
    },
-   "confidence": 0.96
+   "confidence": 0.97
   },
   {
    "date": "2026-08-14",
@@ -94,7 +94,7 @@
     "marksman": "Claude",
     "mage": "Valentina"
    },
-   "confidence": 0.9
+   "confidence": 0.93
   },
   {
    "date": "2026-08-14",
@@ -111,7 +111,7 @@
     "marksman": "Moskov",
     "roam": "Atlas"
    },
-   "confidence": 0.99
+   "confidence": 1
   },
   {
    "date": "2026-08-14",
@@ -139,13 +139,13 @@
    "opponent": "Natus Vincere",
    "won": true,
    "positions": {
-    "roam": "Carmilla",
+    "fighter": "Carmilla",
     "jungler": "Hirara",
     "mage": "Cecilion",
     "marksman": "Melissa",
-    "fighter": "Belerick"
+    "roam": "Belerick"
    },
-   "confidence": 0.51
+   "confidence": 0.55
   },
   {
    "date": "2026-08-15",
@@ -213,7 +213,7 @@
     "roam": "Masha",
     "marksman": "Chip"
    },
-   "confidence": 0.87
+   "confidence": 0.84
   },
   {
    "date": "2026-08-15",
@@ -247,7 +247,7 @@
     "fighter": "Masha",
     "marksman": "Chip"
    },
-   "confidence": 0.64
+   "confidence": 0.62
   },
   {
    "date": "2026-08-15",
@@ -349,7 +349,7 @@
     "marksman": "Moskov",
     "roam": "Ruby"
    },
-   "confidence": 0.97
+   "confidence": 0.98
   },
   {
    "date": "2026-08-15",
@@ -451,7 +451,7 @@
     "marksman": "Claude",
     "roam": "Belerick"
    },
-   "confidence": 0.99
+   "confidence": 1
   },
   {
    "date": "2026-08-16",
@@ -519,7 +519,7 @@
     "marksman": "Freya",
     "roam": "Chou"
    },
-   "confidence": 0.96
+   "confidence": 0.95
   },
   {
    "date": "2026-08-16",
@@ -570,7 +570,7 @@
     "marksman": "Chou",
     "roam": "Mathilda"
    },
-   "confidence": 0.95
+   "confidence": 0.93
   },
   {
    "date": "2026-08-16",
@@ -587,7 +587,7 @@
     "roam": "Masha",
     "marksman": "Chip"
    },
-   "confidence": 0.97
+   "confidence": 0.96
   },
   {
    "date": "2026-08-16",
@@ -689,7 +689,7 @@
     "marksman": "Paquito",
     "roam": "Badang"
    },
-   "confidence": 0.49
+   "confidence": 0.51
   },
   {
    "date": "2026-08-21",
@@ -723,7 +723,7 @@
     "marksman": "Claude",
     "roam": "Rafaela"
    },
-   "confidence": 0.97
+   "confidence": 0.94
   },
   {
    "date": "2026-08-21",
@@ -1029,7 +1029,7 @@
     "marksman": "Melissa",
     "roam": "Ruby"
    },
-   "confidence": 0.97
+   "confidence": 0.98
   },
   {
    "date": "2026-08-22",
@@ -1046,7 +1046,7 @@
     "marksman": "Clint",
     "roam": "Belerick"
    },
-   "confidence": 0.96
+   "confidence": 0.97
   },
   {
    "date": "2026-08-22",
@@ -1080,7 +1080,7 @@
     "marksman": "Brody",
     "roam": "Kaja"
    },
-   "confidence": 0.97
+   "confidence": 0.91
   },
   {
    "date": "2026-08-23",
@@ -1131,7 +1131,7 @@
     "marksman": "Melissa",
     "roam": "Kalea"
    },
-   "confidence": 0.98
+   "confidence": 0.99
   },
   {
    "date": "2026-08-23",
@@ -1335,7 +1335,7 @@
     "marksman": "Melissa",
     "roam": "Rafaela"
    },
-   "confidence": 0.97
+   "confidence": 0.96
   },
   {
    "date": "2026-08-28",
@@ -1369,7 +1369,7 @@
     "marksman": "Claude",
     "fighter": "Chip"
    },
-   "confidence": 0.57
+   "confidence": 0.62
   },
   {
    "date": "2026-08-28",
@@ -1386,7 +1386,7 @@
     "marksman": "Melissa",
     "roam": "Belerick"
    },
-   "confidence": 0.99
+   "confidence": 1
   },
   {
    "date": "2026-08-28",
@@ -1403,7 +1403,7 @@
     "marksman": "Brody",
     "roam": "Kalea"
    },
-   "confidence": 0.96
+   "confidence": 0.97
   },
   {
    "date": "2026-08-28",
@@ -1499,13 +1499,13 @@
    "opponent": "Team Liquid ID",
    "won": true,
    "positions": {
-    "roam": "Carmilla",
+    "fighter": "Carmilla",
     "jungler": "Hirara",
     "mage": "Mathilda",
     "marksman": "Moskov",
-    "fighter": "Belerick"
+    "roam": "Belerick"
    },
-   "confidence": 0.51
+   "confidence": 0.55
   },
   {
    "date": "2026-08-29",
@@ -1556,7 +1556,7 @@
     "marksman": "Claude",
     "roam": "Badang"
    },
-   "confidence": 0.93
+   "confidence": 0.94
   },
   {
    "date": "2026-08-29",
@@ -1573,7 +1573,7 @@
     "marksman": "Moskov",
     "roam": "Marcel"
    },
-   "confidence": 0.83
+   "confidence": 0.86
   },
   {
    "date": "2026-08-29",
@@ -1601,13 +1601,13 @@
    "opponent": "Alter Ego",
    "won": false,
    "positions": {
-    "roam": "Carmilla",
+    "fighter": "Carmilla",
     "jungler": "Paquito",
     "mage": "Novaria",
     "marksman": "Miya",
-    "fighter": "Belerick"
+    "roam": "Belerick"
    },
-   "confidence": 0.51
+   "confidence": 0.55
   },
   {
    "date": "2026-08-29",
@@ -1624,7 +1624,7 @@
     "marksman": "Moskov",
     "roam": "Gatotkaca"
    },
-   "confidence": 0.97
+   "confidence": 0.94
   },
   {
    "date": "2026-08-29",
@@ -1675,7 +1675,7 @@
     "marksman": "Claude",
     "roam": "Marcel"
    },
-   "confidence": 0.87
+   "confidence": 0.92
   },
   {
    "date": "2026-08-29",
@@ -1692,7 +1692,7 @@
     "marksman": "Brody",
     "roam": "Rafaela"
    },
-   "confidence": 0.99
+   "confidence": 1
   },
   {
    "date": "2026-08-29",
@@ -1856,13 +1856,13 @@
    "opponent": "Alter Ego",
    "won": false,
    "positions": {
-    "roam": "Carmilla",
+    "fighter": "Carmilla",
     "jungler": "Hirara",
     "mage": "Selena",
     "marksman": "Claude",
-    "fighter": "Belerick"
+    "roam": "Belerick"
    },
-   "confidence": 0.51
+   "confidence": 0.55
   },
   {
    "date": "2026-08-30",
@@ -1964,7 +1964,7 @@
     "marksman": "Melissa",
     "roam": "Mathilda"
    },
-   "confidence": 0.99
+   "confidence": 0.98
   },
   {
    "date": "2026-09-04",
@@ -1981,7 +1981,7 @@
     "marksman": "Claude",
     "roam": "Gatotkaca"
    },
-   "confidence": 0.74
+   "confidence": 0.62
   },
   {
    "date": "2026-09-04",
@@ -2009,13 +2009,13 @@
    "opponent": "Natus Vincere",
    "won": false,
    "positions": {
-    "mage": "Valentina",
+    "fighter": "Valentina",
     "jungler": "Paquito",
-    "fighter": "Selena",
+    "mage": "Selena",
     "marksman": "Claude",
     "roam": "Belerick"
    },
-   "confidence": 0.47
+   "confidence": 0.87
   },
   {
    "date": "2026-09-04",
@@ -2032,7 +2032,7 @@
     "marksman": "Claude",
     "fighter": "Atlas"
    },
-   "confidence": 0.62
+   "confidence": 0.59
   },
   {
    "date": "2026-09-04",
@@ -2083,7 +2083,7 @@
     "marksman": "Melissa",
     "fighter": "Chip"
    },
-   "confidence": 0.57
+   "confidence": 0.61
   },
   {
    "date": "2026-09-05",
@@ -2100,7 +2100,7 @@
     "marksman": "Paquito",
     "roam": "Minotaur"
    },
-   "confidence": 0.5
+   "confidence": 0.52
   },
   {
    "date": "2026-09-05",
@@ -2151,7 +2151,7 @@
     "marksman": "Claude",
     "roam": "Atlas"
    },
-   "confidence": 0.99
+   "confidence": 1
   },
   {
    "date": "2026-09-05",
@@ -2253,7 +2253,7 @@
     "marksman": "Claude",
     "roam": "Rafaela"
    },
-   "confidence": 0.97
+   "confidence": 0.96
   },
   {
    "date": "2026-09-05",
@@ -2270,7 +2270,7 @@
     "marksman": "Obsidia",
     "fighter": "Hylos"
    },
-   "confidence": 0.87
+   "confidence": 0.89
   },
   {
    "date": "2026-09-05",
@@ -2287,7 +2287,7 @@
     "marksman": "Moskov",
     "fighter": "Chou"
    },
-   "confidence": 0.58
+   "confidence": 0.73
   },
   {
    "date": "2026-09-05",
@@ -2321,7 +2321,7 @@
     "marksman": "Melissa",
     "roam": "Rafaela"
    },
-   "confidence": 0.97
+   "confidence": 0.95
   },
   {
    "date": "2026-09-05",
@@ -2355,7 +2355,7 @@
     "fighter": "Masha",
     "roam": "Atlas"
    },
-   "confidence": 0.47
+   "confidence": 0.5
   },
   {
    "date": "2026-09-06",
@@ -2406,7 +2406,7 @@
     "marksman": "Melissa",
     "roam": "Ruby"
    },
-   "confidence": 0.97
+   "confidence": 0.98
   },
   {
    "date": "2026-09-06",
@@ -2508,7 +2508,7 @@
     "marksman": "Obsidia",
     "roam": "Belerick"
    },
-   "confidence": 0.62
+   "confidence": 0.59
   },
   {
    "date": "2026-09-06",
@@ -2559,7 +2559,7 @@
     "marksman": "Miya",
     "roam": "Badang"
    },
-   "confidence": 0.81
+   "confidence": 0.78
   },
   {
    "date": "2026-09-11",
@@ -2610,7 +2610,7 @@
     "marksman": "Minsitthar",
     "roam": "Belerick"
    },
-   "confidence": 0.66
+   "confidence": 0.62
   },
   {
    "date": "2026-09-11",
@@ -2644,7 +2644,7 @@
     "marksman": "Obsidia",
     "fighter": "Chou"
    },
-   "confidence": 0.58
+   "confidence": 0.73
   },
   {
    "date": "2026-09-11",
@@ -2661,7 +2661,7 @@
     "marksman": "Moskov",
     "roam": "Gatotkaca"
    },
-   "confidence": 0.82
+   "confidence": 0.7
   },
   {
    "date": "2026-09-12",
@@ -2678,7 +2678,7 @@
     "marksman": "Melissa",
     "roam": "Gloo"
    },
-   "confidence": 0.74
+   "confidence": 0.77
   },
   {
    "date": "2026-09-12",
@@ -2695,7 +2695,7 @@
     "marksman": "Clint",
     "roam": "Carmilla"
    },
-   "confidence": 0.99
+   "confidence": 1
   },
   {
    "date": "2026-09-12",
@@ -2712,7 +2712,7 @@
     "marksman": "Miya",
     "fighter": "Carmilla"
    },
-   "confidence": 0.61
+   "confidence": 0.63
   },
   {
    "date": "2026-09-12",
@@ -2729,7 +2729,7 @@
     "marksman": "Granger",
     "roam": "Gloo"
    },
-   "confidence": 0.87
+   "confidence": 0.89
   },
   {
    "date": "2026-09-12",
@@ -2746,7 +2746,7 @@
     "marksman": "Obsidia",
     "roam": "Gloo"
    },
-   "confidence": 0.89
+   "confidence": 0.87
   },
   {
    "date": "2026-09-12",
@@ -2797,7 +2797,7 @@
     "marksman": "Paquito",
     "roam": "Gatotkaca"
    },
-   "confidence": 0.51
+   "confidence": 0.53
   },
   {
    "date": "2026-09-12",
@@ -2814,7 +2814,7 @@
     "marksman": "Miya",
     "roam": "Gatotkaca"
    },
-   "confidence": 0.63
+   "confidence": 0.54
   },
   {
    "date": "2026-09-12",
@@ -2899,7 +2899,7 @@
     "marksman": "Claude",
     "fighter": "Carmilla"
    },
-   "confidence": 0.61
+   "confidence": 0.63
   },
   {
    "date": "2026-09-13",
@@ -2933,7 +2933,7 @@
     "marksman": "Miya",
     "fighter": "Carmilla"
    },
-   "confidence": 0.61
+   "confidence": 0.64
   },
   {
    "date": "2026-09-13",
@@ -2944,13 +2944,13 @@
    "opponent": "Alter Ego",
    "won": false,
    "positions": {
-    "roam": "Carmilla",
+    "fighter": "Carmilla",
     "jungler": "Suyou",
     "mage": "Rafaela",
     "marksman": "Melissa",
-    "fighter": "Belerick"
+    "roam": "Belerick"
    },
-   "confidence": 0.51
+   "confidence": 0.55
   },
   {
    "date": "2026-09-13",
@@ -3001,7 +3001,7 @@
     "marksman": "Obsidia",
     "roam": "Badang"
    },
-   "confidence": 0.93
+   "confidence": 0.94
   },
   {
    "date": "2026-09-18",
@@ -3029,13 +3029,13 @@
    "opponent": "ONIC",
    "won": true,
    "positions": {
-    "fighter": "Belerick",
+    "roam": "Belerick",
     "jungler": "Suyou",
     "mage": "Cecilion",
     "marksman": "Obsidia",
-    "roam": "Carmilla"
+    "fighter": "Carmilla"
    },
-   "confidence": 0.51
+   "confidence": 0.55
   },
   {
    "date": "2026-09-18",
@@ -3052,7 +3052,7 @@
     "marksman": "Claude",
     "fighter": "Chou"
    },
-   "confidence": 0.57
+   "confidence": 0.72
   },
   {
    "date": "2026-09-18",
@@ -3069,7 +3069,7 @@
     "marksman": "Obsidia",
     "roam": "Carmilla"
    },
-   "confidence": 0.91
+   "confidence": 0.93
   },
   {
    "date": "2026-09-18",
@@ -3086,7 +3086,7 @@
     "marksman": "Obsidia",
     "roam": "Kalea"
    },
-   "confidence": 0.52
+   "confidence": 0.63
   },
   {
    "date": "2026-09-18",
@@ -3103,7 +3103,7 @@
     "marksman": "Bruno",
     "roam": "Gatotkaca"
    },
-   "confidence": 0.63
+   "confidence": 0.53
   },
   {
    "date": "2026-09-18",
@@ -3137,7 +3137,7 @@
     "marksman": "Obsidia",
     "fighter": "Chou"
    },
-   "confidence": 0.63
+   "confidence": 0.73
   },
   {
    "date": "2026-09-12",
@@ -3171,7 +3171,7 @@
     "marksman": "Obsidia",
     "roam": "Carmilla"
    },
-   "confidence": 0.79
+   "confidence": 0.74
   },
   {
    "date": "2026-09-12",
@@ -3205,7 +3205,7 @@
     "marksman": "Obsidia",
     "roam": "Hylos"
    },
-   "confidence": 0.94
+   "confidence": 0.95
   },
   {
    "date": "2026-09-12",
@@ -3273,7 +3273,7 @@
     "marksman": "Miya",
     "roam": "Gloo"
    },
-   "confidence": 0.89
+   "confidence": 0.87
   },
   {
    "date": "2026-09-19",
@@ -3324,7 +3324,7 @@
     "marksman": "Obsidia",
     "roam": "Rafaela"
    },
-   "confidence": 0.96
+   "confidence": 0.94
   },
   {
    "date": "2026-09-19",
@@ -3358,7 +3358,7 @@
     "marksman": "Obsidia",
     "roam": "Carmilla"
    },
-   "confidence": 0.9
+   "confidence": 0.89
   },
   {
    "date": "2026-09-19",
@@ -3392,7 +3392,7 @@
     "marksman": "Miya",
     "roam": "Atlas"
    },
-   "confidence": 0.9
+   "confidence": 0.94
   },
   {
    "date": "2026-09-19",
@@ -3426,7 +3426,7 @@
     "marksman": "Brody",
     "roam": "Kalea"
    },
-   "confidence": 0.52
+   "confidence": 0.63
   },
   {
    "date": "2026-09-19",
@@ -3443,7 +3443,7 @@
     "marksman": "Claude",
     "roam": "Gatotkaca"
    },
-   "confidence": 0.74
+   "confidence": 0.62
   },
   {
    "date": "2026-09-19",
@@ -3460,7 +3460,7 @@
     "marksman": "Cici",
     "roam": "Minotaur"
    },
-   "confidence": 0.56
+   "confidence": 0.47
   },
   {
    "date": "2026-09-19",
@@ -3477,7 +3477,7 @@
     "marksman": "Miya",
     "roam": "Gatotkaca"
    },
-   "confidence": 0.74
+   "confidence": 0.62
   },
   {
    "date": "2026-09-20",
@@ -3511,7 +3511,7 @@
     "marksman": "Obsidia",
     "roam": "Minotaur"
    },
-   "confidence": 0.52
+   "confidence": 0.65
   },
   {
    "date": "2026-09-20",
@@ -3528,7 +3528,7 @@
     "marksman": "Miya",
     "roam": "Hylos"
    },
-   "confidence": 0.99
+   "confidence": 0.98
   },
   {
    "date": "2026-09-20",
@@ -3630,7 +3630,7 @@
     "marksman": "Freya",
     "fighter": "Hylos"
    },
-   "confidence": 0.78
+   "confidence": 0.8
   },
   {
    "date": "2026-09-20",
@@ -3647,7 +3647,7 @@
     "marksman": "Claude",
     "fighter": "Belerick"
    },
-   "confidence": 0.62
+   "confidence": 0.59
   },
   {
    "date": "2026-09-20",
@@ -3664,7 +3664,7 @@
     "marksman": "Moskov",
     "roam": "Carmilla"
    },
-   "confidence": 0.88
+   "confidence": 0.93
   },
   {
    "date": "2026-09-20",
@@ -3681,7 +3681,7 @@
     "marksman": "Claude",
     "fighter": "Atlas"
    },
-   "confidence": 0.73
+   "confidence": 0.67
   },
   {
    "date": "2026-09-20",
@@ -3698,7 +3698,7 @@
     "marksman": "Obsidia",
     "roam": "Carmilla"
    },
-   "confidence": 0.79
+   "confidence": 0.67
   },
   {
    "date": "2026-09-20",
@@ -3715,7 +3715,7 @@
     "marksman": "Claude",
     "fighter": "Belerick"
    },
-   "confidence": 0.62
+   "confidence": 0.59
   },
   {
    "date": "2026-10-02",
@@ -3726,13 +3726,13 @@
    "opponent": "Bigetron by Vitality",
    "won": false,
    "positions": {
-    "jungler": "Arlott",
-    "fighter": "Alice",
+    "fighter": "Arlott",
+    "jungler": "Alice",
     "mage": "Kimmy",
     "marksman": "Freya",
     "roam": "Minotaur"
    },
-   "confidence": 0.63
+   "confidence": 0.57
   },
   {
    "date": "2026-10-02",
@@ -3749,7 +3749,7 @@
     "marksman": "Cici",
     "roam": "Gloo"
    },
-   "confidence": 0.69
+   "confidence": 0.78
   },
   {
    "date": "2026-10-02",
@@ -3766,7 +3766,7 @@
     "marksman": "Obsidia",
     "roam": "Minotaur"
    },
-   "confidence": 0.94
+   "confidence": 0.97
   },
   {
    "date": "2026-10-02",
@@ -3800,7 +3800,7 @@
     "marksman": "Obsidia",
     "roam": "Belerick"
    },
-   "confidence": 0.97
+   "confidence": 0.98
   },
   {
    "date": "2026-10-02",
@@ -3834,7 +3834,7 @@
     "marksman": "Cici",
     "roam": "Minotaur"
    },
-   "confidence": 0.82
+   "confidence": 0.83
   },
   {
    "date": "2026-10-02",
@@ -3851,7 +3851,7 @@
     "marksman": "Miya",
     "roam": "Carmilla"
    },
-   "confidence": 0.63
+   "confidence": 0.54
   },
   {
    "date": "2026-10-02",
@@ -3868,7 +3868,7 @@
     "marksman": "Claude",
     "roam": "Mathilda"
    },
-   "confidence": 0.84
+   "confidence": 0.86
   },
   {
    "date": "2026-10-02",
@@ -3885,7 +3885,7 @@
     "marksman": "Moskov",
     "roam": "Carmilla"
    },
-   "confidence": 0.85
+   "confidence": 0.75
   },
   {
    "date": "2026-10-02",
@@ -3919,7 +3919,7 @@
     "marksman": "Obsidia",
     "roam": "Marcel"
    },
-   "confidence": 0.89
+   "confidence": 0.9
   },
   {
    "date": "2026-10-03",
@@ -3970,7 +3970,7 @@
     "marksman": "Claude",
     "roam": "Badang"
    },
-   "confidence": 0.77
+   "confidence": 0.69
   },
   {
    "date": "2026-10-03",
@@ -3987,7 +3987,7 @@
     "marksman": "Moskov",
     "roam": "Masha"
    },
-   "confidence": 0.91
+   "confidence": 0.93
   },
   {
    "date": "2026-10-03",
@@ -4021,7 +4021,7 @@
     "marksman": "Cici",
     "roam": "Khaleed"
    },
-   "confidence": 0.87
+   "confidence": 0.91
   },
   {
    "date": "2026-10-03",
@@ -4038,7 +4038,7 @@
     "marksman": "Chou",
     "roam": "Minotaur"
    },
-   "confidence": 0.88
+   "confidence": 0.83
   },
   {
    "date": "2026-10-03",
@@ -4055,7 +4055,7 @@
     "marksman": "Freya",
     "roam": "Rafaela"
    },
-   "confidence": 0.93
+   "confidence": 0.92
   },
   {
    "date": "2026-10-03",
@@ -4072,7 +4072,7 @@
     "fighter": "Chou",
     "roam": "Minotaur"
    },
-   "confidence": 0.41
+   "confidence": 0.54
   },
   {
    "date": "2026-10-03",
@@ -4089,7 +4089,7 @@
     "marksman": "Aulus",
     "roam": "Badang"
    },
-   "confidence": 0.75
+   "confidence": 0.7
   },
   {
    "date": "2026-10-03",
@@ -4106,7 +4106,7 @@
     "marksman": "Obsidia",
     "roam": "Gloo"
    },
-   "confidence": 0.88
+   "confidence": 0.93
   },
   {
    "date": "2026-10-03",
@@ -4157,7 +4157,7 @@
     "marksman": "Aulus",
     "roam": "Gloo"
    },
-   "confidence": 0.94
+   "confidence": 0.92
   },
   {
    "date": "2026-10-03",
@@ -4208,7 +4208,7 @@
     "marksman": "Miya",
     "roam": "Atlas"
    },
-   "confidence": 0.93
+   "confidence": 0.95
   },
   {
    "date": "2026-10-03",
@@ -4225,7 +4225,7 @@
     "marksman": "Claude",
     "roam": "Belerick"
    },
-   "confidence": 0.76
+   "confidence": 0.68
   },
   {
    "date": "2026-10-04",
@@ -4242,7 +4242,7 @@
     "marksman": "Moskov",
     "roam": "Rafaela"
    },
-   "confidence": 0.98
+   "confidence": 0.95
   },
   {
    "date": "2026-10-04",
@@ -4259,7 +4259,7 @@
     "marksman": "Claude",
     "roam": "Belerick"
    },
-   "confidence": 0.69
+   "confidence": 0.72
   },
   {
    "date": "2026-10-04",
@@ -4276,7 +4276,7 @@
     "marksman": "Obsidia",
     "fighter": "Atlas"
    },
-   "confidence": 0.81
+   "confidence": 0.78
   },
   {
    "date": "2026-10-04",
@@ -4293,7 +4293,7 @@
     "marksman": "Claude",
     "roam": "Gloo"
    },
-   "confidence": 0.92
+   "confidence": 0.93
   },
   {
    "date": "2026-10-04",
@@ -4310,7 +4310,7 @@
     "marksman": "Aulus",
     "roam": "Rafaela"
    },
-   "confidence": 0.58
+   "confidence": 0.57
   },
   {
    "date": "2026-10-04",
@@ -4327,7 +4327,7 @@
     "marksman": "Obsidia",
     "roam": "Minotaur"
    },
-   "confidence": 0.95
+   "confidence": 0.96
   },
   {
    "date": "2026-10-04",
@@ -4344,7 +4344,7 @@
     "marksman": "Paquito",
     "roam": "Minotaur"
    },
-   "confidence": 0.53
+   "confidence": 0.5
   },
   {
    "date": "2026-10-04",
@@ -4361,7 +4361,7 @@
     "marksman": "Obsidia",
     "roam": "Carmilla"
    },
-   "confidence": 0.97
+   "confidence": 0.98
   },
   {
    "date": "2026-10-04",
@@ -4378,7 +4378,7 @@
     "marksman": "Aulus",
     "roam": "Mathilda"
    },
-   "confidence": 0.93
+   "confidence": 0.94
   },
   {
    "date": "2026-10-04",
@@ -4395,7 +4395,7 @@
     "marksman": "Freya",
     "roam": "Minotaur"
    },
-   "confidence": 0.87
+   "confidence": 0.91
   },
   {
    "date": "2026-10-04",
@@ -4412,7 +4412,7 @@
     "jungler": "Lukas",
     "roam": "Atlas"
    },
-   "confidence": 0.45
+   "confidence": 0.41
   },
   {
    "date": "2026-10-04",
@@ -4463,7 +4463,7 @@
     "marksman": "Cici",
     "roam": "Marcel"
    },
-   "confidence": 0.87
+   "confidence": 0.91
   },
   {
    "date": "2026-10-04",
@@ -4531,7 +4531,7 @@
     "marksman": "Hanabi",
     "roam": "Minotaur"
    },
-   "confidence": 0.88
+   "confidence": 0.92
   },
   {
    "date": "2026-09-11",
@@ -4548,7 +4548,7 @@
     "fighter": "Freya",
     "roam": "Gatotkaca"
    },
-   "confidence": 0.72
+   "confidence": 0.71
   },
   {
    "date": "2026-09-11",
@@ -4582,7 +4582,7 @@
     "marksman": "Cici",
     "roam": "Masha"
    },
-   "confidence": 0.94
+   "confidence": 0.92
   },
   {
    "date": "2026-09-11",
@@ -4599,7 +4599,7 @@
     "marksman": "Freya",
     "roam": "Mathilda"
    },
-   "confidence": 0.81
+   "confidence": 0.87
   },
   {
    "date": "2026-10-08",
@@ -4616,7 +4616,7 @@
     "marksman": "Paquito",
     "roam": "Estes"
    },
-   "confidence": 0.7
+   "confidence": 0.69
   },
   {
    "date": "2026-10-08",
@@ -4633,7 +4633,7 @@
     "marksman": "Chou",
     "roam": "Atlas"
    },
-   "confidence": 0.46
+   "confidence": 0.49
   },
   {
    "date": "2026-10-08",
@@ -4650,7 +4650,7 @@
     "jungler": "Paquito",
     "roam": "Hylos"
    },
-   "confidence": 0.52
+   "confidence": 0.49
   },
   {
    "date": "2026-10-08",
@@ -4667,7 +4667,7 @@
     "marksman": "Chou",
     "roam": "Mathilda"
    },
-   "confidence": 0.86
+   "confidence": 0.82
   },
   {
    "date": "2026-10-08",
@@ -4684,7 +4684,7 @@
     "marksman": "Cici",
     "roam": "Gatotkaca"
    },
-   "confidence": 0.83
+   "confidence": 0.86
   },
   {
    "date": "2026-10-08",
@@ -4701,7 +4701,7 @@
     "marksman": "Freya",
     "roam": "Estes"
    },
-   "confidence": 0.92
+   "confidence": 0.93
   },
   {
    "date": "2026-10-08",
@@ -4718,7 +4718,7 @@
     "marksman": "Cici",
     "roam": "Gloo"
    },
-   "confidence": 0.83
+   "confidence": 0.86
   },
   {
    "date": "2026-10-08",
@@ -4752,7 +4752,7 @@
     "fighter": "Aulus",
     "roam": "Gatotkaca"
    },
-   "confidence": 0.56
+   "confidence": 0.54
   },
   {
    "date": "2026-10-09",
@@ -4769,7 +4769,7 @@
     "marksman": "Harith",
     "roam": "Atlas"
    },
-   "confidence": 0.99
+   "confidence": 1
   },
   {
    "date": "2026-10-09",
@@ -4786,7 +4786,7 @@
     "marksman": "Argus",
     "roam": "Rafaela"
    },
-   "confidence": 0.55
+   "confidence": 0.46
   },
   {
    "date": "2026-10-09",
@@ -4820,7 +4820,7 @@
     "marksman": "Obsidia",
     "roam": "Carmilla"
    },
-   "confidence": 0.85
+   "confidence": 0.75
   },
   {
    "date": "2026-10-09",
@@ -4837,7 +4837,7 @@
     "roam": "Ruby",
     "marksman": "Chou"
    },
-   "confidence": 0.38
+   "confidence": 0.46
   },
   {
    "date": "2026-10-09",
@@ -4854,7 +4854,7 @@
     "marksman": "Paquito",
     "roam": "Hylos"
    },
-   "confidence": 0.69
+   "confidence": 0.67
   },
   {
    "date": "2026-10-09",
@@ -4871,7 +4871,7 @@
     "marksman": "Cici",
     "roam": "Atlas"
    },
-   "confidence": 0.9
+   "confidence": 0.92
   },
   {
    "date": "2026-10-09",
@@ -4905,7 +4905,7 @@
     "jungler": "Cici",
     "roam": "Atlas"
    },
-   "confidence": 0.51
+   "confidence": 0.4
   },
   {
    "date": "2026-10-09",
@@ -4973,7 +4973,7 @@
     "marksman": "Moskov",
     "roam": "Marcel"
    },
-   "confidence": 0.66
+   "confidence": 0.72
   },
   {
    "date": "2026-10-11",
@@ -4990,7 +4990,7 @@
     "fighter": "Esmeralda",
     "roam": "Atlas"
    },
-   "confidence": 0.94
+   "confidence": 0.97
   },
   {
    "date": "2026-10-11",
@@ -5007,7 +5007,7 @@
     "marksman": "Freya",
     "roam": "Marcel"
    },
-   "confidence": 0.97
+   "confidence": 0.96
   },
   {
    "date": "2026-10-11",
@@ -5058,7 +5058,7 @@
     "marksman": "Aulus",
     "roam": "Mathilda"
    },
-   "confidence": 0.47
+   "confidence": 0.4
   },
   {
    "date": "2026-10-11",
@@ -5075,7 +5075,7 @@
     "marksman": "Cici",
     "roam": "Atlas"
    },
-   "confidence": 0.98
+   "confidence": 0.97
   },
   {
    "date": "2026-10-11",
@@ -5092,7 +5092,7 @@
     "jungler": "Paquito",
     "roam": "Atlas"
    },
-   "confidence": 0.72
+   "confidence": 0.73
   },
   {
    "date": "2026-10-11",
@@ -5109,7 +5109,7 @@
     "marksman": "Kimmy",
     "roam": "Marcel"
    },
-   "confidence": 0.75
+   "confidence": 0.8
   },
   {
    "date": "2026-10-11",
@@ -5126,7 +5126,7 @@
     "jungler": "Paquito",
     "roam": "Rafaela"
    },
-   "confidence": 0.76
+   "confidence": 0.73
   },
   {
    "date": "2026-10-11",
@@ -5160,7 +5160,7 @@
     "fighter": "Esmeralda",
     "roam": "Hylos"
    },
-   "confidence": 0.78
+   "confidence": 0.57
   },
   {
    "date": "2026-10-11",
@@ -5211,7 +5211,7 @@
     "fighter": "Ruby",
     "roam": "Marcel"
    },
-   "confidence": 0.9
+   "confidence": 0.93
   },
   {
    "date": "2026-10-16",
@@ -5228,7 +5228,7 @@
     "fighter": "Esmeralda",
     "roam": "Atlas"
    },
-   "confidence": 0.92
+   "confidence": 0.94
   },
   {
    "date": "2026-10-16",
@@ -5245,7 +5245,7 @@
     "marksman": "Cici",
     "roam": "Gatotkaca"
    },
-   "confidence": 0.85
+   "confidence": 0.9
   },
   {
    "date": "2026-10-16",
@@ -5262,7 +5262,7 @@
     "marksman": "Cici",
     "roam": "Marcel"
    },
-   "confidence": 0.86
+   "confidence": 0.88
   },
   {
    "date": "2026-10-16",
@@ -5279,7 +5279,7 @@
     "jungler": "Joy",
     "roam": "Badang"
    },
-   "confidence": 0.93
+   "confidence": 0.92
   },
   {
    "date": "2026-10-16",
@@ -5313,7 +5313,7 @@
     "marksman": "Cici",
     "roam": "Atlas"
    },
-   "confidence": 0.51
+   "confidence": 0.52
   },
   {
    "date": "2026-10-16",
@@ -5330,7 +5330,7 @@
     "fighter": "Esmeralda",
     "roam": "Marcel"
    },
-   "confidence": 0.78
+   "confidence": 0.57
   },
   {
    "date": "2026-10-16",
@@ -5381,7 +5381,7 @@
     "marksman": "Obsidia",
     "roam": "Kalea"
    },
-   "confidence": 0.69
+   "confidence": 0.66
   },
   {
    "date": "2026-10-17",
@@ -5415,7 +5415,7 @@
     "marksman": "Paquito",
     "roam": "Marcel"
    },
-   "confidence": 0.81
+   "confidence": 0.79
   },
   {
    "date": "2026-10-17",
@@ -5449,7 +5449,7 @@
     "jungler": "Paquito",
     "roam": "Gloo"
    },
-   "confidence": 0.61
+   "confidence": 0.54
   },
   {
    "date": "2026-10-17",
@@ -5466,7 +5466,7 @@
     "marksman": "Cici",
     "roam": "Kalea"
    },
-   "confidence": 0.98
+   "confidence": 0.97
   },
   {
    "date": "2026-10-17",
@@ -5483,7 +5483,7 @@
     "jungler": "Paquito",
     "roam": "Gloo"
    },
-   "confidence": 0.61
+   "confidence": 0.58
   },
   {
    "date": "2026-10-17",
@@ -5500,7 +5500,7 @@
     "marksman": "Cici",
     "roam": "Marcel"
    },
-   "confidence": 0.98
+   "confidence": 0.97
   },
   {
    "date": "2026-10-17",
@@ -5534,7 +5534,7 @@
     "fighter": "Sora",
     "roam": "Hylos"
    },
-   "confidence": 0.9
+   "confidence": 0.93
   },
   {
    "date": "2026-10-17",
@@ -5568,7 +5568,7 @@
     "marksman": "Freya",
     "roam": "Gatotkaca"
    },
-   "confidence": 0.95
+   "confidence": 0.94
   },
   {
    "date": "2026-10-17",
@@ -5585,7 +5585,7 @@
     "jungler": "Aulus",
     "roam": "Minotaur"
    },
-   "confidence": 0.36
+   "confidence": 0.48
   },
   {
    "date": "2026-10-17",
@@ -5636,7 +5636,7 @@
     "jungler": "Paquito",
     "roam": "Gatotkaca"
    },
-   "confidence": 0.62
+   "confidence": 0.63
   },
   {
    "date": "2026-10-17",
@@ -5670,7 +5670,7 @@
     "marksman": "Freya",
     "roam": "Gatotkaca"
    },
-   "confidence": 0.82
+   "confidence": 0.7
   },
   {
    "date": "2026-10-17",
@@ -5687,7 +5687,7 @@
     "jungler": "Paquito",
     "roam": "Carmilla"
    },
-   "confidence": 0.75
+   "confidence": 0.7
   },
   {
    "date": "2026-08-21",
@@ -5732,13 +5732,13 @@
    "opponent": "ONIC PH",
    "won": false,
    "positions": {
-    "roam": "Carmilla",
+    "fighter": "Carmilla",
     "jungler": "Nolan",
     "mage": "Lylia",
     "marksman": "Melissa",
-    "fighter": "Belerick"
+    "roam": "Belerick"
    },
-   "confidence": 0.51
+   "confidence": 0.55
   },
   {
    "date": "2026-08-21",
@@ -5789,7 +5789,7 @@
     "marksman": "Brody",
     "roam": "Marcel"
    },
-   "confidence": 0.83
+   "confidence": 0.86
   },
   {
    "date": "2026-08-21",
@@ -5806,7 +5806,7 @@
     "marksman": "Moskov",
     "roam": "Badang"
    },
-   "confidence": 0.71
+   "confidence": 0.75
   },
   {
    "date": "2026-08-21",
@@ -5840,7 +5840,7 @@
     "marksman": "Clint",
     "roam": "Marcel"
    },
-   "confidence": 0.89
+   "confidence": 0.9
   },
   {
    "date": "2026-08-21",
@@ -5857,7 +5857,7 @@
     "marksman": "Brody",
     "roam": "Rafaela"
    },
-   "confidence": 0.99
+   "confidence": 1
   },
   {
    "date": "2026-08-22",
@@ -5959,7 +5959,7 @@
     "marksman": "Hanabi",
     "roam": "Gatotkaca"
    },
-   "confidence": 0.73
+   "confidence": 0.67
   },
   {
    "date": "2026-08-22",
@@ -6010,7 +6010,7 @@
     "marksman": "Clint",
     "roam": "Angela"
    },
-   "confidence": 0.99
+   "confidence": 1
   },
   {
    "date": "2026-08-22",
@@ -6027,7 +6027,7 @@
     "marksman": "Claude",
     "roam": "Rafaela"
    },
-   "confidence": 0.97
+   "confidence": 0.94
   },
   {
    "date": "2026-08-22",
@@ -6044,7 +6044,7 @@
     "marksman": "Paquito",
     "roam": "Rafaela"
    },
-   "confidence": 0.92
+   "confidence": 0.9
   },
   {
    "date": "2026-08-22",
@@ -6180,7 +6180,7 @@
     "marksman": "Claude",
     "roam": "Belerick"
    },
-   "confidence": 0.88
+   "confidence": 0.89
   },
   {
    "date": "2026-08-23",
@@ -6299,7 +6299,7 @@
     "marksman": "Clint",
     "roam": "Minotaur"
    },
-   "confidence": 0.73
+   "confidence": 0.67
   },
   {
    "date": "2026-08-28",
@@ -6327,13 +6327,13 @@
    "opponent": "AP.Bren",
    "won": true,
    "positions": {
-    "roam": "Carmilla",
+    "fighter": "Carmilla",
     "jungler": "Hirara",
     "mage": "Novaria",
     "marksman": "Paquito",
-    "fighter": "Belerick"
+    "roam": "Belerick"
    },
-   "confidence": 0.51
+   "confidence": 0.55
   },
   {
    "date": "2026-08-28",
@@ -6367,7 +6367,7 @@
     "marksman": "Claude",
     "roam": "Mathilda"
    },
-   "confidence": 0.89
+   "confidence": 0.88
   },
   {
    "date": "2026-08-28",
@@ -6565,13 +6565,13 @@
    "opponent": "Omega Esports",
    "won": true,
    "positions": {
-    "roam": "Carmilla",
+    "fighter": "Carmilla",
     "jungler": "Hirara",
     "mage": "Mathilda",
     "marksman": "Brody",
-    "fighter": "Belerick"
+    "roam": "Belerick"
    },
-   "confidence": 0.51
+   "confidence": 0.55
   },
   {
    "date": "2026-08-29",
@@ -6588,7 +6588,7 @@
     "marksman": "Paquito",
     "roam": "Angela"
    },
-   "confidence": 0.96
+   "confidence": 0.95
   },
   {
    "date": "2026-08-29",
@@ -6656,7 +6656,7 @@
     "marksman": "Clint",
     "roam": "Marcel"
    },
-   "confidence": 0.89
+   "confidence": 0.9
   },
   {
    "date": "2026-08-29",
@@ -6724,7 +6724,7 @@
     "marksman": "Moskov",
     "roam": "Baxia"
    },
-   "confidence": 0.99
+   "confidence": 1
   },
   {
    "date": "2026-08-30",
@@ -6741,7 +6741,7 @@
     "marksman": "Claude",
     "roam": "Belerick"
    },
-   "confidence": 0.99
+   "confidence": 0.98
   },
   {
    "date": "2026-08-30",
@@ -6758,7 +6758,7 @@
     "marksman": "Moskov",
     "roam": "Belerick"
    },
-   "confidence": 0.62
+   "confidence": 0.59
   },
   {
    "date": "2026-08-30",
@@ -6771,11 +6771,11 @@
    "positions": {
     "roam": "Gatotkaca",
     "jungler": "Hirara",
-    "fighter": "Kagura",
-    "marksman": "Chou",
+    "marksman": "Kagura",
+    "fighter": "Chou",
     "mage": "Angela"
    },
-   "confidence": 0.37
+   "confidence": 0.44
   },
   {
    "date": "2026-08-30",
@@ -6792,7 +6792,7 @@
     "marksman": "Claude",
     "roam": "Khaleed"
    },
-   "confidence": 0.56
+   "confidence": 0.52
   },
   {
    "date": "2026-08-30",
@@ -6809,7 +6809,7 @@
     "marksman": "Hanabi",
     "roam": "Mathilda"
    },
-   "confidence": 0.97
+   "confidence": 0.98
   },
   {
    "date": "2026-08-30",
@@ -6843,7 +6843,7 @@
     "marksman": "Brody",
     "roam": "Rafaela"
    },
-   "confidence": 0.97
+   "confidence": 0.94
   },
   {
    "date": "2026-09-04",
@@ -6911,7 +6911,7 @@
     "marksman": "Clint",
     "roam": "Rafaela"
    },
-   "confidence": 0.92
+   "confidence": 0.88
   },
   {
    "date": "2026-09-04",
@@ -6945,7 +6945,7 @@
     "marksman": "Clint",
     "fighter": "Chou"
    },
-   "confidence": 0.5
+   "confidence": 0.61
   },
   {
    "date": "2026-09-04",
@@ -7030,7 +7030,7 @@
     "marksman": "Melissa",
     "roam": "Atlas"
    },
-   "confidence": 0.86
+   "confidence": 0.88
   },
   {
    "date": "2026-09-05",
@@ -7064,7 +7064,7 @@
     "marksman": "Brody",
     "roam": "Kalea"
    },
-   "confidence": 0.53
+   "confidence": 0.58
   },
   {
    "date": "2026-09-05",
@@ -7081,7 +7081,7 @@
     "marksman": "Miya",
     "roam": "Atlas"
    },
-   "confidence": 0.99
+   "confidence": 1
   },
   {
    "date": "2026-09-05",
@@ -7098,7 +7098,7 @@
     "marksman": "Claude",
     "roam": "Hylos"
    },
-   "confidence": 0.88
+   "confidence": 0.85
   },
   {
    "date": "2026-09-05",
@@ -7132,7 +7132,7 @@
     "marksman": "Claude",
     "roam": "Badang"
    },
-   "confidence": 0.72
+   "confidence": 0.71
   },
   {
    "date": "2026-09-05",
@@ -7149,7 +7149,7 @@
     "marksman": "Clint",
     "fighter": "Atlas"
    },
-   "confidence": 0.63
+   "confidence": 0.54
   },
   {
    "date": "2026-09-05",
@@ -7166,7 +7166,7 @@
     "marksman": "Claude",
     "roam": "Gatotkaca"
    },
-   "confidence": 0.82
+   "confidence": 0.7
   },
   {
    "date": "2026-09-05",
@@ -7183,7 +7183,7 @@
     "marksman": "Melissa",
     "roam": "Minotaur"
    },
-   "confidence": 0.62
+   "confidence": 0.59
   },
   {
    "date": "2026-09-05",
@@ -7251,7 +7251,7 @@
     "marksman": "Miya",
     "fighter": "Khufra"
    },
-   "confidence": 0.6
+   "confidence": 0.61
   },
   {
    "date": "2026-09-05",
@@ -7285,7 +7285,7 @@
     "marksman": "Miya",
     "roam": "Gloo"
    },
-   "confidence": 0.82
+   "confidence": 0.85
   },
   {
    "date": "2026-09-06",
@@ -7302,7 +7302,7 @@
     "marksman": "Claude",
     "roam": "Minotaur"
    },
-   "confidence": 0.73
+   "confidence": 0.67
   },
   {
    "date": "2026-09-06",
@@ -7319,7 +7319,7 @@
     "marksman": "Harith",
     "roam": "Gatotkaca"
    },
-   "confidence": 0.74
+   "confidence": 0.62
   },
   {
    "date": "2026-09-06",
@@ -7489,7 +7489,7 @@
     "marksman": "Moskov",
     "roam": "Marcel"
    },
-   "confidence": 0.64
+   "confidence": 0.79
   },
   {
    "date": "2026-09-11",
@@ -7506,7 +7506,7 @@
     "marksman": "Moskov",
     "roam": "Hylos"
    },
-   "confidence": 0.88
+   "confidence": 0.86
   },
   {
    "date": "2026-09-11",
@@ -7517,13 +7517,13 @@
    "opponent": "Omega Esports",
    "won": false,
    "positions": {
-    "roam": "Gatotkaca",
+    "fighter": "Gatotkaca",
     "jungler": "Fanny",
     "mage": "Selena",
     "marksman": "Miya",
-    "fighter": "Badang"
+    "roam": "Badang"
    },
-   "confidence": 0.52
+   "confidence": 0.6
   },
   {
    "date": "2026-09-11",
@@ -7540,7 +7540,7 @@
     "marksman": "Obsidia",
     "roam": "Gatotkaca"
    },
-   "confidence": 0.82
+   "confidence": 0.7
   },
   {
    "date": "2026-09-11",
@@ -7608,7 +7608,7 @@
     "marksman": "Karrie",
     "roam": "Gatotkaca"
    },
-   "confidence": 0.91
+   "confidence": 0.89
   },
   {
    "date": "2026-09-12",
@@ -7642,7 +7642,7 @@
     "marksman": "Beatrix",
     "fighter": "Hylos"
    },
-   "confidence": 0.58
+   "confidence": 0.63
   },
   {
    "date": "2026-09-12",
@@ -7761,7 +7761,7 @@
     "marksman": "Melissa",
     "roam": "Minotaur"
    },
-   "confidence": 0.61
+   "confidence": 0.64
   },
   {
    "date": "2026-09-12",
@@ -7812,7 +7812,7 @@
     "marksman": "Melissa",
     "fighter": "Chou"
    },
-   "confidence": 0.69
+   "confidence": 0.79
   },
   {
    "date": "2026-09-13",
@@ -7829,7 +7829,7 @@
     "marksman": "Paquito",
     "roam": "Gatotkaca"
    },
-   "confidence": 0.98
+   "confidence": 0.97
   },
   {
    "date": "2026-09-13",
@@ -7846,7 +7846,7 @@
     "marksman": "Obsidia",
     "fighter": "Carmilla"
    },
-   "confidence": 0.61
+   "confidence": 0.64
   },
   {
    "date": "2026-09-13",
@@ -7863,7 +7863,7 @@
     "marksman": "Paquito",
     "roam": "Marcel"
    },
-   "confidence": 0.33
+   "confidence": 0.42
   },
   {
    "date": "2026-09-13",
@@ -7880,7 +7880,7 @@
     "marksman": "Obsidia",
     "fighter": "Carmilla"
    },
-   "confidence": 0.61
+   "confidence": 0.64
   },
   {
    "date": "2026-09-13",
@@ -7948,7 +7948,7 @@
     "marksman": "Miya",
     "fighter": "Belerick"
    },
-   "confidence": 0.62
+   "confidence": 0.59
   },
   {
    "date": "2026-09-13",
@@ -7965,7 +7965,7 @@
     "marksman": "Moskov",
     "roam": "Gatotkaca"
    },
-   "confidence": 0.82
+   "confidence": 0.7
   },
   {
    "date": "2026-09-13",
@@ -7982,7 +7982,7 @@
     "marksman": "Melissa",
     "fighter": "Belerick"
    },
-   "confidence": 0.62
+   "confidence": 0.59
   },
   {
    "date": "2026-09-13",
@@ -8033,7 +8033,7 @@
     "marksman": "Obsidia",
     "roam": "Minotaur"
    },
-   "confidence": 0.61
+   "confidence": 0.64
   },
   {
    "date": "2026-09-18",
@@ -8067,7 +8067,7 @@
     "marksman": "Bruno",
     "roam": "Gatotkaca"
    },
-   "confidence": 0.74
+   "confidence": 0.62
   },
   {
    "date": "2026-09-18",
@@ -8084,7 +8084,7 @@
     "marksman": "Clint",
     "roam": "Minotaur"
    },
-   "confidence": 0.94
+   "confidence": 0.93
   },
   {
    "date": "2026-09-18",
@@ -8095,13 +8095,13 @@
    "opponent": "Team Liquid PH",
    "won": false,
    "positions": {
-    "fighter": "Belerick",
+    "roam": "Belerick",
     "jungler": "Hirara",
     "mage": "Cecilion",
     "marksman": "Bruno",
-    "roam": "Carmilla"
+    "fighter": "Carmilla"
    },
-   "confidence": 0.51
+   "confidence": 0.55
   },
   {
    "date": "2026-09-18",
@@ -8152,7 +8152,7 @@
     "marksman": "Miya",
     "roam": "Hylos"
    },
-   "confidence": 0.88
+   "confidence": 0.86
   },
   {
    "date": "2026-09-18",
@@ -8186,7 +8186,7 @@
     "marksman": "Bruno",
     "roam": "Carmilla"
    },
-   "confidence": 0.99
+   "confidence": 0.98
   },
   {
    "date": "2026-09-19",
@@ -8237,7 +8237,7 @@
     "marksman": "Moskov",
     "roam": "Carmilla"
    },
-   "confidence": 0.85
+   "confidence": 0.84
   },
   {
    "date": "2026-09-19",
@@ -8254,7 +8254,7 @@
     "marksman": "Paquito",
     "roam": "Gloo"
    },
-   "confidence": 0.74
+   "confidence": 0.77
   },
   {
    "date": "2026-09-19",
@@ -8271,7 +8271,7 @@
     "marksman": "Brody",
     "roam": "Gatotkaca"
    },
-   "confidence": 0.73
+   "confidence": 0.67
   },
   {
    "date": "2026-09-19",
@@ -8305,7 +8305,7 @@
     "marksman": "Brody",
     "fighter": "Carmilla"
    },
-   "confidence": 0.73
+   "confidence": 0.67
   },
   {
    "date": "2026-09-19",
@@ -8322,7 +8322,7 @@
     "marksman": "Freya",
     "roam": "Gloo"
    },
-   "confidence": 0.61
+   "confidence": 0.73
   },
   {
    "date": "2026-09-19",
@@ -8339,7 +8339,7 @@
     "marksman": "Paquito",
     "roam": "Angela"
    },
-   "confidence": 0.79
+   "confidence": 0.87
   },
   {
    "date": "2026-09-19",
@@ -8441,7 +8441,7 @@
     "marksman": "Bruno",
     "roam": "Kalea"
    },
-   "confidence": 0.61
+   "confidence": 0.71
   },
   {
    "date": "2026-09-20",
@@ -8492,7 +8492,7 @@
     "marksman": "Karrie",
     "roam": "Marcel"
    },
-   "confidence": 0.76
+   "confidence": 0.81
   },
   {
    "date": "2026-09-20",
@@ -8560,7 +8560,7 @@
     "marksman": "Moskov",
     "roam": "Minotaur"
    },
-   "confidence": 0.68
+   "confidence": 0.71
   },
   {
    "date": "2026-09-25",
@@ -8594,7 +8594,7 @@
     "marksman": "Aulus",
     "roam": "Angela"
    },
-   "confidence": 0.84
+   "confidence": 0.9
   },
   {
    "date": "2026-09-25",
@@ -8611,7 +8611,7 @@
     "marksman": "Obsidia",
     "roam": "Kalea"
    },
-   "confidence": 0.85
+   "confidence": 0.89
   },
   {
    "date": "2026-09-25",
@@ -8645,7 +8645,7 @@
     "marksman": "Moskov",
     "fighter": "Masha"
    },
-   "confidence": 0.69
+   "confidence": 0.72
   },
   {
    "date": "2026-09-25",
@@ -8696,7 +8696,7 @@
     "marksman": "Claude",
     "roam": "Gloo"
    },
-   "confidence": 0.92
+   "confidence": 0.93
   },
   {
    "date": "2026-09-26",
@@ -8713,7 +8713,7 @@
     "marksman": "Moskov",
     "roam": "Carmilla"
    },
-   "confidence": 0.99
+   "confidence": 1
   },
   {
    "date": "2026-09-26",
@@ -8730,7 +8730,7 @@
     "marksman": "Claude",
     "roam": "Atlas"
    },
-   "confidence": 0.55
+   "confidence": 0.68
   },
   {
    "date": "2026-09-26",
@@ -8747,7 +8747,7 @@
     "marksman": "Melissa",
     "roam": "Belerick"
    },
-   "confidence": 0.69
+   "confidence": 0.72
   },
   {
    "date": "2026-09-26",
@@ -8815,7 +8815,7 @@
     "marksman": "Obsidia",
     "roam": "Gloo"
    },
-   "confidence": 0.75
+   "confidence": 0.77
   },
   {
    "date": "2026-09-26",
@@ -8832,7 +8832,7 @@
     "marksman": "Obsidia",
     "fighter": "Masha"
    },
-   "confidence": 0.62
+   "confidence": 0.6
   },
   {
    "date": "2026-09-26",
@@ -8849,7 +8849,7 @@
     "marksman": "Aulus",
     "roam": "Marcel"
    },
-   "confidence": 0.58
+   "confidence": 0.59
   },
   {
    "date": "2026-09-26",
@@ -8866,7 +8866,7 @@
     "jungler": "Paquito",
     "roam": "Minotaur"
    },
-   "confidence": 0.79
+   "confidence": 0.72
   },
   {
    "date": "2026-09-26",
@@ -8900,7 +8900,7 @@
     "marksman": "Obsidia",
     "roam": "Marcel"
    },
-   "confidence": 0.76
+   "confidence": 0.81
   },
   {
    "date": "2026-09-26",
@@ -8911,13 +8911,13 @@
    "opponent": "Team Falcons PH",
    "won": false,
    "positions": {
-    "fighter": "Belerick",
+    "roam": "Belerick",
     "jungler": "Paquito",
     "mage": "Selena",
     "marksman": "Clint",
-    "roam": "Carmilla"
+    "fighter": "Carmilla"
    },
-   "confidence": 0.51
+   "confidence": 0.55
   },
   {
    "date": "2026-09-27",
@@ -8951,7 +8951,7 @@
     "marksman": "Claude",
     "roam": "Carmilla"
    },
-   "confidence": 0.8
+   "confidence": 0.68
   },
   {
    "date": "2026-09-27",
@@ -8985,7 +8985,7 @@
     "marksman": "Obsidia",
     "roam": "Gloo"
    },
-   "confidence": 0.87
+   "confidence": 0.89
   },
   {
    "date": "2026-09-27",
@@ -9053,7 +9053,7 @@
     "marksman": "Aulus",
     "roam": "Marcel"
    },
-   "confidence": 0.89
+   "confidence": 0.9
   },
   {
    "date": "2026-10-02",
@@ -9070,7 +9070,7 @@
     "marksman": "Brody",
     "roam": "Marcel"
    },
-   "confidence": 0.83
+   "confidence": 0.86
   },
   {
    "date": "2026-10-02",
@@ -9087,7 +9087,7 @@
     "marksman": "Miya",
     "roam": "Gatotkaca"
    },
-   "confidence": 0.63
+   "confidence": 0.54
   },
   {
    "date": "2026-10-02",
@@ -9104,7 +9104,7 @@
     "marksman": "Obsidia",
     "roam": "Gatotkaca"
    },
-   "confidence": 0.73
+   "confidence": 0.67
   },
   {
    "date": "2026-10-02",
@@ -9138,7 +9138,7 @@
     "marksman": "Miya",
     "roam": "Gatotkaca"
    },
-   "confidence": 0.82
+   "confidence": 0.7
   },
   {
    "date": "2026-10-02",
@@ -9155,7 +9155,7 @@
     "marksman": "Melissa",
     "roam": "Marcel"
    },
-   "confidence": 0.83
+   "confidence": 0.86
   },
   {
    "date": "2026-10-02",
@@ -9206,7 +9206,7 @@
     "marksman": "Miya",
     "roam": "Atlas"
    },
-   "confidence": 0.99
+   "confidence": 1
   },
   {
    "date": "2026-10-02",
@@ -9223,7 +9223,7 @@
     "marksman": "Obsidia",
     "roam": "Gloo"
    },
-   "confidence": 0.82
+   "confidence": 0.85
   },
   {
    "date": "2026-10-03",
@@ -9240,7 +9240,7 @@
     "jungler": "Paquito",
     "roam": "Minotaur"
    },
-   "confidence": 0.36
+   "confidence": 0.39
   },
   {
    "date": "2026-10-03",
@@ -9257,7 +9257,7 @@
     "marksman": "Obsidia",
     "roam": "Gloo"
    },
-   "confidence": 0.82
+   "confidence": 0.85
   },
   {
    "date": "2026-10-03",
@@ -9274,7 +9274,7 @@
     "jungler": "Paquito",
     "roam": "Minotaur"
    },
-   "confidence": 0.66
+   "confidence": 0.71
   },
   {
    "date": "2026-10-03",
@@ -9325,7 +9325,7 @@
     "marksman": "Paquito",
     "fighter": "Belerick"
    },
-   "confidence": 0.62
+   "confidence": 0.58
   },
   {
    "date": "2026-10-03",
@@ -9359,7 +9359,7 @@
     "marksman": "Obsidia",
     "fighter": "Khufra"
    },
-   "confidence": 0.51
+   "confidence": 0.53
   },
   {
    "date": "2026-10-03",
@@ -9393,7 +9393,7 @@
     "marksman": "Chou",
     "roam": "Marcel"
    },
-   "confidence": 0.87
+   "confidence": 0.91
   },
   {
    "date": "2026-10-03",
@@ -9410,7 +9410,7 @@
     "marksman": "Freya",
     "roam": "Gatotkaca"
    },
-   "confidence": 0.73
+   "confidence": 0.67
   },
   {
    "date": "2026-10-03",
@@ -9438,11 +9438,11 @@
    "opponent": "Aurora PH",
    "won": false,
    "positions": {
-    "fighter": "Atlas",
+    "roam": "Atlas",
     "jungler": "Nolan",
     "mage": "Valentina",
     "marksman": "Moskov",
-    "roam": "Hylos"
+    "fighter": "Hylos"
    },
    "confidence": 0.55
   },
@@ -9461,7 +9461,7 @@
     "marksman": "Obsidia",
     "fighter": "Belerick"
    },
-   "confidence": 0.74
+   "confidence": 0.62
   },
   {
    "date": "2026-10-03",
@@ -9478,7 +9478,7 @@
     "marksman": "Aulus",
     "roam": "Marcel"
    },
-   "confidence": 0.62
+   "confidence": 0.77
   },
   {
    "date": "2026-10-03",
@@ -9495,7 +9495,7 @@
     "marksman": "Obsidia",
     "roam": "Gloo"
    },
-   "confidence": 0.82
+   "confidence": 0.85
   },
   {
    "date": "2026-10-04",
@@ -9512,7 +9512,7 @@
     "marksman": "Freya",
     "roam": "Gloo"
    },
-   "confidence": 0.62
+   "confidence": 0.72
   },
   {
    "date": "2026-10-04",
@@ -9546,7 +9546,7 @@
     "marksman": "Freya",
     "roam": "Minotaur"
    },
-   "confidence": 0.97
+   "confidence": 0.96
   },
   {
    "date": "2026-10-04",
@@ -9580,7 +9580,7 @@
     "marksman": "Paquito",
     "roam": "Carmilla"
    },
-   "confidence": 0.95
+   "confidence": 0.96
   },
   {
    "date": "2026-10-04",
@@ -9631,7 +9631,7 @@
     "marksman": "Paquito",
     "roam": "Belerick"
    },
-   "confidence": 0.31
+   "confidence": 0.3
   },
   {
    "date": "2026-10-08",
@@ -9648,7 +9648,7 @@
     "marksman": "Sora",
     "roam": "Marcel"
    },
-   "confidence": 0.48
+   "confidence": 0.55
   },
   {
    "date": "2026-10-08",
@@ -9665,7 +9665,7 @@
     "marksman": "Cici",
     "roam": "Hilda"
    },
-   "confidence": 0.94
+   "confidence": 0.95
   },
   {
    "date": "2026-10-08",
@@ -9682,7 +9682,7 @@
     "marksman": "Aulus",
     "roam": "Marcel"
    },
-   "confidence": 0.95
+   "confidence": 0.96
   },
   {
    "date": "2026-10-08",
@@ -9716,7 +9716,7 @@
     "jungler": "Lukas",
     "roam": "Gatotkaca"
    },
-   "confidence": 0.37
+   "confidence": 0.29
   },
   {
    "date": "2026-10-08",
@@ -9733,7 +9733,7 @@
     "marksman": "Paquito",
     "roam": "Marcel"
    },
-   "confidence": 0.83
+   "confidence": 0.86
   },
   {
    "date": "2026-10-08",
@@ -9767,7 +9767,7 @@
     "marksman": "Cici",
     "roam": "Marcel"
    },
-   "confidence": 0.89
+   "confidence": 0.9
   },
   {
    "date": "2026-10-08",
@@ -9784,7 +9784,7 @@
     "marksman": "Aulus",
     "fighter": "Kalea"
    },
-   "confidence": 0.46
+   "confidence": 0.37
   },
   {
    "date": "2026-10-08",
@@ -9852,7 +9852,7 @@
     "marksman": "Obsidia",
     "roam": "Minotaur"
    },
-   "confidence": 1
+   "confidence": 0.99
   },
   {
    "date": "2026-10-09",
@@ -9869,7 +9869,7 @@
     "marksman": "Freya",
     "roam": "Marcel"
    },
-   "confidence": 0.93
+   "confidence": 0.92
   },
   {
    "date": "2026-10-09",
@@ -9880,13 +9880,13 @@
    "opponent": "Team Falcons PH",
    "won": true,
    "positions": {
-    "fighter": "Atlas",
+    "roam": "Atlas",
     "jungler": "Harley",
     "mage": "Eudora",
     "marksman": "Paquito",
-    "roam": "Khufra"
+    "fighter": "Khufra"
    },
-   "confidence": 0.53
+   "confidence": 0.57
   },
   {
    "date": "2026-10-09",
@@ -9903,7 +9903,75 @@
     "jungler": "Lukas",
     "roam": "Carmilla"
    },
+   "confidence": 0.44
+  },
+  {
+   "date": "2026-10-09",
+   "league": "ph",
+   "match": "MPL/Philippines/Season_18/Regular_Season#53",
+   "game": 2,
+   "team": "TNC Pro Team",
+   "opponent": "Team Falcons PH",
+   "won": false,
+   "positions": {
+    "fighter": "Aulus",
+    "jungler": "Hirara",
+    "mage": "Eudora",
+    "marksman": "Cici",
+    "roam": "Badang"
+   },
    "confidence": 0.54
+  },
+  {
+   "date": "2026-10-09",
+   "league": "ph",
+   "match": "MPL/Philippines/Season_18/Regular_Season#53",
+   "game": 2,
+   "team": "Team Falcons PH",
+   "opponent": "TNC Pro Team",
+   "won": true,
+   "positions": {
+    "roam": "Hylos",
+    "jungler": "Nolan",
+    "mage": "Selena",
+    "marksman": "Freya",
+    "fighter": "Khufra"
+   },
+   "confidence": 0.52
+  },
+  {
+   "date": "2026-10-09",
+   "league": "ph",
+   "match": "MPL/Philippines/Season_18/Regular_Season#53",
+   "game": 3,
+   "team": "TNC Pro Team",
+   "opponent": "Team Falcons PH",
+   "won": false,
+   "positions": {
+    "fighter": "Uranus",
+    "jungler": "Fanny",
+    "mage": "Selena",
+    "marksman": "Cici",
+    "roam": "Belerick"
+   },
+   "confidence": 1
+  },
+  {
+   "date": "2026-10-09",
+   "league": "ph",
+   "match": "MPL/Philippines/Season_18/Regular_Season#53",
+   "game": 3,
+   "team": "Team Falcons PH",
+   "opponent": "TNC Pro Team",
+   "won": true,
+   "positions": {
+    "fighter": "Carmilla",
+    "jungler": "Hirara",
+    "mage": "Lylia",
+    "marksman": "Chou",
+    "roam": "Marcel"
+   },
+   "confidence": 0.88
   },
   {
    "date": "2026-10-09",
@@ -9937,7 +10005,7 @@
     "marksman": "Freya",
     "roam": "Marcel"
    },
-   "confidence": 0.7
+   "confidence": 0.77
   },
   {
    "date": "2026-10-09",
@@ -9971,7 +10039,7 @@
     "marksman": "Aulus",
     "fighter": "Kalea"
    },
-   "confidence": 0.46
+   "confidence": 0.37
   },
   {
    "date": "2026-10-11",
@@ -10005,7 +10073,177 @@
     "jungler": "Paquito",
     "roam": "Belerick"
    },
-   "confidence": 0.77
+   "confidence": 0.73
+  },
+  {
+   "date": "2026-10-11",
+   "league": "ph",
+   "match": "MPL/Philippines/Season_18/Regular_Season#55",
+   "game": 2,
+   "team": "Aurora PH",
+   "opponent": "Twisted Minds PH",
+   "won": true,
+   "positions": {
+    "fighter": "Barats",
+    "jungler": "Paquito",
+    "mage": "Zhuxin",
+    "marksman": "Miya",
+    "roam": "Carmilla"
+   },
+   "confidence": 1
+  },
+  {
+   "date": "2026-10-11",
+   "league": "ph",
+   "match": "MPL/Philippines/Season_18/Regular_Season#55",
+   "game": 2,
+   "team": "Twisted Minds PH",
+   "opponent": "Aurora PH",
+   "won": false,
+   "positions": {
+    "marksman": "Cici",
+    "jungler": "Aulus",
+    "mage": "Kimmy",
+    "fighter": "Chou",
+    "roam": "Gatotkaca"
+   },
+   "confidence": 0.59
+  },
+  {
+   "date": "2026-10-11",
+   "league": "ph",
+   "match": "MPL/Philippines/Season_18/Regular_Season#55",
+   "game": 3,
+   "team": "Aurora PH",
+   "opponent": "Twisted Minds PH",
+   "won": true,
+   "positions": {
+    "fighter": "Gatotkaca",
+    "jungler": "Aulus",
+    "mage": "Eudora",
+    "marksman": "Obsidia",
+    "roam": "Badang"
+   },
+   "confidence": 0.58
+  },
+  {
+   "date": "2026-10-11",
+   "league": "ph",
+   "match": "MPL/Philippines/Season_18/Regular_Season#55",
+   "game": 3,
+   "team": "Twisted Minds PH",
+   "opponent": "Aurora PH",
+   "won": false,
+   "positions": {
+    "roam": "Minotaur",
+    "jungler": "Fanny",
+    "mage": "Selena",
+    "marksman": "Miya",
+    "fighter": "Belerick"
+   },
+   "confidence": 0.59
+  },
+  {
+   "date": "2026-10-11",
+   "league": "ph",
+   "match": "MPL/Philippines/Season_18/Regular_Season#56",
+   "game": 1,
+   "team": "Team Falcons PH",
+   "opponent": "Team Liquid PH",
+   "won": true,
+   "positions": {
+    "fighter": "Hylos",
+    "jungler": "Paquito",
+    "mage": "Eudora",
+    "marksman": "Freya",
+    "roam": "Marcel"
+   },
+   "confidence": 0.89
+  },
+  {
+   "date": "2026-10-11",
+   "league": "ph",
+   "match": "MPL/Philippines/Season_18/Regular_Season#56",
+   "game": 1,
+   "team": "Team Liquid PH",
+   "opponent": "Team Falcons PH",
+   "won": false,
+   "positions": {
+    "fighter": "Lukas",
+    "jungler": "Aulus",
+    "mage": "Kimmy",
+    "marksman": "Cici",
+    "roam": "Gatotkaca"
+   },
+   "confidence": 0.78
+  },
+  {
+   "date": "2026-10-11",
+   "league": "ph",
+   "match": "MPL/Philippines/Season_18/Regular_Season#56",
+   "game": 2,
+   "team": "Team Falcons PH",
+   "opponent": "Team Liquid PH",
+   "won": false,
+   "positions": {
+    "roam": "Hylos",
+    "jungler": "Paquito",
+    "mage": "Eudora",
+    "fighter": "Esmeralda",
+    "marksman": "Kalea"
+   },
+   "confidence": 0.62
+  },
+  {
+   "date": "2026-10-11",
+   "league": "ph",
+   "match": "MPL/Philippines/Season_18/Regular_Season#56",
+   "game": 2,
+   "team": "Team Liquid PH",
+   "opponent": "Team Falcons PH",
+   "won": true,
+   "positions": {
+    "fighter": "Alice",
+    "jungler": "Aulus",
+    "mage": "Pharsa",
+    "marksman": "Freya",
+    "roam": "Minotaur"
+   },
+   "confidence": 0.87
+  },
+  {
+   "date": "2026-10-11",
+   "league": "ph",
+   "match": "MPL/Philippines/Season_18/Regular_Season#56",
+   "game": 3,
+   "team": "Team Falcons PH",
+   "opponent": "Team Liquid PH",
+   "won": false,
+   "positions": {
+    "fighter": "Carmilla",
+    "jungler": "Alice",
+    "mage": "Eudora",
+    "marksman": "Freya",
+    "roam": "Gatotkaca"
+   },
+   "confidence": 0.58
+  },
+  {
+   "date": "2026-10-11",
+   "league": "ph",
+   "match": "MPL/Philippines/Season_18/Regular_Season#56",
+   "game": 3,
+   "team": "Team Liquid PH",
+   "opponent": "Team Falcons PH",
+   "won": true,
+   "positions": {
+    "fighter": "Lapu-Lapu",
+    "marksman": "Aulus",
+    "mage": "Pharsa",
+    "jungler": "Paquito",
+    "roam": "Minotaur"
+   },
+   "confidence": 0.72
   },
   {
    "date": "2026-08-14",
@@ -10016,13 +10254,13 @@
    "opponent": "Bigetron MY by VIT",
    "won": false,
    "positions": {
-    "roam": "Carmilla",
+    "fighter": "Carmilla",
     "jungler": "Harley",
     "mage": "Valentina",
     "marksman": "Clint",
-    "fighter": "Belerick"
+    "roam": "Belerick"
    },
-   "confidence": 0.51
+   "confidence": 0.55
   },
   {
    "date": "2026-08-14",
@@ -10056,7 +10294,7 @@
     "marksman": "Paquito",
     "roam": "Belerick"
    },
-   "confidence": 0.79
+   "confidence": 0.83
   },
   {
    "date": "2026-08-14",
@@ -10073,7 +10311,7 @@
     "marksman": "Karrie",
     "roam": "Atlas"
    },
-   "confidence": 0.93
+   "confidence": 0.95
   },
   {
    "date": "2026-08-14",
@@ -10124,7 +10362,7 @@
     "marksman": "Freya",
     "roam": "Belerick"
    },
-   "confidence": 0.95
+   "confidence": 0.94
   },
   {
    "date": "2026-08-14",
@@ -10209,7 +10447,7 @@
     "marksman": "Obsidia",
     "roam": "Belerick"
    },
-   "confidence": 0.98
+   "confidence": 0.99
   },
   {
    "date": "2026-08-15",
@@ -10254,13 +10492,13 @@
    "opponent": "Bigetron MY by VIT",
    "won": false,
    "positions": {
-    "roam": "Carmilla",
+    "fighter": "Carmilla",
     "jungler": "Yi Sun-shin",
     "mage": "Rafaela",
     "marksman": "Melissa",
-    "fighter": "Belerick"
+    "roam": "Belerick"
    },
-   "confidence": 0.51
+   "confidence": 0.55
   },
   {
    "date": "2026-08-15",
@@ -10464,7 +10702,7 @@
     "marksman": "Melissa",
     "roam": "Belerick"
    },
-   "confidence": 0.82
+   "confidence": 0.84
   },
   {
    "date": "2026-08-16",
@@ -10634,7 +10872,7 @@
     "marksman": "Moskov",
     "roam": "Belerick"
    },
-   "confidence": 0.79
+   "confidence": 0.68
   },
   {
    "date": "2026-08-21",
@@ -10696,13 +10934,13 @@
    "opponent": "Selangor Red Giants",
    "won": true,
    "positions": {
-    "roam": "Carmilla",
+    "fighter": "Carmilla",
     "jungler": "Paquito",
     "mage": "Pharsa",
     "marksman": "Brody",
-    "fighter": "Belerick"
+    "roam": "Belerick"
    },
-   "confidence": 0.51
+   "confidence": 0.55
   },
   {
    "date": "2026-08-21",
@@ -10787,7 +11025,7 @@
     "marksman": "Moskov",
     "roam": "Carmilla"
    },
-   "confidence": 0.91
+   "confidence": 0.89
   },
   {
    "date": "2026-08-22",
@@ -10821,7 +11059,7 @@
     "marksman": "Brody",
     "roam": "Belerick"
    },
-   "confidence": 0.96
+   "confidence": 0.97
   },
   {
    "date": "2026-08-22",
@@ -10940,7 +11178,7 @@
     "marksman": "Claude",
     "roam": "Marcel"
    },
-   "confidence": 0.87
+   "confidence": 0.86
   },
   {
    "date": "2026-08-22",
@@ -11059,7 +11297,7 @@
     "marksman": "Paquito",
     "roam": "Gatotkaca"
    },
-   "confidence": 0.79
+   "confidence": 0.83
   },
   {
    "date": "2026-08-23",
@@ -11195,7 +11433,7 @@
     "marksman": "Melissa",
     "roam": "Atlas"
    },
-   "confidence": 0.99
+   "confidence": 1
   },
   {
    "date": "2026-08-28",
@@ -11280,7 +11518,7 @@
     "marksman": "Brody",
     "roam": "Gatotkaca"
    },
-   "confidence": 0.73
+   "confidence": 0.62
   },
   {
    "date": "2026-08-28",
@@ -11314,7 +11552,7 @@
     "marksman": "Brody",
     "roam": "Belerick"
    },
-   "confidence": 0.95
+   "confidence": 0.96
   },
   {
    "date": "2026-08-28",
@@ -11331,7 +11569,7 @@
     "marksman": "Ixia",
     "roam": "Rafaela"
    },
-   "confidence": 0.99
+   "confidence": 1
   },
   {
    "date": "2026-08-28",
@@ -11508,6 +11746,23 @@
    "league": "my",
    "match": "MPL/Malaysia/Season_18/Regular_Season#18",
    "game": 3,
+   "team": "Bigetron MY by VIT",
+   "opponent": "Team Vamos",
+   "won": false,
+   "positions": {
+    "fighter": "Barats",
+    "jungler": "Leomord",
+    "mage": "Rafaela",
+    "marksman": "Brody",
+    "roam": "Gloo"
+   },
+   "confidence": 1
+  },
+  {
+   "date": "2026-08-29",
+   "league": "my",
+   "match": "MPL/Malaysia/Season_18/Regular_Season#18",
+   "game": 3,
    "team": "Team Vamos",
    "opponent": "Bigetron MY by VIT",
    "won": true,
@@ -11518,7 +11773,7 @@
     "marksman": "Ixia",
     "roam": "Marcel"
    },
-   "confidence": 0.83
+   "confidence": 0.86
   },
   {
    "date": "2026-08-29",
@@ -11586,7 +11841,7 @@
     "marksman": "Hanabi",
     "roam": "Gatotkaca"
    },
-   "confidence": 0.97
+   "confidence": 0.94
   },
   {
    "date": "2026-08-30",
@@ -11688,7 +11943,7 @@
     "marksman": "Harith",
     "roam": "Belerick"
    },
-   "confidence": 0.95
+   "confidence": 0.96
   },
   {
    "date": "2026-08-30",
@@ -11767,13 +12022,13 @@
    "opponent": "Team Flash",
    "won": false,
    "positions": {
-    "fighter": "Atlas",
+    "roam": "Atlas",
     "mage": "Zhuxin",
     "marksman": "Melissa",
-    "roam": "Chou",
+    "fighter": "Chou",
     "jungler": "Suyou"
    },
-   "confidence": 0.54
+   "confidence": 0.65
   },
   {
    "date": "2026-09-04",
@@ -11807,7 +12062,7 @@
     "roam": "Belerick",
     "jungler": "Paquito"
    },
-   "confidence": 0.99
+   "confidence": 1
   },
   {
    "date": "2026-09-04",
@@ -11847,6 +12102,23 @@
    "date": "2026-09-04",
    "league": "my",
    "match": "MPL/Malaysia/Season_18/Regular_Season#23",
+   "game": 1,
+   "team": "Selangor Red Giants",
+   "opponent": "RRQ Tora",
+   "won": true,
+   "positions": {
+    "fighter": "Esmeralda",
+    "jungler": "Paquito",
+    "mage": "Rafaela",
+    "marksman": "Moskov",
+    "roam": "Kalea"
+   },
+   "confidence": 1
+  },
+  {
+   "date": "2026-09-04",
+   "league": "my",
+   "match": "MPL/Malaysia/Season_18/Regular_Season#23",
    "game": 2,
    "team": "RRQ Tora",
    "opponent": "Selangor Red Giants",
@@ -11875,7 +12147,7 @@
     "marksman": "Miya",
     "roam": "Gloo"
    },
-   "confidence": 0.86
+   "confidence": 0.89
   },
   {
    "date": "2026-09-04",
@@ -11914,6 +12186,142 @@
   {
    "date": "2026-09-05",
    "league": "my",
+   "match": "MPL/Malaysia/Season_18/Regular_Season#24",
+   "game": 1,
+   "team": "Team Flash",
+   "opponent": "RRQ Tora",
+   "won": true,
+   "positions": {
+    "fighter": "Barats",
+    "jungler": "Leomord",
+    "mage": "Eudora",
+    "marksman": "Brody",
+    "roam": "Marcel"
+   },
+   "confidence": 1
+  },
+  {
+   "date": "2026-09-05",
+   "league": "my",
+   "match": "MPL/Malaysia/Season_18/Regular_Season#24",
+   "game": 1,
+   "team": "RRQ Tora",
+   "opponent": "Team Flash",
+   "won": false,
+   "positions": {
+    "fighter": "Uranus",
+    "jungler": "Paquito",
+    "mage": "Rafaela",
+    "marksman": "Moskov",
+    "roam": "Belerick"
+   },
+   "confidence": 1
+  },
+  {
+   "date": "2026-09-05",
+   "league": "my",
+   "match": "MPL/Malaysia/Season_18/Regular_Season#24",
+   "game": 2,
+   "team": "Team Flash",
+   "opponent": "RRQ Tora",
+   "won": true,
+   "positions": {
+    "fighter": "Uranus",
+    "jungler": "Paquito",
+    "mage": "Rafaela",
+    "marksman": "Claude",
+    "roam": "Atlas"
+   },
+   "confidence": 1
+  },
+  {
+   "date": "2026-09-05",
+   "league": "my",
+   "match": "MPL/Malaysia/Season_18/Regular_Season#24",
+   "game": 2,
+   "team": "RRQ Tora",
+   "opponent": "Team Flash",
+   "won": false,
+   "positions": {
+    "fighter": "Esmeralda",
+    "jungler": "Suyou",
+    "mage": "Lylia",
+    "marksman": "Melissa",
+    "roam": "Belerick"
+   },
+   "confidence": 1
+  },
+  {
+   "date": "2026-09-05",
+   "league": "my",
+   "match": "MPL/Malaysia/Season_18/Regular_Season#25",
+   "game": 1,
+   "team": "Team Rey",
+   "opponent": "IG",
+   "won": true,
+   "positions": {
+    "fighter": "Uranus",
+    "jungler": "Paquito",
+    "mage": "Rafaela",
+    "marksman": "Miya",
+    "roam": "Hylos"
+   },
+   "confidence": 0.99
+  },
+  {
+   "date": "2026-09-05",
+   "league": "my",
+   "match": "MPL/Malaysia/Season_18/Regular_Season#25",
+   "game": 1,
+   "team": "IG",
+   "opponent": "Team Rey",
+   "won": false,
+   "positions": {
+    "fighter": "Barats",
+    "jungler": "Hirara",
+    "mage": "Mathilda",
+    "marksman": "Obsidia",
+    "roam": "Gloo"
+   },
+   "confidence": 1
+  },
+  {
+   "date": "2026-09-05",
+   "league": "my",
+   "match": "MPL/Malaysia/Season_18/Regular_Season#25",
+   "game": 2,
+   "team": "Team Rey",
+   "opponent": "IG",
+   "won": true,
+   "positions": {
+    "fighter": "Barats",
+    "jungler": "Hirara",
+    "mage": "Rafaela",
+    "marksman": "Miya",
+    "roam": "Minotaur"
+   },
+   "confidence": 1
+  },
+  {
+   "date": "2026-09-05",
+   "league": "my",
+   "match": "MPL/Malaysia/Season_18/Regular_Season#25",
+   "game": 2,
+   "team": "IG",
+   "opponent": "Team Rey",
+   "won": false,
+   "positions": {
+    "fighter": "Atlas",
+    "jungler": "Paquito",
+    "mage": "Vexana",
+    "marksman": "Claude",
+    "roam": "Belerick"
+   },
+   "confidence": 0.59
+  },
+  {
+   "date": "2026-09-05",
+   "league": "my",
    "match": "MPL/Malaysia/Season_18/Regular_Season#26",
    "game": 1,
    "team": "Selangor Red Giants",
@@ -11927,6 +12335,40 @@
     "roam": "Badang"
    },
    "confidence": 1
+  },
+  {
+   "date": "2026-09-05",
+   "league": "my",
+   "match": "MPL/Malaysia/Season_18/Regular_Season#26",
+   "game": 1,
+   "team": "Team Vamos",
+   "opponent": "Selangor Red Giants",
+   "won": false,
+   "positions": {
+    "fighter": "Sora",
+    "jungler": "Nolan",
+    "mage": "Valentina",
+    "marksman": "Obsidia",
+    "roam": "Belerick"
+   },
+   "confidence": 1
+  },
+  {
+   "date": "2026-09-05",
+   "league": "my",
+   "match": "MPL/Malaysia/Season_18/Regular_Season#26",
+   "game": 2,
+   "team": "Selangor Red Giants",
+   "opponent": "Team Vamos",
+   "won": true,
+   "positions": {
+    "fighter": "Esmeralda",
+    "jungler": "Nolan",
+    "roam": "Ruby",
+    "marksman": "Melissa",
+    "mage": "Rafaela"
+   },
+   "confidence": 0.97
   },
   {
    "date": "2026-09-05",
@@ -11949,6 +12391,40 @@
    "date": "2026-09-06",
    "league": "my",
    "match": "MPL/Malaysia/Season_18/Regular_Season#27",
+   "game": 1,
+   "team": "IG",
+   "opponent": "Bigetron MY by VIT",
+   "won": true,
+   "positions": {
+    "jungler": "Chou",
+    "fighter": "Alice",
+    "mage": "Zhuxin",
+    "marksman": "Obsidia",
+    "roam": "Mathilda"
+   },
+   "confidence": 0.55
+  },
+  {
+   "date": "2026-09-06",
+   "league": "my",
+   "match": "MPL/Malaysia/Season_18/Regular_Season#27",
+   "game": 1,
+   "team": "Bigetron MY by VIT",
+   "opponent": "IG",
+   "won": false,
+   "positions": {
+    "fighter": "Uranus",
+    "jungler": "Hayabusa",
+    "mage": "Selena",
+    "marksman": "Miya",
+    "roam": "Marcel"
+   },
+   "confidence": 1
+  },
+  {
+   "date": "2026-09-06",
+   "league": "my",
+   "match": "MPL/Malaysia/Season_18/Regular_Season#27",
    "game": 2,
    "team": "IG",
    "opponent": "Bigetron MY by VIT",
@@ -11960,7 +12436,75 @@
     "marksman": "Miya",
     "roam": "Gatotkaca"
    },
+   "confidence": 0.52
+  },
+  {
+   "date": "2026-09-06",
+   "league": "my",
+   "match": "MPL/Malaysia/Season_18/Regular_Season#27",
+   "game": 2,
+   "team": "Bigetron MY by VIT",
+   "opponent": "IG",
+   "won": true,
+   "positions": {
+    "fighter": "Ruby",
+    "jungler": "Suyou",
+    "mage": "Eudora",
+    "marksman": "Melissa",
+    "roam": "Atlas"
+   },
+   "confidence": 0.88
+  },
+  {
+   "date": "2026-09-06",
+   "league": "my",
+   "match": "MPL/Malaysia/Season_18/Regular_Season#27",
+   "game": 3,
+   "team": "IG",
+   "opponent": "Bigetron MY by VIT",
+   "won": true,
+   "positions": {
+    "jungler": "Chou",
+    "fighter": "Alice",
+    "mage": "Selena",
+    "marksman": "Brody",
+    "roam": "Mathilda"
+   },
    "confidence": 0.55
+  },
+  {
+   "date": "2026-09-06",
+   "league": "my",
+   "match": "MPL/Malaysia/Season_18/Regular_Season#27",
+   "game": 3,
+   "team": "Bigetron MY by VIT",
+   "opponent": "IG",
+   "won": false,
+   "positions": {
+    "fighter": "Esmeralda",
+    "jungler": "Suyou",
+    "mage": "Valentina",
+    "marksman": "Miya",
+    "roam": "Minotaur"
+   },
+   "confidence": 1
+  },
+  {
+   "date": "2026-09-06",
+   "league": "my",
+   "match": "MPL/Malaysia/Season_18/Regular_Season#28",
+   "game": 1,
+   "team": "Team Vamos",
+   "opponent": "AC Esports",
+   "won": true,
+   "positions": {
+    "fighter": "Esmeralda",
+    "jungler": "Paquito",
+    "mage": "Vexana",
+    "marksman": "Obsidia",
+    "roam": "Belerick"
+   },
+   "confidence": 1
   },
   {
    "date": "2026-09-06",
@@ -11977,7 +12521,41 @@
     "marksman": "Brody",
     "roam": "Gatotkaca"
    },
-   "confidence": 0.97
+   "confidence": 0.94
+  },
+  {
+   "date": "2026-09-06",
+   "league": "my",
+   "match": "MPL/Malaysia/Season_18/Regular_Season#28",
+   "game": 2,
+   "team": "Team Vamos",
+   "opponent": "AC Esports",
+   "won": true,
+   "positions": {
+    "marksman": "Benedetta",
+    "jungler": "Nolan",
+    "mage": "Selena",
+    "fighter": "Esmeralda",
+    "roam": "Belerick"
+   },
+   "confidence": 1
+  },
+  {
+   "date": "2026-09-06",
+   "league": "my",
+   "match": "MPL/Malaysia/Season_18/Regular_Season#28",
+   "game": 2,
+   "team": "AC Esports",
+   "opponent": "Team Vamos",
+   "won": false,
+   "positions": {
+    "fighter": "Gatotkaca",
+    "jungler": "Hirara",
+    "mage": "Angela",
+    "marksman": "Paquito",
+    "roam": "Gloo"
+   },
+   "confidence": 0.74
   },
   {
    "date": "2026-09-11",
@@ -11994,7 +12572,7 @@
     "marksman": "Miya",
     "roam": "Marcel"
    },
-   "confidence": 0.59
+   "confidence": 0.62
   },
   {
    "date": "2026-09-11",
@@ -12009,6 +12587,40 @@
     "jungler": "Fanny",
     "mage": "Selena",
     "marksman": "Harith",
+    "roam": "Gatotkaca"
+   },
+   "confidence": 1
+  },
+  {
+   "date": "2026-09-11",
+   "league": "my",
+   "match": "MPL/Malaysia/Season_18/Regular_Season#29",
+   "game": 2,
+   "team": "IG",
+   "opponent": "Team Rey",
+   "won": true,
+   "positions": {
+    "fighter": "Chou",
+    "roam": "Baxia",
+    "mage": "Selena",
+    "marksman": "Melissa",
+    "jungler": "Guinevere"
+   },
+   "confidence": 0.47
+  },
+  {
+   "date": "2026-09-11",
+   "league": "my",
+   "match": "MPL/Malaysia/Season_18/Regular_Season#29",
+   "game": 2,
+   "team": "Team Rey",
+   "opponent": "IG",
+   "won": false,
+   "positions": {
+    "fighter": "Barats",
+    "jungler": "Paquito",
+    "mage": "Rafaela",
+    "marksman": "Claude",
     "roam": "Gatotkaca"
    },
    "confidence": 1
@@ -12034,6 +12646,40 @@
    "date": "2026-09-11",
    "league": "my",
    "match": "MPL/Malaysia/Season_18/Regular_Season#30",
+   "game": 1,
+   "team": "Bigetron MY by VIT",
+   "opponent": "Selangor Red Giants",
+   "won": false,
+   "positions": {
+    "fighter": "Sora",
+    "jungler": "Paquito",
+    "mage": "Valentina",
+    "marksman": "Obsidia",
+    "roam": "Belerick"
+   },
+   "confidence": 0.99
+  },
+  {
+   "date": "2026-09-11",
+   "league": "my",
+   "match": "MPL/Malaysia/Season_18/Regular_Season#30",
+   "game": 2,
+   "team": "Selangor Red Giants",
+   "opponent": "Bigetron MY by VIT",
+   "won": true,
+   "positions": {
+    "roam": "Minotaur",
+    "jungler": "Nolan",
+    "mage": "Selena",
+    "marksman": "Melissa",
+    "fighter": "Carmilla"
+   },
+   "confidence": 0.64
+  },
+  {
+   "date": "2026-09-11",
+   "league": "my",
+   "match": "MPL/Malaysia/Season_18/Regular_Season#30",
    "game": 2,
    "team": "Bigetron MY by VIT",
    "opponent": "Selangor Red Giants",
@@ -12045,7 +12691,24 @@
     "marksman": "Claude",
     "roam": "Belerick"
    },
-   "confidence": 0.99
+   "confidence": 1
+  },
+  {
+   "date": "2026-09-12",
+   "league": "my",
+   "match": "MPL/Malaysia/Season_18/Regular_Season#31",
+   "game": 1,
+   "team": "Team Flash",
+   "opponent": "AC Esports",
+   "won": true,
+   "positions": {
+    "fighter": "Ruby",
+    "jungler": "Hirara",
+    "mage": "Rafaela",
+    "marksman": "Miya",
+    "roam": "Belerick"
+   },
+   "confidence": 0.91
   },
   {
    "date": "2026-09-12",
@@ -12067,6 +12730,74 @@
   {
    "date": "2026-09-12",
    "league": "my",
+   "match": "MPL/Malaysia/Season_18/Regular_Season#31",
+   "game": 2,
+   "team": "Team Flash",
+   "opponent": "AC Esports",
+   "won": true,
+   "positions": {
+    "fighter": "Barats",
+    "jungler": "Nolan",
+    "mage": "Rafaela",
+    "marksman": "Hanabi",
+    "roam": "Gloo"
+   },
+   "confidence": 1
+  },
+  {
+   "date": "2026-09-12",
+   "league": "my",
+   "match": "MPL/Malaysia/Season_18/Regular_Season#31",
+   "game": 2,
+   "team": "AC Esports",
+   "opponent": "Team Flash",
+   "won": false,
+   "positions": {
+    "fighter": "Hylos",
+    "jungler": "Paquito",
+    "mage": "Eudora",
+    "marksman": "Claude",
+    "roam": "Atlas"
+   },
+   "confidence": 0.55
+  },
+  {
+   "date": "2026-09-12",
+   "league": "my",
+   "match": "MPL/Malaysia/Season_18/Regular_Season#32",
+   "game": 1,
+   "team": "Team Vamos",
+   "opponent": "Team Rey",
+   "won": false,
+   "positions": {
+    "fighter": "Phoveus",
+    "jungler": "Fanny",
+    "mage": "Novaria",
+    "marksman": "Obsidia",
+    "roam": "Atlas"
+   },
+   "confidence": 1
+  },
+  {
+   "date": "2026-09-12",
+   "league": "my",
+   "match": "MPL/Malaysia/Season_18/Regular_Season#32",
+   "game": 1,
+   "team": "Team Rey",
+   "opponent": "Team Vamos",
+   "won": true,
+   "positions": {
+    "fighter": "Hylos",
+    "jungler": "Hirara",
+    "mage": "Eudora",
+    "marksman": "Paquito",
+    "roam": "Mathilda"
+   },
+   "confidence": 0.99
+  },
+  {
+   "date": "2026-09-12",
+   "league": "my",
    "match": "MPL/Malaysia/Season_18/Regular_Season#32",
    "game": 2,
    "team": "Team Vamos",
@@ -12079,7 +12810,41 @@
     "marksman": "Obsidia",
     "roam": "Badang"
    },
-   "confidence": 0.71
+   "confidence": 0.75
+  },
+  {
+   "date": "2026-09-12",
+   "league": "my",
+   "match": "MPL/Malaysia/Season_18/Regular_Season#32",
+   "game": 2,
+   "team": "Team Rey",
+   "opponent": "Team Vamos",
+   "won": true,
+   "positions": {
+    "fighter": "Barats",
+    "jungler": "Paquito",
+    "mage": "Rafaela",
+    "marksman": "Moskov",
+    "roam": "Kalea"
+   },
+   "confidence": 1
+  },
+  {
+   "date": "2026-09-12",
+   "league": "my",
+   "match": "MPL/Malaysia/Season_18/Regular_Season#33",
+   "game": 1,
+   "team": "Selangor Red Giants",
+   "opponent": "RRQ Tora",
+   "won": true,
+   "positions": {
+    "fighter": "Esmeralda",
+    "jungler": "Hirara",
+    "mage": "Novaria",
+    "marksman": "Claude",
+    "roam": "Badang"
+   },
+   "confidence": 1
   },
   {
    "date": "2026-09-12",
@@ -12096,7 +12861,24 @@
     "marksman": "Melissa",
     "roam": "Gloo"
    },
-   "confidence": 0.89
+   "confidence": 0.87
+  },
+  {
+   "date": "2026-09-12",
+   "league": "my",
+   "match": "MPL/Malaysia/Season_18/Regular_Season#33",
+   "game": 2,
+   "team": "Selangor Red Giants",
+   "opponent": "RRQ Tora",
+   "won": false,
+   "positions": {
+    "fighter": "Esmeralda",
+    "jungler": "Hirara",
+    "mage": "Novaria",
+    "marksman": "Moskov",
+    "roam": "Badang"
+   },
+   "confidence": 1
   },
   {
    "date": "2026-09-12",
@@ -12130,7 +12912,7 @@
     "marksman": "Melissa",
     "roam": "Atlas"
    },
-   "confidence": 0.86
+   "confidence": 0.88
   },
   {
    "date": "2026-09-12",
@@ -12150,6 +12932,176 @@
    "confidence": 1
   },
   {
+   "date": "2026-09-13",
+   "league": "my",
+   "match": "MPL/Malaysia/Season_18/Regular_Season#34",
+   "game": 1,
+   "team": "Bigetron MY by VIT",
+   "opponent": "AC Esports",
+   "won": true,
+   "positions": {
+    "fighter": "Uranus",
+    "jungler": "Hirara",
+    "mage": "Valentina",
+    "marksman": "Obsidia",
+    "roam": "Hylos"
+   },
+   "confidence": 1
+  },
+  {
+   "date": "2026-09-13",
+   "league": "my",
+   "match": "MPL/Malaysia/Season_18/Regular_Season#34",
+   "game": 1,
+   "team": "AC Esports",
+   "opponent": "Bigetron MY by VIT",
+   "won": false,
+   "positions": {
+    "fighter": "Esmeralda",
+    "jungler": "Fanny",
+    "mage": "Zhuxin",
+    "marksman": "Claude",
+    "roam": "Atlas"
+   },
+   "confidence": 1
+  },
+  {
+   "date": "2026-09-13",
+   "league": "my",
+   "match": "MPL/Malaysia/Season_18/Regular_Season#34",
+   "game": 2,
+   "team": "Bigetron MY by VIT",
+   "opponent": "AC Esports",
+   "won": true,
+   "positions": {
+    "fighter": "Carmilla",
+    "jungler": "Paquito",
+    "mage": "Selena",
+    "marksman": "Moskov",
+    "roam": "Minotaur"
+   },
+   "confidence": 0.64
+  },
+  {
+   "date": "2026-09-13",
+   "league": "my",
+   "match": "MPL/Malaysia/Season_18/Regular_Season#34",
+   "game": 2,
+   "team": "AC Esports",
+   "opponent": "Bigetron MY by VIT",
+   "won": false,
+   "positions": {
+    "fighter": "Valentina",
+    "jungler": "Hirara",
+    "mage": "Eudora",
+    "marksman": "Obsidia",
+    "roam": "Gloo"
+   },
+   "confidence": 0.95
+  },
+  {
+   "date": "2026-09-13",
+   "league": "my",
+   "match": "MPL/Malaysia/Season_18/Regular_Season#35",
+   "game": 1,
+   "team": "RRQ Tora",
+   "opponent": "Team Flash",
+   "won": true,
+   "positions": {
+    "fighter": "Esmeralda",
+    "jungler": "Paquito",
+    "mage": "Rafaela",
+    "marksman": "Melissa",
+    "roam": "Gatotkaca"
+   },
+   "confidence": 1
+  },
+  {
+   "date": "2026-09-13",
+   "league": "my",
+   "match": "MPL/Malaysia/Season_18/Regular_Season#35",
+   "game": 1,
+   "team": "Team Flash",
+   "opponent": "RRQ Tora",
+   "won": false,
+   "positions": {
+    "fighter": "Barats",
+    "jungler": "Hirara",
+    "mage": "Vexana",
+    "marksman": "Beatrix",
+    "roam": "Kaja"
+   },
+   "confidence": 1
+  },
+  {
+   "date": "2026-09-13",
+   "league": "my",
+   "match": "MPL/Malaysia/Season_18/Regular_Season#35",
+   "game": 2,
+   "team": "RRQ Tora",
+   "opponent": "Team Flash",
+   "won": true,
+   "positions": {
+    "fighter": "Uranus",
+    "jungler": "Harley",
+    "mage": "Eudora",
+    "marksman": "Miya",
+    "roam": "Mathilda"
+   },
+   "confidence": 1
+  },
+  {
+   "date": "2026-09-13",
+   "league": "my",
+   "match": "MPL/Malaysia/Season_18/Regular_Season#35",
+   "game": 2,
+   "team": "Team Flash",
+   "opponent": "RRQ Tora",
+   "won": false,
+   "positions": {
+    "fighter": "Barats",
+    "jungler": "Nolan",
+    "mage": "Valentina",
+    "marksman": "Claude",
+    "roam": "Marcel"
+   },
+   "confidence": 1
+  },
+  {
+   "date": "2026-09-18",
+   "league": "my",
+   "match": "MPL/Malaysia/Season_18/Regular_Season#36",
+   "game": 1,
+   "team": "Team Rey",
+   "opponent": "Team Flash",
+   "won": false,
+   "positions": {
+    "roam": "Carmilla",
+    "jungler": "Paquito",
+    "mage": "Eudora",
+    "marksman": "Moskov",
+    "fighter": "Hylos"
+   },
+   "confidence": 0.58
+  },
+  {
+   "date": "2026-09-18",
+   "league": "my",
+   "match": "MPL/Malaysia/Season_18/Regular_Season#36",
+   "game": 1,
+   "team": "Team Flash",
+   "opponent": "Team Rey",
+   "won": true,
+   "positions": {
+    "fighter": "Minotaur",
+    "jungler": "Aulus",
+    "mage": "Valentina",
+    "marksman": "Claude",
+    "roam": "Gatotkaca"
+   },
+   "confidence": 0.53
+  },
+  {
    "date": "2026-09-18",
    "league": "my",
    "match": "MPL/Malaysia/Season_18/Regular_Season#36",
@@ -12164,7 +13116,24 @@
     "marksman": "Bruno",
     "roam": "Belerick"
    },
-   "confidence": 0.58
+   "confidence": 0.63
+  },
+  {
+   "date": "2026-09-18",
+   "league": "my",
+   "match": "MPL/Malaysia/Season_18/Regular_Season#36",
+   "game": 2,
+   "team": "Team Flash",
+   "opponent": "Team Rey",
+   "won": false,
+   "positions": {
+    "fighter": "Minotaur",
+    "jungler": "Aulus",
+    "mage": "Lylia",
+    "marksman": "Claude",
+    "roam": "Gatotkaca"
+   },
+   "confidence": 0.53
   },
   {
    "date": "2026-09-18",
@@ -12181,7 +13150,41 @@
     "marksman": "Bruno",
     "roam": "Marcel"
    },
-   "confidence": 0.83
+   "confidence": 0.88
+  },
+  {
+   "date": "2026-09-18",
+   "league": "my",
+   "match": "MPL/Malaysia/Season_18/Regular_Season#36",
+   "game": 3,
+   "team": "Team Flash",
+   "opponent": "Team Rey",
+   "won": false,
+   "positions": {
+    "fighter": "Belerick",
+    "marksman": "Aulus",
+    "mage": "Eudora",
+    "jungler": "Paquito",
+    "roam": "Mathilda"
+   },
+   "confidence": 0.71
+  },
+  {
+   "date": "2026-09-18",
+   "league": "my",
+   "match": "MPL/Malaysia/Season_18/Regular_Season#37",
+   "game": 1,
+   "team": "RRQ Tora",
+   "opponent": "Team Vamos",
+   "won": true,
+   "positions": {
+    "fighter": "Barats",
+    "jungler": "Lancelot",
+    "mage": "Lylia",
+    "marksman": "Obsidia",
+    "roam": "Marcel"
+   },
+   "confidence": 1
   },
   {
    "date": "2026-09-18",
@@ -12204,6 +13207,40 @@
    "date": "2026-09-18",
    "league": "my",
    "match": "MPL/Malaysia/Season_18/Regular_Season#37",
+   "game": 2,
+   "team": "RRQ Tora",
+   "opponent": "Team Vamos",
+   "won": false,
+   "positions": {
+    "fighter": "Barats",
+    "jungler": "Paquito",
+    "mage": "Lylia",
+    "marksman": "Claude",
+    "roam": "Marcel"
+   },
+   "confidence": 1
+  },
+  {
+   "date": "2026-09-18",
+   "league": "my",
+   "match": "MPL/Malaysia/Season_18/Regular_Season#37",
+   "game": 2,
+   "team": "Team Vamos",
+   "opponent": "RRQ Tora",
+   "won": true,
+   "positions": {
+    "roam": "Minotaur",
+    "jungler": "Hirara",
+    "mage": "Eudora",
+    "marksman": "Melissa",
+    "fighter": "Belerick"
+   },
+   "confidence": 0.59
+  },
+  {
+   "date": "2026-09-18",
+   "league": "my",
+   "match": "MPL/Malaysia/Season_18/Regular_Season#37",
    "game": 3,
    "team": "RRQ Tora",
    "opponent": "Team Vamos",
@@ -12215,7 +13252,109 @@
     "marksman": "Moskov",
     "roam": "Marcel"
    },
-   "confidence": 0.89
+   "confidence": 0.9
+  },
+  {
+   "date": "2026-09-18",
+   "league": "my",
+   "match": "MPL/Malaysia/Season_18/Regular_Season#37",
+   "game": 3,
+   "team": "Team Vamos",
+   "opponent": "RRQ Tora",
+   "won": true,
+   "positions": {
+    "fighter": "Arlott",
+    "jungler": "Nolan",
+    "mage": "Eudora",
+    "marksman": "Obsidia",
+    "roam": "Minotaur"
+   },
+   "confidence": 1
+  },
+  {
+   "date": "2026-09-19",
+   "league": "my",
+   "match": "MPL/Malaysia/Season_18/Regular_Season#38",
+   "game": 1,
+   "team": "Team Vamos",
+   "opponent": "Bigetron MY by VIT",
+   "won": true,
+   "positions": {
+    "fighter": "Yu Zhong",
+    "jungler": "Paquito",
+    "mage": "Lylia",
+    "marksman": "Moskov",
+    "roam": "Belerick"
+   },
+   "confidence": 0.98
+  },
+  {
+   "date": "2026-09-19",
+   "league": "my",
+   "match": "MPL/Malaysia/Season_18/Regular_Season#38",
+   "game": 1,
+   "team": "Bigetron MY by VIT",
+   "opponent": "Team Vamos",
+   "won": false,
+   "positions": {
+    "fighter": "Sora",
+    "jungler": "Hirara",
+    "mage": "Eudora",
+    "marksman": "Obsidia",
+    "roam": "Minotaur"
+   },
+   "confidence": 1
+  },
+  {
+   "date": "2026-09-19",
+   "league": "my",
+   "match": "MPL/Malaysia/Season_18/Regular_Season#38",
+   "game": 2,
+   "team": "Team Vamos",
+   "opponent": "Bigetron MY by VIT",
+   "won": true,
+   "positions": {
+    "fighter": "Paquito",
+    "jungler": "Fanny",
+    "mage": "Valentina",
+    "marksman": "Brody",
+    "roam": "Belerick"
+   },
+   "confidence": 0.94
+  },
+  {
+   "date": "2026-09-19",
+   "league": "my",
+   "match": "MPL/Malaysia/Season_18/Regular_Season#38",
+   "game": 2,
+   "team": "Bigetron MY by VIT",
+   "opponent": "Team Vamos",
+   "won": false,
+   "positions": {
+    "roam": "Carmilla",
+    "jungler": "Hirara",
+    "mage": "Eudora",
+    "marksman": "Melissa",
+    "fighter": "Hylos"
+   },
+   "confidence": 0.59
+  },
+  {
+   "date": "2026-09-19",
+   "league": "my",
+   "match": "MPL/Malaysia/Season_18/Regular_Season#39",
+   "game": 1,
+   "team": "RRQ Tora",
+   "opponent": "IG",
+   "won": true,
+   "positions": {
+    "fighter": "Esmeralda",
+    "jungler": "X.Borg",
+    "mage": "Eudora",
+    "marksman": "Obsidia",
+    "roam": "Minotaur"
+   },
+   "confidence": 0.99
   },
   {
    "date": "2026-09-19",
@@ -12232,7 +13371,7 @@
     "marksman": "Miya",
     "roam": "Hylos"
    },
-   "confidence": 0.77
+   "confidence": 0.65
   },
   {
    "date": "2026-09-19",
@@ -12255,6 +13394,23 @@
    "date": "2026-09-19",
    "league": "my",
    "match": "MPL/Malaysia/Season_18/Regular_Season#39",
+   "game": 2,
+   "team": "IG",
+   "opponent": "RRQ Tora",
+   "won": true,
+   "positions": {
+    "fighter": "Chou",
+    "jungler": "Guinevere",
+    "mage": "Valentina",
+    "marksman": "Clint",
+    "roam": "Minotaur"
+   },
+   "confidence": 0.73
+  },
+  {
+   "date": "2026-09-19",
+   "league": "my",
+   "match": "MPL/Malaysia/Season_18/Regular_Season#39",
    "game": 3,
    "team": "RRQ Tora",
    "opponent": "IG",
@@ -12265,6 +13421,57 @@
     "mage": "Zhuxin",
     "marksman": "Miya",
     "roam": "Marcel"
+   },
+   "confidence": 1
+  },
+  {
+   "date": "2026-09-19",
+   "league": "my",
+   "match": "MPL/Malaysia/Season_18/Regular_Season#39",
+   "game": 3,
+   "team": "IG",
+   "opponent": "RRQ Tora",
+   "won": true,
+   "positions": {
+    "fighter": "Chou",
+    "jungler": "Guinevere",
+    "mage": "Valentina",
+    "marksman": "Clint",
+    "roam": "Minotaur"
+   },
+   "confidence": 0.73
+  },
+  {
+   "date": "2026-09-19",
+   "league": "my",
+   "match": "MPL/Malaysia/Season_18/Regular_Season#40",
+   "game": 1,
+   "team": "AC Esports",
+   "opponent": "Selangor Red Giants",
+   "won": false,
+   "positions": {
+    "roam": "Gatotkaca",
+    "jungler": "Hirara",
+    "mage": "Valentina",
+    "marksman": "Clint",
+    "fighter": "Minotaur"
+   },
+   "confidence": 0.54
+  },
+  {
+   "date": "2026-09-19",
+   "league": "my",
+   "match": "MPL/Malaysia/Season_18/Regular_Season#40",
+   "game": 1,
+   "team": "Selangor Red Giants",
+   "opponent": "AC Esports",
+   "won": true,
+   "positions": {
+    "fighter": "Esmeralda",
+    "jungler": "Nolan",
+    "mage": "Eudora",
+    "marksman": "Bruno",
+    "roam": "Atlas"
    },
    "confidence": 1
   },
@@ -12286,6 +13493,23 @@
    "confidence": 1
   },
   {
+   "date": "2026-09-19",
+   "league": "my",
+   "match": "MPL/Malaysia/Season_18/Regular_Season#40",
+   "game": 2,
+   "team": "Selangor Red Giants",
+   "opponent": "AC Esports",
+   "won": true,
+   "positions": {
+    "fighter": "Minotaur",
+    "jungler": "Paquito",
+    "mage": "Eudora",
+    "marksman": "Bruno",
+    "roam": "Gatotkaca"
+   },
+   "confidence": 0.53
+  },
+  {
    "date": "2026-09-20",
    "league": "my",
    "match": "MPL/Malaysia/Season_18/Regular_Season#41",
@@ -12300,7 +13524,7 @@
     "marksman": "Bruno",
     "fighter": "Atlas"
    },
-   "confidence": 0.62
+   "confidence": 0.59
   },
   {
    "date": "2026-09-20",
@@ -12317,7 +13541,7 @@
     "marksman": "Obsidia",
     "roam": "Minotaur"
    },
-   "confidence": 0.85
+   "confidence": 0.75
   },
   {
    "date": "2026-09-20",
@@ -12334,7 +13558,7 @@
     "marksman": "Bruno",
     "roam": "Atlas"
    },
-   "confidence": 0.86
+   "confidence": 0.88
   },
   {
    "date": "2026-09-20",
@@ -12351,7 +13575,7 @@
     "marksman": "Obsidia",
     "roam": "Minotaur"
    },
-   "confidence": 0.85
+   "confidence": 0.75
   },
   {
    "date": "2026-09-20",
@@ -12385,7 +13609,7 @@
     "marksman": "Obsidia",
     "roam": "Hylos"
    },
-   "confidence": 0.57
+   "confidence": 0.53
   },
   {
    "date": "2026-09-20",
@@ -12419,7 +13643,7 @@
     "marksman": "Moskov",
     "roam": "Minotaur"
    },
-   "confidence": 0.69
+   "confidence": 0.71
   },
   {
    "date": "2026-09-20",
@@ -12453,7 +13677,24 @@
     "marksman": "Moskov",
     "fighter": "Belerick"
    },
-   "confidence": 0.62
+   "confidence": 0.59
+  },
+  {
+   "date": "2026-09-20",
+   "league": "my",
+   "match": "MPL/Malaysia/Season_18/Regular_Season#42",
+   "game": 3,
+   "team": "Selangor Red Giants",
+   "opponent": "Team Rey",
+   "won": false,
+   "positions": {
+    "fighter": "Minotaur",
+    "jungler": "Nolan",
+    "mage": "Eudora",
+    "marksman": "Obsidia",
+    "roam": "Gatotkaca"
+   },
+   "confidence": 0.54
   },
   {
    "date": "2026-09-20",
@@ -12487,7 +13728,7 @@
     "fighter": "Esmeralda",
     "roam": "Carmilla"
    },
-   "confidence": 0.98
+   "confidence": 0.99
   },
   {
    "date": "2026-10-08",
@@ -12521,7 +13762,7 @@
     "fighter": "Esmeralda",
     "roam": "Khaleed"
    },
-   "confidence": 0.87
+   "confidence": 0.91
   },
   {
    "date": "2026-10-08",
@@ -12538,7 +13779,7 @@
     "marksman": "Brody",
     "roam": "Marcel"
    },
-   "confidence": 0.75
+   "confidence": 0.81
   },
   {
    "date": "2026-10-08",
@@ -12572,7 +13813,7 @@
     "marksman": "Paquito",
     "roam": "Gatotkaca"
    },
-   "confidence": 0.63
+   "confidence": 0.53
   },
   {
    "date": "2026-10-08",
@@ -12606,7 +13847,245 @@
     "fighter": "Esmeralda",
     "roam": "Atlas"
    },
-   "confidence": 0.95
+   "confidence": 0.97
+  },
+  {
+   "date": "2026-10-09",
+   "league": "my",
+   "match": "MPL/Malaysia/Season_18/Regular_Season#45",
+   "game": 1,
+   "team": "Team Vamos",
+   "opponent": "IG",
+   "won": true,
+   "positions": {
+    "fighter": "Arlott",
+    "jungler": "Nolan",
+    "mage": "Valentina",
+    "marksman": "Aulus",
+    "roam": "Minotaur"
+   },
+   "confidence": 0.98
+  },
+  {
+   "date": "2026-10-09",
+   "league": "my",
+   "match": "MPL/Malaysia/Season_18/Regular_Season#45",
+   "game": 1,
+   "team": "IG",
+   "opponent": "Team Vamos",
+   "won": false,
+   "positions": {
+    "marksman": "Phoveus",
+    "jungler": "Hirara",
+    "mage": "Angela",
+    "fighter": "Esmeralda",
+    "roam": "Gatotkaca"
+   },
+   "confidence": 0.99
+  },
+  {
+   "date": "2026-10-09",
+   "league": "my",
+   "match": "MPL/Malaysia/Season_18/Regular_Season#45",
+   "game": 2,
+   "team": "Team Vamos",
+   "opponent": "IG",
+   "won": false,
+   "positions": {
+    "fighter": "Lukas",
+    "jungler": "Aulus",
+    "mage": "Zhuxin",
+    "marksman": "Obsidia",
+    "roam": "Minotaur"
+   },
+   "confidence": 0.93
+  },
+  {
+   "date": "2026-10-09",
+   "league": "my",
+   "match": "MPL/Malaysia/Season_18/Regular_Season#45",
+   "game": 2,
+   "team": "IG",
+   "opponent": "Team Vamos",
+   "won": true,
+   "positions": {
+    "mage": "Freya",
+    "jungler": "Suyou",
+    "fighter": "Esmeralda",
+    "marksman": "Moskov",
+    "roam": "Atlas"
+   },
+   "confidence": 0.83
+  },
+  {
+   "date": "2026-10-09",
+   "league": "my",
+   "match": "MPL/Malaysia/Season_18/Regular_Season#45",
+   "game": 3,
+   "team": "Team Vamos",
+   "opponent": "IG",
+   "won": true,
+   "positions": {
+    "fighter": "Barats",
+    "jungler": "Hirara",
+    "mage": "Valentina",
+    "marksman": "Aulus",
+    "roam": "Gloo"
+   },
+   "confidence": 1
+  },
+  {
+   "date": "2026-10-09",
+   "league": "my",
+   "match": "MPL/Malaysia/Season_18/Regular_Season#45",
+   "game": 3,
+   "team": "IG",
+   "opponent": "Team Vamos",
+   "won": false,
+   "positions": {
+    "fighter": "Esmeralda",
+    "jungler": "Suyou",
+    "mage": "Zhuxin",
+    "marksman": "Paquito",
+    "roam": "Atlas"
+   },
+   "confidence": 0.99
+  },
+  {
+   "date": "2026-10-09",
+   "league": "my",
+   "match": "MPL/Malaysia/Season_18/Regular_Season#46",
+   "game": 1,
+   "team": "AC Esports",
+   "opponent": "RRQ Tora",
+   "won": true,
+   "positions": {
+    "fighter": "Alice",
+    "jungler": "Harley",
+    "mage": "Eudora",
+    "marksman": "Paquito",
+    "roam": "Atlas"
+   },
+   "confidence": 0.99
+  },
+  {
+   "date": "2026-10-09",
+   "league": "my",
+   "match": "MPL/Malaysia/Season_18/Regular_Season#46",
+   "game": 1,
+   "team": "RRQ Tora",
+   "opponent": "AC Esports",
+   "won": false,
+   "positions": {
+    "fighter": "Sora",
+    "jungler": "Suyou",
+    "mage": "Valentina",
+    "marksman": "Cici",
+    "roam": "Carmilla"
+   },
+   "confidence": 0.97
+  },
+  {
+   "date": "2026-10-09",
+   "league": "my",
+   "match": "MPL/Malaysia/Season_18/Regular_Season#46",
+   "game": 2,
+   "team": "AC Esports",
+   "opponent": "RRQ Tora",
+   "won": false,
+   "positions": {
+    "marksman": "Cici",
+    "jungler": "Fanny",
+    "mage": "Valentina",
+    "fighter": "Esmeralda",
+    "roam": "Minotaur"
+   },
+   "confidence": 1
+  },
+  {
+   "date": "2026-10-09",
+   "league": "my",
+   "match": "MPL/Malaysia/Season_18/Regular_Season#46",
+   "game": 2,
+   "team": "RRQ Tora",
+   "opponent": "AC Esports",
+   "won": true,
+   "positions": {
+    "fighter": "Dyrroth",
+    "marksman": "Aulus",
+    "mage": "Rafaela",
+    "jungler": "Paquito",
+    "roam": "Hylos"
+   },
+   "confidence": 0.72
+  },
+  {
+   "date": "2026-10-09",
+   "league": "my",
+   "match": "MPL/Malaysia/Season_18/Regular_Season#46",
+   "game": 3,
+   "team": "AC Esports",
+   "opponent": "RRQ Tora",
+   "won": false,
+   "positions": {
+    "fighter": "Sora",
+    "jungler": "Nolan",
+    "mage": "Valentina",
+    "marksman": "Chou",
+    "roam": "Belerick"
+   },
+   "confidence": 0.84
+  },
+  {
+   "date": "2026-10-09",
+   "league": "my",
+   "match": "MPL/Malaysia/Season_18/Regular_Season#46",
+   "game": 3,
+   "team": "RRQ Tora",
+   "opponent": "AC Esports",
+   "won": true,
+   "positions": {
+    "fighter": "Uranus",
+    "jungler": "Hirara",
+    "mage": "Selena",
+    "marksman": "Paquito",
+    "roam": "Minotaur"
+   },
+   "confidence": 1
+  },
+  {
+   "date": "2026-10-11",
+   "league": "my",
+   "match": "MPL/Malaysia/Season_18/Regular_Season#47",
+   "game": 1,
+   "team": "Team Flash",
+   "opponent": "Team Vamos",
+   "won": false,
+   "positions": {
+    "fighter": "Phoveus",
+    "jungler": "Nolan",
+    "mage": "Zhuxin",
+    "marksman": "Cici",
+    "roam": "Marcel"
+   },
+   "confidence": 0.97
+  },
+  {
+   "date": "2026-10-11",
+   "league": "my",
+   "match": "MPL/Malaysia/Season_18/Regular_Season#47",
+   "game": 1,
+   "team": "Team Vamos",
+   "opponent": "Team Flash",
+   "won": true,
+   "positions": {
+    "fighter": "Arlott",
+    "jungler": "Hirara",
+    "mage": "Zetian",
+    "marksman": "Aulus",
+    "roam": "Atlas"
+   },
+   "confidence": 0.98
   },
   {
    "date": "2026-10-11",
@@ -12624,6 +14103,108 @@
     "roam": "Gatotkaca"
    },
    "confidence": 1
+  },
+  {
+   "date": "2026-10-11",
+   "league": "my",
+   "match": "MPL/Malaysia/Season_18/Regular_Season#47",
+   "game": 2,
+   "team": "Team Vamos",
+   "opponent": "Team Flash",
+   "won": true,
+   "positions": {
+    "marksman": "Aulus",
+    "jungler": "Hirara",
+    "mage": "Valentina",
+    "fighter": "Ruby",
+    "roam": "Atlas"
+   },
+   "confidence": 0.88
+  },
+  {
+   "date": "2026-10-11",
+   "league": "my",
+   "match": "MPL/Malaysia/Season_18/Regular_Season#48",
+   "game": 1,
+   "team": "IG",
+   "opponent": "AC Esports",
+   "won": false,
+   "positions": {
+    "fighter": "Esmeralda",
+    "jungler": "Fanny",
+    "mage": "Zhuxin",
+    "marksman": "Cici",
+    "roam": "Hylos"
+   },
+   "confidence": 1
+  },
+  {
+   "date": "2026-10-11",
+   "league": "my",
+   "match": "MPL/Malaysia/Season_18/Regular_Season#48",
+   "game": 1,
+   "team": "AC Esports",
+   "opponent": "IG",
+   "won": true,
+   "positions": {
+    "marksman": "Freya",
+    "jungler": "Aulus",
+    "mage": "Zetian",
+    "fighter": "X.Borg",
+    "roam": "Kalea"
+   },
+   "confidence": 0.6
+  },
+  {
+   "date": "2026-10-11",
+   "league": "my",
+   "match": "MPL/Malaysia/Season_18/Regular_Season#48",
+   "game": 2,
+   "team": "IG",
+   "opponent": "AC Esports",
+   "won": true,
+   "positions": {
+    "fighter": "Dyrroth",
+    "jungler": "Nolan",
+    "mage": "Valentina",
+    "marksman": "Paquito",
+    "roam": "Belerick"
+   },
+   "confidence": 0.99
+  },
+  {
+   "date": "2026-10-11",
+   "league": "my",
+   "match": "MPL/Malaysia/Season_18/Regular_Season#48",
+   "game": 2,
+   "team": "AC Esports",
+   "opponent": "IG",
+   "won": false,
+   "positions": {
+    "fighter": "Esmeralda",
+    "jungler": "Aulus",
+    "mage": "Selena",
+    "marksman": "Cici",
+    "roam": "Gatotkaca"
+   },
+   "confidence": 0.91
+  },
+  {
+   "date": "2026-10-11",
+   "league": "my",
+   "match": "MPL/Malaysia/Season_18/Regular_Season#48",
+   "game": 3,
+   "team": "IG",
+   "opponent": "AC Esports",
+   "won": false,
+   "positions": {
+    "fighter": "Freya",
+    "jungler": "Nolan",
+    "mage": "Selena",
+    "marksman": "Paquito",
+    "roam": "Carmilla"
+   },
+   "confidence": 0.69
   },
   {
    "date": "2026-10-11",
@@ -12663,6 +14244,23 @@
    "date": "2026-10-11",
    "league": "my",
    "match": "MPL/Malaysia/Season_18/Regular_Season#49",
+   "game": 1,
+   "team": "RRQ Tora",
+   "opponent": "Team Rey",
+   "won": false,
+   "positions": {
+    "fighter": "Hylos",
+    "jungler": "Aulus",
+    "mage": "Valentina",
+    "marksman": "Freya",
+    "roam": "Rafaela"
+   },
+   "confidence": 0.86
+  },
+  {
+   "date": "2026-10-11",
+   "league": "my",
+   "match": "MPL/Malaysia/Season_18/Regular_Season#49",
    "game": 2,
    "team": "Team Rey",
    "opponent": "RRQ Tora",
@@ -12673,6 +14271,23 @@
     "mage": "Kimmy",
     "marksman": "Cici",
     "roam": "Gloo"
+   },
+   "confidence": 0.89
+  },
+  {
+   "date": "2026-10-11",
+   "league": "my",
+   "match": "MPL/Malaysia/Season_18/Regular_Season#49",
+   "game": 2,
+   "team": "RRQ Tora",
+   "opponent": "Team Rey",
+   "won": false,
+   "positions": {
+    "fighter": "Alice",
+    "jungler": "Aulus",
+    "mage": "Zetian",
+    "marksman": "Freya",
+    "roam": "Minotaur"
    },
    "confidence": 0.87
   },
@@ -12725,7 +14340,7 @@
     "marksman": "Obsidia",
     "roam": "Kalea"
    },
-   "confidence": 0.92
+   "confidence": 0.94
   },
   {
    "date": "2026-10-16",
@@ -12742,7 +14357,7 @@
     "marksman": "Moskov",
     "roam": "Belerick"
    },
-   "confidence": 0.99
+   "confidence": 1
   },
   {
    "date": "2026-10-16",
@@ -12793,7 +14408,7 @@
     "marksman": "Aulus",
     "roam": "Carmilla"
    },
-   "confidence": 0.76
+   "confidence": 0.74
   },
   {
    "date": "2026-10-16",
@@ -12827,7 +14442,7 @@
     "fighter": "X.Borg",
     "roam": "Carmilla"
    },
-   "confidence": 0.95
+   "confidence": 0.96
   },
   {
    "date": "2026-10-17",
@@ -12844,7 +14459,7 @@
     "marksman": "Cici",
     "roam": "Kalea"
    },
-   "confidence": 0.56
+   "confidence": 0.54
   },
   {
    "date": "2026-10-17",
@@ -12912,7 +14527,7 @@
     "marksman": "Freya",
     "roam": "Mathilda"
    },
-   "confidence": 0.91
+   "confidence": 0.94
   },
   {
    "date": "2026-10-17",
@@ -12929,7 +14544,7 @@
     "marksman": "Paquito",
     "roam": "Kalea"
    },
-   "confidence": 0.65
+   "confidence": 0.64
   },
   {
    "date": "2026-10-17",
@@ -12963,7 +14578,7 @@
     "marksman": "Moskov",
     "roam": "Hilda"
    },
-   "confidence": 0.98
+   "confidence": 0.99
   },
   {
    "date": "2026-10-17",

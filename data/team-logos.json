@@ -1,1 +1,117 @@
-{}
+{
+ "id-rrqhoshi": {
+  "page": "RRQ Hoshi",
+  "file": "Rex Regum Qeon full darkmode.png",
+  "path": "/teams/id-rrqhoshi.png"
+ },
+ "id-dewaunitedesports": {
+  "page": "Dewa United Esports",
+  "file": "Dewa United with esports lightmode.png",
+  "path": "/teams/id-dewaunitedesports.png"
+ },
+ "id-geekfamid": {
+  "page": "Geek Fam ID",
+  "file": "Geek Fam 2019 allmode.png",
+  "path": "/teams/id-geekfamid.png"
+ },
+ "id-bigetronbyvitality": {
+  "page": "Bigetron by Vitality",
+  "file": "Bigetron by Vitality full darkmode.png",
+  "path": "/teams/id-bigetronbyvitality.png"
+ },
+ "id-evos": {
+  "page": "EVOS",
+  "file": "EVOS Esports allmode.png",
+  "path": "/teams/id-evos.png"
+ },
+ "id-natusvincere": {
+  "page": "Natus Vincere",
+  "file": "Natus Vincere 2021 darkmode.png",
+  "path": "/teams/id-natusvincere.png"
+ },
+ "id-teamliquidid": {
+  "page": "Team Liquid ID",
+  "file": "Team Liquid Aura full darkmode.png",
+  "path": "/teams/id-teamliquidid.png"
+ },
+ "id-alterego": {
+  "page": "Alter Ego",
+  "file": "Alter Ego 2022 allmode.png",
+  "path": "/teams/id-alterego.png"
+ },
+ "ph-teamfalconsph": {
+  "page": "Team Falcons PH",
+  "file": "Team Falcons 2022 full darkmode.png",
+  "path": "/teams/ph-teamfalconsph.png"
+ },
+ "ph-tncproteam": {
+  "page": "TNC Pro Team",
+  "file": "TNC_Pro_Team_2021_allmode.png",
+  "path": "/teams/ph-tncproteam.png"
+ },
+ "ph-onicph": {
+  "page": "ONIC Philippines",
+  "file": "ONIC Philippines 2025 full allmode.png",
+  "path": "/teams/ph-onicph.png"
+ },
+ "ph-apbren": {
+  "page": "AP.Bren",
+  "file": "AP Bren allmode.png",
+  "path": "/teams/ph-apbren.png"
+ },
+ "ph-omegaesports": {
+  "page": "Omega Esports",
+  "file": "Omega Esports (Philippines) 2025 full darkmode.png",
+  "path": "/teams/ph-omegaesports.png"
+ },
+ "ph-teamliquidph": {
+  "page": "Team Liquid PH",
+  "file": "Team Liquid Echo full darkmode.png",
+  "path": "/teams/ph-teamliquidph.png"
+ },
+ "ph-twistedmindsph": {
+  "page": "Twisted Minds PH",
+  "file": "Twisted Minds 2023 full darkmode.png",
+  "path": "/teams/ph-twistedmindsph.png"
+ },
+ "my-bigetronmybyvit": {
+  "page": "Bigetron MY by VIT",
+  "file": "Bigetron by Vitality full darkmode.png",
+  "path": "/teams/my-bigetronmybyvit.png"
+ },
+ "my-teamvamos": {
+  "page": "Team Vamos",
+  "file": "Team_Vamos_full_darkmode.png",
+  "path": "/teams/my-teamvamos.png"
+ },
+ "my-selangorredgiants": {
+  "page": "Selangor Red Giants",
+  "file": "Selangor Red Giants 2024 allmode.png",
+  "path": "/teams/my-selangorredgiants.png"
+ },
+ "my-teamflash": {
+  "page": "Team Flash",
+  "file": "Team Flash full darkmode.png",
+  "path": "/teams/my-teamflash.png"
+ },
+ "my-teamrey": {
+  "page": "Team Rey",
+  "file": "Team_Rey_Full_allmode.png",
+  "path": "/teams/my-teamrey.png"
+ },
+ "id-onic": {
+  "page": "ONIC Prime",
+  "file": "ONIC Esports 2019 allmode.png",
+  "path": "/teams/id-onic.png"
+ },
+ "ph-auroraph": {
+  "page": "Aurora Gaming PH",
+  "file": "Aurora Gaming 2025 full allmode.png",
+  "path": "/teams/ph-auroraph.png"
+ },
+ "my-ig": {
+  "page": "IGNITE Gaming",
+  "file": "IGNITE_Gaming_allmode.png",
+  "path": "/teams/my-ig.png"
+ }
+}
