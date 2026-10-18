@@ -10,7 +10,7 @@ import { getSettings, DEFAULT_SETTINGS, type Settings } from "@/lib/settings";
 import { clientId, passcodeOk, rateLimit } from "@/lib/guard";
 import { applyRules, getRules } from "@/lib/rules";
 import { buildCandidates } from "@/lib/candidates";
-import { getMeta } from "@/lib/meta";
+import { findTeam, getMeta, leagueOf } from "@/lib/meta";
 
 export const maxDuration = 60;
 export const dynamic = "force-dynamic";
@@ -53,6 +53,8 @@ export async function POST(req: Request) {
   const index = buildIndex(ctx.heroes);
   const parsed = parseRequest(body, index);
   if (!parsed.ok) return fail(400, "invalid_draft", parsed.message);
+  // The pro team to draft like (optional). An id from an older season is ignored, not an error.
+  const team = findTeam((body as Record<string, unknown>).team);
 
   const apiKey = getApiKey();
   if (!apiKey) {
@@ -96,7 +98,8 @@ export async function POST(req: Request) {
           draft: {
             bans: parsed.draft.bans.map((h) => h.name),
             enemy: parsed.draft.enemy.map((h) => h.name),
-            team: Object.fromEntries(parsed.draft.team.map((t) => [t.position, t.hero.name]))
+            team: Object.fromEntries(parsed.draft.team.map((t) => [t.position, t.hero.name])),
+            proTeam: team?.id ?? null
           },
           open: parsed.draft.open,
           result: extra.result
@@ -110,8 +113,8 @@ export async function POST(req: Request) {
   const model = getModel();
   const rules = getRules();
   const applied = applyRules(rules, index, parsed.draft);
-  const candidates = buildCandidates(ctx, parsed.draft, applied);
-  const messages = buildMessages(ctx, parsed.draft, parsed.need, candidates, applied, rules.principles);
+  const candidates = buildCandidates(ctx, parsed.draft, applied, team);
+  const messages = buildMessages(ctx, parsed.draft, parsed.need, candidates, applied, rules.principles, team);
 
   try {
     let reply = await track(chatJson({ model, messages, apiKey })).catch(async (e) => {
@@ -152,7 +155,7 @@ export async function POST(req: Request) {
       position: s.position,
       options: s.options.map((o) => {
         const c = (candidates[s.position] ?? []).find((x) => x.hero === o.hero);
-        return { ...o, tags: c?.tags ?? [], evidence: c?.evidence ?? "", score: c?.score ?? null, picks: c?.picks ?? 0, wins: c?.wins ?? 0, focusPicks: c?.focusPicks ?? 0, focusWins: c?.focusWins ?? 0 };
+        return { ...o, tags: c?.tags ?? [], evidence: c?.evidence ?? "", score: c?.score ?? null, picks: c?.picks ?? 0, wins: c?.wins ?? 0, teamPicks: c?.teamPicks ?? 0, teamWins: c?.teamWins ?? 0 };
       })
     }));
 
@@ -178,8 +181,8 @@ export async function POST(req: Request) {
         pro: {
           league: meta.league,
           games: meta.games,
-          focusTeam: meta.focusTeam,
-          focusGames: meta.focusGames,
+          leagues: (meta.leagues ?? []).filter((l) => l.games).map((l) => ({ short: l.short, games: l.games })),
+          team: team ? { id: team.id, name: team.name, league: leagueOf(team, meta)?.short ?? "", logo: team.logo } : null,
           latestGame: meta.latestGame,
           source: meta.source.name,
           license: meta.source.license

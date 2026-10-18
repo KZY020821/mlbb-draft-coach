@@ -1,6 +1,9 @@
 // Turns parsed pro games into the meta stats the app reads (data/meta.json).
 // Pure functions with no Node or browser APIs.
 //
+// Games from every league (MPL ID, PH, MY) are pooled for the hero stats. Each team's own picks
+// are kept separately (meta.teams), so the app can weight the team a player chooses.
+//
 // Liquipedia lists each team's five picks but not who played which position, so positions are
 // inferred: every lineup must fill all five positions once, and a hero's likely positions are
 // learned across all lineups (soft EM), starting from its roles and known lanes.
@@ -37,15 +40,17 @@ const PERMS = (() => {
   return out;
 })();
 
+// One id per team per league, safe in file names and links, e.g. "ph-teamliquidph".
+export const teamId = (league, name) => `${league}-${idOf(name)}`;
+
 function dayDiff(a, b) {
   if (!a || !b) return 0;
   return Math.max(0, (Date.parse(b + "T00:00:00Z") - Date.parse(a + "T00:00:00Z")) / 86400000);
 }
 
 export function buildMeta(games, roster, opts = {}) {
-  const focusTeam = opts.focusTeam ?? "Team Liquid PH";
-  const focusWeight = opts.focusWeight ?? 3;
   const halfLifeDays = opts.halfLifeDays ?? 28;
+  const leagueList = opts.leagues ?? [];
 
   const byId = new Map(roster.map((h) => [idOf(h.name), h]));
   const unknown = new Set();
@@ -67,7 +72,15 @@ export function buildMeta(games, roster, opts = {}) {
         if (name) bansByHero[name] = (bansByHero[name] || 0) + 1;
       }
       if (heroes.some((h) => !h)) continue;
-      lineups.push({ game: g, team: g.teams[t], opponent: g.teams[1 - t], won: g.winner === t, heroes });
+      lineups.push({
+        game: g,
+        league: g.league ?? "",
+        team: g.teams[t],
+        page: g.teamPages?.[t] ?? g.teams[t],
+        opponent: g.teams[1 - t],
+        won: g.winner === t,
+        heroes
+      });
     }
   }
   const latest = games.reduce((d, g) => (g.date > d ? g.date : d), "");
@@ -131,36 +144,38 @@ export function buildMeta(games, roster, opts = {}) {
     return { ...l, positions, confidence: Math.round(w[best] * 100) / 100 };
   });
 
-  // Stats per hero and position.
+  // Stats per hero and position, for the whole pool and for each team.
+  // teams[id].heroes[hero][position] = [picks, wins, recency weight].
   const stats = {};
   const pairs = {};
+  const teams = {};
   for (const l of assigned) {
-    const focus = l.team === focusTeam;
-    const recency = Math.pow(0.5, dayDiff(l.game.date, latest) / halfLifeDays);
-    const weight = recency * (focus ? focusWeight : 1);
+    const weight = Math.pow(0.5, dayDiff(l.game.date, latest) / halfLifeDays);
+    const id = teamId(l.league, l.team);
+    const team = (teams[id] ||= { id, league: l.league, name: l.team, pages: new Set(), games: 0, wins: 0, lastPlayed: "", heroes: {} });
+    team.pages.add(l.page);
+    team.games++;
+    team.wins += l.won ? 1 : 0;
+    if (l.game.date > team.lastPlayed) team.lastPlayed = l.game.date;
     for (const p of POSITIONS) {
       const h = l.positions[p];
-      const s = (((stats[h] ||= {})[p]) ||= { picks: 0, wins: 0, focusPicks: 0, focusWins: 0, weight: 0, lastPlayed: "" });
+      const s = (((stats[h] ||= {})[p]) ||= { picks: 0, wins: 0, weight: 0, lastPlayed: "" });
       s.picks++;
       s.wins += l.won ? 1 : 0;
-      if (focus) {
-        s.focusPicks++;
-        s.focusWins += l.won ? 1 : 0;
-      }
       s.weight += weight;
       if (l.game.date > s.lastPlayed) s.lastPlayed = l.game.date;
+      const t = (((team.heroes[h] ||= {})[p]) ||= [0, 0, 0]);
+      t[0]++;
+      t[1] += l.won ? 1 : 0;
+      t[2] += weight;
     }
     const hs = [...l.heroes].sort();
     for (let i = 0; i < hs.length; i++) {
       for (let j = i + 1; j < hs.length; j++) {
         const key = hs[i] + "|" + hs[j];
-        const pr = (pairs[key] ||= { heroes: [hs[i], hs[j]], games: 0, wins: 0, focusGames: 0, focusWins: 0, weight: 0 });
+        const pr = (pairs[key] ||= { heroes: [hs[i], hs[j]], games: 0, wins: 0, weight: 0 });
         pr.games++;
         pr.wins += l.won ? 1 : 0;
-        if (focus) {
-          pr.focusGames++;
-          pr.focusWins += l.won ? 1 : 0;
-        }
         pr.weight += weight;
       }
     }
@@ -202,7 +217,7 @@ export function buildMeta(games, roster, opts = {}) {
   }
   for (const [h, bans] of Object.entries(bansByHero)) heroes[h] ||= { picks: 0, wins: 0, bans, positions: {} };
 
-  // Ranking per position: recency- and focus-weighted picks, nudged by a smoothed win rate.
+  // Ranking per position: recency-weighted picks, nudged by a smoothed win rate.
   const ranking = {};
   for (const p of POSITIONS) {
     ranking[p] = Object.entries(stats)
@@ -217,33 +232,51 @@ export function buildMeta(games, roster, opts = {}) {
   }
 
   const pairList = Object.values(pairs)
-    .filter((pr) => pr.games >= 2 || pr.focusGames >= 1)
+    .filter((pr) => pr.games >= 2)
     .map((pr) => ({ ...pr, weight: round(pr.weight) }))
     .sort((a, b) => b.weight - a.weight)
     .slice(0, 400);
+
+  const leagueOrder = leagueList.map((x) => x.id);
+  const teamList = Object.values(teams)
+    .map((t) => {
+      for (const byPos of Object.values(t.heroes)) for (const v of Object.values(byPos)) v[2] = round(v[2]);
+      return { ...t, pages: [...t.pages].sort() };
+    })
+    .sort((a, b) => leagueOrder.indexOf(a.league) - leagueOrder.indexOf(b.league) || b.games - a.games || a.name.localeCompare(b.name));
+  const leagues = leagueList.map((x) => {
+    const own = games.filter((g) => g.league === x.id);
+    return {
+      ...x,
+      games: own.length,
+      latestGame: own.reduce((d, g) => (g.date > d ? g.date : d), ""),
+      teams: teamList.filter((t) => t.league === x.id).length
+    };
+  });
 
   const meanConfidence = assigned.length ? round(assigned.reduce((a, l) => a + l.confidence, 0) / assigned.length) : 0;
 
   return {
     meta: {
-      league: opts.league ?? "MPL Philippines Season 18",
+      league: opts.league ?? leagueList.map((x) => x.name).join(", "),
       source: { name: "Liquipedia", license: "CC BY-SA 3.0", pages: opts.pages ?? [], fetchedAt: opts.fetchedAt ?? "" },
-      focusTeam,
-      focusWeight,
       halfLifeDays,
       games: games.length,
-      focusGames: games.filter((g) => g.teams.includes(focusTeam)).length,
       latestGame: latest,
+      leagues,
       positionConfidence: meanConfidence,
       correctedLineups: assigned.filter((l) => l.corrected).length,
       unknownHeroes: [...unknown].sort(),
       heroes,
       ranking,
       pairs: pairList,
-      matchups
+      matchups,
+      // pages (names as written on Liquipedia) are only for finding logos; update-meta replaces them with logo.
+      teams: teamList
     },
     lineups: assigned.map((l) => ({
       date: l.game.date,
+      league: l.league,
       match: l.game.match,
       game: l.game.game,
       team: l.team,

@@ -1,7 +1,7 @@
 import type { Candidate } from "./candidates";
 import type { Context, Hero } from "./context";
 import { OPTIONS_PER_POSITION, teamHeroes, type Draft } from "./draft";
-import { getMeta, hasMeta } from "./meta";
+import { getMeta, hasMeta, leagueOf, type Team } from "./meta";
 import { POSITIONS, POSITION_LABEL, type Position } from "./positions";
 import type { AppliedRule } from "./rules";
 
@@ -43,13 +43,23 @@ export function buildMessages(
   need: number,
   candidates: Partial<Record<Position, Candidate[]>>,
   applied: AppliedRule[] = [],
-  principles: string[] = []
+  principles: string[] = [],
+  team: Team | null = null
 ): Message[] {
   const m = ctx.meta;
   const meta = getMeta();
+  const leagues = meta.leagues?.filter((l) => l.games).map((l) => `${l.name} (${l.games} games)`).join(", ");
   const proLine = hasMeta(meta)
-    ? `${meta.league}: ${meta.games} pro games up to ${meta.latestGame}, including ${meta.focusGames} by ${meta.focusTeam}. Positions in the pro data are inferred from picks.`
+    ? `${leagues || meta.league}: ${meta.games} pro games up to ${meta.latestGame}. Positions in the pro data are inferred from picks.`
     : "No pro league data is loaded yet, so the candidates come from the tier list only.";
+  const teamLeague = team ? leagueOf(team, meta) : undefined;
+  // How much the chosen pro team should steer the picks. Without one, no team gets extra weight.
+  const teamRules = team
+    ? [
+        `- The player chose to draft like ${team.name} (${teamLeague?.short ?? "MPL"}, ${team.games} games, ${team.wins}-${team.games - team.wins}). Part of each score already comes from how often ${team.name} plays the hero in that position, and each candidate's evidence says how ${team.name} did with it. When two candidates are close, prefer the one ${team.name} plays, and say so. Do not pass over a clear counter to the enemy's picks just because ${team.name} has not played it.`,
+        "- Treat any sample of 1 to 3 games as weak evidence."
+      ]
+    : ["- One team's record is not a reason on its own. Treat any single team's picks, and any sample of 1 to 3 games, as weak evidence."];
   const topBans = Object.entries(meta.heroes)
     .sort((a, b) => b[1].bans - a[1].bans)
     .slice(0, 10)
@@ -62,9 +72,9 @@ export function buildMessages(
     "",
     "How to decide:",
     `- For each open position, choose exactly ${OPTIONS_PER_POSITION} heroes from that position's candidate list, ranked best first. Never pick a hero that is not on the list.`,
-    "- Each candidate has a score (0-100) built from the whole league's pro data: how much pros play it in that position, its win rate there, how its team did against the heroes the enemy has picked now, and how it did alongside our current picks. Candidates are listed best score first, after any of our coach's counters. Start from the top of the list and move a lower hero up only for a clear reason in this draft (a counter to a specific enemy hero, or something our team lacks).",
+    `- Each candidate has a score (0-100) built from MPL ID, PH and MY pro data: how much pros play it in that position, its win rate there, how its team did against the heroes the enemy has picked now, and how it did alongside our current picks${team ? `, plus how much ${team.name} plays it there` : ""}. Candidates are listed best score first, after any of our coach's counters. Start from the top of the list and move a lower hero up only for a clear reason in this draft (a counter to a specific enemy hero, or something our team lacks).`,
     "- Counter picks matter as much as popularity: weigh the head-to-head records against the enemy's current picks and what the enemy draft threatens.",
-    "- One team's record is not a reason on its own. Treat any single team's picks, and any sample of 1 to 3 games, as weak evidence.",
+    ...teamRules,
     "- Offer three options that a player could each realistically play, so a player can choose the hero they play best. Avoid three near-identical heroes when a strong alternative style exists on the list.",
     "- The roles listed are correct. Do not call a hero tanky or a frontliner unless its roles include Tank.",
     `- These heroes are recent and their abilities were not verified, so do not describe their abilities in detail: ${m.unverifiedKits.join(", ")}.`,
@@ -74,7 +84,7 @@ export function buildMessages(
     "",
     "CONTEXT",
     proLine,
-    ...(topBans ? [`Most banned in that league: ${topBans}.`] : []),
+    ...(topBans ? [`Most banned in those leagues: ${topBans}.`] : []),
     `Patch ${m.patch} (${m.season}). Patch notes: ${ctx.patchNotes || "none"}`,
     "",
     "OUTPUT",

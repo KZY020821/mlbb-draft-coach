@@ -1,11 +1,14 @@
 {
-  "about": "How each open position's shortlist is scored (0-100). Weights should add up to 1. popularity: how much pros play the hero in that position (recent games count more; the focus team's games count focusWeight times, set in meta-config.json). winRate: the hero's pro win rate there, smoothed so small samples stay near 50%. counter: how the hero's team did in pro games against the heroes the enemy has picked now. synergy: how it did alongside our current picks. focusTieBreak: at most this much extra (0-1 scale) for the focus team's own record, so it only breaks near-ties.",
+  "about": "How each open position's shortlist is scored (0-100). Weights should add up to 1. popularity: how much pros in MPL ID, PH and MY play the hero in that position (recent games count more). winRate: the hero's pro win rate there, smoothed so small samples stay near 50%. counter: how the hero's team did in pro games against the heroes the enemy has picked now. synergy: how it did alongside our current picks. team: used only when the player picks a pro team to draft like. weight is that team's share of the score (the four parts above share the rest), and within it popularity is how often that team plays the hero in that position compared with its most played hero there, and the remainder is that team's smoothed win rate with it.",
   "weights": {
     "popularity": 0.35,
     "winRate": 0.2,
     "counter": 0.3,
     "synergy": 0.15
   },
-  "focusTieBreak": 0,
+  "team": {
+    "weight": 0.3,
+    "popularity": 0.7
+  },
   "minCounterGames": 3
 }

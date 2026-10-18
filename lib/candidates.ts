@@ -1,12 +1,13 @@
 import type { Context, Hero } from "./context";
 import { teamHeroes, type Draft } from "./draft";
-import { getMeta, hasMeta, type Meta } from "./meta";
+import { getMeta, hasMeta, type Team } from "./meta";
 import { fitsPosition, type Position } from "./positions";
 import type { AppliedRule } from "./rules";
 import scoringRaw from "@/data/scoring.json";
 
 // Why a hero made the shortlist. Shown in the results and given to the model as evidence.
-export type Tag = "pro" | "focus" | "rule" | "pair" | "counter" | "tier";
+// "team": the pro team the player chose plays this hero in this position.
+export type Tag = "pro" | "team" | "rule" | "pair" | "counter" | "tier";
 
 export type Candidate = {
   hero: string;
@@ -16,17 +17,17 @@ export type Candidate = {
   score: number; // 0-100, see data/scoring.json
   picks: number; // pro picks in this position
   wins: number;
-  focusPicks: number; // the focus team's picks in this position
-  focusWins: number;
+  teamPicks: number; // the chosen pro team's picks in this position
+  teamWins: number;
   bans: number; // pro bans, any position
-  pairs: { with: string; games: number; wins: number; focusGames: number }[]; // with our current picks
+  pairs: { with: string; games: number; wins: number }[]; // with our current picks
   versus: { enemy: string; games: number; wins: number }[]; // pro games against the enemy's current picks
   evidence: string; // one line, plain words
 };
 
 type Scoring = {
   weights: { popularity: number; winRate: number; counter: number; synergy: number };
-  focusTieBreak: number;
+  team: { weight: number; popularity: number };
   minCounterGames: number;
 };
 export const SCORING = scoringRaw as unknown as Scoring;
@@ -41,7 +42,7 @@ const smoothed = (wins: number, games: number, prior: number) => (wins + prior /
 // Spreads a smoothed win rate onto 0-1: 35% or worse is 0, 65% or better is 1, 50% is 0.5.
 const rate01 = (r: number) => clamp01((r - 0.35) / 0.3);
 
-function evidenceLine(c: Candidate, position: Position, meta: Meta, ruleEnemy?: string): string {
+function evidenceLine(c: Candidate, position: Position, team: Team | null, ruleEnemy?: string): string {
   const where = { roam: "roam", marksman: "gold lane", jungler: "jungle", mage: "mid lane", fighter: "EXP lane" }[position];
   const parts: string[] = [];
   if (c.picks) parts.push(`${c.picks} pro picks in ${where}, ${c.wins} wins (${pct(c.wins, c.picks)})`);
@@ -50,14 +51,21 @@ function evidenceLine(c: Candidate, position: Position, meta: Meta, ruleEnemy?: 
   if (vs.length) parts.push(`against the enemy's current picks: ${vs.map((v) => `vs ${v.enemy} ${v.wins}-${v.games - v.wins}`).join(", ")}`);
   for (const p of c.pairs.slice(0, 2)) parts.push(`with our ${p.with}: ${p.wins}-${p.games - p.wins}`);
   if (c.bans) parts.push(`banned ${c.bans} times`);
-  if (c.focusPicks) parts.push(`${meta.focusTeam}: ${c.focusWins}-${c.focusPicks - c.focusWins}`);
+  if (team) {
+    parts.push(
+      c.teamPicks
+        ? `${team.name} played it here ${c.teamPicks} time${c.teamPicks === 1 ? "" : "s"}, ${c.teamWins}-${c.teamPicks - c.teamWins}`
+        : `${team.name} has not played it here`
+    );
+  }
   if (ruleEnemy) parts.push(`our coach's counter to ${ruleEnemy}`);
   return parts.join("; ");
 }
 
 // Up to 12 heroes per open position, all available and played there, ranked by one score:
-// how much pros play them there, how they do, how they did against the enemy's picks and with ours.
-export function buildCandidates(ctx: Context, draft: Draft, applied: AppliedRule[]): Record<Position, Candidate[]> {
+// how much pros play them there, how they do, how they did against the enemy's picks and with ours,
+// and, when the player chose a pro team to draft like, how much that team plays them there.
+export function buildCandidates(ctx: Context, draft: Draft, applied: AppliedRule[], team: Team | null = null): Record<Position, Candidate[]> {
   const meta = getMeta();
   const byName = new Map(ctx.heroes.map((h) => [h.name, h]));
   const taken = new Set([...draft.bans, ...draft.enemy, ...teamHeroes(draft)].map((h) => h.name));
@@ -82,6 +90,7 @@ export function buildCandidates(ctx: Context, draft: Draft, applied: AppliedRule
     if (hasMeta(meta)) for (const [name, m] of Object.entries(meta.heroes)) if (m.positions[position]?.picks) pool.add(name);
     for (const name of ruleFor.keys()) pool.add(name);
     const maxWeight = Math.max(1e-9, ...Object.values(meta.heroes).map((m) => m.positions[position]?.weight ?? 0));
+    const teamMax = team ? Math.max(1e-9, ...Object.values(team.heroes).map((byPos) => byPos[position]?.[2] ?? 0)) : 1;
 
     const scored: Candidate[] = [];
     const score = (name: string, fallback = false) => {
@@ -93,7 +102,7 @@ export function buildCandidates(ctx: Context, draft: Draft, applied: AppliedRule
 
       const pairs = meta.pairs
         .filter((p) => p.heroes.includes(h.name) && p.heroes.some((x) => ours.includes(x)))
-        .map((p) => ({ with: p.heroes[0] === h.name ? p.heroes[1] : p.heroes[0], games: p.games, wins: p.wins, focusGames: p.focusGames }))
+        .map((p) => ({ with: p.heroes[0] === h.name ? p.heroes[1] : p.heroes[0], games: p.games, wins: p.wins }))
         .sort((a, b) => b.games - a.games);
       const row = meta.matchups?.[h.name] ?? {};
       const versus = enemy
@@ -110,15 +119,22 @@ export function buildCandidates(ctx: Context, draft: Draft, applied: AppliedRule
       const winRate = rate01(smoothed(wins, picks, 6));
       const counter = vsGames >= SCORING.minCounterGames ? rate01(smoothed(vsWins, vsGames, 8)) : 0.5;
       const synergy = pairGames >= 2 ? rate01(smoothed(pairWins, pairGames, 6)) : 0.5;
-      const focus = s?.focusPicks ? SCORING.focusTieBreak * (smoothed(s.focusWins, s.focusPicks, 4) - 0.5) * 2 : 0;
-      const total = (w.popularity * popularity + w.winRate * winRate + w.counter * counter + w.synergy * synergy + focus) * 100;
+      const base = w.popularity * popularity + w.winRate * winRate + w.counter * counter + w.synergy * synergy;
+
+      // The chosen team's part: how often it plays the hero here (against its most played), and how it did.
+      const [teamPicks, teamWins, teamWeight] = team?.heroes[h.name]?.[position] ?? [0, 0, 0];
+      const tw = team ? SCORING.team.weight : 0;
+      const teamPart = teamPicks
+        ? SCORING.team.popularity * clamp01(teamWeight / teamMax) + (1 - SCORING.team.popularity) * rate01(smoothed(teamWins, teamPicks, 4))
+        : 0;
+      const total = ((1 - tw) * base + tw * teamPart) * 100;
 
       const tags: Tag[] = [];
       if (ruleFor.has(h.name)) tags.push("rule");
       if (picks) tags.push("pro");
       if (vsGames >= SCORING.minCounterGames && counter >= 0.6) tags.push("counter");
       if (pairGames >= 2 && synergy >= 0.6) tags.push("pair");
-      if ((s?.focusPicks ?? 0) >= 3) tags.push("focus");
+      if (teamPicks >= 2) tags.push("team");
       if (fallback) tags.push("tier");
 
       scored.push({
@@ -129,8 +145,8 @@ export function buildCandidates(ctx: Context, draft: Draft, applied: AppliedRule
         score: Math.round(total),
         picks,
         wins,
-        focusPicks: s?.focusPicks ?? 0,
-        focusWins: s?.focusWins ?? 0,
+        teamPicks,
+        teamWins,
         bans: meta.heroes[h.name]?.bans ?? 0,
         pairs,
         versus,
@@ -155,7 +171,7 @@ export function buildCandidates(ctx: Context, draft: Draft, applied: AppliedRule
     const rules = scored.filter((c) => c.tags.includes("rule"));
     const rest = scored.filter((c) => !c.tags.includes("rule")).slice(0, Math.max(0, MAX_PER_POSITION - rules.length));
     const list = [...rules, ...rest];
-    for (const c of list) c.evidence = evidenceLine(c, position, meta, ruleFor.get(c.hero));
+    for (const c of list) c.evidence = evidenceLine(c, position, team, ruleFor.get(c.hero));
     out[position] = list;
   }
   return out;

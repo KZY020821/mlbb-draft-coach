@@ -5,11 +5,13 @@ import { accountsEnabled, currentUser } from "@/lib/session";
 import { accountFor, type Account } from "@/lib/access";
 import AccountBar from "@/components/AccountBar";
 import { SiteFooter } from "@/components/LegalPage";
+import { teamChoices } from "@/lib/meta";
 
 export const dynamic = "force-dynamic";
 
 export default async function Home() {
   const ctx = await getContext();
+  const { leagues, teams } = teamChoices();
   const accountsOn = accountsEnabled();
   let account: Account | null = null;
   if (accountsOn) {
@@ -27,7 +29,7 @@ export default async function Home() {
         <p className="kicker">Mobile Legends: Bang Bang</p>
         <h1>MLBB Draft Coach</h1>
         <p className="lede">
-          Enter the bans and picks from your draft. The analysis reads the current patch data and suggests the best last pick or two.
+          Enter the bans and picks from your draft. The analysis reads the current patch data and MPL Indonesia, Philippines and Malaysia drafts, and suggests the best last pick or two.
         </p>
         <p className="patch">
           Patch {ctx.meta.patch} · {ctx.meta.season} · Data as of {ctx.meta.dataAsOf}
@@ -39,6 +41,8 @@ export default async function Home() {
         staleDays={dataAgeDays(ctx)}
         accountsOn={accountsOn}
         account={account}
+        leagues={leagues}
+        teams={teams}
       />
       <SiteFooter />
     </main>

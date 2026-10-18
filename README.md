@@ -41,25 +41,33 @@ All are environment variables, listed with defaults in `.env.example`: `DEEPSEEK
 
 The app uses one fast model with DeepSeek's "thinking" mode turned off, because draft decisions are made in seconds. An answer usually takes about 4 seconds.
 
-## Pro meta data (MPL PH, Team Liquid PH weighted)
+## Pro meta data (MPL ID, MPL PH and MPL MY)
 
 `data/meta.json` holds pro league stats that drive the suggestions. A GitHub Action (`.github/workflows/update-meta.yml`) rebuilds it every Tuesday at 08:17 Malaysia/Philippine time, after the weekend matches, and whenever the pipeline or its settings change:
 
-1. `scripts/update-meta.mjs` reads the MPL Philippines Season 18 pages through the [Liquipedia](https://liquipedia.net/mobilelegends/) API (identifying User-Agent, gzip, one request per 2.5 seconds). Each game gives both teams' picks, bans, sides and the winner.
+1. `scripts/update-meta.mjs` reads the MPL Indonesia, Philippines and Malaysia Season 18 pages through the [Liquipedia](https://liquipedia.net/mobilelegends/) API (identifying User-Agent, gzip, several pages per request, at least 2.5 seconds between requests). Each game gives both teams' picks, bans, sides and the winner. The three leagues are pooled for the hero stats.
 2. Liquipedia does not say who played which position, so `scripts/meta/build.mjs` infers it: every lineup must fill all five positions once, and each hero's likely positions are learned across all lineups, starting from its roles. Each lineup gets a confidence; corrections go in `data/position-overrides.json`.
-3. Per hero and position it counts pro picks and wins, weighted by recency (28-day half-life) and with every team's games counted the same (Team Liquid PH's record is still shown), plus which heroes are picked together and how each hero's team did against each enemy hero (head-to-head).
+3. Per hero and position it counts pro picks and wins, weighted by recency (28-day half-life) and with every team's games counted the same, plus which heroes are picked together and how each hero's team did against each enemy hero (head-to-head). Each team's own picks per position are kept too, for the pro team picker.
+4. It finds each team's logo on its Liquipedia page (the dark-mode logo when there is one), saves a 96-pixel copy in `public/teams/<team id>.png` and remembers the source file in `data/team-logos.json`, so a logo is downloaded again only when the team changes it. A team without a logo shows its initials.
 
 After each run, `scripts/check-health.mjs` looks for things a person has to fix, and the job emails the owner when the run failed or a check found something:
 
 - the run itself failed (for example Liquipedia kept refusing requests),
 - the patch data in `data/context.json` is more than 7 days old,
-- no new pro games for 14 days (season over or new pages),
-- Liquipedia has a page for the next season,
-- Liquipedia lists a hero the app doesn't know.
+- a league has no games, or no new games for 14 days (season over or new pages),
+- Liquipedia has a page for a league's next season,
+- Liquipedia lists a hero the app doesn't know,
+- a team's logo could not be found (fix: add its Liquipedia page title to `teamPages` in `data/meta-config.json`).
 
 Email needs three repository secrets (Settings > Secrets and variables > Actions): `SMTP_USER` (the Gmail address that sends), `SMTP_PASSWORD` (a Gmail app password for it) and `ALERT_EMAIL` (where alerts go). Without them the run shows a warning instead.
 
-Settings (league pages, focus team, weight, half-life) are in `data/meta-config.json`. The inferred lineups are in `data/pro-games.json`. Data from Liquipedia is licensed CC BY-SA 3.0 and credited on the results page.
+Settings (leagues and their pages, half-life, team page overrides) are in `data/meta-config.json`. When a new season starts, change each league's `name` and `pages`. The inferred lineups are in `data/pro-games.json`. Data from Liquipedia is licensed CC BY-SA 3.0 and credited on the results page. Team logos belong to their teams and are shown only to identify them.
+
+## Draft like a pro team
+
+Above the bans, players can pick a pro team from MPL Indonesia, Philippines or Malaysia (tabs by league, each team with its logo and record). The choice is optional, remembered in that browser, and can be set in a link with `?team=<team id>`, e.g. `?team=ph-teamliquidph`. Without a team, no team gets extra weight.
+
+With a team chosen, 30% of each candidate's score comes from that team (`team.weight` in `data/scoring.json`): mostly how often it plays the hero in that position compared with its most played hero there, and partly its record with it. The other four parts share the remaining 70%. The prompt tells the model which team the player drafts like, to prefer that team's heroes when candidates are close, and not to pass over a clear counter just because the team hasn't played it. Each option's evidence shows the team's record with the hero, and heroes the team played there at least twice get a badge with its logo.
 
 ## How suggestions are made
 
@@ -67,12 +75,12 @@ For each open position the server scores every available hero that pros play the
 
 | Part | Weight | What it measures |
 | --- | --- | --- |
-| Popularity | 35% | How much pros play the hero in that position, recent games counting more |
+| Popularity | 35% | How much pros in MPL ID, PH and MY play the hero in that position, recent games counting more |
 | Win rate | 20% | Its pro win rate there, pulled towards 50% when the sample is small |
 | Counter | 30% | How its team did in pro games against the heroes the enemy has picked now |
 | Synergy | 15% | How it did alongside your current picks |
 
-Every team's games count the same. Team Liquid PH's record is still shown in the evidence, and `focusWeight` in `data/meta-config.json` and `focusTieBreak` in `data/scoring.json` can give it extra weight again. DeepSeek ranks 3 options per open position from that shortlist, starting from the top, so a player can choose the one they play best. Each option shows its score and pro evidence. When pro data is missing, the shortlist falls back to the tier list.
+Every team's games count the same. When the player picks a pro team (see above), that team's part takes 30% and these four share the other 70%. DeepSeek ranks 3 options per open position from that shortlist, starting from the top, so a player can choose the one they play best. Each option shows its score and pro evidence. When pro data is missing, the shortlist falls back to the tier list.
 
 ## How an analysis works
 
@@ -91,6 +99,7 @@ https://mlbb-draft-coach-six.vercel.app/?bans=Hirara,Freya,Kaja&enemy=Tigreal,Gl
 
 - `bans` (up to 10) and `enemy` (up to 5) are comma-separated hero names.
 - Our picks go by position: `roam`, `marksman`, `jungler`, `mage`, `fighter`, one hero each. Leave a position out to mark it open.
+- `team` (optional) chooses the pro team to draft like, by its id (e.g. `ph-teamliquidph`).
 - Case and spacing do not matter. Nothing is sent until you click the button.
 
 To build and open that link for you (needs Node, nothing to install):
