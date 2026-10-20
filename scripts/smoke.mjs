@@ -118,6 +118,9 @@ check("Soyou is accepted as Suyou", r.status === 200 && r.json.meta && (await la
 r = await post({ ...draft, enemyPicks: ["Suyou", "soyou"] });
 check("Soyou and Suyou are the same hero", r.status === 400 && r.json.error.message.includes("Suyou"));
 
+const page = await fetch(APP + "/");
+check("security headers are sent", page.headers.get("x-frame-options") === "DENY" && (page.headers.get("content-security-policy") ?? "").includes("frame-ancestors 'none'") && page.headers.get("x-content-type-options") === "nosniff");
+
 const big = await fetch(APP + "/api/analyze", { method: "POST", body: "x".repeat(5000) });
 check("oversized body -> 413", big.status === 413);
 const junk = await fetch(APP + "/api/analyze", { method: "POST", body: "not json" });
