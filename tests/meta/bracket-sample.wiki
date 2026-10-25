@@ -1,0 +1,17 @@
+{{Bracket|Bracket/8U4L2DSL1D|id=TESTBRKT
+|R1M1header=Upper Bracket Quarterfinals
+|R1M1={{Match|bestof=5
+    |opponent1={{TeamOpponent|Team Liquid PH}}
+    |opponent2={{TeamOpponent|Aurora PH}}
+    |date=October 24, 2026 - 17:00 {{Abbr/PHT}}
+    |map1={{Map|team1side=blue|team2side=red|winner=1
+        |t1h1=atlas |t1h2=claude |t1h3=hirara |t1h4=zhuxin |t1h5=arlott
+        |t2h1=khufra |t2h2=karrie |t2h3=suyou |t2h4=valentina |t2h5=chou
+    }}
+    |map2={{Map|winner=}}
+}}
+|R1M2={{Match|bestof=5
+    |opponent1={{TeamOpponent|ONIC PH}}
+    |opponent2={{TeamOpponent|TBD}}
+}}
+}}

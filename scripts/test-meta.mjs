@@ -35,6 +35,8 @@ check(
     parseDate("TBD") === ""
 );
 check("winner and sides", games[0].winner === 0 && games[1].winner === 1 && games[1].sides.join() === "red,blue");
+const bracket = parseMatches(readFileSync(root + "tests/meta/bracket-sample.wiki", "utf8"), "playoffs");
+check("playoff bracket pages: played games read, unplayed and TBD skipped", bracket.length === 1 && bracket[0].teams.join() === "Team Liquid PH,Aurora PH" && bracket[0].date === "2026-10-24");
 check("names as written on the page are kept for logos", games[0].teamPages.join() === "Team Liquid PH,ONIC Philippines");
 check("picks and bans read", games[0].picks[0].join() === "arlott,cici,zhuxin,atlas,suyou" && games[0].bans[0].length === 5);
 
