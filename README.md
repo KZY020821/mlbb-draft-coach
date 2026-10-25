@@ -35,6 +35,8 @@ When the account settings below are all present, the AI coach needs Google sign-
 | `OWNER_EMAIL` | The only account that can open `/admin`. |
 | `APP_URL` | The public site address, e.g. `https://mlbb-draft-coach-six.vercel.app`. |
 
+If some of these are set but not all (or `AUTH_SECRET` is shorter than 32 characters), the AI coach refuses to run instead of opening to everyone, and the server log says what is missing.
+
 ## Settings
 
 All are environment variables, listed with defaults in `.env.example`: `DEEPSEEK_API_KEY`, `DEEPSEEK_BASE_URL`, `DEEPSEEK_MODEL` (default `deepseek-flash`), `APP_PASSCODE`, `RATE_LIMIT_PER_10MIN`.
@@ -43,7 +45,7 @@ The app uses one fast model with DeepSeek's "thinking" mode turned off, because 
 
 ## Pro meta data (MPL ID, MPL PH and MPL MY)
 
-`data/meta.json` holds pro league stats that drive the suggestions. A GitHub Action (`.github/workflows/update-meta.yml`) rebuilds it every Tuesday at 08:17 Malaysia/Philippine time, after the weekend matches, and whenever the pipeline or its settings change:
+`data/meta.json` holds pro league stats that drive the suggestions. A GitHub Action (`.github/workflows/update-meta.yml`) rebuilds it every Tuesday at 08:17 Malaysia/Philippine time, after the weekend matches, and whenever the pipeline or its settings change (during the MPL PH Season 18 playoffs also at 23:17 on 25 and 26 October 2026):
 
 1. `scripts/update-meta.mjs` reads the MPL Indonesia, Philippines and Malaysia Season 18 pages through the [Liquipedia](https://liquipedia.net/mobilelegends/) API (identifying User-Agent, gzip, several pages per request, at least 2.5 seconds between requests). Each game gives both teams' picks, bans, sides and the winner. The three leagues are pooled for the hero stats.
 2. Liquipedia does not say who played which position, so `scripts/meta/build.mjs` infers it: every lineup must fill all five positions once, and each hero's likely positions are learned across all lineups, starting from its roles. Each lineup gets a confidence; corrections go in `data/position-overrides.json`.

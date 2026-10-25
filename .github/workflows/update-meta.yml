@@ -6,6 +6,9 @@ name: Update pro meta data
 on:
   schedule:
     - cron: "17 0 * * 2" # every Tuesday, 08:17 Malaysia/Philippine time (00:17 UTC), after the weekend matches
+    # TEMPORARY for the MPL PH Season 18 playoffs: also 23:17 Philippine time (15:17 UTC) on 25 and 26
+    # October, after each day's matches. Remove after 26 October 2026 (it would fire again next October).
+    - cron: "17 15 25-26 10 *"
   workflow_dispatch:
     inputs:
       test_email:
