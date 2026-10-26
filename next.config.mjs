@@ -5,6 +5,11 @@ const nextConfig = {
   // no MIME sniffing, and only the origin is sent to other sites.
   async headers() {
     return [
+      // The service worker must never be cached by the browser, so app updates reach people.
+      {
+        source: "/sw.js",
+        headers: [{ key: "Cache-Control", value: "no-cache, no-store, must-revalidate" }]
+      },
       {
         source: "/:path*",
         headers: [
