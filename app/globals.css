@@ -276,3 +276,11 @@ table.data td.num, table.data th.num { text-align: right; }
 .prose h2 { font-size: 20px; margin: 18px 0 6px; }
 .prose ul { padding-left: 20px; display: grid; gap: 6px; }
 .prose a { color: var(--ours); }
+
+/* Installable app */
+.topbar-actions { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; justify-content: flex-end; }
+.install-ios { position: relative; }
+.install-tip { position: absolute; right: 0; top: calc(100% + 8px); z-index: 30; width: 230px; margin: 0; padding: 10px 12px; border-radius: 12px; border: 1px solid var(--line-strong); background: var(--panel-solid); color: var(--fg); font-size: 13px; box-shadow: 0 16px 32px -12px rgba(0, 0, 0, 0.8); }
+@media (display-mode: standalone) {
+  body { padding-top: max(16px, env(safe-area-inset-top)); }
+}

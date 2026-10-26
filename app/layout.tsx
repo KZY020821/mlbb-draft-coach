@@ -3,7 +3,11 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: "MLBB Draft Coach",
-  description: "Enter the bans and picks from a Mobile Legends draft and get the best last pick or two for your team."
+  description: "Enter the bans and picks from a Mobile Legends draft and get the best last pick or two for your team.",
+  applicationName: "MLBB Draft Coach",
+  // Installed on iPhone/iPad: full screen, dark status bar, home-screen name and icon.
+  appleWebApp: { capable: true, title: "Draft Coach", statusBarStyle: "black" },
+  icons: { apple: "/icons/apple-touch-icon.png" }
 };
 
 export const viewport: Viewport = {

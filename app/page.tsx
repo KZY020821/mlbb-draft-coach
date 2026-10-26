@@ -6,6 +6,7 @@ import { accountFor, type Account } from "@/lib/access";
 import AccountBar from "@/components/AccountBar";
 import { SiteFooter } from "@/components/LegalPage";
 import { teamChoices } from "@/lib/meta";
+import InstallApp from "@/components/InstallApp";
 
 export const dynamic = "force-dynamic";
 
@@ -29,7 +30,10 @@ export default async function Home() {
           <img src="/icon.svg" alt="" width={30} height={30} />
           <span>MLBB Draft Coach</span>
         </a>
-        <AccountBar accountsOn={accountsOn} account={account} />
+        <div className="topbar-actions">
+          <InstallApp />
+          <AccountBar accountsOn={accountsOn} account={account} />
+        </div>
       </div>
       <header className="hero">
         <p className="kicker">Mobile Legends: Bang Bang · Draft assistant</p>

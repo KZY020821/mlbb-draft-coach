@@ -93,6 +93,14 @@ Every team's games count the same. When the player picks a pro team (see above),
 3. `lib/deepseek.ts` calls DeepSeek in JSON mode.
 4. `lib/draft.ts` checks every option against the roster, the draft and that position's shortlist, and expects 3 options per open position. If an option is invented, banned, already picked, off the shortlist, or a position has fewer than 3, the server asks once more with the problems listed, then drops anything still invalid.
 
+## Install as an app
+
+The site is a progressive web app: people can install it from the "Install app" button (Android, Chrome and Edge on desktop) or with Share > Add to Home Screen on iPhone and iPad, and it opens full screen with its own icon.
+
+- `app/manifest.ts`: name, colours, start page and icons (`public/icons/`, made from the shield in `app/icon.svg`).
+- `public/sw.js`: the service worker. Pages always come from the network (they show who is signed in) with `public/offline.html` as the fallback; build files, icons, team logos and fonts are cached; `/api/` and `/admin` are never cached. Change `VERSION` in it to clear old caches.
+- `components/InstallApp.tsx`: registers the service worker and shows the install button.
+
 ## Fill the form from a link
 
 The page fills its boxes from the link, so you only click **Analyze draft**:
