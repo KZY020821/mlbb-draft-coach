@@ -284,3 +284,18 @@ table.data td.num, table.data th.num { text-align: right; }
 @media (display-mode: standalone) {
   body { padding-top: max(16px, env(safe-area-inset-top)); }
 }
+
+/* Not found and error pages */
+.status-page { justify-items: start; padding: 32px 24px; gap: 14px; }
+.status-page h1 { font-size: clamp(32px, 6vw, 48px); }
+.status-action { text-decoration: none; display: inline-block; }
+a.ghost { text-decoration: none; display: inline-block; }
+
+/* Feedback under each analysis */
+.feedback { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 14px; padding: 12px 14px; border-radius: var(--radius-sm); background: var(--raised); border: 1px solid var(--line); }
+.feedback-q { font-weight: 600; font-size: 14px; }
+.feedback-buttons { display: flex; gap: 8px; }
+.feedback-buttons .pick-btn { margin-left: 0; font-size: 13px; text-transform: none; letter-spacing: 0; }
+.feedback-note { display: flex; flex-wrap: wrap; align-items: end; gap: 8px; flex: 1 1 100%; }
+.feedback-note .box { flex: 1 1 240px; }
+.feedback-thanks { color: var(--good); font-size: 14px; }

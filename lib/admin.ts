@@ -221,7 +221,25 @@ export async function picksReport(days = 30) {
     select a.id, a.created_at, u.email, a.open_positions, a.result, a.picked_hero, a.draft
     from analyses a left join users u on u.id = a.user_id
     where a.status = 'ok' order by a.created_at desc limit 25`;
-  return { days, totals: totals as { ok: number; picked: number; users: number }, suggested, pickedRank, enemies, bans, open, recent };
+  const [fb] = await sql`
+    select count(*) filter (where feedback = 1)::int as up, count(*) filter (where feedback = -1)::int as down
+    from analyses where status = 'ok' and ${since}`;
+  const complaints = await sql<{ id: number; created_at: Date; email: string | null; note: string; result: { slots?: { position: string; options: { hero: string }[] }[] }; draft: { enemy?: string[] } }[]>`
+    select a.id, a.feedback_at as created_at, u.email, a.feedback_note as note, a.result, a.draft
+    from analyses a left join users u on u.id = a.user_id
+    where a.feedback = -1 order by a.feedback_at desc limit 25`;
+  return {
+    days,
+    totals: totals as { ok: number; picked: number; users: number },
+    feedback: fb as { up: number; down: number },
+    complaints,
+    suggested,
+    pickedRank,
+    enemies,
+    bans,
+    open,
+    recent
+  };
 }
 
 export const ownerAddress = ownerEmail;
