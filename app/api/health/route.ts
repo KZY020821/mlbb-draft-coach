@@ -26,8 +26,12 @@ export async function GET() {
       const sql = await db();
       await sql`select 1`;
       database = "ok";
-      const settings = await getSettings();
-      aiPaused = !settings.aiEnabled || (await monthSpendUsd()) >= settings.monthlyBudgetUsd;
+      // The switch and the budget are only enforced for signed-in analyses (lib/access.ts gate()),
+      // so only report a pause where it actually stops analyses.
+      if (accountsEnabled()) {
+        const settings = await getSettings();
+        aiPaused = !settings.aiEnabled || (await monthSpendUsd()) >= settings.monthlyBudgetUsd;
+      }
     } catch {
       database = "error";
       problems.push("database_unreachable");

@@ -484,7 +484,7 @@ function Results({ result }: { result: Result }) {
         </p>
       )}
 
-      {result.analysisId ? <Feedback analysisId={result.analysisId} /> : null}
+      {result.analysisId && result.account ? <Feedback analysisId={result.analysisId} /> : null}
 
       <p className="fineprint">
         {pro.games > 0 ? (

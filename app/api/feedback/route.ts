@@ -17,14 +17,15 @@ export async function POST(req: Request) {
   const note = typeof body.note === "string" ? body.note.trim().slice(0, 500) : "";
   if (!Number.isInteger(id) || id <= 0 || !vote) return Response.json({ error: { message: "analysisId and vote (up or down) are required." } }, { status: 400 });
 
+  // Feedback needs a signed-in account: without one, anyone could rate any anonymous analysis by its number.
   const user = accountsEnabled() ? await currentUser() : null;
-  if (accountsEnabled() && !user) return Response.json({ error: { message: "Sign in first." } }, { status: 401 });
+  if (!user) return Response.json({ error: { message: "Sign in first." } }, { status: 401 });
 
   const sql = await db();
   // Only the person who ran the analysis can rate it; a later vote replaces the earlier one.
   const rows = await sql`
     update analyses set feedback = ${vote}, feedback_note = ${note}, feedback_at = now()
-    where id = ${id} and status = 'ok' and user_id is not distinct from ${user?.id ?? null}
+    where id = ${id} and status = 'ok' and user_id = ${user.id}
     returning id`;
   if (!rows.length) return Response.json({ error: { message: "That analysis was not found." } }, { status: 404 });
   return Response.json({ ok: true });
