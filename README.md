@@ -150,7 +150,7 @@ Hero names must match the roster (case and spacing do not matter). The results p
 
 ## Patch data
 
-`data/context.json` is a snapshot (patch 2.2.16, Season 42, as of 2026-10-18). The page warns when it is more than 7 days old. `getContext()` in `lib/context.ts` is the single place to change when the data comes from a daily refresh job instead of this file.
+`data/context.json` is a snapshot (patch 2.2.16, Season 42, as of 2026-10-31). The page warns when it is more than 7 days old. `getContext()` in `lib/context.ts` is the single place to change when the data comes from a daily refresh job instead of this file.
 
 ## Tests
 
