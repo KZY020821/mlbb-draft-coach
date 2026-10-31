@@ -61,8 +61,9 @@ jobs:
           AUTH_SECRET=test-secret-0123456789-abcdefghijklmnop-xyz OWNER_EMAIL=owner@example.com APP_URL=http://127.0.0.1:3200 \
           GOOGLE_AUTH_URL=http://127.0.0.1:4020/auth GOOGLE_TOKEN_URL=http://127.0.0.1:4020/token GOOGLE_USERINFO_URL=http://127.0.0.1:4020/userinfo \
           RATE_LIMIT_PER_10MIN=500 npx next start -p 3200 > app-accounts.log 2>&1 &
-          for port in 3100 3200 4010 4020; do
-            for i in $(seq 1 60); do curl -s -o /dev/null "http://127.0.0.1:$port/" && break; sleep 1; done
+          # Wait for each server (the DeepSeek stand-in is asked on /__last, which it answers without crashing).
+          for url in http://127.0.0.1:4010/__last http://127.0.0.1:4020/ http://127.0.0.1:3100/ http://127.0.0.1:3200/; do
+            for i in $(seq 1 60); do curl -s -o /dev/null "$url" && break; sleep 1; done
           done
       - name: End-to-end tests
         run: node scripts/smoke.mjs
