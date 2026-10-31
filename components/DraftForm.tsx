@@ -484,6 +484,8 @@ function Results({ result }: { result: Result }) {
         </p>
       )}
 
+      {result.analysisId ? <Feedback analysisId={result.analysisId} /> : null}
+
       <p className="fineprint">
         {pro.games > 0 ? (
           <>
@@ -501,5 +503,52 @@ function Results({ result }: { result: Result }) {
         Patch {meta.patch} ({meta.season}), analyzed by {meta.model}. An AI estimate, not live win rates.
       </p>
     </section>
+  );
+}
+
+// "Was this helpful?" under each analysis. A thumbs down asks what was wrong (optional).
+function Feedback({ analysisId }: { analysisId: number }) {
+  const [vote, setVote] = useState<"up" | "down" | null>(null);
+  const [note, setNote] = useState("");
+  const [sent, setSent] = useState(false);
+  async function send(v: "up" | "down", text = "") {
+    setVote(v);
+    const res = await fetch("/api/feedback", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ analysisId, vote: v, note: text })
+    }).catch(() => null);
+    setSent(Boolean(res?.ok) && (v === "up" || Boolean(text)));
+  }
+  return (
+    <div className="feedback">
+      <span className="feedback-q">Were these suggestions helpful?</span>
+      <div className="feedback-buttons">
+        <button type="button" className={`pick-btn${vote === "up" ? " on" : ""}`} aria-pressed={vote === "up"} onClick={() => send("up")}>
+          👍 Yes
+        </button>
+        <button type="button" className={`pick-btn${vote === "down" ? " on" : ""}`} aria-pressed={vote === "down"} onClick={() => send("down")}>
+          👎 No
+        </button>
+      </div>
+      {vote === "down" && !sent && (
+        <form
+          className="feedback-note"
+          onSubmit={(e) => {
+            e.preventDefault();
+            send("down", note);
+          }}
+        >
+          <label className="box">
+            <span className="box-label">What was wrong? (optional)</span>
+            <input type="text" value={note} maxLength={500} onChange={(e) => setNote(e.target.value)} placeholder="e.g. Atlas was a bad pick into their Ling" />
+          </label>
+          <button type="submit" className="ghost small">
+            Send
+          </button>
+        </form>
+      )}
+      {sent && <span className="feedback-thanks">Thanks, this helps improve the coach.</span>}
+    </div>
   );
 }

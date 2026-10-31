@@ -579,6 +579,43 @@ async function Picks() {
         </div>
       </section>
 
+      <section className="panel">
+        <h2>Player feedback</h2>
+        <div className="stat-row">
+          <Stat label="Helpful" value={n(r.feedback.up)} tone={r.feedback.up ? "pos" : undefined} />
+          <Stat label="Not helpful" value={n(r.feedback.down)} tone={r.feedback.down ? "neg" : undefined} />
+          <Stat label="Helpful rate" value={pct(r.feedback.up, r.feedback.up + r.feedback.down)} />
+        </div>
+        {r.complaints.length ? (
+          <div className="table-wrap">
+            <table className="data">
+              <thead>
+                <tr>
+                  <th>When</th>
+                  <th>Account</th>
+                  <th>Enemy picks</th>
+                  <th>Suggested</th>
+                  <th>What was wrong</th>
+                </tr>
+              </thead>
+              <tbody>
+                {r.complaints.map((c) => (
+                  <tr key={c.id}>
+                    <td>{dateTime(c.created_at)}</td>
+                    <td>{c.email ?? "–"}</td>
+                    <td>{(c.draft?.enemy ?? []).join(", ")}</td>
+                    <td>{(c.result?.slots ?? []).map((s) => `${POS_LABEL[s.position] ?? s.position}: ${s.options.map((o) => o.hero).join(", ")}`).join(" · ")}</td>
+                    <td style={{ whiteSpace: "normal", minWidth: 200 }}>{c.note || "–"}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        ) : (
+          <p className="note">No &quot;not helpful&quot; votes yet.</p>
+        )}
+      </section>
+
       <div className="admin-grid">
         {["roam", "marksman", "jungler", "mage", "fighter"].map((pos) => {
           const rows = (byPos.get(pos) ?? []).slice(0, 10);
