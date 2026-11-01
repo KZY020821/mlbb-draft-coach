@@ -67,7 +67,7 @@ export default async function AccountPage({ searchParams }: { searchParams: SP }
         <h2>Delete account</h2>
         <p className="note">
           This removes your account and signs you out. Your past drafts stay only as anonymous statistics, without your name, email or notes. Payment amounts and
-          dates are kept for accounting, without your email. An active Coach plan ends and is not refunded automatically. This can&apos;t be undone.
+          dates are kept for accounting, without your email. Free access given to your email ends too. An active Coach plan ends and is not refunded automatically. This can&apos;t be undone.
         </p>
         {sp.err && (
           <p className="error" role="alert">
