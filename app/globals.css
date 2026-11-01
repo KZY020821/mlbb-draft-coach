@@ -299,3 +299,22 @@ a.ghost { text-decoration: none; display: inline-block; }
 .feedback-note { display: flex; flex-wrap: wrap; align-items: end; gap: 8px; flex: 1 1 100%; }
 .feedback-note .box { flex: 1 1 240px; }
 .feedback-thanks { color: var(--good); font-size: 14px; }
+
+/* Account page */
+.facts { display: grid; grid-template-columns: max-content 1fr; gap: 8px 18px; margin: 0; }
+.facts dt { color: var(--muted); font-size: 14px; }
+.facts dd { margin: 0; font-weight: 600; min-width: 0; overflow-wrap: anywhere; }
+.danger-zone { border-color: rgba(255, 122, 102, 0.35); }
+.delete-form { display: flex; flex-wrap: wrap; align-items: end; gap: 10px; }
+.delete-form .box { flex: 1 1 220px; max-width: 320px; }
+.danger { padding: 12px 18px; border-radius: var(--radius-sm); border: 1px solid var(--enemy); background: rgba(255, 122, 102, 0.12); color: var(--enemy); font: 700 14px/1 var(--body); }
+.danger:hover { background: rgba(255, 122, 102, 0.22); }
+
+/* Admin budget bar: solid = spent so far, faint = projected by month end */
+.budget { display: grid; gap: 6px; margin-top: 4px; }
+.budget-bar { position: relative; height: 10px; border-radius: 999px; background: var(--raised); border: 1px solid var(--line); overflow: hidden; }
+.budget-bar span { position: absolute; inset: 0 auto 0 0; border-radius: 999px; }
+.budget-projected { background: rgba(92, 200, 255, 0.18); }
+.budget-used { background: var(--good); }
+.budget-used.warm { background: var(--gold); }
+.budget-used.hot { background: var(--enemy); }

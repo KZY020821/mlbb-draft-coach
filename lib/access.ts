@@ -64,6 +64,18 @@ export async function monthSpendUsd(): Promise<number> {
   return Number(row.usd);
 }
 
+// This month's AI spend against the budget, and where it will land at this pace (Malaysia time).
+export async function budgetStatus(settings: Settings) {
+  const spent = await monthSpendUsd();
+  const now = new Date(new Date().toLocaleString("en-US", { timeZone: "Asia/Kuala_Lumpur" }));
+  const day = now.getDate() - 1 + (now.getHours() * 60 + now.getMinutes()) / 1440;
+  const daysInMonth = new Date(now.getFullYear(), now.getMonth() + 1, 0).getDate();
+  const projected = day > 0.25 ? (spent / day) * daysInMonth : spent;
+  const budget = settings.monthlyBudgetUsd;
+  const pct = (x: number) => (budget > 0 ? Math.round((x / budget) * 100) : 0);
+  return { spent, budget, projected, usedPct: pct(spent), projectedPct: pct(projected) };
+}
+
 // Decides access and, for a trial, reserves one use atomically (refund it if the analysis fails).
 export async function gate(user: User): Promise<Gate> {
   const settings = await getSettings();

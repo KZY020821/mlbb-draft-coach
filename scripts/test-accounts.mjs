@@ -170,6 +170,46 @@ r = await analyze(p2.session);
 check("daily fair-use limit applies to subscribers", r.status === 429 && r.data?.error?.code === "fair_use");
 await sql`delete from settings`;
 
+// --- Health: budget figures only with the token ---
+const healthOpen = await (await fetch(`${APP}/api/health`)).json();
+const healthTok = await (await fetch(`${APP}/api/health`, { headers: { "x-health-token": process.env.HEALTH_TOKEN || "test-health-token" } })).json();
+const healthBad = await (await fetch(`${APP}/api/health`, { headers: { "x-health-token": "wrong" } })).json();
+check("health hides the budget without the token", healthOpen.ok === true && !("budget" in healthOpen) && !("budget" in healthBad));
+check("health shows budget use with the token", typeof healthTok.budget?.usedPct === "number" && typeof healthTok.budget?.projectedPct === "number", JSON.stringify(healthTok.budget));
+
+// --- Account page, data download and deletion (p1 has an analysis, a pick and feedback) ---
+check("account page needs sign-in", [307, 308].includes((await page("/account")).status));
+const acct = await page("/account", p1.session);
+check("account page shows the plan and email", acct.status === 200 && (await acct.text()).includes("player1@example.com"));
+// player1 is already on the free list (note "tester", from the free-list checks above).
+const [p1id] = await sql`select id from users where email = 'player1@example.com'`;
+await sql`insert into payments (user_id, email, amount_sen, kind, provider_ref) values (${p1id.id}, 'player1@example.com', 1500, 'subscription', 'BANK-REF-123')`;
+const exp = await page("/api/account/export", p1.session);
+const data = await exp.json().catch(() => null);
+check("data download has the profile, drafts and feedback", exp.status === 200 && data?.profile?.email === "player1@example.com" && data.analyses.some((a) => a.feedback_note === "Atlas was wrong into Ling") && /attachment/.test(exp.headers.get("content-disposition") ?? ""));
+check("data download includes payment references and free access", data?.payments?.some((p) => p.provider_ref === "BANK-REF-123") && data?.freeAccess?.note === "tester");
+check("data download needs sign-in", (await page("/api/account/export")).status === 401);
+const del = (session, confirm, origin = APP) =>
+  fetch(`${APP}/api/account/delete`, {
+    method: "POST",
+    redirect: "manual",
+    headers: { "Content-Type": "application/x-www-form-urlencoded", cookie: `dc_session=${session}`, origin },
+    body: new URLSearchParams({ confirm })
+  });
+check("delete from another site is refused", (await del(p1.session, "DELETE", "https://evil.example")).status === 403);
+const noConfirm = await del(p1.session, "yes");
+check("delete needs DELETE typed in", noConfirm.status === 303 && (noConfirm.headers.get("location") ?? "").includes("/account?err="));
+const [p1row] = await sql`select id from users where email = ${"player1@example.com"}`;
+const deleted = await del(p1.session, "DELETE");
+check("delete signs out and goes home", deleted.status === 303 && (deleted.headers.get("location") ?? "").endsWith("/?deleted=1") && /dc_session=;/.test(deleted.headers.getSetCookie().join(";")));
+const [gone] = await sql`select count(*)::int as n from users where email = ${"player1@example.com"}`;
+const [anon] = await sql`select count(*)::int as n, count(*) filter (where feedback_note <> '')::int as notes from analyses where id = ${firstId} and user_id is null`;
+check("account removed, its analyses kept anonymously without notes", gone.n === 0 && anon.n === 1 && anon.notes === 0, JSON.stringify({ gone, anon, id: p1row?.id }));
+const [comp] = await sql`select count(*)::int as n from comp_emails where email = 'player1@example.com'`;
+const [pay] = await sql`select count(*)::int as n from payments where provider_ref = 'BANK-REF-123' and user_id is null and email = 'deleted account'`;
+check("deletion removes the free-access entry and anonymises payments", comp.n === 0 && pay.n === 1, JSON.stringify({ comp, pay }));
+check("the old session no longer works", (await page("/account", p1.session)).status !== 200);
+
 // --- Sign out ---
 const out = await fetch(`${APP}/api/auth/logout`, { method: "POST", redirect: "manual", headers: { cookie: `dc_session=${p1.session}` } });
 check("sign-out clears the session cookie", /dc_session=;/.test(out.headers.getSetCookie().join(";")));

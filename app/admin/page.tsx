@@ -15,7 +15,7 @@ import {
   usageByDay,
   usersList
 } from "@/lib/admin";
-import { monthSpendUsd } from "@/lib/access";
+import { budgetStatus } from "@/lib/access";
 import { getModel } from "@/lib/deepseek";
 import * as act from "./actions";
 
@@ -191,14 +191,15 @@ async function Pricing() {
 }
 
 async function Usage() {
-  const [settings, days, errors, balance, spend, spenders] = await Promise.all([
-    getSettings(),
+  const settings = await getSettings();
+  const [days, errors, balance, budget, spenders] = await Promise.all([
     usageByDay(14),
     errorsThisMonth(),
     deepseekBalance(),
-    monthSpendUsd(),
+    budgetStatus(settings),
     topSpenders(10)
   ]);
+  const spend = budget.spent;
   const today = days[0];
   return (
     <>
@@ -210,6 +211,16 @@ async function Usage() {
           <Stat label="Analyses today" value={`${n(today.ok)} ok · ${n(today.errors)} failed`} />
           <Stat label="Cost today" value={usd(today.costUsd)} />
           <Stat label="Model" value={getModel()} />
+        </div>
+        <div className="budget" aria-label={`AI budget: ${budget.usedPct}% used, ${budget.projectedPct}% projected by month end`}>
+          <div className="budget-bar">
+            <span className="budget-projected" style={{ width: `${Math.min(100, budget.projectedPct)}%` }} />
+            <span className={`budget-used${budget.usedPct >= 80 ? " hot" : budget.usedPct >= 50 ? " warm" : ""}`} style={{ width: `${Math.min(100, budget.usedPct)}%` }} />
+          </div>
+          <p className="note">
+            {budget.usedPct}% of the monthly AI budget used. At this pace the month ends at {usd(budget.projected)} ({budget.projectedPct}%).
+            {budget.projectedPct >= 100 ? " Analyses will pause before the month ends unless the budget is raised." : ""}
+          </p>
         </div>
       </section>
 
