@@ -13,6 +13,8 @@
     "test:accounts": "node scripts/test-accounts.mjs"
   },
   "dependencies": {
+    "@vercel/analytics": "2.0.1",
+    "@vercel/speed-insights": "2.0.0",
     "next": "16.4.3",
     "postgres": "^3.4.9",
     "react": "19.3.0",

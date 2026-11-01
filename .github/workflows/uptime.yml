@@ -1,0 +1,54 @@
+name: Uptime
+
+# Every hour: opens the site and /api/health. Emails the owner (same SMTP secrets as the data job)
+# when either is down, or when the AI coach is paused (switched off or monthly budget reached).
+# Emails again each hour while it stays down. Set the SITE_URL repository variable to change the address.
+on:
+  schedule:
+    - cron: "41 * * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    env:
+      SITE_URL: ${{ vars.SITE_URL || 'https://mlbb-draft-coach-six.vercel.app' }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout: scripts
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Check the site
+        id: check
+        run: |
+          problems=""
+          home=$(curl -s -o /dev/null -w "%{http_code}" --max-time 30 "$SITE_URL/") || home="no answer"
+          [ "$home" = "200" ] || problems="$problems\nThe home page answered: $home"
+          health=$(curl -s --max-time 30 -w "\n%{http_code}" "$SITE_URL/api/health") || health=$'\nno answer'
+          code=$(echo "$health" | tail -n1)
+          json=$(echo "$health" | sed '$d')
+          echo "Health ($code): $json"
+          [ "$code" = "200" ] || problems="$problems\n/api/health answered $code: $json"
+          echo "$json" | grep -q '"aiPaused":true' && problems="$problems\nThe AI coach is paused (switched off in admin, or the monthly AI budget is reached)."
+          if [ -n "$problems" ]; then
+            printf "Something is wrong with %s:\n%b\n\nRun: %s/%s/actions/runs/%s\n" "$SITE_URL" "$problems" "$GITHUB_SERVER_URL" "$GITHUB_REPOSITORY" "$GITHUB_RUN_ID" > email.txt
+            cat email.txt
+            echo "down=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "All good."
+          fi
+      - name: Email the owner
+        if: steps.check.outputs.down == 'true'
+        env:
+          SMTP_USER: ${{ secrets.SMTP_USER }}
+          SMTP_PASSWORD: ${{ secrets.SMTP_PASSWORD }}
+          ALERT_EMAIL: ${{ secrets.ALERT_EMAIL }}
+        run: |
+          npm install --no-save --no-audit --no-fund nodemailer@6.9.16 > /dev/null
+          node scripts/send-alert.mjs "MLBB Draft Coach: the site needs attention" email.txt

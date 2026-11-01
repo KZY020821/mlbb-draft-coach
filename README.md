@@ -93,6 +93,14 @@ Every team's games count the same. When the player picks a pro team (see above),
 3. `lib/deepseek.ts` calls DeepSeek in JSON mode.
 4. `lib/draft.ts` checks every option against the roster, the draft and that position's shortlist, and expects 3 options per open position. If an option is invented, banned, already picked, off the shortlist, or a position has fewer than 3, the server asks once more with the problems listed, then drops anything still invalid.
 
+## Checks, monitoring and quality
+
+- **Every pull request** runs `.github/workflows/ci.yml`: typecheck, build, the pro-data pipeline tests, the end-to-end tests (stand-in DeepSeek) and the sign-in/trials/payments tests (a Postgres service and stand-in Google). Nothing real is called.
+- **Uptime:** `.github/workflows/uptime.yml` opens the site and `/api/health` every hour and emails the owner (same SMTP secrets as the data job) when either is down or the AI coach is paused. `/api/health` checks the AI key, sign-in settings and database, and never calls the AI. Set the `SITE_URL` repository variable if the address changes.
+- **Visitors and speed:** Vercel Analytics and Speed Insights are in the page (no cookies). Turn them on in the Vercel dashboard under Analytics and Speed Insights.
+- **AI quality check:** Actions > AI quality check > Run workflow (needs the `DEEPSEEK_API_KEY` repository secret). It replays recent pro games with one of the winning team's picks hidden and reports how often the coach's 3 options include what the pros picked, with and without drafting like that team. Locally: `APP_URL=http://127.0.0.1:3000 node scripts/eval-ai.mjs --cases 20 [--with-team]` against an app started with a real key. The games are also in the coach's pro data, so compare runs rather than reading the rates as absolute accuracy.
+- **Player feedback:** each analysis ends with "Were these suggestions helpful?" (a thumbs-down asks what was wrong). Votes and notes are in admin > Picks data > Player feedback.
+
 ## Install as an app
 
 The site is a progressive web app: people can install it from the "Install app" button (Android, Chrome and Edge on desktop) or with Share > Add to Home Screen on iPhone and iPad, and it opens full screen with its own icon.

@@ -117,6 +117,16 @@ check("another account cannot mark it", (await pick(p2.session, firstId, firstHe
 const [pk] = await sql`select picked_hero from analyses where id = ${firstId}`;
 check("picked hero saved", pk.picked_hero === firstHero, pk.picked_hero);
 
+// --- Feedback ---
+const rate = (session, id, vote, note = "") =>
+  fetch(`${APP}/api/feedback`, { method: "POST", headers: { "Content-Type": "application/json", ...(session ? { cookie: `dc_session=${session}` } : {}) }, body: JSON.stringify({ analysisId: id, vote, note }) });
+check("player can rate their analysis", (await rate(p1.session, firstId, "down", "Atlas was wrong into Ling")).status === 200);
+check("another account cannot rate it", (await rate(p2.session, firstId, "up")).status === 404);
+check("signed-out rating is refused", (await rate(null, firstId, "up")).status === 401);
+check("a vote other than up or down is refused", (await rate(p1.session, firstId, "maybe")).status === 400);
+const [fbRow] = await sql`select feedback, feedback_note from analyses where id = ${firstId}`;
+check("feedback and note saved", fbRow.feedback === -1 && fbRow.feedback_note === "Atlas was wrong into Ling", JSON.stringify(fbRow));
+
 // --- Owner and admin ---
 const owner = await signIn(OWNER);
 check("non-owner gets 404 on /admin", (await page("/admin", p1.session)).status === 404);
@@ -134,6 +144,7 @@ const usageHtml = await (await page("/admin?tab=usage", owner.session)).text();
 check("admin shows the DeepSeek balance", usageHtml.includes("9.87 USD"));
 const picksHtml = await (await page("/admin?tab=picks", owner.session)).text();
 check("admin picks data shows the marked pick", picksHtml.includes(firstHero) && picksHtml.includes("Gloo"));
+check("admin shows the not-helpful note", picksHtml.includes("Atlas was wrong into Ling") && picksHtml.includes("Player feedback"));
 
 // --- Free list, subscription, kill switch, budget (set directly; the UI is tested in test-admin-ui) ---
 await sql`insert into comp_emails (email, note) values ('player1@example.com', 'tester')`;

@@ -118,6 +118,10 @@ check("Soyou is accepted as Suyou", r.status === 200 && r.json.meta && (await la
 r = await post({ ...draft, enemyPicks: ["Suyou", "soyou"] });
 check("Soyou and Suyou are the same hero", r.status === 400 && r.json.error.message.includes("Suyou"));
 
+const health = await fetch(APP + "/api/health");
+const hj = await health.json().catch(() => null);
+check("health endpoint answers ok without calling the AI", health.status === 200 && hj?.ok === true && hj.proGames > 0 && typeof hj.patchDataAgeDays === "number");
+
 const page = await fetch(APP + "/");
 check("security headers are sent", page.headers.get("x-frame-options") === "DENY" && (page.headers.get("content-security-policy") ?? "").includes("frame-ancestors 'none'") && page.headers.get("x-content-type-options") === "nosniff");
 

@@ -1,0 +1,74 @@
+name: Checks
+
+# Runs on every pull request (and on main): typecheck, build, the pro-data pipeline tests, the
+# end-to-end tests against a stand-in DeepSeek, and the sign-in/payments tests against a real
+# Postgres and a stand-in Google. Nothing here calls the real AI or Liquipedia.
+on:
+  pull_request:
+  push:
+    branches: [main]
+    paths-ignore:
+      - "data/meta.json"
+      - "data/pro-games.json"
+      - "data/team-logos.json"
+      - "public/teams/**"
+
+permissions:
+  contents: read
+
+concurrency:
+  group: checks-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  checks:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    services:
+      postgres:
+        image: postgres:16
+        env:
+          POSTGRES_HOST_AUTH_METHOD: trust
+        ports: ["5544:5432"]
+        options: >-
+          --health-cmd "pg_isready -U postgres" --health-interval 5s --health-timeout 5s --health-retries 10
+    env:
+      DEEPSEEK_API_KEY: test-key
+      DEEPSEEK_BASE_URL: http://127.0.0.1:4010
+      NEXT_TELEMETRY_DISABLED: "1"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci --no-audit --no-fund
+      - name: Typecheck
+        run: npx tsc --noEmit -p .
+      - name: Build
+        run: npm run build
+      - name: Pro-data pipeline tests
+        run: node scripts/test-meta.mjs
+      - name: Health checks run (offline)
+        run: node scripts/check-health.mjs --offline
+      - name: Start stand-ins and the app (open, and with accounts)
+        run: |
+          node scripts/mock-deepseek.mjs > mock-deepseek.log 2>&1 &
+          node scripts/mock-google.mjs > mock-google.log 2>&1 &
+          RATE_LIMIT_PER_10MIN=60 npx next start -p 3100 > app-open.log 2>&1 &
+          DATABASE_URL=postgres://postgres@127.0.0.1:5544/postgres \
+          GOOGLE_CLIENT_ID=test-google-client GOOGLE_CLIENT_SECRET=test-google-secret \
+          AUTH_SECRET=test-secret-0123456789-abcdefghijklmnop-xyz OWNER_EMAIL=owner@example.com APP_URL=http://127.0.0.1:3200 \
+          GOOGLE_AUTH_URL=http://127.0.0.1:4020/auth GOOGLE_TOKEN_URL=http://127.0.0.1:4020/token GOOGLE_USERINFO_URL=http://127.0.0.1:4020/userinfo \
+          RATE_LIMIT_PER_10MIN=500 npx next start -p 3200 > app-accounts.log 2>&1 &
+          # Wait for each server (the DeepSeek stand-in is asked on /__last, which it answers without crashing).
+          for url in http://127.0.0.1:4010/__last http://127.0.0.1:4020/ http://127.0.0.1:3100/ http://127.0.0.1:3200/; do
+            for i in $(seq 1 60); do curl -s -o /dev/null "$url" && break; sleep 1; done
+          done
+      - name: End-to-end tests
+        run: node scripts/smoke.mjs
+      - name: Sign-in, trials and payments tests
+        run: APP_URL=http://127.0.0.1:3200 node scripts/test-accounts.mjs
+      - name: Server logs (on failure)
+        if: failure()
+        run: tail -n 60 app-open.log app-accounts.log mock-deepseek.log mock-google.log 2>/dev/null || true

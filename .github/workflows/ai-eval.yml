@@ -1,0 +1,60 @@
+name: AI quality check
+
+# Run by hand (Actions > AI quality check > Run workflow) before a release or after changing the
+# prompt or scoring. Replays recent pro games with one pick hidden against the real AI and reports
+# how often the coach suggests what the pros picked. Needs the DEEPSEEK_API_KEY repository secret.
+# Each case is one real analysis (about RM0.01 each).
+on:
+  workflow_dispatch:
+    inputs:
+      cases:
+        description: "Number of pro games to replay"
+        default: "20"
+      with_team:
+        description: "Also run drafting like the team that played"
+        type: boolean
+        default: true
+
+permissions:
+  contents: read
+
+jobs:
+  eval:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
+      NEXT_TELEMETRY_DISABLED: "1"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - name: Check the key is set
+        run: |
+          if [ -z "$DEEPSEEK_API_KEY" ]; then
+            echo "::error::Add the DEEPSEEK_API_KEY repository secret (Settings > Secrets and variables > Actions)."
+            exit 1
+          fi
+      - run: npm ci --no-audit --no-fund
+      - run: npm run build
+      - name: Start the app (accounts off, no rate limit to speak of)
+        run: |
+          RATE_LIMIT_PER_10MIN=10000 npx next start -p 3000 > app.log 2>&1 &
+          for i in $(seq 1 60); do curl -s -o /dev/null http://127.0.0.1:3000/ && break; sleep 1; done
+      - name: Without a team
+        run: APP_URL=http://127.0.0.1:3000 node scripts/eval-ai.mjs --cases "${{ inputs.cases }}" --out report.md
+      - name: Drafting like the team that played
+        if: inputs.with_team
+        run: APP_URL=http://127.0.0.1:3000 node scripts/eval-ai.mjs --cases "${{ inputs.cases }}" --with-team --out report-team.md
+      - name: Summary
+        if: always()
+        run: cat report.md report-team.md >> "$GITHUB_STEP_SUMMARY" 2>/dev/null || true
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: ai-quality-report
+          path: |
+            report*.md
+            app.log

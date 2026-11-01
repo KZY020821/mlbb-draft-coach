@@ -85,6 +85,10 @@ create table if not exists analyses (
 );
 create index if not exists analyses_user_time on analyses(user_id, created_at);
 create index if not exists analyses_time on analyses(created_at);
+-- Was the analysis helpful? 1 = yes, -1 = no, with an optional note. Added after launch.
+alter table analyses add column if not exists feedback smallint;
+alter table analyses add column if not exists feedback_note text not null default '';
+alter table analyses add column if not exists feedback_at timestamptz;
 create table if not exists settings (
   key text primary key,
   value jsonb not null,
