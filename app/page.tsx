@@ -10,7 +10,8 @@ import InstallApp from "@/components/InstallApp";
 
 export const dynamic = "force-dynamic";
 
-export default async function Home() {
+export default async function Home({ searchParams }: { searchParams: Promise<{ deleted?: string }> }) {
+  const { deleted } = await searchParams;
   const ctx = await getContext();
   const { leagues, teams } = teamChoices();
   const accountsOn = accountsEnabled();
@@ -35,6 +36,11 @@ export default async function Home() {
           <AccountBar accountsOn={accountsOn} account={account} />
         </div>
       </div>
+      {deleted === "1" && (
+        <p className="stale" role="status">
+          Your account was deleted. Thanks for trying the draft coach.
+        </p>
+      )}
       <header className="hero">
         <p className="kicker">Mobile Legends: Bang Bang · Draft assistant</p>
         <h1>

@@ -26,6 +26,9 @@ export default function AccountBar({ accountsOn, account }: { accountsOn: boolea
       {account.image ? <img className="avatar" src={account.image} alt="" width={28} height={28} referrerPolicy="no-referrer" /> : null}
       <span className="who">{account.name || account.email}</span>
       <span className={`badge badge-${account.plan}`}>{PLAN[account.plan]}</span>
+      <a className="ghost small" href="/account">
+        Account
+      </a>
       {account.plan === "owner" && (
         <a className="ghost small" href="/admin">
           Admin
