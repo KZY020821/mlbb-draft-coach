@@ -3,6 +3,8 @@ name: Uptime
 # Every hour: opens the site and /api/health. Emails the owner (same SMTP secrets as the data job)
 # when either is down, or when the AI coach is paused (switched off or monthly budget reached).
 # Emails again each hour while it stays down. Set the SITE_URL repository variable to change the address.
+# With the same HEALTH_TOKEN set in Vercel and as a repository secret, it also emails once a day
+# (09:41 Malaysia time) while this month's AI spend is past 50% of the budget, or on pace to pass it.
 on:
   schedule:
     - cron: "41 * * * *"
@@ -17,6 +19,7 @@ jobs:
     timeout-minutes: 5
     env:
       SITE_URL: ${{ vars.SITE_URL || 'https://mlbb-draft-coach-six.vercel.app' }}
+      HEALTH_TOKEN: ${{ secrets.HEALTH_TOKEN }}
     steps:
       - uses: actions/checkout@v4
         with:
@@ -30,12 +33,18 @@ jobs:
           problems=""
           home=$(curl -s -o /dev/null -w "%{http_code}" --max-time 30 "$SITE_URL/") || home="no answer"
           [ "$home" = "200" ] || problems="$problems\nThe home page answered: $home"
-          health=$(curl -s --max-time 30 -w "\n%{http_code}" "$SITE_URL/api/health") || health=$'\nno answer'
+          health=$(curl -s --max-time 30 -H "x-health-token: $HEALTH_TOKEN" -w "\n%{http_code}" "$SITE_URL/api/health") || health=$'\nno answer'
           code=$(echo "$health" | tail -n1)
           json=$(echo "$health" | sed '$d')
           echo "Health ($code): $json"
           [ "$code" = "200" ] || problems="$problems\n/api/health answered $code: $json"
           echo "$json" | grep -q '"aiPaused":true' && problems="$problems\nThe AI coach is paused (switched off in admin, or the monthly AI budget is reached)."
+          # Budget warning, once a day: past 50% used, or projected to pass 100% by month end.
+          used=$(echo "$json" | sed -n 's/.*"usedPct":\([0-9]*\).*/\1/p')
+          projected=$(echo "$json" | sed -n 's/.*"projectedPct":\([0-9]*\).*/\1/p')
+          if [ -n "$used" ] && [ "$(date -u +%H)" = "01" ] && { [ "$used" -ge 50 ] || [ "$projected" -ge 100 ]; }; then
+            problems="$problems\nThe AI budget is at $used% for this month (on pace for $projected% by month end). Raise it in admin > API usage, or expect analyses to pause."
+          fi
           if [ -n "$problems" ]; then
             printf "Something is wrong with %s:\n%b\n\nRun: %s/%s/actions/runs/%s\n" "$SITE_URL" "$problems" "$GITHUB_SERVER_URL" "$GITHUB_REPOSITORY" "$GITHUB_RUN_ID" > email.txt
             cat email.txt
